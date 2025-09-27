@@ -4,82 +4,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruitful Bough - For Learning and Exploring Education Mindset and Ideas...</title>
+    <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
 </head>
-<div class="display-pag" id="load-page">
-    <p class="display-page"><span class="dis-one">F</span><span class="dis-three">P</span><span class="dis-three">H</span></p>
-</div>
-<script>
-    let loaded = false;
-    let timeoutReached = false;
-
-    // this is for loading the page...
-    window.addEventListener('load', function() {
-        loaded = true;
-        if (timeoutReached) {
-            document.getElementById('load-page').style.display = 'none';
-        }
-    });
-
-    // this is for the time setting...
-    setTimeout(function() {
-        timeoutReached = true;
-        if (loaded) {
-            document.getElementById('load-page').style.display = 'none';
-        }
-    }, 25000); // 1000 milliseconds = 1 second
-
-    // this is for the color toogle
-    let index = 0;
-
-    setInterval(function() {
-        let spans = document.querySelectorAll('.display-page span');
-        spans.forEach((span) => {
-            span.classList.remove('pink');
-        });
-        spans[index].classList.add('pink');
-        index = (index + 1) % 3;
-    }, 1200);
-</script>
 
 <body>
+    <div class="div-test-one">
+        <img src="./icons/please_moa.png" class="img-test-one">
+        <p class="par-test-one">Start your</p>
+        <p class="par-test-two">Journey with Fruitful Bough</p>
+        <p class="par-test-three">Start now with Fruitful bough</p>
+        <button class="but-test-one">Subscribe Now $12</button>
+        <div class="div-test-three" style="display: none;">
+            <img src="./icons/bacdddk1.png" class="img-test-two">
+        </div>
+        <script>
+            // For sample testing...
+
+            const ButOne = document.querySelector('.but-test-one');
+            const ExitDiv = document.querySelector('.div-test-one');
+            const ShowDiv = document.querySelector('.div-test-three');
+
+            // All an event listener to the button
+            ButOne.addEventListener('click', function() {
+                // Not show
+                ExitDiv.replaceWith(ShowDiv);
+                // Show  the div to show
+                ShowDiv.style.display = 'block';
+            });
+        </script>
+        <p class="par-test-four">Or</p>
+        <button class="but-test-two">Maybe Later</button>
+        <div class="div-test-four" style="display: none;"></div>
+        <script>
+            // For sample testing...
+
+            const ButTwo = document.querySelector('.but-test-two');
+            const ShowDivTwo = document.querySelector('.div-test-four');
+
+            // All an event listener to the button
+            ButTwo.addEventListener('click', function() {
+                // Not show
+                ExitDiv.replaceWith(ShowDivTwo);
+                // Show  the div to show
+                ShowDivTwo.style.display = 'block';
+            });
+        </script>
+    </div>
     <style>
-        .display-pag {
-            position: fixed;
+        .div-test-one {
+            /* Adjust styles here */
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.90);
+            background-color: #e6e4e2;
             z-index: 2;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .img-test-one {
+            zoom: 65%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .par-test-one {
+            text-align: center;
+            margin-top: 330px;
+            font-family: "Cabri", sans-serif;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        
+        .par-test-two {
+            text-align: center;
+            font-family: "Cabri", sans-serif;
+            font-weight: bold;
+            margin-top: -11px;
+            font-size: 17px;
+        }
+        
+        .par-test-three {
+            text-align: center;
+            font-size: 14.5px;
+            margin-top: -9px;
+            color: #292929;
+        }
+        
+        .but-test-one {
+            width: 65%;
+            height: 7%;
+            top: 75%;
+            position: absolute;
+            left: 50%;
+            font-size: 13.5px;
+            font-weight: bold;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            background-color: #ba9105;
+            border: 1px solid #ba9105;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+            font-family: "Cabri", sans-serif;
+            color: white;
+        }
+        
+        .but-test-one:hover {
+            background-color: #1b1b1b;
+            border: 2px solid #1b1b1b;
+            /* Change background on hover */
+            color: white;
+            /* Change text color on hover */
+        }
+        
+        .par-test-four {
+            font-size: 15.5px;
+            color: #848282;
+            position: absolute;
+            top: 79%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .but-test-two {
+            width: 65%;
+            height: 6.5%;
+            position: absolute;
+            font-weight: bold;
+            top: 88%;
+            font-size: 14.5px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            background-color: #ffffff;
+            font-family: "Cabri", sans-serif;
+            border: 1px solid #ffffff;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+            color: #ba9105;
+        }
+        
+        .but-test-two:hover {
+            background-color: #1b1b1b;
+            border: 2px solid #1b1b1b;
+            /* Change background on hover */
+            color: white;
+            /* Change text color on hover */
+        }
+        
+        .div-test-three {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            position: fixed;
             top: 0;
             left: 0;
         }
         
-        .display-page {
-            position: absolute;
-            font-size: 65px;
-            color: white;
-            top: 40%;
-            left: 50%;
-            font-weight: bold;
-            font-family: Impact, sans-serif;
-            transform: translate(-50%, -50%);
+        .div-test-four {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
         
-        .dis-one {
-            color: #242424;
+        @media (max-width: 480px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-one {
+                zoom: 80%;
+            }
+            .par-test-one {
+                font-size: 19px;
+            }
+            .par-test-two {
+                font-size: 19px;
+            }
+            .par-test-three {
+                font-size: 16px;
+            }
+            .but-test-one {
+                font-size: 15.5px;
+            }
+            .but-test-two {
+                font-size: 15.5px;
+            }
         }
         
-        .dis-two {
-            color: #242424;
+        @media (max-width: 350px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-one {
+                zoom: 65%;
+            }
+            .par-test-one {
+                font-size: 17px;
+            }
+            .par-test-two {
+                font-size: 17px;
+            }
+            .par-test-three {
+                font-size: 14.5px;
+            }
+            .but-test-one {
+                font-size: 14.5px;
+            }
+            .par-test-four {
+                font-size: 14.5px;
+            }
+            .but-test-two {
+                font-size: 14.5px;
+            }
         }
         
-        .dis-three {
-            color: #242424;
+        @media (max-width: 300px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-one {
+                zoom: 55%;
+            }
+            .par-test-one {
+                font-size: 15px;
+            }
+            .par-test-two {
+                font-size: 15px;
+            }
+            .par-test-three {
+                font-size: 13.5px;
+            }
+            .but-test-one {
+                font-size: 13.5px;
+            }
+            .par-test-four {
+                font-size: 13.5px;
+            }
+            .but-test-two {
+                font-size: 13.5px;
+            }
         }
         
-        .pink {
-            color: #555555;
+        @media (max-width:270px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-one {
+                zoom: 45%;
+            }
+            .par-test-one {
+                font-size: 14px;
+            }
+            .par-test-two {
+                font-size: 14px;
+            }
+            .par-test-three {
+                font-size: 12.5px;
+            }
+            .but-test-one {
+                font-size: 13.5px;
+            }
+            .par-test-four {
+                font-size: 13px;
+            }
+            .but-test-two {
+                font-size: 13.5px;
+            }
         }
     </style>
 
