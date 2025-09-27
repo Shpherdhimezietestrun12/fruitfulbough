@@ -17,6 +17,14 @@
         <button class="but-test-one">Subscribe Now $12</button>
         <div class="div-test-three" style="display: none;">
             <img src="./icons/bacdddk1.png" class="img-test-two">
+            <p class="par-test-five">Our Packages</p>
+            <p class="par-test-six">Subscription ensures uninterrupted access to</p>
+            <p class="par-test-seven">our platform, eliminating payment-related</p>
+            <p class="par-test-eight">disruptions.</p>
+            <button class="but-test-three">Guidelines</button>
+            <div class="div-test-five"></div>
+            <div class="div-test-six"></div>
+            <div class="div-test-seven"></div>
         </div>
         <script>
             // For sample testing...
@@ -33,9 +41,9 @@
                 ShowDiv.style.display = 'block';
             });
         </script>
-        <p class="par-test-four">Or</p>
-        <button class="but-test-two">Maybe Later</button>
-        <div class="div-test-four" style="display: none;"></div>
+        <p class=" par-test-four ">Or</p>
+        <button class="but-test-two ">Maybe Later</button>
+        <div class="div-test-four " style="display: none; "></div>
         <script>
             // For sample testing...
 
@@ -73,7 +81,7 @@
         }
         
         .par-test-one {
-            font-family: "Cabri", sans-serif;
+            font-family: "Cabri ", sans-serif;
             font-weight: bold;
             font-size: 17px;
             left: 50%;
@@ -83,7 +91,7 @@
         }
         
         .par-test-two {
-            font-family: "Cabri", sans-serif;
+            font-family: "Cabri ", sans-serif;
             font-weight: bold;
             font-size: 17px;
             left: 50%;
@@ -96,7 +104,7 @@
         }
         
         .par-test-three {
-            font-family: "Cabri", sans-serif;
+            font-family: "Cabri ", sans-serif;
             font-size: 11.5px;
             left: 50%;
             transform: translateX(-50%);
@@ -117,16 +125,18 @@
             font-weight: bold;
             transform: translate(-50%, -50%);
             border-radius: 20px;
-            background-color: #ba9105;
-            border: 1px solid #ba9105;
+            background-color: #eab80e;
+            border: 1px solid #eab80e;
             cursor: pointer;
             /* Often added for buttons */
             transition: background-color 0.3s, color 0.3s;
-            font-family: "Cabri", sans-serif;
+            font-family: "Cabri ", sans-serif;
             color: white;
         }
         
-        .but-test-one:hover {
+        .but-test-one:hover,
+        .but-test-two:hover,
+        .but-test-three:hover {
             background-color: #1b1b1b;
             border: 2px solid #1b1b1b;
             /* Change background on hover */
@@ -154,27 +164,19 @@
             transform: translate(-50%, -50%);
             border-radius: 20px;
             background-color: #ffffff;
-            font-family: "Cabri", sans-serif;
+            font-family: "Cabri ", sans-serif;
             border: 1px solid #ffffff;
             cursor: pointer;
             /* Often added for buttons */
             transition: background-color 0.3s, color 0.3s;
-            color: #ba9105;
-        }
-        
-        .but-test-two:hover {
-            background-color: #1b1b1b;
-            border: 2px solid #1b1b1b;
-            /* Change background on hover */
-            color: white;
-            /* Change text color on hover */
+            color: #eab80e;
         }
         
         .div-test-three {
             /* Adjust styles here */
             width: 100%;
             height: 100%;
-            background-color: black;
+            background-color: #dad9d9;
             position: fixed;
             top: 0;
             left: 0;
@@ -190,14 +192,98 @@
             left: 0;
         }
         
+        .img-test-two {
+            zoom: 35%;
+            position: absolute;
+            top: 4%;
+            left: 4%;
+        }
+        
+        .par-test-five {
+            font-size: 26.5px;
+            font-family: Impact, sans-serif;
+            color: black;
+            position: absolute;
+            top: 1.5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .par-test-six {
+            margin-top: 16%;
+            font-size: 12.5px;
+            font-family: "Cabri ", sans-serif;
+            color: #454141;
+            text-align: center;
+        }
+        
+        .par-test-seven,
+        .par-test-eight {
+            margin-top: -2.5%;
+            font-size: 12.5px;
+            font-family: "Cabri ", sans-serif;
+            color: #454141;
+            text-align: center;
+        }
+        
+        .but-test-three {
+            height: 7%;
+            background-color: #eab80e;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+            font-family: "Cabri ", sans-serif;
+            border: 1px solid #eab80e;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            position: absolute;
+            font-size: 15.5px;
+            font-weight: bold;
+            top: 22%;
+            color: white;
+        }
+        
+        .div-test-five {
+            width: 90%;
+            height: 14%;
+            background-color: #ffffff;
+            top: 45%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+        }
+        
+        .div-test-six {
+            width: 90%;
+            height: 14%;
+            background-color: #ffffff;
+            top: 62%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+        }
+        
+        .div-test-seven {
+            width: 90%;
+            height: 14%;
+            background-color: #ffffff;
+            top: 79%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+        }
+        
         @media (max-width: 480px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .img-test-one {
                 zoom: 80%;
+                zoom: 35%;
             }
-            .par-test-one {
-                font-size: 19px;
-            }
+            .par-test-one,
             .par-test-two {
                 font-size: 19px;
             }
@@ -208,11 +294,38 @@
             .par-test-four {
                 font-size: 15.5px;
             }
-            .but-test-one {
-                font-size: 15.5px;
-            }
+            .but-test-one,
             .but-test-two {
                 font-size: 15.5px;
+            }
+            .img-test-two {
+                zoom: 35%;
+            }
+            .par-test-five {
+                font-size: 26.5px;
+                top: 1.5%;
+            }
+            .par-test-six {
+                margin-top: 22%;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -2%;
+            }
+            .par-test-six {
+                margin-top: 17%;
+                font-size: 12.5px;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -2.5%;
+                font-size: 12.5px;
+            }
+            .but-test-three {
+                top: 28%;
+                height: 7%;
+                font-size: 15.5px;
+                font-weight: bold;
             }
         }
         
@@ -221,9 +334,7 @@
             .img-test-one {
                 zoom: 65%;
             }
-            .par-test-one {
-                font-size: 17px;
-            }
+            .par-test-one,
             .par-test-two {
                 font-size: 17px;
             }
@@ -231,14 +342,35 @@
                 font-size: 11.5px;
                 top: 61.5%;
             }
-            .but-test-one {
-                font-size: 14.5px;
-            }
-            .par-test-four {
-                font-size: 14.5px;
-            }
+            .but-test-one,
+            .par-test-four,
             .but-test-two {
                 font-size: 14.5px;
+            }
+            .img-test-two {
+                zoom: 32%;
+            }
+            .par-test-five {
+                font-size: 22.5px;
+                top: 2.5%;
+            }
+            .par-test-six {
+                margin-top: 22%;
+            }
+            .par-test-six {
+                margin-top: 25%;
+                font-size: 12px;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -2.5%;
+                font-size: 12px;
+            }
+            .but-test-three {
+                top: 29%;
+                height: 6.5%;
+                font-size: 12.5px;
+                font-weight: bold;
             }
         }
         
@@ -247,9 +379,7 @@
             .img-test-one {
                 zoom: 55%;
             }
-            .par-test-one {
-                font-size: 15px;
-            }
+            .par-test-one,
             .par-test-two {
                 font-size: 15px;
             }
@@ -257,14 +387,34 @@
                 font-size: 10.5px;
                 top: 61.5%;
             }
-            .but-test-one {
-                font-size: 13.5px;
-            }
+            .but-test-one,
             .par-test-four {
                 font-size: 13.5px;
             }
             .but-test-two {
                 font-size: 13.5px;
+            }
+            .img-test-two {
+                zoom: 27%;
+            }
+            .par-test-five {
+                font-size: 18.5px;
+                top: 2.6%;
+            }
+            .par-test-six {
+                margin-top: 26%;
+                font-size: 11.5px;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -2.5%;
+                font-size: 11.5px;
+            }
+            .but-test-three {
+                top: 27%;
+                height: 6.5%;
+                font-size: 11.5px;
+                font-weight: bold;
             }
         }
         
@@ -273,9 +423,7 @@
             .img-test-one {
                 zoom: 45%;
             }
-            .par-test-one {
-                font-size: 14px;
-            }
+            .par-test-one,
             .par-test-two {
                 font-size: 14px;
             }
@@ -283,15 +431,35 @@
                 font-size: 10.5px;
                 top: 60.5%;
             }
-            .but-test-one {
+            .but-test-one,
+            .but-test-two {
                 font-size: 13.5px;
             }
             .par-test-four {
                 font-size: 13px;
                 top: 79.5%;
             }
-            .but-test-two {
-                font-size: 13.5px;
+            .img-test-two {
+                zoom: 23%;
+            }
+            .par-test-five {
+                font-size: 16.5px;
+                top: 2.5%;
+            }
+            .par-test-six {
+                margin-top: 27%;
+                font-size: 10.5px;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -2%;
+                font-size: 10.5px;
+            }
+            .but-test-three {
+                top: 25%;
+                height: 5.5%;
+                font-size: 11.5px;
+                font-weight: bold;
             }
         }
     </style>
