@@ -47,9 +47,18 @@
                 <img src="./icons/forwassrd.png" class="img-test-five">
             </div>
         </div>
-        <div class="div-test-eight" style="display: none;"></div>
-        <div class="div-test-nine" style="display: none;"></div>
-        <div class="div-test-ten" style="display: none;"></div>
+        <div class="div-test-eight" style="display: none;">
+            <img src="./icons/icons8-cancel-100.png" class="img-test-six">
+            <p class="par-test-eighteen">Payment options</p>
+            <nav class="nav-test-one">
+                <ul>
+                    <li><button class="but-test-four"></button></li>
+                    <li><button class="but-test-five"></button></li>
+                    <li><button class="but-test-six"></button></li>
+                </ul>
+            </nav>
+        </div>
+
         <script>
             // For sample testing...
 
@@ -61,8 +70,7 @@
             const NewDivThree = document.querySelector('.div-test-seven');
             const ImgOne = document.querySelector('.img-test-two');
             const RepDivOne = document.querySelector('.div-test-eight');
-            const RepDivTwo = document.querySelector('.div-test-nine');
-            const RepDivThree = document.querySelector('.div-test-ten');
+
 
             // All an event listener to the button
             ButOne.addEventListener('click', function() {
@@ -92,17 +100,17 @@
             // For second set
             NewDivTwo.addEventListener('click', function() {
                 // Not show
-                ShowDiv.replaceWith(RepDivTwo);
+                ShowDiv.replaceWith(RepDivOne);
                 // Show  the div to show
-                RepDivTwo.style.display = 'block';
+                RepDivOne.style.display = 'block';
             });
 
             // For third set
             NewDivThree.addEventListener('click', function() {
                 // Not show
-                ShowDiv.replaceWith(RepDivThree);
+                ShowDiv.replaceWith(RepDivOne);
                 // Show  the div to show
-                RepDivThree.style.display = 'block';
+                RepDivOne.style.display = 'block';
             });
         </script>
         <p class=" par-test-four ">Or</p>
@@ -413,33 +421,55 @@
             /* Adjust styles here */
             width: 100%;
             height: 100%;
-            background-color: blue;
+            background-color: #e6e4e2;
             top: 0;
             left: 0;
             position: fixed;
             /* Add flexbox for centering */
         }
         
-        .div-test-nine {
-            /* Adjust styles here */
-            width: 100%;
-            height: 100%;
-            background-color: red;
-            top: 0;
-            left: 0;
-            position: fixed;
-            /* Add flexbox for centering */
+        .img-test-six {
+            zoom: 35%;
+            left: 86%;
+            top: 3.6%;
+            position: absolute;
         }
         
-        .div-test-ten {
-            /* Adjust styles here */
-            width: 100%;
-            height: 100%;
-            background-color: purple;
-            top: 0;
-            left: 0;
-            position: fixed;
-            /* Add flexbox for centering */
+        .par-test-eighteen {
+            left: 5%;
+            top: 1%;
+            font-size: 21px;
+            font-family: "Cabri ", sans-serif;
+            text-align: start;
+            position: absolute;
+            font-weight: bold;
+        }
+        
+        .nav-test-one {
+            top: 9.5%;
+            left: -3.7%;
+            position: absolute;
+        }
+        
+        .nav-test-one li {
+            list-style: none;
+            padding: 15px;
+            display: inline-block;
+        }
+        
+        .but-test-four,
+        .but-test-five,
+        .but-test-six {
+            width: 70px;
+            height: 60px;
+            background-color: #eeeeee;
+            border-top: 0px solid;
+            border-left: 1px solid #a0a0a0;
+            border-right: 0px solid #a0a0a0;
+            border-bottom: 3px solid #a0a0a0;
+            color: #a0a0a0;
+            text-shadow: 0 0 10px #a0a0a0;
+            border-radius: 10px;
         }
         
         @media (max-width: 700px) {
@@ -488,6 +518,23 @@
             .div-test-seven {
                 top: 80%;
             }
+            .img-test-six {
+                zoom: 29%;
+                left: 94%;
+            }
+            .nav-test-one {}
+            .nav-test-one li {
+                padding: 60px;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 100px;
+                height: 90px;
+            }
         }
         
         @media (max-width: 600px) {
@@ -521,6 +568,23 @@
                 zoom: 16%;
                 left: 87%;
                 top: 40%;
+            }
+            .img-test-six {
+                zoom: 29%;
+                left: 92%;
+            }
+            .nav-test-one {}
+            .nav-test-one li {
+                padding: 50px;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 90px;
+                height: 80px;
             }
         }
         
@@ -593,6 +657,23 @@
                 left: 87%;
                 top: 40%;
             }
+            .img-test-six {
+                zoom: 29%;
+                left: 90%;
+            }
+            .nav-test-one {}
+            .nav-test-one li {
+                padding: 30px;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 85px;
+                height: 75px;
+            }
         }
         
         @media (max-width: 378px) {
@@ -631,6 +712,21 @@
                 font-size: 12.5px;
                 font-weight: bold;
             }
+            .img-test-six {
+                zoom: 29%;
+            }
+            .nav-test-one {
+                left: -2%;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 75px;
+                height: 65px;
+            }
         }
         
         @media (max-width: 368px) {
@@ -652,6 +748,21 @@
                 height: 6%;
                 font-size: 12.5px;
                 font-weight: bold;
+            }
+            .img-test-six {
+                zoom: 29%;
+            }
+            .nav-test-one {
+                left: -3%;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 70px;
+                height: 60px;
             }
         }
         
@@ -731,6 +842,21 @@
                 margin-left: 68%;
                 font-size: 19.5px;
             }
+            .img-test-six {
+                zoom: 29%;
+            }
+            .nav-test-one {
+                left: -5%;
+            }
+            .par-test-eighteen {
+                font-size: 21px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 69px;
+                height: 59px;
+            }
         }
         
         @media (max-width: 320px) {
@@ -746,6 +872,21 @@
                 zoom: 16%;
                 left: 87%;
                 top: 40%;
+            }
+            .img-test-six {
+                zoom: 26%;
+            }
+            .nav-test-one {
+                left: -5.7%;
+            }
+            .par-test-eighteen {
+                font-size: 19px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 60px;
+                height: 50px;
             }
         }
         
@@ -824,6 +965,21 @@
                 left: 87%;
                 top: 40%;
             }
+            .img-test-six {
+                zoom: 27%;
+            }
+            .nav-test-one {
+                left: -7.7%;
+            }
+            .par-test-eighteen {
+                font-size: 19px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 55px;
+                height: 45px;
+            }
         }
         
         @media (max-width:270px) {
@@ -901,6 +1057,21 @@
                 zoom: 14%;
                 left: 87%;
                 top: 40%;
+            }
+            .img-test-six {
+                zoom: 20%;
+            }
+            .nav-test-one {
+                left: -8.7%;
+            }
+            .par-test-eighteen {
+                font-size: 17px;
+            }
+            .but-test-four,
+            .but-test-five,
+            .but-test-six {
+                width: 45px;
+                height: 35px;
             }
         }
     </style>
