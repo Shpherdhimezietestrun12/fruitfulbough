@@ -22,16 +22,47 @@
             <p class="par-test-seven">our platform, eliminating payment-related</p>
             <p class="par-test-eight">disruptions.</p>
             <button class="but-test-three">Guidelines</button>
-            <div class="div-test-five"></div>
-            <div class="div-test-six"></div>
-            <div class="div-test-seven"></div>
+            <div class="div-test-five">
+                <img src="./icons/icons8-circle-100.png" class="img-test-three">
+                <p class="par-test-nine">First Set</p>
+                <p class="par-test-twelve">Standard</p>
+                <img src="./icons/liness1.png" class="img-test-four">
+                <p class="par-test-fiveteen">$12</p>
+                <img src="./icons/forwassrd.png" class="img-test-five">
+            </div>
+            <div class="div-test-six">
+                <img src="./icons/icons8-cirvvvcle-100.png" class="img-test-three">
+                <p class="par-test-ten">Second Set</p>
+                <p class="par-test-thirteen">Seasoned</p>
+                <img src="./icons/liness1.png" class="img-test-four">
+                <p class="par-test-sixteen">$20</p>
+                <img src="./icons/forwassrd.png" class="img-test-five">
+            </div>
+            <div class="div-test-seven">
+                <img src="./icons/icons8-circbbble-100.png" class="img-test-three">
+                <p class="par-test-eleven">Third Set</p>
+                <p class="par-test-fourteen">Project backing</p>
+                <img src="./icons/liness1.png" class="img-test-four">
+                <p class="par-test-seventeen">$25</p>
+                <img src="./icons/forwassrd.png" class="img-test-five">
+            </div>
         </div>
+        <div class="div-test-eight" style="display: none;"></div>
+        <div class="div-test-nine" style="display: none;"></div>
+        <div class="div-test-ten" style="display: none;"></div>
         <script>
             // For sample testing...
 
             const ButOne = document.querySelector('.but-test-one');
             const ExitDiv = document.querySelector('.div-test-one');
             const ShowDiv = document.querySelector('.div-test-three');
+            const NewDivOne = document.querySelector('.div-test-five');
+            const NewDivTwo = document.querySelector('.div-test-six');
+            const NewDivThree = document.querySelector('.div-test-seven');
+            const ImgOne = document.querySelector('.img-test-two');
+            const RepDivOne = document.querySelector('.div-test-eight');
+            const RepDivTwo = document.querySelector('.div-test-nine');
+            const RepDivThree = document.querySelector('.div-test-ten');
 
             // All an event listener to the button
             ButOne.addEventListener('click', function() {
@@ -39,6 +70,39 @@
                 ExitDiv.replaceWith(ShowDiv);
                 // Show  the div to show
                 ShowDiv.style.display = 'block';
+            });
+
+
+            // All an event listener to the button
+            ImgOne.addEventListener('click', function() {
+                // Not show
+                ShowDiv.replaceWith(ExitDiv);
+                // Show  the div to show
+                ExitDiv.style.display = 'block';
+            });
+
+            // For first set
+            NewDivOne.addEventListener('click', function() {
+                // Not show
+                ShowDiv.replaceWith(RepDivOne);
+                // Show  the div to show
+                RepDivOne.style.display = 'block';
+            });
+
+            // For second set
+            NewDivTwo.addEventListener('click', function() {
+                // Not show
+                ShowDiv.replaceWith(RepDivTwo);
+                // Show  the div to show
+                RepDivTwo.style.display = 'block';
+            });
+
+            // For third set
+            NewDivThree.addEventListener('click', function() {
+                // Not show
+                ShowDiv.replaceWith(RepDivThree);
+                // Show  the div to show
+                RepDivThree.style.display = 'block';
             });
         </script>
         <p class=" par-test-four ">Or</p>
@@ -136,7 +200,10 @@
         
         .but-test-one:hover,
         .but-test-two:hover,
-        .but-test-three:hover {
+        .but-test-three:hover,
+        .div-test-five:hover,
+        .div-test-six:hover,
+        .div-test-seven:hover {
             background-color: #1b1b1b;
             border: 2px solid #1b1b1b;
             /* Change background on hover */
@@ -201,7 +268,7 @@
         
         .par-test-five {
             font-size: 26.5px;
-            font-family: Impact, sans-serif;
+            font-family: "Cabri ", sans-serif;
             color: black;
             position: absolute;
             top: 1.5%;
@@ -227,6 +294,7 @@
         }
         
         .but-test-three {
+            width: 35%;
             height: 7%;
             background-color: #eab80e;
             cursor: pointer;
@@ -248,33 +316,204 @@
             width: 90%;
             height: 14%;
             background-color: #ffffff;
-            top: 45%;
+            top: 50%;
             position: absolute;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 15px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .div-test-six {
             width: 90%;
             height: 14%;
             background-color: #ffffff;
-            top: 62%;
+            top: 67%;
             position: absolute;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 15px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
         }
         
         .div-test-seven {
             width: 90%;
             height: 14%;
             background-color: #ffffff;
-            top: 79%;
+            top: 84%;
             position: absolute;
             left: 50%;
             transform: translate(-50%, -50%);
             border-radius: 15px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .img-test-three {
+            zoom: 19%;
+            left: 3%;
+            top: 40%;
+            position: absolute;
+        }
+        
+        .par-test-nine,
+        .par-test-ten,
+        .par-test-eleven {
+            margin-top: 5%;
+            margin-left: 11%;
+            font-size: 16.5px;
+            font-family: "Cabri ", sans-serif;
+            text-align: start;
+            font-weight: bold;
+            position: absolute;
+        }
+        
+        .par-test-twelve,
+        .par-test-thirteen,
+        .par-test-fourteen {
+            margin-top: 15%;
+            margin-left: 11%;
+            font-size: 16.5px;
+            font-family: "Cabri ", sans-serif;
+            text-align: start;
+            position: absolute;
+        }
+        
+        .img-test-four {
+            zoom: 50%;
+            top: 20%;
+            left: 55%;
+            position: absolute;
+        }
+        
+        .par-test-fiveteen,
+        .par-test-sixteen,
+        .par-test-seventeen {
+            margin-top: 9.5%;
+            margin-left: 71%;
+            font-size: 22px;
+            font-family: "Cabri ", sans-serif;
+            text-align: end;
+            position: absolute;
+            font-weight: bold;
+        }
+        
+        .img-test-five {
+            zoom: 20%;
+            left: 87%;
+            top: 40%;
+            position: absolute;
+        }
+        
+        .div-test-eight {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .div-test-nine {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: red;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .div-test-ten {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: purple;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        @media (max-width: 700px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .but-test-three {
+                top: 32%;
+                height: 7%;
+                font-size: 15.5px;
+                font-weight: bold;
+            }
+            .par-test-seven,
+            .par-test-eight {
+                margin-top: -1.5%;
+                font-size: 12.5px;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 3.5%;
+                font-size: 15.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 8%;
+                font-size: 15.5px;
+            }
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 4.4%;
+                margin-left: 68%;
+                font-size: 25.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .but-test-three {
+                top: 31%;
+                height: 7%;
+                font-size: 15.5px;
+                font-weight: bold;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 4%;
+                font-size: 15.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 9%;
+                font-size: 15.5px;
+            }
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 5.6%;
+                margin-left: 68%;
+                font-size: 22.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
+            }
         }
         
         @media (max-width: 480px) {
@@ -302,10 +541,10 @@
             }
             .par-test-five {
                 font-size: 26.5px;
-                top: 1.5%;
+                top: 2%;
             }
             .par-test-six {
-                margin-top: 18%;
+                margin-top: 24%;
             }
             .par-test-seven,
             .par-test-eight {
@@ -313,10 +552,54 @@
                 font-size: 12.5px;
             }
             .but-test-three {
-                top: 28%;
+                top: 32%;
                 height: 7%;
                 font-size: 15.5px;
                 font-weight: bold;
+            }
+            .img-test-three {
+                zoom: 15%;
+                top: 46%;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 7%;
+                font-size: 16.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 14.5%;
+                font-size: 16.5px;
+            }
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 7.6%;
+                margin-left: 68%;
+                font-size: 19.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
+            }
+        }
+        
+        @media (max-width: 368px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 9.6%;
+                margin-left: 68%;
+                font-size: 19.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 39%;
             }
         }
         
@@ -363,6 +646,48 @@
                 font-size: 12.5px;
                 font-weight: bold;
             }
+            .img-test-three {
+                zoom: 13%;
+                top: 46%;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 7%;
+                font-size: 14.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 15%;
+                font-size: 14.5px;
+            }
+            .img-test-four {
+                zoom: 40%;
+                top: 26%;
+                left: 52%;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 11.5%;
+                margin-left: 65%;
+                font-size: 17.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
+            }
         }
         
         @media (max-width: 300px) {
@@ -406,6 +731,39 @@
                 height: 6.5%;
                 font-size: 11.5px;
                 font-weight: bold;
+            }
+            .img-test-three {
+                zoom: 9.5%;
+                top: 46%;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 9%;
+                font-size: 13.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 17%;
+                font-size: 13.5px;
+            }
+            .img-test-four {
+                zoom: 42%;
+                top: 26%;
+                left: 49%;
+            }
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 12.5%;
+                margin-left: 65%;
+                font-size: 17.5px;
+            }
+            .img-test-five {
+                zoom: 16%;
+                left: 87%;
+                top: 40%;
             }
         }
         
@@ -451,6 +809,39 @@
                 height: 5.5%;
                 font-size: 11.5px;
                 font-weight: bold;
+            }
+            .img-test-three {
+                zoom: 10%;
+                top: 46%;
+            }
+            .par-test-nine,
+            .par-test-ten,
+            .par-test-eleven {
+                margin-top: 10%;
+                font-size: 11.5px;
+            }
+            .par-test-twelve,
+            .par-test-thirteen,
+            .par-test-fourteen {
+                margin-top: 20%;
+                font-size: 11.5px;
+            }
+            .img-test-four {
+                zoom: 40%;
+                top: 26%;
+                left: 50%;
+            }
+            .par-test-fiveteen,
+            .par-test-sixteen,
+            .par-test-seventeen {
+                margin-top: 14.5%;
+                margin-left: 68%;
+                font-size: 14.5px;
+            }
+            .img-test-five {
+                zoom: 14%;
+                left: 87%;
+                top: 40%;
             }
         }
     </style>
