@@ -173,7 +173,18 @@
         </script>
         <p class=" par-test-four ">Or</p>
         <button class="but-test-two ">Maybe Later</button>
-        <div class="div-test-four " style="display: none; "></div>
+        <div class="div-test-four " style="display: none; ">
+            <div class="div-test-eleven">
+                <p class="parag-test-one">Discover Best Books</p>
+                <p class="parag-test-two">Today!</p>
+                <img src="./Pictures/cynthia2 - Copy.png" class="cynthia-test">
+                <p class="parag-test-three">Get 1 month free to devour as many</p>
+                <p class="parag-test-four">books as you can</p>
+                <button class="but-test-eight"><img src="./icons/forward.png" class="img-test-eight"></button>
+            </div>
+
+        </div>
+
         <script>
             // For sample testing...
 
@@ -319,7 +330,7 @@
             /* Adjust styles here */
             width: 100%;
             height: 100%;
-            background-color: pink;
+            background-color: white;
             position: fixed;
             top: 0;
             left: 0;
@@ -509,14 +520,15 @@
         }
         
         .nav-test-one {
-            top: 9.5%;
+            top: 7.5%;
             left: -3.7%;
+            text-align: center;
             position: absolute;
         }
         
         .nav-test-one li {
             list-style: none;
-            padding: 15px !important;
+            padding: 7px !important;
             display: inline-block;
         }
         
@@ -527,9 +539,9 @@
             height: 60px;
             background-color: #eeeeee;
             border-top: 0px solid;
-            border-left: 1px solid #a0a0a0;
-            border-right: 0px solid #a0a0a0;
-            border-bottom: 3px solid #a0a0a0;
+            border-left: 0px solid;
+            border-right: 0px solid;
+            border-bottom: 0px solid;
             color: #a0a0a0;
             text-shadow: 0 0 10px #a0a0a0;
             border-radius: 10px;
@@ -596,6 +608,83 @@
             font-weight: bold;
             top: 99%;
             color: white;
+        }
+        
+        .div-test-eleven {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-image: url('./Pictures/HEaderGIFOpenData.gif');
+            background-size: cover;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .parag-test-one {
+            color: white;
+            margin-top: 100%;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .parag-test-two {
+            color: white;
+            margin-top: -8%;
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .parag-test-three {
+            color: white;
+            margin-top: -8%;
+            font-size: 12.5px;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .parag-test-four {
+            color: white;
+            margin-top: -3%;
+            font-size: 12.5px;
+            text-align: center;
+            font-style: italic;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .cynthia-test {
+            zoom: 43%;
+            position: absolute;
+            top: 46%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .but-test-eight {
+            width: 12%;
+            height: 8%;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            left: 49%;
+            top: 89%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            border: 1px solid transparent;
+        }
+        
+        .img-test-eight {
+            zoom: 35%;
+            text-align: center;
         }
         
         @media (max-width: 700px) {
@@ -858,6 +947,22 @@
             }
         }
         
+        @media (max-width: 390px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .nav-test-one {
+                left: -5%;
+            }
+        }
+        
+        @media (max-width: 380px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 65%;
+                top: 59.5%;
+                left: 48%;
+            }
+        }
+        
         @media (max-width: 378px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .par-test-fiveteen,
@@ -879,6 +984,42 @@
                 zoom: 75%;
                 top: 57.5%;
                 left: 48%;
+            }
+        }
+        
+        @media (max-width: 392px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 70%;
+                top: 57.5%;
+                left: 48%;
+            }
+            .nav-test-one {
+                left: -5%;
+            }
+        }
+        
+        @media (max-width: 386px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 65%;
+                top: 57.5%;
+                left: 48%;
+            }
+            .nav-test-one {
+                left: -7.7%;
+            }
+        }
+        
+        @media (max-width: 387px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 65%;
+                top: 57.5%;
+                left: 48%;
+            }
+            .nav-test-one {
+                left: -7.7%;
             }
         }
         
@@ -958,6 +1099,72 @@
             }
         }
         
+        @media (max-width: 376px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 70%;
+                top: 55.5%;
+                left: 48%;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 40%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
+            }
+        }
+        
+        @media (max-width: 373px) {
+            /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 70%;
+                top: 55.5%;
+                left: 48%;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 40%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
+            }
+        }
+        
         @media (max-width: 370px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .nav-test-one {
@@ -989,6 +1196,30 @@
                 font-size: 16.5px;
                 top: 94%;
             }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 40%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
+            }
         }
         
         @media (max-width: 368px) {
@@ -1015,7 +1246,8 @@
                 zoom: 29%;
             }
             .nav-test-one {
-                left: -3%;
+                left: 2%;
+                top: 9.7%;
             }
             .par-test-eighteen,
             .par-test-nineteen {
@@ -1024,21 +1256,50 @@
             .but-test-four,
             .but-test-five,
             .but-test-six {
-                width: 70px;
-                height: 60px;
+                width: 75px;
+                height: 65px;
             }
             .par-test-nineteen {
                 top: 27.5%;
             }
             .img-test-seven {
-                zoom: 70%;
-                top: 55.5%;
+                zoom: 65%;
+                top: 45.5%;
                 left: 48%;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 36%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
             }
         }
         
         @media (max-width: 361px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
+            .img-test-seven {
+                zoom: 65%;
+                top: 54.5%;
+                left: 48%;
+            }
             .nav-test-two {
                 top: 70%;
             }
@@ -1059,6 +1320,30 @@
                 height: 7%;
                 font-size: 16.5px;
                 top: 95%;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 36%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
             }
         }
         
@@ -1090,18 +1375,41 @@
                 font-size: 16.5px;
                 top: 95%;
             }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 36%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
+            }
         }
         
         @media (max-width: 351px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .nav-test-one {
                 top: 9.5%;
-                left: -6%;
-                position: absolute;
+                left: 0%;
             }
             .img-test-seven {
                 zoom: 65%;
-                top: 54.5%;
+                top: 64.5%;
                 left: 48%;
             }
             .nav-test-two {
@@ -1124,6 +1432,30 @@
                 height: 7%;
                 font-size: 16.5px;
                 top: 95%;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 36%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%
             }
         }
         
@@ -1207,7 +1539,7 @@
                 zoom: 29%;
             }
             .nav-test-one {
-                left: -5%;
+                left: 0%;
             }
             .par-test-eighteen,
             .par-test-nineteen {
@@ -1220,8 +1552,8 @@
                 height: 59px;
             }
             .img-test-seven {
-                zoom: 65%;
-                top: 54%;
+                zoom: 75%;
+                top: 65%;
                 left: 48%;
             }
             .nav-test-two {
@@ -1245,26 +1577,108 @@
                 font-size: 16.5px;
                 top: 95%;
             }
+            .parag-test-one {
+                margin-top: 110%;
+                font-size: 28px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 28px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 47%;
+                top: 43%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 8%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 30%;
+            }
         }
         
         @media (max-width: 328px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .nav-test-one {
-                top: 9.5%;
-                left: -6%;
-                position: absolute;
+                left: -1%;
+            }
+            .parag-test-one {
+                margin-top: 115%;
+                font-size: 26px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 26px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 42%;
+                top: 45%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 7%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 25%;
             }
         }
         
         @media (max-width: 325px) {
             /* Styles for devices with a maximum width of 480px (e.g., many smartphones) */
             .nav-test-one {
-                left: -7.7%;
+                left: -1.7%;
             }
             .img-test-seven {
                 zoom: 60%;
                 top: 51%;
                 left: 48%;
+            }
+            .parag-test-one {
+                margin-top: 125%;
+                font-size: 26px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 26px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 42%;
+                top: 48%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 7%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 20%;
             }
         }
         
@@ -1286,7 +1700,7 @@
                 zoom: 26%;
             }
             .nav-test-one {
-                left: -5.7%;
+                left: -2.7%;
             }
             .par-test-eighteen,
             .par-test-nineteen {
@@ -1295,8 +1709,8 @@
             .but-test-four,
             .but-test-five,
             .but-test-six {
-                width: 60px;
-                height: 50px;
+                width: 70px;
+                height: 60px;
             }
             .par-test-nineteen {
                 top: 26%;
@@ -1326,6 +1740,34 @@
                 height: 7%;
                 font-size: 16.5px;
                 top: 93%;
+            }
+            .parag-test-one {
+                margin-top: 125%;
+                font-size: 26px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 26px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 42%;
+                top: 48%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 7%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 20%;
             }
         }
         
@@ -1408,7 +1850,7 @@
                 zoom: 27%;
             }
             .nav-test-one {
-                left: -7.7%;
+                left: -4.5%;
             }
             .par-test-eighteen,
             .par-test-nineteen {
@@ -1417,8 +1859,8 @@
             .but-test-four,
             .but-test-five,
             .but-test-six {
-                width: 55px;
-                height: 45px;
+                width: 65px;
+                height: 55px;
             }
             .par-test-nineteen {
                 top: 24%;
@@ -1448,6 +1890,35 @@
                 height: 6.9%;
                 font-size: 15.5px;
                 top: 88%;
+            }
+            .parag-test-one {
+                margin-top: 130%;
+                font-size: 26px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 26px;
+            }
+            .parag-test-three {
+                color: white;
+                font-size: 12.5px;
+            }
+            .parag-test-four {
+                color: white;
+                margin-top: -3%;
+                font-size: 12.5px;
+            }
+            .cynthia-test {
+                zoom: 42%;
+                top: 46%;
+            }
+            .but-test-eight {
+                width: 15%;
+                height: 7%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 20%;
             }
         }
         
@@ -1531,7 +2002,7 @@
                 zoom: 20%;
             }
             .nav-test-one {
-                left: -8.7%;
+                left: -4.5%;
             }
             .par-test-eighteen,
             .par-test-nineteen {
@@ -1540,8 +2011,8 @@
             .but-test-four,
             .but-test-five,
             .but-test-six {
-                width: 45px;
-                height: 35px;
+                width: 55px;
+                height: 45px;
             }
             .par-test-nineteen {
                 top: 22%;
@@ -1571,6 +2042,34 @@
                 height: 5.9%;
                 font-size: 13.5px;
                 top: 82%;
+            }
+            .parag-test-one {
+                margin-top: 150%;
+                font-size: 20px;
+            }
+            .parag-test-two {
+                margin-top: -8%;
+                font-size: 20px;
+            }
+            .parag-test-three {
+                margin-top: -8%;
+                font-size: 9.5px;
+            }
+            .parag-test-four {
+                margin-top: -3%;
+                font-size: 9.5px;
+            }
+            .cynthia-test {
+                zoom: 32%;
+                top: 46%;
+            }
+            .but-test-eight {
+                width: 12%;
+                height: 5%;
+                top: 89%;
+            }
+            .img-test-eight {
+                zoom: 15%;
             }
         }
     </style>
