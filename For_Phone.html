@@ -47,19 +47,33 @@
         </script>
         <p class=" par-test-four ">Or</p>
         <button class="but-test-two ">Maybe Later</button>
-        <div class="div-test-four " style="display: none; ">
+        <div class="div-set-four " style="display: none; ">
             <div class="div-test-eleven">
-                <p class="parag-test-one">Discover Best Books</p>
-                <p class="parag-test-two">Today!</p>
-                <img src="./Pictures/cynthia2 - Copy.png" class="cynthia-test">
-                <p class="parag-test-three">Get 1 month free to devour as many</p>
-                <p class="parag-test-four">books as you can</p>
-                <button class="but-test-eight"><img src="./icons/forward.png" class="img-test-eight"></button>
+
+
+                <img src="./icons/10622087.png" class="cynthia-test">
+                <p class="par-set-seven">Explore Best Books</p>
+                <p class="par-set-eight">Today!</p>
+                <p class="par-set-nine">Enjoy Fruitful bough books</p>
+                <p class="par-set-ten">today for free.</p>
+                <img src="./icons/icons8-right-arrow-100.png" class="img-set-two">
+                <div class="div-set-five"></div>
+
             </div>
-
         </div>
+        <script>
+            const ButTwo = document.querySelector('.but-test-two');
+            const ShowDivOne = document.querySelector('.div-set-four');
 
 
+            // All an event listener to the button
+            ButTwo.addEventListener('click', function() {
+                // Not show
+                ExitDiv.replaceWith(ShowDivOne);
+                // Show  the div to show
+                ShowDivOne.style.display = 'block';
+            });
+        </script>
     </div>
     <style>
         .div-test-one {
@@ -136,7 +150,8 @@
             color: white;
         }
         
-        .but-test-one:hover {
+        .but-test-one:hover,
+        .but-test-two:hover {
             background-color: #1b1b1b;
             border: 2px solid #1b1b1b;
             /* Change background on hover */
@@ -178,6 +193,18 @@
             height: 100%;
             background-image: url('./Pictures/HEaderGIFOpenData.gif');
             background-size: cover;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .div-set-four {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: white;
             z-index: 1;
             top: 0;
             left: 0;
@@ -281,9 +308,10 @@
             font-size: 16px;
             width: 100%;
             /* or a specific width */
-            text-align: center;
             color: black;
-            margin-top: 68%;
+            top: 73%;
+            left: 75%;
+            transform: translate(-50%, -50%);
             font-weight: bold;
             font-family: "Cabri", sans-serif;
         }
@@ -303,13 +331,90 @@
             font-size: 17px;
             background-color: transparent;
             color: #ffca16;
-            border-bottom: 1px solid #f2bf11;
+            border-bottom: 0.5px solid #f2bf11;
         }
         
         .input-set-one:focus {
             outline: none;
             border: none;
             border-bottom: 1px solid #f2bf11;
+        }
+        
+        .cynthia-test {
+            zoom: 90%;
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .par-set-seven {
+            position: absolute;
+            font-size: 27px;
+            width: 100%;
+            /* or a specific width */
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            top: 54%;
+            font-family: "Cooper Black", sans-serif;
+        }
+        
+        .par-set-eight {
+            position: absolute;
+            font-size: 27px;
+            width: 100%;
+            /* or a specific width */
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            top: 60%;
+            font-family: "Cooper Black", sans-serif;
+        }
+        
+        .par-set-nine {
+            position: absolute;
+            font-size: 16px;
+            width: 100%;
+            /* or a specific width */
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            top: 69%;
+        }
+        
+        .par-set-ten {
+            position: absolute;
+            font-size: 16px;
+            width: 100%;
+            /* or a specific width */
+            text-align: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            top: 72.5%;
+        }
+        
+        .div-set-five {
+            width: 100%;
+            height: 9%;
+            background-image: url('./Pictures/Untitled.png');
+            background-size: cover;
+            bottom: 0;
+            position: absolute;
+            clip-path: polygon(0 100%, 50% 0, 100% 100%);
+        }
+        
+        .img-set-two {
+            zoom: 50%;
+            position: absolute;
+            top: 90.5%;
+            left: 50.5%;
+            z-index: 3;
+            transform: translate(-50%, -50%);
         }
     </style>
 
