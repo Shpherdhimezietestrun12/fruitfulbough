@@ -11,6 +11,53 @@
 <body>
     <div class="div-test-one">
         <img src="./icons/please_moa.png" class="img-test-one">
+        <div class="main-updates">
+            <nav class="nav-main-updates">
+                <ul>
+                    <li class="list-main-one">See</li>
+                    <li class="list-main-two">our</li>
+                    <li class="list-main-two">update</li>
+                    <li>
+                        <img src="./icons/right_arrowwwww.png" class="img-main-updates">
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="Main-1" style="display: none;">
+            <div class="show-new-main"></div>
+            <button class="main-but-1" onclick="window.location.href='https://g.page/r/CVAud1-kzM6NEBM/review';">Verify</button>
+        </div>
+        <script>
+            const LoadOne = document.querySelector('.main-updates');
+            const NewMain = document.querySelector('.Main-1');
+            const MainButOne = document.querySelector('.main-but-1');
+
+
+            // All an event listener to the button
+            LoadOne.addEventListener('click', function() {
+                // Not show
+                ExitDiv.replaceWith(NewMain);
+                // Show  the div to show
+                NewMain.style.display = 'block';
+            });
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'G-143X6VKLYW');
+
+
+            MainButOne.addEventListener('click', function() {
+                gtag('event', 'click', {
+                    'event_category': 'Button',
+                    'event_label': 'Verify Button',
+                    'value': '1'
+                });
+                window.location.href = 'https://g.page/r/CVAud1-kzM6NEBM/review';
+            });
+        </script>
         <p class="par-test-one">Start your</p>
         <p class="par-test-two">Journey with Fruitful Bough</p>
         <p class="par-test-three">Start now with Fruitful bough</p>
@@ -65,7 +112,7 @@
             </div>
         </div>
         <div class="home-page" style="display: none;">
-            <button class="but-tap-one" onclick="HomeCont()"><img src="./icons/Untitlssssssed.png" class="img-set-three"></button>
+            <button class="but-tap-one" onclick="HomeCont()"><img src="./icons/Untbbbbitled.png" class="img-set-three"></button>
             <div class="div-tap-one" style="display: none;"></div>
             <button class="but-tap-two"><img src="./icons/icons8-search-100.png" class="img-set-four"></button>
             <div class="home-page-one">
@@ -115,6 +162,63 @@
     </script>
     </div>
     <style>
+        .main-updates {
+            /* Adjust styles here */
+            width: 100%;
+            height: 6%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 3;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .Main-1 {
+            /* Adjust styles here */
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .show-new-main {
+            /* Adjust styles here */
+            width: 100%;
+            height: 65%;
+            background-image: url('./Pictures/Notice_two.png');
+            background-color: black;
+            background-size: cover;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
+        
+        .main-but-1 {
+            width: 55%;
+            height: 7%;
+            top: 70%;
+            position: absolute;
+            left: 50%;
+            font-size: 15.5px;
+            font-weight: bold;
+            transform: translate(-50%, -50%);
+            border-radius: 20px;
+            background-color: #eab80e;
+            border: 1px solid #eab80e;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+            font-family: "Cabri ", sans-serif;
+            color: white;
+        }
+        
         .div-test-one {
             /* Adjust styles here */
             width: 100%;
@@ -125,6 +229,37 @@
             left: 0;
             position: fixed;
             /* Add flexbox for centering */
+        }
+        
+        .list-main-one,
+        .list-main-two {
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transition */
+            position: relative;
+            top: -8px;
+            /* Adjust this value to move the text up or down */
+        }
+        
+        .nav-main-updates {
+            text-align: center;
+        }
+        
+        .nav-main-updates li {
+            list-style: none;
+            padding-left: 0px;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+            color: white;
+            display: inline-block;
+        }
+        
+        .img-main-updates {
+            zoom: 28%;
+            padding-left: 30px;
+            position: relative;
+            top: -17px;
+            /* Adjust this value to move the text up or down */
         }
         
         .img-test-one {
@@ -190,7 +325,8 @@
         }
         
         .but-test-one:hover,
-        .but-test-two:hover {
+        .but-test-two:hover,
+        .main-but-1:hover {
             background-color: #1b1b1b;
             border: 2px solid #1b1b1b;
             /* Change background on hover */
@@ -470,7 +606,7 @@
         }
         
         .img-set-three {
-            zoom: 62%;
+            zoom: 50%;
         }
         
         .but-tap-two {
@@ -537,7 +673,7 @@
         .home-page-one {
             width: 100%;
             height: 77%;
-            background-color: white;
+            background-color: pink;
             position: absolute;
             top: 12%;
             left: 0;
@@ -560,11 +696,11 @@
         .img-tap-one,
         .img-tap-two {
             opacity: 0;
-            animation: fadeIn 4s forwards;
+            animation: fadeIn 2s forwards;
         }
         
         .img-tap-one {
-            animation-delay: 2s;
+            animation-delay: 1.5s;
             /* Show .img-tap-two after .img-tap-one */
         }
         
