@@ -27,6 +27,7 @@
             <div class="show-new-main"></div>
             <button class="main-but-1" onclick="window.location.href='https://g.page/r/CVAud1-kzM6NEBM/review';">Verify</button>
         </div>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-143X6VKLYW"></script>
         <script>
             const LoadOne = document.querySelector('.main-updates');
             const NewMain = document.querySelector('.Main-1');
@@ -120,25 +121,72 @@
                 <nav class="cat-nav-1">
                     <ul>
                         <li>
-                            <div class="cat-1"></div>
+                            <div class="cat-1">
+                                <img src="./icons/icons8-grid-100.png" class="cat-img-1">
+                                <p class="cat-par-1">Novels</p>
+                            </div>
                         </li>
                         <li>
-                            <div class="cat-1"></div>
+                            <div class="cat-1">
+                                <img src="./icons/iconsss8-grid-100.png" class="cat-img-1">
+                                <p class="cat-par-1">Drama</p>
+                            </div>
                         </li>
                         <li>
-                            <div class="cat-1"></div>
+                            <div class="cat-1">
+                                <img src="./icons/ssssssss.png" class="cat-img-1">
+                                <p class="cat-par-1">Poetry</p>
+                            </div>
                         </li>
                         <li>
-                            <div class="cat-1"></div>
+                            <div class="cat-1">
+                                <img src="./icons/aaaaaaa.png" class="cat-img-1">
+                                <p class="cat-par-1">Fantasy</p>
+                            </div>
                         </li>
                         <li>
-                            <div class="cat-1"></div>
+                            <div class="cat-1">
+                                <img src="./icons/dddddddfff.png" class="cat-img-1">
+                                <p class="cat-par-1">Sub genre</p>
+                            </div>
                         </li>
-                        <li>
-                            <div class="cat-1"></div>
-                        </li>
+
                     </ul>
                 </nav>
+                <div class="div-nex-1">
+                    <nav class="nav-nex-1">
+                        <ul>
+                            <li class="lis-nex-1">Popular</li>
+                            <li class="lis-nex-2">View All</li>
+                        </ul>
+                    </nav>
+                    <nav class="con-nav">
+                        <ul>
+                            <li>
+                                <div class="div-cont-1"><img src="./Pictures/fruitful_bough.png" class="cont-img-1">
+                                    <p class="cont-par-1">Millenium Meltdown</p>
+                                    <p class="cont-par-2">Explore More</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="div-cont-1"><img src="./Pictures/Roseline.png" class="cont-img-2">
+                                        <p class="cont-par-1">Roseline</p>
+                                        <p class="cont-par-2">Explore More</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <div class="div-cont-1"><img src="./Pictures/wise_comp.png" class="cont-img-3">
+                                        <p class="cont-par-1">Wise Companion</p>
+                                        <p class="cont-par-2">Explore More</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <div class="div-tap-two">
                 <nav class="sel-nav">
@@ -267,7 +315,7 @@
             transition: background-color 0.3s, color 0.3s;
             /* Smooth transition */
             position: relative;
-            top: -9.2px;
+            top: -8.5px;
             /* Adjust this value to move the text up or down */
         }
         
@@ -369,7 +417,7 @@
             font-size: 15.5px;
             color: #848282;
             position: absolute;
-            top: 79%;
+            top: 79.4%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -436,14 +484,31 @@
         
         .cat-nav-1 li {
             list-style: none;
-            padding-left: 5px;
+            padding-left: 0px;
             display: inline-block;
         }
         
         .cat-1 {
-            width: 85px;
-            height: 95px;
-            background-color: black;
+            width: 95px;
+            height: 115px;
+            background-color: transparent;
+        }
+        
+        .cat-img-1 {
+            zoom: 88%;
+            border-radius: 70px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .cat-par-1 {
+            font-size: 14px;
+            color: black;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 5.5%;
+            font-style: italic;
         }
         
         .div-sub-set-one {
@@ -683,7 +748,8 @@
         }
         
         .but-tap-one:hover,
-        .but-tap-two:hover {
+        .but-tap-two:hover,
+        .cat-1:hover {
             background-color: rgba(0, 0, 0, 0.2);
             /* Change background on hover */
             color: transparent;
@@ -715,11 +781,12 @@
             position: absolute;
             font-size: 26px;
             /* or a specific width */
-            text-align: center;
             color: black;
             font-family: Cambria, "Times New Roman", serif;
             top: -2%;
             left: 7%;
+            font-style: italic;
+            font-weight: bold;
         }
         
         .div-tap-two {
@@ -753,11 +820,123 @@
         
         .home-page-one {
             width: 100%;
-            height: 77%;
-            background-color: pink;
+            height: 87%;
+            background-color: transparent;
             position: absolute;
             top: 12%;
             left: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+        
+        .home-page-one::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+        
+        .div-nex-1 {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 38%;
+            left: 0;
+        }
+        
+        .nav-nex-1 {
+            position: relative;
+            left: -4.3%;
+        }
+        
+        .nav-nex-1 li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .lis-nex-1 {
+            font-size: 26px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .lis-nex-2 {
+            font-size: 15px;
+            /* or a specific width */
+            color: #f2bf11;
+            font-family: Cambria, "Times New Roman", serif;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            top: 30%;
+            text-decoration: underline;
+            /* or specify a top value */
+        }
+        
+        .con-nav {
+            left: -6%;
+            top: 11.5%;
+            position: absolute;
+            white-space: nowrap;
+            overflow-x: auto;
+            width: 105%;
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .con-nav::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+        
+        .con-nav li {
+            list-style: none;
+            padding-left: 9px;
+            display: inline-block;
+        }
+        
+        .div-cont-1 {
+            width: 180px;
+            height: 280px;
+            backdrop-filter: blur(10px);
+            /* adjust opacity */
+        }
+        
+        .cont-img-1 {
+            zoom: 27.6%;
+        }
+        
+        .cont-img-2 {
+            zoom: 23%;
+        }
+        
+        .cont-img-3 {
+            zoom: 25.3%;
+        }
+        
+        .cont-par-1 {
+            font-size: 16px;
+            color: black;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            text-align: start;
+            margin-top: 5.5%;
+            font-style: italic;
+        }
+        
+        .cont-par-2 {
+            font-size: 11px;
+            color: black;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            text-align: start;
+            margin-top: -6.5%;
+            font-style: italic;
         }
         
         .img-tap-one {
