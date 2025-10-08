@@ -113,9 +113,71 @@
             </div>
         </div>
         <div class="home-page" style="display: none;">
-            <button class="but-tap-one" onclick="HomeCont()"><img src="./icons/Untbbbbitled.png" class="img-set-three"></button>
-            <div class="div-tap-one" style="display: none;"></div>
+            <button class="but-tap-one" onclick="HomeCont()"><img src="./icons/icons8-fries-menu-100.png" class="img-set-three"></button>
+            <div class="div-tap-one" style="display: none;">
+                <div class="menu-div-1"></div>
+                <div class="menu-div-2">
+                    <p class="client-name">Shepherd Chimezie</p>
+                    <p class="client-dets">ID: 123456789-10</p>
+                </div>
+                <p class="par-2000">_____________________________________________</p>
+                <button class="butt-1000">All Books</button>
+                <button class="butt-1200">Profile</button>
+                <button class="butt-1300">Favourites</button>
+                <button class="butt-1400">Notifications</button>
+                <button class="butt-1500">Help</button>
+                <button class="butt-1600">Settings</button>
+                <button class="butt-1700">About Us</button>
+                <p class="par-2100">_____________________________________________</p>
+                <button class="butt-1800">Logout</button>
+                <script>
+                    const buttons = document.querySelectorAll('.butt-1000, .butt-1200, .butt-1300, .butt-1400, .butt-1500, .butt-1600, .butt-1700, .butt-1800');
+
+                    buttons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            buttons.forEach(btn => btn.classList.remove('active'));
+                            button.classList.add('active');
+                        });
+                    });
+                </script>
+            </div>
             <button class="but-tap-two"><img src="./icons/icons8-search-100.png" class="img-set-four"></button>
+            <div class="search-com" style="display: none;">
+                <input class="search-2" type="text" placeholder="Explore all books contents now">
+                <nav class="exp-nav-1">
+                    <ul>
+                        <li>
+                            <div class="divi-1"> <img src="./icons/icons8-poetry-100.png" class="divi-img-1"></div>
+                        </li>
+                        <li>
+                            <div class="divi-1"><img src="./icons/icons8-drama-100-2.png" class="divi-img-1"></div>
+                        </li>
+                        <li>
+                            <div class="divi-1"><img src="./icons/icons8-note-100.png" class="divi-img-1"></div>
+                        </li>
+                        <li>
+                            <div class="divi-1">
+                                <img src="./icons/icons8-three-dots-100.png" class="divi-img-1">
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="no-search"></div>
+                <div class="searching"></div>
+                <div class="search-found" style="display: none;"></div>
+            </div>
+            <script>
+                const ButtOne = document.querySelector('.but-tap-two');
+                const ShowDivCom = document.querySelector('.search-com');
+                const ExitHomeiv = document.querySelector('.home-page-one');
+
+                ButtOne.addEventListener('click', function() {
+                    // Show the div
+                    ShowDivCom.style.display = 'block';
+                    // Hide the home page
+                    ExitHomeiv.style.display = 'none';
+                });
+            </script>
             <div class="home-page-one">
                 <p class="par-tap-one">Categories</p>
                 <nav class="cat-nav-1">
@@ -127,32 +189,153 @@
                             </div>
                         </li>
                         <li>
-                            <div class="cat-1">
+                            <div class="cat-2">
                                 <img src="./icons/iconsss8-grid-100.png" class="cat-img-1">
                                 <p class="cat-par-1">Drama</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cat-1">
+                            <div class="cat-3">
                                 <img src="./icons/ssssssss.png" class="cat-img-1">
                                 <p class="cat-par-1">Poetry</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cat-1">
+                            <div class="cat-4">
                                 <img src="./icons/aaaaaaa.png" class="cat-img-1">
                                 <p class="cat-par-1">Fantasy</p>
                             </div>
                         </li>
                         <li>
-                            <div class="cat-1">
+                            <div class="cat-5">
                                 <img src="./icons/dddddddfff.png" class="cat-img-1">
-                                <p class="cat-par-1">Sub genre</p>
+                                <p class="cat-par-1">Sub genres</p>
                             </div>
                         </li>
+                        <!-- duplicate the content -->
 
                     </ul>
                 </nav>
+                <div class="cat-1-dis" style="display: none;">
+                    <p class="par-cat-1000">All Novels</p>
+                    <div class="div-9000" onclick="window.location.href='The%Roseline%NoneElse%1.html';">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="img-214-1000">
+                        <p class="par-3000">The Roseline Or None Else</p>
+                        <nav class="nav-3500">
+                            <ul>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                            </ul>
+                        </nav>
+                        <p class="par-3600">Description: A love that transcends</p>
+                        <p class="par-3700">time and mortality...</p>
+                    </div>
+                </div>
+                <div class="cat-2-dis" style="display: none;">
+                    <p class="par-3800">Not yet updated</p>
+                </div>
+                <div class="cat-3-dis" style="display: none;">
+                    <p class="par-3800">Not yet updated</p>
+                </div>
+                <div class="cat-4-dis" style="display: none;">
+                    <p class="par-3800">Not yet updated</p>
+                </div>
+                <div class="cat-5-dis" style="display: none;">
+                    <p class="par-cat-1000">All Genre</p>
+                    <div class="div-9000" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-214-1500">
+                        <p class="par-3010">The Millenium Meltdown</p>
+                        <nav class="nav-3510">
+                            <ul>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                            </ul>
+                        </nav>
+                        <p class="par-3650">Description: This work documents</p>
+                        <p class="par-3750">the intrigue, anxiety...</p>
+                    </div>
+                    <div class="div-9500">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg" class="img-214-1500">
+                        <p class="par-3010">The Millenium Meltdown</p>
+                        <nav class="nav-3510">
+                            <ul>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                            </ul>
+                        </nav>
+                        <p class="par-3650">Description: This work documents</p>
+                        <p class="par-3750">the intrigue, anxiety...</p>
+                    </div>
+
+                </div>
+                <script>
+                    // for the first cat
+                    const Cat_1 = document.querySelector('.cat-1');
+                    const Cat_2 = document.querySelector('.cat-2');
+                    const Cat_3 = document.querySelector('.cat-3');
+                    const Cat_4 = document.querySelector('.cat-4');
+                    const Cat_5 = document.querySelector('.cat-5');
+                    const ShowCat_1 = document.querySelector('.cat-1-dis');
+                    const ShowCat_2 = document.querySelector('.cat-2-dis');
+                    const ShowCat_3 = document.querySelector('.cat-3-dis');
+                    const ShowCat_4 = document.querySelector('.cat-4-dis');
+                    const ShowCat_5 = document.querySelector('.cat-5-dis');
+                    const ExitDis = document.querySelector('.div-nex-1');
+
+                    function hideAllDivs() {
+                        ShowCat_1.style.display = 'none';
+                        ShowCat_2.style.display = 'none';
+                        ShowCat_3.style.display = 'none';
+                        ShowCat_4.style.display = 'none';
+                        ShowCat_5.style.display = 'none';
+                    }
+
+                    Cat_1.addEventListener('click', function() {
+                        hideAllDivs();
+                        // Show the div
+                        ShowCat_1.style.display = 'block';
+                        // Hide the home page
+                        ExitDis.style.display = 'none';
+                    });
+                    Cat_2.addEventListener('click', function() {
+                        hideAllDivs();
+                        // Show the div
+                        ShowCat_2.style.display = 'block';
+                        // Hide the home page
+                        ExitDis.style.display = 'none';
+                    });
+                    // All an event listener to the button
+                    Cat_3.addEventListener('click', function() {
+                        hideAllDivs();
+                        // Show the div
+                        ShowCat_3.style.display = 'block';
+                        // Hide the home page
+                        ExitDis.style.display = 'none';
+                    });
+                    Cat_4.addEventListener('click', function() {
+                        hideAllDivs();
+                        // Show the div
+                        ShowCat_4.style.display = 'block';
+                        // Hide the home page
+                        ExitDis.style.display = 'none';
+                    });
+                    Cat_5.addEventListener('click', function() {
+                        hideAllDivs();
+                        // Show the div
+                        ShowCat_5.style.display = 'block';
+                        // Hide the home page
+                        ExitDis.style.display = 'none';
+                    });
+                </script>
                 <div class="div-nex-1">
                     <nav class="nav-nex-1">
                         <ul>
@@ -163,84 +346,499 @@
                     <nav class="con-nav">
                         <ul>
                             <li>
-                                <div class="div-cont-1"><img src="./Pictures/fruitful_bough.png" class="cont-img-1">
+                                <div class="div-cont-1" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
+                                    <img src="./Pictures/fruitful_bough.png" class="cont-img-1">
                                     <p class="cont-par-1">Millenium Meltdown</p>
-                                    <p class="cont-par-2">Explore More</p>
+                                    <p class="cont-par-2">Digital Evolution</p>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <div class="div-cont-1"><img src="./Pictures/Roseline.png" class="cont-img-2">
+                                    <div class="div-cont-1" onclick="window.location.href='The%Roseline%NoneElse%1.html';">
+                                        <img src="./Pictures/roseline_2.png" class="cont-img-2">
                                         <p class="cont-par-1">Roseline</p>
-                                        <p class="cont-par-2">Explore More</p>
+                                        <p class="cont-par-2">Romance</p>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <div class="div-cont-1"><img src="./Pictures/wise_comp.png" class="cont-img-3">
+                                    <div class="div-cont-1">
+                                        <img src="./Pictures/wise_comp.png" class="cont-img-3">
                                         <p class="cont-par-1">Wise Companion</p>
-                                        <p class="cont-par-2">Explore More</p>
+                                        <p class="cont-par-2">Gemstone Wisdom</p>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                     </nav>
+                    <nav class="nav-nex-2">
+                        <ul>
+                            <li class="lis-nex-1">Trending</li>
+                            <li class="lis-nex-2">View All</li>
+                        </ul>
+                    </nav>
+                    <nav class="trend-1">
+                        <ul>
+                            <li>
+                                <div class="div-tre-1" onclick="window.location.href='The%Roseline%NoneElse%1.html';">
+                                    <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="tre-img-1">
+                                    <p class="par-tre-1">The Roseline or None Else</p>
+                                    <p class="par-tre-2">A Tale of Undying Love</p>
+                                    <nav class="nav-rate-1">
+                                        <ul>
+                                            <li><img src="./icons/icons8-love-100.png" class="rate-1"></li>
+                                            <li><img src="./icons/fffhhhh.png" class="rate-1"></li>
+                                            <li><img src="./icons/fffhhhh.png" class="rate-1"></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div-tre-1" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
+                                    <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="tre-img-2">
+                                    <p class="par-tre-3">The Millenium Meltdown</p>
+                                    <p class="par-tre-4">Historical Novel</p>
+                                    <nav class="nav-rate-2">
+                                        <ul>
+                                            <li><img src="./icons/icons8-love-100.png" class="rate-1"></li>
+                                            <li><img src="./icons/fffhhhh.png" class="rate-1"></li>
+                                            <li><img src="./icons/fffhhhh.png" class="rate-1"></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="par-aa-1">Where</p>
+                    <p class="par-aa-2">will you go today</p>
+                    <input class="search-1" type="text" placeholder="Explore available books now">
+                    <nav class="exp-nav">
+                        <ul>
+                            <li>
+                                <div class="divi-1"> <img src="./icons/icons8-poetry-100.png" class="divi-img-1"></div>
+                            </li>
+                            <li>
+                                <div class="divi-1"><img src="./icons/icons8-drama-100-2.png" class="divi-img-1"></div>
+                            </li>
+                            <li>
+                                <div class="divi-1"><img src="./icons/icons8-note-100.png" class="divi-img-1"></div>
+                            </li>
+                            <li>
+                                <div class="divi-1">
+                                    <img src="./icons/icons8-three-dots-100.png" class="divi-img-1">
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="new-div">
+                        <div class="new-div-1">
+                            <p class="par-new-1">New Release</p>
+                            <p class="par-new-2">Sneak Peak</p>
+                            <button class="but-new-1">BOOK <img src="./icons/jjjjjjjjjjj.png" class="book-img"></button>
+                        </div>
+                        <div class="audio-format">
+                            <div class="audio-format-1">
+                                <p class="audio-1">Use Audio Format Here</p>
+                                <p class="audio-2">Read books the advanced way by</p>
+                                <p class="audio-3">just listening to it.</p>
+                                <button class="but-audio-1">Explore Now</button>
+                            </div>
+                        </div>
+                        <script>
+                            const NewOne = document.querySelector('.new-div-1');
+                            const NewTwo = document.querySelector('.audio-format');
+                            const ImagesNew = [
+                                './Pictures/istockphoto-471876836-612x612.jpg',
+                                './Pictures/books-assortment-with-dark-background_23-2148898297.jpg',
+                                './Pictures/2b25bc7f455b701a4412e3408b3719d0.jpg',
+                                './Pictures/photo-1419640303358-44f0d27f48e7.jpg',
+
+                            ];
+                            const ImagesNewTwo = [
+                                './Pictures/audio-1.jpg',
+                                './Pictures/audio-2.jpg',
+                                './Pictures/audio-4.jpg',
+                                './Pictures/audio-test.jpg',
+
+                            ];
+                            let currentImageIndex = 0;
+
+                            setInterval(() => {
+                                NewOne.style.backgroundImage = `url(${ImagesNew[currentImageIndex]})`;
+
+
+
+                                currentImageIndex = (currentImageIndex + 1) % ImagesNew.length;
+
+                            }, 5000); // 3000 milliseconds = 9 seconds
+
+
+                            setInterval(() => {
+
+                                NewTwo.style.backgroundImage = `url(${ImagesNewTwo[currentImageIndex]})`;
+
+
+
+                                currentImageIndex = (currentImageIndex + 1) % ImagesNewTwo.length;
+                            }, 9000); // 3000 milliseconds = 9 seconds
+                        </script>
+                        <div class="anime-format">
+                            <div class="anime-1">
+                                <p class="audio-1">Upcoming Model</p>
+                                <p class="audio-2">Animated upcoming feature</p>
+                                <p class="audio-3">whle reading each book.</p>
+                            </div>
+                        </div>
+                        <p class="parry-1">Known Authors</p>
+                        <nav class="navvy-1">
+                            <ul>
+                                <li>
+                                    <div class="divvy-one">
+                                        <img src="./Pictures/519e7de2fe62d3817ba6ba3538dadfad.webp" class="imgi-1">
+                                        <p class="paryy-1">J.K</p>
+                                        <p class="paryy-2">Rowlings</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divvy-one">
+                                        <img src="./Pictures/ndtsjs1mbus8ubg04hv02g5f3l.jpg" class="imgi-1">
+                                        <p class="paryy-1">Malcolm</p>
+                                        <p class="paryy-2">Gladwell</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divvy-one">
+                                        <img src="./Pictures/u3936ct1vdvcr0c27th87pd01dac-d34396935eabe128fdc1a252049725a1.jpg" class="imgi-1">
+                                        <p class="paryy-1">Michael</p>
+                                        <p class="paryy-2">Lewis</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="divvy-one">
+                                        <img src="./Pictures/images.jpg" class="imgi-1">
+                                        <p class="paryy-1">Susan</p>
+                                        <p class="paryy-2">Cain</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <p class="par-213">Book Of The Week</p>
+                        <div class="div-214" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
+                            <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-214-1">
+                            <p class="par-300">The Millenium Meltdown</p>
+                            <p class="par-301">Historical Novel</p>
+                            <nav class="nav-300">
+                                <ul>
+                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                </ul>
+                            </nav>
+                            <p class="par-302">$4 - $10</p>
+                            <p class="par-302">$4 - $10</p>
+                        </div>
+                        <nav class="nav-500">
+                            <ul>
+                                <li>
+                                    <div class="div-500">
+                                        <p class="par-700">Get 10% Off on Our</p>
+                                        <p class="par-701">FB Platform Now.</p>
+                                        <button class="but-702">Explore More</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-501">
+                                        <p class="par-700">This website is currently</p>
+                                        <p class="par-701">undergoing construction.</p>
+                                        <button class="but-702">Read more</button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="div-502">
+                                        <p class="par-700">Reading is a basic tool in</p>
+                                        <p class="par-701">in the living of a good life - Mortimer Adler.</p>
+                                        <button class="but-702">Explore More</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="main-500">
+                        <div class="main-500-1">
+                            <div class="main-500-2">
+                                <p class="par-1000">The Millenium</p>
+                                <p class="par-1200">Meltdown Book</p>
+                                <nav class="nav-1300">
+                                    <ul>
+                                        <li class="list-1700" onclick="DisplayOne()">Details</li>
+                                        <li class="list-1800" onclick="DisplayTwo()">Previews</li>
+                                    </ul>
+                                </nav>
+                                <div class="dets-1">
+                                    <p class="par-5000">This work documents the</p>
+                                    <p class="par-5100">intrigue, anxiety, and eventual</p>
+                                    <p class="par-5200">triumph over one of the</p>
+                                    <p class="par-5300">most feared technological crises</p>
+                                </div>
+                                <div class="prev-1" style="display: none;">
+                                    <p class="par-5000">Also chronicles the intrigue,</p>
+                                    <p class="par-5100">anxiety, and ultimate victory</p>
+                                    <p class="par-5200">over a major technological</p>
+                                    <p class="par-5300">hurdle in modern times.</p>
+                                </div>
+                                <button class="but-1600">Explore Now</button>
+                            </div>
+                            <script>
+                                // for the live stream...
+                                function DisplayOne() {
+                                    var container_1 = document.querySelector(".dets-1");
+                                    container_1.style.display = container_1.style.display == "block" ? "none" : "block";
+                                }
+
+                                function DisplayTwo() {
+                                    var container_2 = document.querySelector(".prev-1");
+                                    container_2.style.display = container_2.style.display == "block" ? "none" : "block";
+                                }
+                                // Get the element
+                                // Get all list items
+                                const listItems = document.querySelectorAll('.list-1700, .list-1800');
+                                const dets1 = document.querySelector('.dets-1');
+                                const dets2 = document.querySelector('.dets-2');
+
+                                // Set default content and bold list item
+                                dets1.style.display = 'block';
+                                listItems[0].classList.add('bold');
+
+                                // Add event listeners
+                                listItems.forEach((item, index) => {
+                                    item.addEventListener('click', () => {
+                                        // Remove bold class from all list items
+                                        listItems.forEach((i) => i.classList.remove('bold'));
+                                        // Add bold class to the clicked item
+                                        item.classList.add('bold');
+
+                                        // Toggle content display
+                                        if (index === 0) {
+                                            dets1.style.display = 'block';
+                                            dets2.style.display = 'none';
+                                        } else {
+                                            dets1.style.display = 'none';
+                                            dets2.style.display = 'block';
+                                        }
+                                    });
+                                });
+                            </script>
+                            <div class="stud-1">
+                                <p class="par-stud-1">Hey students!</p>
+                                <p class="par-stud-2">You can check your</p>
+                                <p class="par-stud-3">notes/assignment here</p>
+                                <p class="par-stud-4">Prepared by Mr Agu Chimezie.</p>
+                                <button class="but-1800">Explore Now</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="div-tap-two">
+                    <div class="sel-nav-1"><img src="./icons/Untitlssssssed - Copy.png" class="img-1"></div>
+                    <div class="sel-nav-2"><img src="./icons/icons8-love-10w0.png" class="img-2"></div>
+                    <div class="sel-nav-3"><img src="./icons/icons8-students-100.png" class="img-3"></div>
+                    <div class="sel-nav-4"><img src="./icons/icons8-person-10w0.png" class="img-4"></div>
+                </div>
+                <script></script>
             </div>
-            <div class="div-tap-two">
-                <nav class="sel-nav">
+            <div class="container_2" style="display: none;">
+                <div class="cnt_1">
+                    <button class="bttn_1"><img src="./icons/back.png" class="img-bttn_1"></button>
+                    <p class="pat_1">Favourites</p>
+                </div>
+                <div class="not-found"></div>
+                <p class="pat_2">No Book Found !</p>
+                <p class="pat_3">Search for popular books</p>
+                <button class="bttn_3">Explore Books</button>
+            </div>
+            <div class="container_3" style="display: none;">
+                <nav class="nav_1">
                     <ul>
-                        <li><img src="./icons/Untitlssssssed - Copy.png" class="img-1"></li>
-                        <li><img src="./icons/icons8-love-10w0.png" class="img-2"></li>
-                        <li><img src="./icons/icons8-students-100.png" class="img-3"></li>
-                        <li><img src="./icons/icons8-person-10w0.png" class="img-4"></li>
+                        <li><button class="but_3">All <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
+                        <div class="div_all_12">
+                            <p class="pra_12_1">Not Yet Updated...</p>
+                        </div>
+                        <li><button class="but_4">Recent Notes <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
+                        <li><button class="but_5">New <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
                     </ul>
                 </nav>
+                <div class="all_cont"></div>
+                <div class="rec_cont"></div>
+                <div class=""></div>
+            </div>
+            <div class="container_4" style="display: none;">
+                <div class="div_cont_4_1"></div>
+                <div class="back_pic"></div>
+                <div class="info_div_1">
+                    <p class="client_name_2">Chimezie Shepherd</p>
+                    <nav class="client_nu_1">
+                        <ul>
+                            <li class="tab_100">Phone</li>
+                            <li class="tab_120"><span>+234 9162 6308 43</span></li>
+                        </ul>
+                    </nav>
+                    <nav class="client_mail_1">
+                        <ul>
+                            <li class="tab_100">Mail</li>
+                            <li class="tab_120"><span>fph59695@gmail.com</span></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="next_1">
+                    <img src="./icons/icons8-ai-100.png" class="img_nex_10">
+                    <p class="pra_nex_10">AI Assistance</p>
+                </div>
+                <div class="next_2">
+                    <img src="./icons/icons8-note-100.png" class="img_nex_10">
+                    <p class="pra_nex_10">Take Note</p>
+                </div>
+                <div class="next_3">
+                    <img src="./icons/icons8-settings-100-2.png" class="img_nex_10">
+                    <p class="pra_nex_10">Settings</p>
+                </div>
+                <div class="next_4">
+                    <img src="./icons/nnnnnnn.png" class="img_nex_10">
+                    <p class="pra_nex_10">Log out</p>
+                </div>
+                <div class="next_5">
+                    <button class="btt_100">Edit Profile</button>
+                </div>
             </div>
         </div>
-    </div>
-    <script>
-        const ButTwo = document.querySelector('.but-test-two');
-        const ShowDivOne = document.querySelector('.div-set-four');
-        const ButThree = document.querySelector('.img-set-two');
-        const HomeDiv = document.querySelector('.home-page');
+        <script>
+            const ButTwo = document.querySelector('.but-test-two');
+            const ShowDivOne = document.querySelector('.div-set-four');
+            const ButThree = document.querySelector('.img-set-two');
+            const HomeDiv = document.querySelector('.home-page');
 
 
-        // All an event listener to the button
-        ButTwo.addEventListener('click', function() {
-            // Not show
-            ExitDiv.replaceWith(ShowDivOne);
-            // Show  the div to show
-            ShowDivOne.style.display = 'block';
-        });
+            // All an event listener to the button
+            ButTwo.addEventListener('click', function() {
+                // Not show
+                ExitDiv.replaceWith(ShowDivOne);
+                // Show  the div to show
+                ShowDivOne.style.display = 'block';
+            });
 
 
-        // All an event listener to the button
-        ButThree.addEventListener('click', function() {
-            // Not show
-            ShowDivOne.replaceWith(HomeDiv);
-            // Show  the div to show
-            HomeDiv.style.display = 'block';
-        });
+            // All an event listener to the button
+            ButThree.addEventListener('click', function() {
+                // Not show
+                ShowDivOne.replaceWith(HomeDiv);
+                // Show  the div to show
+                HomeDiv.style.display = 'block';
+            });
 
-        function HomeCont() {
-            var container_three = document.querySelector(".div-tap-one");
-            if (container_three.classList.contains("show")) {
-                container_three.classList.remove("show");
-                setTimeout(() => {
-                    container_three.style.display = "none";
-                }, 2500); // Wait for the transition to finish
-            } else {
-                container_three.style.display = "block";
-                setTimeout(() => {
-                    container_three.classList.add("show");
-                }, 10);
+            function HomeCont() {
+                var container_three = document.querySelector(".div-tap-one");
+                if (container_three.classList.contains("show")) {
+                    container_three.classList.remove("show");
+                    setTimeout(() => {
+                        container_three.style.display = "none";
+                    }, 2500); // Wait for the transition to finish
+                } else {
+                    container_three.style.display = "block";
+                    setTimeout(() => {
+                        container_three.classList.add("show");
+                    }, 10);
+                }
             }
-        }
-    </script>
+            // this if for the nav selection ExitHomeiv
+            const Dis_1 = document.querySelector('.sel-nav-1');
+            const Dis_2 = document.querySelector('.sel-nav-2');
+            const Dis_3 = document.querySelector('.sel-nav-3');
+            const Dis_4 = document.querySelector('.sel-nav-4');
+            // const RemoveHome = document.querySelector('.home-page-one'); this is already ExitHomeiv
+
+            const ShowTwo = document.querySelector('.container_2');
+            const ShowThree = document.querySelector('.container_3');
+            const ShowFour = document.querySelector('.container_4');
+
+            // for image  
+            const IMG_1 = document.querySelector('.img-1');
+            const IMG_2 = document.querySelector('.img-2');
+            const IMG_3 = document.querySelector('.img-3');
+            const IMG_4 = document.querySelector('.img-4');
+
+            const Dis_images = [{
+                    element: IMG_2,
+                    originalSrc: './icons/icons8-love-10w0.png'
+                },
+                // add more images here
+                {
+                    element: IMG_3,
+                    originalSrc: './icons/icons8-students-100.png'
+                }, {
+                    element: IMG_4,
+                    originalSrc: './icons/icons8-person-10w0.png'
+                }, {
+                    element: IMG_1,
+                    originalSrc: './icons/Untiqqqqtlssssssed.png'
+                }
+            ];
+
+            function resetImages() {
+                Dis_images.forEach(image => image.element.src = image.originalSrc);
+            }
+
+            // the function for hiding all the containers 
+
+
+            // Function to hide all containers
+            function hideContainers() {
+                ShowTwo.style.display = 'none';
+                ShowThree.style.display = 'none';
+                ShowFour.style.display = 'none';
+            }
+            Dis_1.addEventListener('click', () => {
+                resetImages();
+                IMG_1.src = './icons/Untitlssssssed - Copy.png'; // replace with your new image path
+                hideContainers();
+                ExitHomeiv.style.display = 'block';
+
+            });
+
+            Dis_2.addEventListener('click', () => {
+                resetImages();
+                IMG_2.src = './icons/icons8-love-100.png'; // replace with your new image path
+                hideContainers();
+                ShowTwo.style.display = 'block';
+
+
+            });
+
+            Dis_3.addEventListener('click', () => {
+                resetImages();
+                IMG_3.src = './icons/icons8-students-10w0.png'; // replace with your new image path
+
+                hideContainers();
+                ShowThree.style.display = 'block';
+
+            });
+
+            Dis_4.addEventListener('click', () => {
+                resetImages();
+                IMG_4.src = './icons/icons8-person-10wq0.png'; // replace with your new image path
+
+                hideContainers();
+                ShowFour.style.display = 'block';
+
+            });
+        </script>
     </div>
     <style>
+        body {
+            background-color: #e6e4e2;
+        }
+        
         .main-updates {
             /* Adjust styles here */
             width: 100%;
@@ -468,7 +1066,7 @@
         
         .cat-nav-1 {
             left: -7%;
-            top: 9.5%;
+            top: 5%;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
@@ -482,13 +1080,33 @@
             /* hide scrollbar on Chrome, Safari, and Opera */
         }
         
+        .cat-nav-1 ul {
+            display: flex;
+            flex-wrap: nowrap;
+            animation: scroll-cat-nav 5s linear infinite !important;
+        }
+        
         .cat-nav-1 li {
             list-style: none;
             padding-left: 0px;
             display: inline-block;
+            white-space: nowrap;
         }
         
-        .cat-1 {
+        @keyframes scroll-cat-nav {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .cat-1,
+        .cat-2,
+        .cat-3,
+        .cat-4,
+        .cat-5 {
             width: 95px;
             height: 115px;
             background-color: transparent;
@@ -574,7 +1192,7 @@
             font-size: 14px;
             font-weight: bold;
             color: #b0b0b0;
-            margin-top: -3.5%;
+            margin-top: -3.9%;
             font-family: "Cabri ", sans-serif;
         }
         
@@ -724,7 +1342,7 @@
             justify-content: center;
             position: absolute;
             align-items: center;
-            top: 2.6%;
+            top: 1.6%;
             left: 3%;
             border: 0px solid;
         }
@@ -738,7 +1356,7 @@
             height: 50px;
             background-color: transparent;
             position: absolute;
-            top: 3%;
+            top: 2%;
             right: 3%;
             border: 0px solid;
         }
@@ -749,7 +1367,11 @@
         
         .but-tap-one:hover,
         .but-tap-two:hover,
-        .cat-1:hover {
+        .cat-1:hover,
+        .cat-2:hover,
+        .cat-3:hover,
+        .cat-4:hover,
+        .cat-5:hover {
             background-color: rgba(0, 0, 0, 0.2);
             /* Change background on hover */
             color: transparent;
@@ -759,14 +1381,14 @@
         
         .div-tap-one {
             /* Adjust styles here */
-            width: 77%;
+            width: 85%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 4;
+            background-color: rgba(0, 0, 0, 0.9);
             top: -100%;
             /* Start from above the screen */
             left: 0;
             position: absolute;
+            z-index: 5;
             /* Add flexbox for centering */
             transition: top 0.5s ease-in-out;
             /* Add transition effect */
@@ -777,13 +1399,195 @@
             display: block;
         }
         
+        .menu-div-1 {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 3%;
+            left: 5%;
+            background-image: url('./icons/icons8-person-48.png');
+            background-color: white;
+            background-size: cover;
+            border-radius: 30px;
+        }
+        
+        .menu-div-2 {
+            width: 72%;
+            height: 8%;
+            position: absolute;
+            top: 1.8%;
+            left: 20%;
+            background-color: transparent;
+            border-radius: 0px;
+        }
+        
+        .client-name {
+            font-size: 16px;
+            position: relative;
+            color: white;
+            left: 3%;
+            top: -15%;
+            font-weight: bold;
+            font-style: italic;
+        }
+        
+        .client-dets {
+            font-size: 12px;
+            position: relative;
+            color: white;
+            left: 3%;
+            top: -35%;
+        }
+        
+        .par-2000 {
+            font-size: 9px;
+            position: absolute;
+            color: #5a5a5a;
+            left: 6%;
+            top: 13%;
+        }
+        
+        .butt-1000,
+        .butt-1200,
+        .butt-1300,
+        .butt-1400,
+        .butt-1500,
+        .butt-1600,
+        .butt-1700,
+        .butt-1800 {
+            width: 80%;
+            height: 7%;
+            background-color: transparent;
+            position: absolute;
+            left: -6%;
+            border: 0px solid;
+            font-size: 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            background-position: 40px 4.5px;
+            background-size: 30px 30px;
+            /* width height */
+            /* or left, top, bottom */
+            background-repeat: no-repeat;
+            /* adjust padding to fit image */
+        }
+        
+        .butt-1000:hover,
+        .butt-1200:hover,
+        .butt-1300:hover,
+        .butt-1400:hover,
+        .butt-1500:hover,
+        .butt-1600:hover,
+        .butt-1700:hover,
+        .butt-1800:hover,
+        .butt-1000.active,
+        .butt-1200.active,
+        .butt-1300.active,
+        .butt-1400.active,
+        .butt-1500.active,
+        .butt-1600.active,
+        .butt-1700.active,
+        .butt-1800.active {
+            background-color: white;
+            color: black;
+        }
+        
+        .butt-1000 {
+            top: 22%;
+            background-image: url('./icons/icons8-books-100-2.png');
+        }
+        
+        .butt-1000:hover,
+        .butt-1000.active {
+            background-image: url('./icons/icons8-books-100.png');
+        }
+        
+        .butt-1200 {
+            top: 29.2%;
+            background-image: url('./icons/icons8-person-1007.png');
+        }
+        
+        .butt-1200:hover,
+        .butt-1200.active {
+            background-image: url('./icons/icons8-person-100.png');
+        }
+        
+        .butt-1300 {
+            top: 36.3%;
+            background-image: url('./icons/bbbbbbbb.png');
+        }
+        
+        .butt-1300:hover,
+        .butt-1300.active {
+            background-image: url('./icons/icons8-lodddve-100.png');
+        }
+        
+        .butt-1400 {
+            top: 43.5%;
+            background-image: url('./icons/icons8-notification-100-2.png');
+        }
+        
+        .butt-1400:hover,
+        .butt-1400.active {
+            background-image: url('./icons/gggggggg.png');
+        }
+        
+        .butt-1500 {
+            top: 50.7%;
+            background-image: url('./icons/icons8-help-100.png');
+        }
+        
+        .butt-1500:hover,
+        .butt-1500.active {
+            background-image: url('./icons/qqqqqqqqq.png');
+        }
+        
+        .butt-1600 {
+            top: 57.9%;
+            background-image: url('./icons/icons8-settings-100.png');
+        }
+        
+        .butt-1600:hover,
+        .butt-1600.active {
+            background-image: url('./icons/icons8-settings-100-2.png');
+        }
+        
+        .butt-1700 {
+            top: 65.1%;
+            background-image: url('./icons/icons8-about-100.png');
+        }
+        
+        .butt-1700:hover,
+        .butt-1700.active {
+            background-image: url('./icons/ccccccccc.png');
+        }
+        
+        .butt-1800 {
+            top: 84.3%;
+            background-image: url('./icons/icons8-logout-100.png');
+        }
+        
+        .butt-1800:hover,
+        .butt-1800.active {
+            background-image: url('./icons/nnnnnnn.png');
+        }
+        
+        .par-2100 {
+            font-size: 9px;
+            position: absolute;
+            color: #5a5a5a;
+            left: 6%;
+            top: 75.5%;
+        }
+        
         .par-tap-one {
             position: absolute;
             font-size: 26px;
             /* or a specific width */
             color: black;
             font-family: Cambria, "Times New Roman", serif;
-            top: -2%;
+            top: -2.7%;
             left: 7%;
             font-style: italic;
             font-weight: bold;
@@ -793,19 +1597,12 @@
             width: 100%;
             height: 11%;
             background-color: white;
-            position: absolute;
+            position: fixed;
             bottom: 0;
             left: 0;
-        }
-        
-        .sel-nav {
-            margin-left: -10.7%;
-        }
-        
-        .sel-nav li {
-            list-style: none;
-            padding-left: 35px;
-            display: inline-block;
+            z-index: 4;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
         }
         
         .img-1 {
@@ -818,12 +1615,14 @@
             zoom: 40%;
         }
         
-        .home-page-one {
+        .home-page-one,
+        .search-com,
+        .container_3 {
             width: 100%;
-            height: 87%;
-            background-color: transparent;
+            min-height: 87vh;
+            /* or a specific value */
             position: absolute;
-            top: 12%;
+            top: 10.5%;
             left: 0;
             overflow-y: auto;
             scrollbar-width: none;
@@ -837,12 +1636,232 @@
             /* Chrome, Safari, and Opera */
         }
         
+        .container_2 {
+            width: 100%;
+            min-height: 87vh;
+            /* or a specific value */
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+        
+        .home-page-one {
+            background-color: #e6e4e2;
+        }
+        
+        .container_2 {
+            background-color: #e6e4e2;
+        }
+        
+        .container_3 {
+            background-color: #e6e4e2;
+        }
+        
+        .container_4 {
+            width: 100%;
+            min-height: 87vh;
+            /* or a specific value */
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+        
+        .container_4 {
+            background-color: #e6e4e2;
+        }
+        
+        .div_cont_4_1 {
+            position: absolute;
+            width: 100%;
+            height: 30%;
+            background-image: url('./Pictures/Books-to-Read.webp');
+            background-size: cover;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .back_pic {
+            position: absolute;
+            width: 126px;
+            height: 126px;
+            top: 28%;
+            left: 50%;
+            background-color: transparent;
+            background-image: url('./icons/FB-Stream.png');
+            background-size: cover;
+            transform: translate(-50%, -50%);
+            border-radius: 70px;
+            border: 2.5px solid #e6e4e2;
+            z-index: 2;
+        }
+        
+        .info_div_1 {
+            position: absolute;
+            width: 100%;
+            height: 28%;
+            top: 30%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .client_name_2 {
+            position: absolute;
+            font-size: 18px;
+            color: black;
+            top: 32%;
+            font-weight: bold;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .client_nu_1,
+        .client_mail_1 {
+            position: absolute;
+            font-size: 16px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .client_nu_1 {
+            top: 51%;
+            left: -7.5%;
+        }
+        
+        .tab_100 {
+            color: #747272;
+        }
+        
+        .tab_120 {
+            position: relative;
+            color: black;
+            left: 62%;
+        }
+        
+        .next_1 {
+            position: absolute;
+            width: 100%;
+            height: 10.5%;
+            top: 58.3%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .img_nex_10 {
+            position: relative;
+            zoom: 40%;
+            top: 22%;
+            left: 1.5%;
+        }
+        
+        .next_2 {
+            position: absolute;
+            width: 100%;
+            height: 10.5%;
+            top: 69.2%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .next_3 {
+            position: absolute;
+            width: 100%;
+            height: 10.5%;
+            top: 80%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .next_4 {
+            position: absolute;
+            width: 100%;
+            height: 10.5%;
+            top: 90.7%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .next_5 {
+            position: absolute;
+            width: 100%;
+            height: 35.5%;
+            top: 102%;
+            left: 0;
+            background-color: transparent;
+            border-bottom: 0.5px solid #858585;
+        }
+        
+        .btt_100 {
+            position: absolute;
+            width: 36%;
+            height: 22%;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            border-radius: 5px;
+            border: 0px solid;
+            color: #ffca16;
+            font-weight: bold;
+        }
+        
+        .pra_nex_10 {
+            font-size: 19px;
+            color: black;
+            position: absolute;
+            top: 7%;
+            left: 17%;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .client_mail_1 {
+            top: 70%;
+            left: -7.2%;
+        }
+        
+        .client_nu_1 li,
+        .client_mail_1 li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .client_nu_1 li {
+            padding-left: 5px;
+        }
+        
+        .client_mail_1 li {
+            padding-left: 5px;
+        }
+        
+        .container_2,
+        .container_3,
+        .container_4 {
+            z-index: 3;
+        }
+        
         .div-nex-1 {
             width: 100%;
-            height: 100%;
-            background-color: transparent;
+            height: 600%;
+            background-color: #e6e4e2;
             position: absolute;
-            top: 38%;
+            top: 31%;
             left: 0;
         }
         
@@ -852,6 +1871,17 @@
         }
         
         .nav-nex-1 li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .nav-nex-2 {
+            position: relative;
+            top: 10.85%;
+            left: -4.3%;
+        }
+        
+        .nav-nex-2 li {
             list-style: none;
             display: inline-block;
         }
@@ -880,7 +1910,7 @@
         
         .con-nav {
             left: -6%;
-            top: 11.5%;
+            top: 1.8%;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
@@ -901,9 +1931,10 @@
         }
         
         .div-cont-1 {
-            width: 180px;
-            height: 280px;
-            backdrop-filter: blur(10px);
+            width: 190px;
+            height: 290px;
+            background-color: rgba(0, 0, 0, 0.09);
+            border-radius: 15px;
             /* adjust opacity */
         }
         
@@ -912,7 +1943,7 @@
         }
         
         .cont-img-2 {
-            zoom: 23%;
+            zoom: 24%;
         }
         
         .cont-img-3 {
@@ -926,6 +1957,7 @@
             font-weight: bold;
             text-align: start;
             margin-top: 5.5%;
+            margin-left: 6.5%;
             font-style: italic;
         }
         
@@ -936,6 +1968,7 @@
             font-weight: bold;
             text-align: start;
             margin-top: -6.5%;
+            margin-left: 6.5%;
             font-style: italic;
         }
         
@@ -972,8 +2005,1252 @@
                 opacity: 1;
             }
         }
+        
+        .trend-1 {
+            left: -6%;
+            top: 14.3%;
+            position: absolute;
+            white-space: nowrap;
+            overflow-x: auto;
+            right: 0;
+            width: calc(100% + 6%);
+            /* adjust gap size */
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .trend-1::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+        
+        .trend-1 li {
+            list-style: none;
+            padding-left: 10px;
+            /* add padding-right */
+            display: inline-block;
+        }
+        
+        .div-tre-1 {
+            width: 390px;
+            height: 235px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            /* adjust opacity */
+        }
+        
+        .tre-img-1 {
+            zoom: 19.6%;
+            border-radius: 25px;
+            margin-left: 2.5%;
+            margin-top: 3.1%;
+        }
+        
+        .tre-img-2 {
+            zoom: 21.6%;
+            border-radius: 25px;
+            margin-left: 2.5%;
+            margin-top: 3.1%;
+        }
+        
+        .par-tre-1 {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+            top: -90.5%;
+            right: -18%;
+            font-weight: bold;
+            font-style: italic;
+            /* or a specific pixel value */
+        }
+        
+        .par-tre-2,
+        .par-tre-4 {
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            position: relative;
+            top: -91.5%;
+            right: -10.5%;
+            /* or a specific pixel value */
+        }
+        
+        .par-tre-3 {
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            position: relative;
+            top: -90.5%;
+            right: -22%;
+            font-weight: bold;
+            font-style: italic;
+            /* or a specific pixel value */
+        }
+        
+        .nav-rate-1 {
+            position: relative;
+            top: -90%;
+            right: -30%;
+        }
+        
+        .nav-rate-2 {
+            position: relative;
+            top: -90%;
+            right: -35%;
+        }
+        
+        .nav-rate-1 li,
+        .nav-rate-2 li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .rate-1 {
+            zoom: 20%;
+        }
+        
+        .par-aa-1 {
+            position: absolute;
+            font-size: 26px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 22.8%;
+            left: 7%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .par-aa-2 {
+            position: absolute;
+            font-size: 20.5px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 24.2%;
+            left: 7%;
+        }
+        
+        .search-1,
+        .search-2 {
+            width: 75%;
+            position: absolute;
+            /* or a specific width */
+            background-color: rgba(0, 0, 0, 0.7);
+            font-family: Cambria, "Times New Roman", serif;
+            left: 7%;
+            border-radius: 9px;
+            color: white;
+            padding-left: 48px;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: bold;
+            border: 0px solid;
+            background-position: 10px 15px;
+            background-size: 30px 30px;
+            /* width height */
+            /* or left, top, bottom */
+            background-repeat: no-repeat;
+            /* adjust padding to fit image */
+        }
+        
+        .search-1 {
+            top: 25.9%;
+            height: 1.7%;
+            background-image: url('./icons/search_things.png');
+        }
+        
+        .search-1:focus,
+        .search-2:focus {
+            outline: none;
+            border: none;
+        }
+        
+        .search-1::placeholder,
+        .search-2::placeholder {
+            font-size: 15px;
+            color: #b4b4b4;
+        }
+        
+        .exp-nav,
+        .exp-nav-1 {
+            left: -11%;
+            position: absolute;
+            white-space: nowrap;
+            /* adjust gap size */
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .exp-nav {
+            top: 28%;
+        }
+        
+        .exp-nav li,
+        .exp-nav-1 li {
+            list-style: none;
+            padding-left: 15px;
+            display: inline-block;
+        }
+        
+        .divi-1 {
+            width: 65px;
+            height: 65px;
+            background-color: rgba(242, 191, 17, 0.9);
+            /* #f2bf11 with 70% opacity */
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .divi-img-1 {
+            zoom: 35%;
+        }
+        
+        .new-div {
+            width: 100%;
+            height: 50%;
+            background-color: #e6e4e2;
+            position: absolute;
+            top: 31%;
+            border-bottom: 1px solid blue;
+            left: 0;
+        }
+        
+        .new-div-1 {
+            width: 90%;
+            height: 13%;
+            background-image: url('./Pictures/photo-1419640303358-44f0d27f48e7.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 1%;
+            border: 0px solid;
+            border-radius: 20px;
+            left: 5%;
+        }
+        
+        .par-new-1 {
+            font-size: 24px;
+            position: relative;
+            color: #ccc9c9;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+            left: 10%;
+        }
+        
+        .par-new-2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ccc9c9;
+            position: relative;
+            left: 10%;
+            font-family: "Cabri ", sans-serif;
+            top: -9%;
+        }
+        
+        .but-new-1 {
+            width: 33%;
+            height: 15%;
+            font-weight: bold;
+            font-size: 14px;
+            background-color: white;
+            color: black;
+            position: absolute;
+            font-family: "Cabri ", sans-serif;
+            right: 7%;
+            top: 75%;
+            border-radius: 20px;
+            border: 0px solid;
+        }
+        
+        .book-img {
+            zoom: 14%;
+            top: 3%;
+            position: relative;
+        }
+        
+        .audio-format {
+            width: 90%;
+            height: 13%;
+            background-image: url('./Pictures/audio-test.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 15%;
+            border: 0px solid;
+            border-radius: 10px;
+            left: 5%;
+        }
+        
+        .audio-format-1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+        }
+        
+        .audio-1 {
+            font-size: 22px;
+            position: relative;
+            color: white;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+        }
+        
+        .audio-2 {
+            font-size: 12px;
+            position: relative;
+            color: white;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            font-style: italic;
+            top: -1%;
+        }
+        
+        .audio-3 {
+            font-size: 12px;
+            position: relative;
+            color: white;
+            font-style: italic;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            top: -1%;
+        }
+        
+        .but-audio-1 {
+            width: 50%;
+            height: 19%;
+            font-weight: bold;
+            font-size: 14px;
+            background-color: white;
+            color: black;
+            position: absolute;
+            font-style: italic;
+            font-family: "Cabri ", sans-serif;
+            left: 4%;
+            top: 65%;
+            border-radius: 20px;
+            border: 0px solid;
+        }
+        
+        .anime-format {
+            width: 90%;
+            height: 13%;
+            background-image: url('./Pictures/e44d9577ec2b2752bacc74699178195f.gif');
+            background-size: cover;
+            position: absolute;
+            top: 29%;
+            border: 0px solid;
+            border-radius: 20px;
+            left: 5%;
+        }
+        
+        .anime-1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            border-radius: 20px;
+            left: 0;
+        }
+        
+        .parry-1 {
+            position: absolute;
+            font-size: 18px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 42.5%;
+            left: 7%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .navvy-1 {
+            left: -7%;
+            top: 45%;
+            position: absolute;
+        }
+        
+        .navvy-1 li {
+            list-style: none;
+            padding-left: 0px;
+            display: inline-block;
+        }
+        
+        .divvy-one {
+            width: 77px;
+            height: 120px;
+            background-color: transparent;
+        }
+        
+        .imgi-1 {
+            width: 65px;
+            /* adjust width */
+            height: 65px;
+            /* adjust height */
+            border-radius: 35px;
+            object-fit: cover;
+            /* maintain aspect ratio */
+            position: relative;
+            display: block;
+            margin-left: auto;
+            top: 6%;
+            margin-right: auto;
+        }
+        
+        .paryy-1 {
+            text-align: center;
+            font-size: 15px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .paryy-2 {
+            text-align: center;
+            position: relative;
+            font-size: 15px;
+            top: -12%;
+            /* or a specific width */
+            color: black;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-213 {
+            position: absolute;
+            font-size: 21px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 54.5%;
+            left: 7%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .div-214 {
+            width: 90%;
+            height: 13%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 58.7%;
+            border: 0px solid;
+            border-radius: 9px;
+            left: 5%;
+        }
+        
+        .img-214-1 {
+            zoom: 18.6%;
+            border-radius: 25px;
+            position: relative;
+            top: 5%;
+            left: 3%;
+        }
+        
+        .par-300,
+        .par-3000,
+        .par-3010 {
+            color: black;
+            position: absolute;
+            font-weight: bold;
+            font-family: Cambria, "Times New Roman", serif;
+            font-style: italic;
+        }
+        
+        .par-300 {
+            font-size: 13px;
+            top: 7%;
+            right: 5%;
+        }
+        
+        .par-301 {
+            font-size: 12.5px;
+            color: white;
+            position: absolute;
+            top: 19%;
+            right: 24%;
+        }
+        
+        .nav-300,
+        .nav-3500,
+        .nav-3510 {
+            position: relative;
+        }
+        
+        .nav-300 li,
+        .nav-3500 li,
+        .nav-3510 li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .nav-300 {
+            top: -58%;
+            left: 37%;
+        }
+        
+        .img-300 {
+            zoom: 21%;
+        }
+        
+        .par-302 {
+            font-size: 18.5px;
+            color: white;
+            position: absolute;
+            top: 50%;
+            right: 30.3%;
+            font-weight: bold;
+        }
+        
+        .nav-500 {
+            left: -8.5%;
+            top: 72.5%;
+            position: absolute;
+            white-space: nowrap;
+            overflow-x: auto;
+            right: 0;
+            width: 110%;
+            /* adjust width to parent container */
+            overflow-x: auto;
+            /* enable horizontal scrolling */
+            /* adjust gap size */
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .nav-500 ul {
+            display: flex;
+            flex-wrap: nowrap;
+            animation: scroll-nav-500 5s linear infinite;
+        }
+        
+        .nav-500::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+        
+        .nav-500 li {
+            list-style: none;
+            padding-left: 10px;
+            /* add padding-right */
+            display: inline-block;
+        }
+        
+        @keyframes scroll-nav-500 {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-180%);
+                /* adjust value based on content width */
+            }
+        }
+        
+        .div-500,
+        .div-501,
+        .div-502 {
+            width: 310px;
+            height: 150px;
+            border-radius: 5px;
+        }
+        
+        .div-500 {
+            background-color: #aee5e3;
+        }
+        
+        .div-501 {
+            background-color: #daeba5;
+        }
+        
+        .div-502 {
+            background-color: #7ede99;
+        }
+        
+        .par-700 {
+            font-size: 16px;
+            font-weight: bold;
+            color: black;
+            position: relative;
+            left: 20px;
+            top: 34px;
+        }
+        
+        .par-701 {
+            font-size: 14.5px;
+            color: black;
+            position: relative;
+            top: 27px;
+            left: 20px;
+            font-weight: bolder;
+        }
+        
+        .but-702 {
+            width: 41%;
+            height: 25%;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: black;
+            color: white;
+            position: relative;
+            font-style: italic;
+            font-family: "Cabri ", sans-serif;
+            left: 20px;
+            top: 30px;
+            border-radius: 5px;
+            border: 0px solid;
+        }
+        
+        .main-500 {
+            width: 100%;
+            height: 23.3%;
+            background-image: url('./Pictures/HD-wallpaper-flying-book-read-black-blue-dark-fly-magic-paper-white-wings-thumbnail.jpg');
+            background-size: cover;
+            position: absolute;
+            top: 75%;
+            background-position: center;
+            border-radius: 60px;
+            left: 0;
+        }
+        
+        .main-500-1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 60px;
+            left: 0;
+        }
+        
+        .main-500-2 {
+            width: 80%;
+            height: 45%;
+            background-color: white;
+            border-radius: 50px;
+            left: 0;
+            position: absolute;
+            top: 24.5%;
+            /* adjusted to 50% for perfect centering */
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .par-1000 {
+            font-size: 20.5px;
+            color: black;
+            position: relative;
+            top: 27px;
+            left: 26px;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .par-1200 {
+            font-size: 20.5px;
+            color: black;
+            position: relative;
+            top: 10px;
+            left: 30px;
+            left: px;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .nav-1300 {
+            top: 100px;
+            left: -40px;
+            position: absolute;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .nav-1300 li {
+            list-style: none;
+            padding-left: 30px;
+            display: inline-block;
+        }
+        
+        .but-1600,
+        .but-1800 {
+            width: 50%;
+            height: 50px;
+            position: absolute;
+            font-family: "Cabri ", sans-serif;
+            top: 85%;
+            font-size: 14px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f2bf11;
+            border-radius: 15px;
+            color: white;
+            border: 1px solid #f2bf11;
+        }
+        
+        .but-1600 {
+            top: 85%;
+            background-color: #f2bf11;
+            color: white;
+            border: 1px solid #f2bf11;
+        }
+        
+        .dets-1,
+        .prev-1 {
+            width: 80%;
+            height: 30%;
+            position: absolute;
+            left: 10%;
+            top: 40%;
+            background-color: white;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        .par-5000,
+        .par-5100,
+        .par-5200,
+        .par-5300 {
+            position: relative;
+            font-size: 13.5px;
+            font-family: "Cabri ", sans-serif;
+            color: black;
+            left: 2%;
+            font-style: italic;
+        }
+        
+        .par-5000 {
+            top: 1%;
+        }
+        
+        .par-5100 {
+            top: -6%;
+        }
+        
+        .par-5200 {
+            top: -14%;
+        }
+        
+        .par-5300 {
+            top: -23%;
+        }
+        
+        .stud-1 {
+            width: 80%;
+            height: 40%;
+            background-color: rgba(242, 191, 17, 0.25);
+            border-radius: 50px;
+            left: 0;
+            position: absolute;
+            top: 78%;
+            /* adjusted to 50% for perfect centering */
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .par-stud-1 {
+            font-size: 20.5px;
+            color: white;
+            position: absolute;
+            top: 27px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .par-stud-2 {
+            font-size: 13.5px;
+            color: white;
+            position: relative;
+            top: 65px;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-stud-3 {
+            font-size: 13.5px;
+            color: white;
+            position: relative;
+            top: 55px;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-stud-4 {
+            font-size: 13.5px;
+            color: white;
+            position: relative;
+            top: 45px;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .but-1800 {
+            top: 65%;
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+        }
+        
+        .search-com {
+            z-index: 1;
+            background-color: #e6e4e2;
+        }
+        
+        .search-2 {
+            top: 2.9%;
+            height: 10.7%;
+            background-image: url('./icons/search_things.png');
+        }
+        
+        .exp-nav-1 {
+            top: 14%;
+        }
+        
+        .no-search {
+            width: 17%;
+            height: 11%;
+            background-color: transparent;
+            background-image: url('./icons/ssssssssssss.png');
+            background-size: cover;
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .search-found {
+            width: 100%;
+            min-height: 87vh;
+            /* or a specific value */
+            position: absolute;
+            top: 30.5%;
+            left: 0;
+            background-color: #fbfbfb;
+            z-index: 2;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+        
+        .cat-1-dis,
+        .cat-2-dis,
+        .cat-3-dis,
+        .cat-4-dis,
+        .cat-5-dis {
+            width: 100%;
+            height: 100vh;
+            /* or a specific height value */
+            position: fixed;
+            overflow-y: auto;
+            top: 37.5%;
+            left: 0;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+        
+        .cat-1-dis,
+        .cat-2-dis,
+        .cat-3-dis,
+        .cat-4-dis,
+        .cat-5-dis {
+            z-index: 1;
+        }
+        
+        .cat-1-dis {
+            background-color: #e6e4e2;
+        }
+        
+        .cat-2-dis {
+            background-color: #e6e4e2;
+        }
+        
+        .cat-3-dis {
+            background-color: #e6e4e2;
+        }
+        
+        .cat-4-dis {
+            background-color: #e6e4e2;
+        }
+        
+        .cat-5-dis {
+            background-color: #e6e4e2;
+        }
+        
+        .par-cat-1000 {
+            position: absolute;
+            font-size: 22px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 0%;
+            left: 7%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .div-9000,
+        .div-9500 {
+            width: 90%;
+            height: 23%;
+            background-color: rgba(242, 191, 17, 0.48);
+            position: absolute;
+            border: 0px solid;
+            border-radius: 9px;
+            left: 5%;
+        }
+        
+        .div-9000 {
+            top: 10.7%;
+        }
+        
+        .div-9500 {
+            top: 35.7%;
+        }
+        
+        .img-214-1000,
+        .img-214-1500 {
+            border-radius: 25px;
+            position: relative;
+            left: 3%;
+        }
+        
+        .img-214-1000 {
+            zoom: 11.6%;
+            top: 5%;
+        }
+        
+        .img-214-1500 {
+            zoom: 11.6%;
+            top: 8.5%;
+        }
+        
+        .par-3000,
+        .par-3010 {
+            font-size: 14px;
+            top: 1.5%;
+        }
+        
+        .par-3000 {
+            right: 15%;
+        }
+        
+        .par-3010 {
+            right: 17%;
+        }
+        
+        .nav-3500 {
+            top: -78%;
+            right: -20.5%;
+        }
+        
+        .nav-3510 {
+            top: -68%;
+            right: -20.5%;
+        }
+        
+        .img-3500 {
+            zoom: 17%;
+        }
+        
+        .par-3600,
+        .par-3650 {
+            position: absolute;
+            font-size: 12.5px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 37%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .par-3600 {
+            right: 4.5%;
+        }
+        
+        .par-3650 {
+            right: 5.7%;
+        }
+        
+        .par-3700,
+        .par-3750 {
+            position: absolute;
+            font-size: 12.5px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 50%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .par-3700 {
+            right: 30.5%;
+        }
+        
+        .par-3750 {
+            right: 27.5%;
+        }
+        
+        .par-3800 {
+            position: absolute;
+            font-size: 20.5px;
+            /* or a specific width */
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-style: italic;
+            font-weight: bold;
+        }
+        
+        .sel-nav-1,
+        .sel-nav-2,
+        .sel-nav-3,
+        .sel-nav-4 {
+            width: 25%;
+            height: 100%;
+            top: 0;
+            position: absolute;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50px;
+        }
+        
+        .sel-nav-1 {
+            left: 0;
+        }
+        
+        .sel-nav-2 {
+            left: 25%;
+        }
+        
+        .sel-nav-3 {
+            left: 50%;
+        }
+        
+        .sel-nav-4 {
+            left: 75%;
+        }
+        
+        .sel-nav-1:hover,
+        .sel-nav-2:hover,
+        .sel-nav-3:hover,
+        .sel-nav-4:hover {
+            background-color: rgba(242, 191, 17, 0.39);
+            border: 0px solid;
+            /* Change background on hover */
+            /* Change text color on hover */
+        }
+        
+        .cnt_1 {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 12%;
+            background-color: black;
+            left: 0;
+            border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        
+        .bttn_1 {
+            position: absolute;
+            width: 17%;
+            height: 80%;
+            background-color: transparent;
+            border: 0px solid;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 10%;
+            left: 1%;
+        }
+        
+        .bttn_1:hover {
+            background-color: #1b1b1b;
+            border: 2px solid #1b1b1b;
+            /* Change background on hover */
+            color: white;
+            /* Change text color on hover */
+        }
+        
+        .img-bttn_1 {
+            zoom: 30%;
+        }
+        
+        .pat_1 {
+            left: 50%;
+            font-size: 20px;
+            top: 20%;
+            color: white;
+            position: absolute;
+            font-style: italic;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+        
+        .not-found {
+            position: absolute;
+            width: 75%;
+            height: 45%;
+            background-image: url('./icons/9337482.png');
+            background-size: cover;
+            background-color: transparent;
+            border: 0px solid;
+            border-radius: 30px;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .pat_2 {
+            left: 50%;
+            font-size: 20.5px;
+            top: 60.5%;
+            color: black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-family: Cambria, "Times New Roman", serif;
+            font-style: italic;
+        }
+        
+        .pat_3 {
+            left: 50%;
+            font-size: 15px;
+            top: 65.5%;
+            color: black;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-family: Cambria, "Times New Roman", serif;
+            font-style: italic;
+        }
+        
+        .bttn_3 {
+            position: absolute;
+            width: 67%;
+            height: 8.5%;
+            background-color: black;
+            border: 0px solid;
+            top: 76%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f2bf11;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .nav_1 {
+            position: absolute;
+            top: -1%;
+            left: -4%;
+        }
+        
+        .nav_1 li {
+            list-style: none;
+            padding-left: 12px;
+            display: inline-block;
+        }
+        
+        .but_3,
+        .but_4,
+        .but_5 {
+            height: 29px;
+            background-color: transparent;
+            border-radius: 20px;
+            border: 1px solid black;
+            padding-right: 10px;
+        }
+        
+        .but_3:hover,
+        .but_4:hover,
+        .but_5:hover {
+            background-color: #1b1b1b;
+            border: 2px solid #1b1b1b;
+            /* Change background on hover */
+            color: white;
+            /* Change text color on hover */
+        }
+        
+        .but_3:hover {
+            background-position: 29px 2px;
+            background-size: 18px 18px;
+            /* width height */
+            /* or left, top, bottom */
+            background-repeat: no-repeat;
+            /* adjust padding to fit image */
+            background-image: url('./icons/icons8-cancel-1jjj00.png');
+        }
+        
+        .but_4:hover {
+            background-position: 95px 2.8px;
+            background-size: 18px 18px;
+            /* width height */
+            /* or left, top, bottom */
+            background-repeat: no-repeat;
+            /* adjust padding to fit image */
+            background-image: url('./icons/icons8-cancel-1jjj00.png');
+        }
+        
+        .but_5:hover {
+            background-position: 40px 2.8px;
+            background-size: 18px 18px;
+            /* width height */
+            /* or left, top, bottom */
+            background-repeat: no-repeat;
+            /* adjust padding to fit image */
+            background-image: url('./icons/icons8-cancel-1jjj00.png');
+        }
+        
+        .img_but_3 {
+            zoom: 13%;
+            position: relative;
+            top: 5px;
+            left: 25px;
+        }
+        
+        .div_all_12 {
+            position: absolute;
+            width: 150%;
+            min-height: 87vh;
+            background-color: transparent;
+            left: 0;
+            top: 90%;
+        }
+        
+        .pra_12_1 {
+            font-size: 20px;
+            color: black;
+            top: 50%;
+            left: 40%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
     </style>
 
 </body>
+
+</html>
+
+</html>
 
 </html>
