@@ -839,6 +839,8 @@
             background-color: #e6e4e2;
         }
         
+        .home-page {}
+        
         .main-updates {
             /* Adjust styles here */
             width: 100%;
@@ -1618,10 +1620,8 @@
         .home-page-one,
         .search-com,
         .container_3 {
-            width: 100%;
             min-height: 87vh;
             /* or a specific value */
-            position: absolute;
             top: 10.5%;
             left: 0;
             overflow-y: auto;
@@ -1634,6 +1634,11 @@
         .home-page-one::-webkit-scrollbar {
             display: none;
             /* Chrome, Safari, and Opera */
+        }
+        
+        .search-com {
+            position: absolute;
+            width: 100%;
         }
         
         .container_2 {
@@ -1653,6 +1658,11 @@
         
         .home-page-one {
             background-color: #e6e4e2;
+            position: absolute;
+            overscroll-behavior: contain !important;
+            padding-bottom: 11%;
+            width: 108%;
+            /* match the height of .div-tap-two */
         }
         
         .container_2 {
@@ -1661,6 +1671,8 @@
         
         .container_3 {
             background-color: #e6e4e2;
+            position: absolute;
+            width: 100%;
         }
         
         .container_4 {
