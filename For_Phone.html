@@ -166,176 +166,114 @@
                 <div class="searching"></div>
                 <div class="search-found" style="display: none;"></div>
             </div>
-            <script>
-                const ButtOne = document.querySelector('.but-tap-two');
-                const ShowDivCom = document.querySelector('.search-com');
-                const ExitHomeiv = document.querySelector('.home-page-one');
-
-                ButtOne.addEventListener('click', function() {
-                    // Show the div
-                    ShowDivCom.style.display = 'block';
-                    // Hide the home page
-                    ExitHomeiv.style.display = 'none';
-                });
-            </script>
             <div class="home-page-one">
                 <p class="par-tap-one">Categories</p>
                 <nav class="cat-nav-1">
                     <ul>
                         <li>
                             <div class="cat-1">
-                                <img src="./icons/icons8-grid-100.png" class="cat-img-1">
+                                <div class="div-cat-1">
+                                    <img src="./icons/icons8-album-100.png" class="img_cat-1">
+                                </div>
                                 <p class="cat-par-1">Novels</p>
+                            </div>
+                            <div class="cat-1-dis" style="display: none;">
+                                <p class="par-cat-1000">All Novels</p>
                             </div>
                         </li>
                         <li>
                             <div class="cat-2">
-                                <img src="./icons/iconsss8-grid-100.png" class="cat-img-1">
+                                <div class="div-cat-2">
+                                    <img src="./icons/333333.png" class="img_cat-1">
+                                </div>
                                 <p class="cat-par-1">Drama</p>
                             </div>
                         </li>
                         <li>
                             <div class="cat-3">
-                                <img src="./icons/ssssssss.png" class="cat-img-1">
+                                <div class="div-cat-3">
+                                    <img src="./icons/eeeeeee.png" class="img_cat-1">
+                                </div>
                                 <p class="cat-par-1">Poetry</p>
                             </div>
                         </li>
                         <li>
                             <div class="cat-4">
-                                <img src="./icons/aaaaaaa.png" class="cat-img-1">
+                                <div class="div-cat-4">
+                                    <img src="./icons/icons8-fantasy-100.png" class="img_cat-1">
+                                </div>
                                 <p class="cat-par-1">Fantasy</p>
                             </div>
                         </li>
                         <li>
                             <div class="cat-5">
-                                <img src="./icons/dddddddfff.png" class="cat-img-1">
-                                <p class="cat-par-1">Sub genres</p>
+                                <div class="div-cat-5">
+                                    <img src="./icons/tttttttttt.png" class="img_cat-1">
+                                </div>
+                                <p class="cat-par-1">Sub Genre</p>
                             </div>
                         </li>
-                        <!-- duplicate the content -->
-
                     </ul>
+                    <script>
+                        // for the first cat
+                        const Cat_1 = document.querySelector('.cat-1');
+                        const Cat_2 = document.querySelector('.cat-2');
+                        const Cat_3 = document.querySelector('.cat-3');
+                        const Cat_4 = document.querySelector('.cat-4');
+                        const Cat_5 = document.querySelector('.cat-5');
+                        const ShowCat_1 = document.querySelector('.cat-1-dis');
+                        const ShowCat_2 = document.querySelector('.cat-2-dis');
+                        const ShowCat_3 = document.querySelector('.cat-3-dis');
+                        const ShowCat_4 = document.querySelector('.cat-4-dis');
+                        const ShowCat_5 = document.querySelector('.cat-5-dis');
+                        const ExitDis = document.querySelector('.div-nex-1');
+
+                        function hideAllDivs() {
+                            ShowCat_1.style.display = 'none';
+                            ShowCat_2.style.display = 'none';
+                            ShowCat_3.style.display = 'none';
+                            ShowCat_4.style.display = 'none';
+                            ShowCat_5.style.display = 'none';
+                        }
+
+                        Cat_1.addEventListener('click', function() {
+                            hideAllDivs();
+                            // Show the div
+                            ShowCat_1.style.display = 'block';
+                            // Hide the home page
+                            ExitDis.style.display = 'none';
+                        });
+                        Cat_2.addEventListener('click', function() {
+                            hideAllDivs();
+                            // Show the div
+                            ShowCat_2.style.display = 'block';
+                            // Hide the home page
+                            ExitDis.style.display = 'none';
+                        });
+                        // All an event listener to the button
+                        Cat_3.addEventListener('click', function() {
+                            hideAllDivs();
+                            // Show the div
+                            ShowCat_3.style.display = 'block';
+                            // Hide the home page
+                            ExitDis.style.display = 'none';
+                        });
+                        Cat_4.addEventListener('click', function() {
+                            hideAllDivs();
+                            // Show the div
+                            ShowCat_4.style.display = 'block';
+                            // Hide the home page
+                            ExitDis.style.display = 'none';
+                        });
+                        Cat_5.addEventListener('click', function() {
+                            hideAllDivs();
+                            // Show the div
+                            ShowCat_5.style.display = 'block';
+                            // Hide the home page
+                            ExitDis.style.display = 'none';
+                        });
+                    </script>
                 </nav>
-                <div class="cat-1-dis" style="display: none;">
-                    <p class="par-cat-1000">All Novels</p>
-                    <div class="div-9000" onclick="window.location.href='The%Roseline%NoneElse%1.html';">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="img-214-1000">
-                        <p class="par-3000">The Roseline Or None Else</p>
-                        <nav class="nav-3500">
-                            <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                            </ul>
-                        </nav>
-                        <p class="par-3600">Description: A love that transcends</p>
-                        <p class="par-3700">time and mortality...</p>
-                    </div>
-                </div>
-                <div class="cat-2-dis" style="display: none;">
-                    <p class="par-3800">Not yet updated</p>
-                </div>
-                <div class="cat-3-dis" style="display: none;">
-                    <p class="par-3800">Not yet updated</p>
-                </div>
-                <div class="cat-4-dis" style="display: none;">
-                    <p class="par-3800">Not yet updated</p>
-                </div>
-                <div class="cat-5-dis" style="display: none;">
-                    <p class="par-cat-1000">All Genre</p>
-                    <div class="div-9000" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-214-1500">
-                        <p class="par-3010">The Millenium Meltdown</p>
-                        <nav class="nav-3510">
-                            <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                            </ul>
-                        </nav>
-                        <p class="par-3650">Description: This work documents</p>
-                        <p class="par-3750">the intrigue, anxiety...</p>
-                    </div>
-                    <div class="div-9500">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg" class="img-214-1500">
-                        <p class="par-3010">The Millenium Meltdown</p>
-                        <nav class="nav-3510">
-                            <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                            </ul>
-                        </nav>
-                        <p class="par-3650">Description: This work documents</p>
-                        <p class="par-3750">the intrigue, anxiety...</p>
-                    </div>
-
-                </div>
-                <script>
-                    // for the first cat
-                    const Cat_1 = document.querySelector('.cat-1');
-                    const Cat_2 = document.querySelector('.cat-2');
-                    const Cat_3 = document.querySelector('.cat-3');
-                    const Cat_4 = document.querySelector('.cat-4');
-                    const Cat_5 = document.querySelector('.cat-5');
-                    const ShowCat_1 = document.querySelector('.cat-1-dis');
-                    const ShowCat_2 = document.querySelector('.cat-2-dis');
-                    const ShowCat_3 = document.querySelector('.cat-3-dis');
-                    const ShowCat_4 = document.querySelector('.cat-4-dis');
-                    const ShowCat_5 = document.querySelector('.cat-5-dis');
-                    const ExitDis = document.querySelector('.div-nex-1');
-
-                    function hideAllDivs() {
-                        ShowCat_1.style.display = 'none';
-                        ShowCat_2.style.display = 'none';
-                        ShowCat_3.style.display = 'none';
-                        ShowCat_4.style.display = 'none';
-                        ShowCat_5.style.display = 'none';
-                    }
-
-                    Cat_1.addEventListener('click', function() {
-                        hideAllDivs();
-                        // Show the div
-                        ShowCat_1.style.display = 'block';
-                        // Hide the home page
-                        ExitDis.style.display = 'none';
-                    });
-                    Cat_2.addEventListener('click', function() {
-                        hideAllDivs();
-                        // Show the div
-                        ShowCat_2.style.display = 'block';
-                        // Hide the home page
-                        ExitDis.style.display = 'none';
-                    });
-                    // All an event listener to the button
-                    Cat_3.addEventListener('click', function() {
-                        hideAllDivs();
-                        // Show the div
-                        ShowCat_3.style.display = 'block';
-                        // Hide the home page
-                        ExitDis.style.display = 'none';
-                    });
-                    Cat_4.addEventListener('click', function() {
-                        hideAllDivs();
-                        // Show the div
-                        ShowCat_4.style.display = 'block';
-                        // Hide the home page
-                        ExitDis.style.display = 'none';
-                    });
-                    Cat_5.addEventListener('click', function() {
-                        hideAllDivs();
-                        // Show the div
-                        ShowCat_5.style.display = 'block';
-                        // Hide the home page
-                        ExitDis.style.display = 'none';
-                    });
-                </script>
                 <div class="div-nex-1">
                     <nav class="nav-nex-1">
                         <ul>
@@ -397,7 +335,7 @@
                             <li>
                                 <div class="div-tre-1" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
                                     <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="tre-img-2">
-                                    <p class="par-tre-3">The Millenium Meltdown</p>
+                                    <p class="par-tre-3">Millenium Meltdown</p>
                                     <p class="par-tre-4">Historical Novel</p>
                                     <nav class="nav-rate-2">
                                         <ul>
@@ -437,140 +375,138 @@
                             <p class="par-new-2">Sneak Peak</p>
                             <button class="but-new-1">BOOK <img src="./icons/jjjjjjjjjjj.png" class="book-img"></button>
                         </div>
-                        <div class="audio-format">
-                            <div class="audio-format-1">
-                                <p class="audio-1">Use Audio Format Here</p>
-                                <p class="audio-2">Read books the advanced way by</p>
-                                <p class="audio-3">just listening to it.</p>
-                                <button class="but-audio-1">Explore Now</button>
-                            </div>
-                        </div>
-                        <script>
-                            const NewOne = document.querySelector('.new-div-1');
-                            const NewTwo = document.querySelector('.audio-format');
-                            const ImagesNew = [
-                                './Pictures/istockphoto-471876836-612x612.jpg',
-                                './Pictures/books-assortment-with-dark-background_23-2148898297.jpg',
-                                './Pictures/2b25bc7f455b701a4412e3408b3719d0.jpg',
-                                './Pictures/photo-1419640303358-44f0d27f48e7.jpg',
-
-                            ];
-                            const ImagesNewTwo = [
-                                './Pictures/audio-1.jpg',
-                                './Pictures/audio-2.jpg',
-                                './Pictures/audio-4.jpg',
-                                './Pictures/audio-test.jpg',
-
-                            ];
-                            let currentImageIndex = 0;
-
-                            setInterval(() => {
-                                NewOne.style.backgroundImage = `url(${ImagesNew[currentImageIndex]})`;
-
-
-
-                                currentImageIndex = (currentImageIndex + 1) % ImagesNew.length;
-
-                            }, 5000); // 3000 milliseconds = 9 seconds
-
-
-                            setInterval(() => {
-
-                                NewTwo.style.backgroundImage = `url(${ImagesNewTwo[currentImageIndex]})`;
-
-
-
-                                currentImageIndex = (currentImageIndex + 1) % ImagesNewTwo.length;
-                            }, 9000); // 3000 milliseconds = 9 seconds
-                        </script>
-                        <div class="anime-format">
-                            <div class="anime-1">
-                                <p class="audio-1">Upcoming Model</p>
-                                <p class="audio-2">Animated upcoming feature</p>
-                                <p class="audio-3">whle reading each book.</p>
-                            </div>
-                        </div>
-                        <p class="parry-1">Known Authors</p>
-                        <nav class="navvy-1">
-                            <ul>
-                                <li>
-                                    <div class="divvy-one">
-                                        <img src="./Pictures/519e7de2fe62d3817ba6ba3538dadfad.webp" class="imgi-1">
-                                        <p class="paryy-1">J.K</p>
-                                        <p class="paryy-2">Rowlings</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="divvy-one">
-                                        <img src="./Pictures/ndtsjs1mbus8ubg04hv02g5f3l.jpg" class="imgi-1">
-                                        <p class="paryy-1">Malcolm</p>
-                                        <p class="paryy-2">Gladwell</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="divvy-one">
-                                        <img src="./Pictures/u3936ct1vdvcr0c27th87pd01dac-d34396935eabe128fdc1a252049725a1.jpg" class="imgi-1">
-                                        <p class="paryy-1">Michael</p>
-                                        <p class="paryy-2">Lewis</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="divvy-one">
-                                        <img src="./Pictures/images.jpg" class="imgi-1">
-                                        <p class="paryy-1">Susan</p>
-                                        <p class="paryy-2">Cain</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                        <p class="par-213">Book Of The Week</p>
-                        <div class="div-214" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
-                            <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-214-1">
-                            <p class="par-300">The Millenium Meltdown</p>
-                            <p class="par-301">Historical Novel</p>
-                            <nav class="nav-300">
-                                <ul>
-                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
-                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
-                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
-                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
-                                    <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
-                                </ul>
-                            </nav>
-                            <p class="par-302">$4 - $10</p>
-
-                        </div>
-                        <nav class="nav-500">
-                            <ul>
-                                <li>
-                                    <div class="div-500">
-                                        <p class="par-700">Get 10% Off on Our</p>
-                                        <p class="par-701">FB Platform Now.</p>
-                                        <button class="but-702">Explore More</button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="div-501">
-                                        <p class="par-700">This website is currently</p>
-                                        <p class="par-701">undergoing construction.</p>
-                                        <button class="but-702">Read more</button>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="div-502">
-                                        <p class="par-700">Reading is a basic tool in</p>
-                                        <p class="par-701">in the living of a good life.</p>
-                                        <button class="but-702">Explore More</button>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
+                    <div class="audio-format">
+                        <div class="audio-format-1">
+                            <p class="audio-1">Use Audio Format Here</p>
+                            <p class="audio-2">Read books the advanced way by</p>
+                            <p class="audio-3">just listening to it.</p>
+                            <button class="but-audio-1">Explore Now</button>
+                        </div>
+                    </div>
+                    <script>
+                        const NewOne = document.querySelector('.new-div-1');
+                        const NewTwo = document.querySelector('.audio-format');
+                        const ImagesNew = [
+                            './Pictures/istockphoto-471876836-612x612.jpg',
+                            './Pictures/books-assortment-with-dark-background_23-2148898297.jpg',
+                            './Pictures/2b25bc7f455b701a4412e3408b3719d0.jpg',
+                            './Pictures/photo-1419640303358-44f0d27f48e7.jpg',
+
+                        ];
+                        const ImagesNewTwo = [
+                            './Pictures/audio-1.jpg',
+                            './Pictures/audio-2.jpg',
+                            './Pictures/audio-4.jpg',
+                            './Pictures/audio-test.jpg',
+
+                        ];
+                        let currentImageIndex = 0;
+
+                        setInterval(() => {
+                            NewOne.style.backgroundImage = `url(${ImagesNew[currentImageIndex]})`;
+
+
+
+                            currentImageIndex = (currentImageIndex + 1) % ImagesNew.length;
+
+                        }, 5000); // 3000 milliseconds = 9 seconds
+
+
+                        setInterval(() => {
+
+                            NewTwo.style.backgroundImage = `url(${ImagesNewTwo[currentImageIndex]})`;
+
+
+
+                            currentImageIndex = (currentImageIndex + 1) % ImagesNewTwo.length;
+                        }, 9000); // 3000 milliseconds = 9 seconds
+                    </script>
+                    <div class="anime-format">
+                        <div class="anime-1">
+                            <p class="audio-1">Upcoming Model</p>
+                            <p class="audio-2">Animated upcoming feature</p>
+                            <p class="audio-3">whle reading each book.</p>
+                        </div>
+                    </div>
+                    <p class="parry-1">Known Authors</p>
+                    <nav class="navvy-1">
+                        <ul>
+                            <li>
+                                <div class="divvy-one">
+                                    <img src="./Pictures/519e7de2fe62d3817ba6ba3538dadfad.webp" class="imgi-1">
+                                    <p class="paryy-1">J.K</p>
+                                    <p class="paryy-2">Rowlings</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divvy-one">
+                                    <img src="./Pictures/ndtsjs1mbus8ubg04hv02g5f3l.jpg" class="imgi-1">
+                                    <p class="paryy-1">Malcolm</p>
+                                    <p class="paryy-2">Gladwell</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divvy-one">
+                                    <img src="./Pictures/u3936ct1vdvcr0c27th87pd01dac-d34396935eabe128fdc1a252049725a1.jpg" class="imgi-1">
+                                    <p class="paryy-1">Michael</p>
+                                    <p class="paryy-2">Lewis</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="divvy-one">
+                                    <img src="./Pictures/images.jpg" class="imgi-1">
+                                    <p class="paryy-1">Susan</p>
+                                    <p class="paryy-2">Cain</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="par-213">Book Of The Week</p>
+                    <div class="div-214" onclick="window.location.href='The%Millenium%Meltdown%1.html';">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-214-1">
+                        <p class="par-300">The Millenium Meltdown</p>
+                        <p class="par-301">Historical Novel</p>
+                        <nav class="nav-300">
+                            <ul>
+                                <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                                <li><img src="./icons/icons8-star-100.png" class="img-300"></li>
+                            </ul>
+                        </nav>
+                        <p class="par-302">$4 - $10</p>
+                    </div>
+                    <nav class="nav-500">
+                        <ul>
+                            <li>
+                                <div class="div-500">
+                                    <p class="par-700">Get 10% Off on Our</p>
+                                    <p class="par-701">FB Platform Now.</p>
+                                    <button class="but-702">Explore More</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div-501">
+                                    <p class="par-700">This website is currently</p>
+                                    <p class="par-701">undergoing construction.</p>
+                                    <button class="but-702">Read more</button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="div-502">
+                                    <p class="par-700">Reading is a basic tool in</p>
+                                    <p class="par-701">in the living of a good life.</p>
+                                    <button class="but-702">Explore More</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
                     <div class="main-500">
                         <div class="main-500-1">
                             <div class="main-500-2">
-                                <p class="par-1000">The Millenium</p>
-                                <p class="par-1200">Meltdown Book</p>
+                                <p class="par-1000">Millenium Meltdown</p>
                                 <nav class="nav-1300">
                                     <ul>
                                         <li class="list-1700" onclick="DisplayOne()">Details</li>
@@ -590,127 +526,75 @@
                                     <p class="par-5300">hurdle in modern times.</p>
                                 </div>
                                 <button class="but-1600">Explore Now</button>
-                            </div>
-                            <script>
-                                // for the live stream...
-                                function DisplayOne() {
-                                    var container_1 = document.querySelector(".dets-1");
-                                    container_1.style.display = container_1.style.display == "block" ? "none" : "block";
-                                }
+                                <script>
+                                    // for the live stream...
+                                    function DisplayOne() {
+                                        var container_1 = document.querySelector(".dets-1");
+                                        container_1.style.display = container_1.style.display == "block" ? "none" : "block";
+                                    }
 
-                                function DisplayTwo() {
-                                    var container_2 = document.querySelector(".prev-1");
-                                    container_2.style.display = container_2.style.display == "block" ? "none" : "block";
-                                }
-                                // Get the element
-                                // Get all list items
-                                const listItems = document.querySelectorAll('.list-1700, .list-1800');
-                                const dets1 = document.querySelector('.dets-1');
-                                const dets2 = document.querySelector('.dets-2');
+                                    function DisplayTwo() {
+                                        var container_2 = document.querySelector(".prev-1");
+                                        container_2.style.display = container_2.style.display == "block" ? "none" : "block";
+                                    }
+                                    // Get the element
+                                    // Get all list items
+                                    const listItems = document.querySelectorAll('.list-1700, .list-1800');
+                                    const dets1 = document.querySelector('.dets-1');
+                                    const dets2 = document.querySelector('.dets-2');
 
-                                // Set default content and bold list item
-                                dets1.style.display = 'block';
-                                listItems[0].classList.add('bold');
+                                    // Set default content and bold list item
+                                    dets1.style.display = 'block';
+                                    listItems[0].classList.add('bold');
 
-                                // Add event listeners
-                                listItems.forEach((item, index) => {
-                                    item.addEventListener('click', () => {
-                                        // Remove bold class from all list items
-                                        listItems.forEach((i) => i.classList.remove('bold'));
-                                        // Add bold class to the clicked item
-                                        item.classList.add('bold');
+                                    // Add event listeners
+                                    listItems.forEach((item, index) => {
+                                        item.addEventListener('click', () => {
+                                            // Remove bold class from all list items
+                                            listItems.forEach((i) => i.classList.remove('bold'));
+                                            // Add bold class to the clicked item
+                                            item.classList.add('bold');
 
-                                        // Toggle content display
-                                        if (index === 0) {
-                                            dets1.style.display = 'block';
-                                            dets2.style.display = 'none';
-                                        } else {
-                                            dets1.style.display = 'none';
-                                            dets2.style.display = 'block';
-                                        }
+                                            // Toggle content display
+                                            if (index === 0) {
+                                                dets1.style.display = 'block';
+                                                dets2.style.display = 'none';
+                                            } else {
+                                                dets1.style.display = 'none';
+                                                dets2.style.display = 'block';
+                                            }
+                                        });
                                     });
-                                });
-                            </script>
-                            <div class="stud-1">
-                                <p class="par-stud-1">Hey students!</p>
-                                <p class="par-stud-2">You can check your</p>
-                                <p class="par-stud-3">notes/assignment here</p>
-                                <p class="par-stud-4">Prepared by Mr Agu Chimezie.</p>
-                                <button class="but-1800">Explore Now</button>
+                                </script>
                             </div>
+                        </div>
+                        <div class="stud-1">
+                            <p class="par-stud-1">Hey students!</p>
+                            <p class="par-stud-2">You can check your</p>
+                            <p class="par-stud-3">notes/assignment here</p>
+                            <p class="par-stud-4">Prepared by Mr Agu Chimezie.</p>
+                            <button class="but-1800">Explore Now</button>
                         </div>
                     </div>
                 </div>
-                <div class="div-tap-two">
-                    <div class="sel-nav-1"><img src="./icons/Untitlssssssed - Copy.png" class="img-1"></div>
-                    <div class="sel-nav-2"><img src="./icons/icons8-love-10w0.png" class="img-2"></div>
-                    <div class="sel-nav-3"><img src="./icons/icons8-students-100.png" class="img-3"></div>
-                    <div class="sel-nav-4"><img src="./icons/icons8-person-10w0.png" class="img-4"></div>
-                </div>
-                <script></script>
             </div>
-            <div class="container_2" style="display: none;">
-                <div class="cnt_1">
-                    <button class="bttn_1"><img src="./icons/back.png" class="img-bttn_1"></button>
-                    <p class="pat_1">Favourites</p>
-                </div>
-                <div class="not-found"></div>
-                <p class="pat_2">No Book Found !</p>
-                <p class="pat_3">Search for popular books</p>
-                <button class="bttn_3">Explore Books</button>
-            </div>
-            <div class="container_3" style="display: none;">
-                <nav class="nav_1">
-                    <ul>
-                        <li><button class="but_3">All <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
-                        <div class="div_all_12">
-                            <p class="pra_12_1">Not Yet Updated...</p>
-                        </div>
-                        <li><button class="but_4">Recent Notes <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
-                        <li><button class="but_5">New <img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="img_but_3"></button></li>
-                    </ul>
-                </nav>
-                <div class="all_cont"></div>
-                <div class="rec_cont"></div>
-                <div class=""></div>
-            </div>
-            <div class="container_4" style="display: none;">
-                <div class="div_cont_4_1"></div>
-                <div class="back_pic"></div>
-                <div class="info_div_1">
-                    <p class="client_name_2">Chimezie Shepherd</p>
-                    <nav class="client_nu_1">
-                        <ul>
-                            <li class="tab_100">Phone</li>
-                            <li class="tab_120"><span>+234 9162 6308 43</span></li>
-                        </ul>
-                    </nav>
-                    <nav class="client_mail_1">
-                        <ul>
-                            <li class="tab_100">Mail</li>
-                            <li class="tab_120"><span>fph59695@gmail.com</span></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="next_1">
-                    <img src="./icons/icons8-ai-100.png" class="img_nex_10">
-                    <p class="pra_nex_10">AI Assistance</p>
-                </div>
-                <div class="next_2">
-                    <img src="./icons/icons8-note-100.png" class="img_nex_10">
-                    <p class="pra_nex_10">Take Note</p>
-                </div>
-                <div class="next_3">
-                    <img src="./icons/icons8-settings-100-2.png" class="img_nex_10">
-                    <p class="pra_nex_10">Settings</p>
-                </div>
-                <div class="next_4">
-                    <img src="./icons/nnnnnnn.png" class="img_nex_10">
-                    <p class="pra_nex_10">Log out</p>
-                </div>
-                <div class="next_5">
-                    <button class="btt_100">Edit Profile</button>
-                </div>
+            <script>
+                const ButtOne = document.querySelector('.but-tap-two');
+                const ShowDivCom = document.querySelector('.search-com');
+                const ExitHomeiv = document.querySelector('.home-page-one');
+
+                ButtOne.addEventListener('click', function() {
+                    // Show the div
+                    ShowDivCom.style.display = 'block';
+                    // Hide the home page
+                    ExitHomeiv.style.display = 'none';
+                });
+            </script>
+            <div class="div-tap-two">
+                <div class="sel-nav-1"><img src="./icons/Untitlssssssed - Copy.png" class="img-1"></div>
+                <div class="sel-nav-2"><img src="./icons/icons8-love-10w0.png" class="img-2"></div>
+                <div class="sel-nav-3"><img src="./icons/icons8-students-100.png" class="img-3"></div>
+                <div class="sel-nav-4"><img src="./icons/icons8-person-10w0.png" class="img-4"></div>
             </div>
         </div>
         <script>
@@ -839,7 +723,15 @@
             background-color: #e6e4e2;
         }
         
-        .home-page {}
+        .home-page {
+            width: 100%;
+            height: 100%;
+            background-color: #e6e4e2;
+            top: 0;
+            left: 0;
+            position: fixed;
+            /* Add flexbox for centering */
+        }
         
         .main-updates {
             /* Adjust styles here */
@@ -1067,12 +959,12 @@
         }
         
         .cat-nav-1 {
-            left: -2%;
-            top: 5%;
+            left: -7%;
+            top: 30px;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
-            width: 105%;
+            width: 108%;
             -webkit-overflow-scrolling: touch;
             /* for smooth scrolling on iOS */
         }
@@ -1110,15 +1002,52 @@
         .cat-4,
         .cat-5 {
             width: 95px;
-            height: 115px;
+            height: 110px;
             background-color: transparent;
         }
         
-        .cat-img-1 {
-            zoom: 88%;
-            border-radius: 70px;
-            display: block;
-            margin: 0 auto;
+        .div-cat-1,
+        .div-cat-2,
+        .div-cat-3,
+        .div-cat-4,
+        .div-cat-5 {
+            width: 89px;
+            height: 89px;
+            background-size: cover;
+            top: 45px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 150px;
+        }
+        
+        .div-cat-1 {
+            background-image: url('./icons/take_one.png');
+        }
+        
+        .div-cat-2 {
+            background-image: url('./icons/11111111.png');
+        }
+        
+        .div-cat-3 {
+            background-image: url('./icons/4444444.png');
+        }
+        
+        .div-cat-4 {
+            background-image: url('./icons/zzzzzzzzz.png');
+        }
+        
+        .div-cat-5 {
+            background-image: url('./icons/lllllllll.png');
+        }
+        
+        .img_cat-1 {
+            zoom: 45%;
+            left: 0;
+            top: 25%;
+            right: 0;
+            margin: auto;
+            position: absolute;
         }
         
         .cat-par-1 {
@@ -1127,7 +1056,8 @@
             font-family: "Cabri ", sans-serif;
             font-weight: bold;
             text-align: center;
-            margin-top: 5.5%;
+            top: -10.5%;
+            position: relative;
             font-style: italic;
         }
         
@@ -1390,7 +1320,7 @@
             /* Start from above the screen */
             left: 0;
             position: absolute;
-            z-index: 5;
+            z-index: 10;
             /* Add flexbox for centering */
             transition: top 0.5s ease-in-out;
             /* Add transition effect */
@@ -1588,10 +1518,10 @@
             font-size: 26px;
             /* or a specific width */
             color: black;
-            font-family: Cambria, "Times New Roman", serif;
-            top: -2.7%;
+            top: -6.5px;
             left: 7%;
             font-style: italic;
+            font-family: "Cabri ", sans-serif;
             font-weight: bold;
         }
         
@@ -1602,7 +1532,7 @@
             position: fixed;
             bottom: 0;
             left: 0;
-            z-index: 4;
+            z-index: 9;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
@@ -1620,7 +1550,6 @@
         .home-page-one,
         .search-com,
         .container_3 {
-            min-height: 87vh;
             /* or a specific value */
             left: 0;
             overflow-y: auto;
@@ -1639,6 +1568,8 @@
             position: absolute;
             width: 100%;
             top: 10.5%;
+            z-index: 8;
+            height: 100%;
         }
         
         .container_2 {
@@ -1658,10 +1589,9 @@
         
         .home-page-one {
             background-color: #e6e4e2;
-            position: absolute;
-            overscroll-behavior: contain !important;
-            padding-bottom: 11%;
-            width: 102%;
+            position: fixed;
+            width: 100%;
+            height: 100%;
             top: 10.5%;
             /* match the height of .div-tap-two */
         }
@@ -1676,6 +1606,7 @@
             width: 100%;
             top: 0;
             bottom: 0;
+            min-height: 87vh;
         }
         
         .container_4 {
@@ -1873,11 +1804,12 @@
         
         .div-nex-1 {
             width: 100%;
-            height: 600%;
+            height: 180%;
             background-color: #e6e4e2;
             position: absolute;
-            top: 31%;
+            top: 165px;
             left: 0;
+            padding-bottom: 20px;
         }
         
         .nav-nex-1 {
@@ -1891,8 +1823,8 @@
         }
         
         .nav-nex-2 {
-            position: absolute;
-            top: 390px;
+            position: relative;
+            top: 340px;
             left: -4.3%;
         }
         
@@ -1916,20 +1848,24 @@
             color: #f2bf11;
             font-family: Cambria, "Times New Roman", serif;
             font-weight: bold;
-            position: relative;
-            left: 110px;
-            top: 0;
             text-decoration: underline;
+            right: 2%;
+            top: 10px;
+            position: absolute;
             /* or specify a top value */
         }
         
+        .lis-nex-2:hover {
+            color: black;
+        }
+        
         .con-nav {
-            left: -6%;
-            top: 1.8%;
+            left: -8%;
+            top: 56px;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
-            width: 105%;
+            width: 106%;
             -webkit-overflow-scrolling: touch;
             /* for smooth scrolling on iOS */
         }
@@ -2023,7 +1959,7 @@
         
         .trend-1 {
             left: -9%;
-            top: 420px;
+            top: 450px;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
@@ -2051,30 +1987,34 @@
             height: 235px;
             background-color: rgba(0, 0, 0, 0.1);
             border-radius: 10px;
+            position: relative;
             /* adjust opacity */
         }
         
         .tre-img-1 {
             zoom: 19.6%;
             border-radius: 25px;
-            margin-left: 2.5%;
-            margin-top: 3.1%;
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
         }
         
         .tre-img-2 {
             zoom: 21.6%;
             border-radius: 25px;
-            margin-left: 2.5%;
-            margin-top: 3.1%;
+            position: absolute;
+            top: 50%;
+            left: 21%;
+            transform: translate(-50%, -50%);
         }
         
         .par-tre-1 {
             color: black;
             font-size: 18px;
-            text-align: center;
-            position: relative;
-            top: -90.5%;
-            right: -15%;
+            position: absolute;
+            top: 10px;
+            left: 185px;
             font-weight: bold;
             font-style: italic;
             /* or a specific pixel value */
@@ -2082,22 +2022,30 @@
         
         .par-tre-2,
         .par-tre-4 {
-            color: black;
             font-size: 14px;
-            text-align: center;
-            position: relative;
-            top: -91.5%;
-            right: -11.5%;
             /* or a specific pixel value */
         }
         
+        .par-tre-2 {
+            position: absolute;
+            top: 45px;
+            left: 185px;
+            color: black;
+        }
+        
+        .par-tre-4 {
+            top: 45px;
+            left: 197px;
+            position: absolute;
+            color: black;
+        }
+        
         .par-tre-3 {
-            color: white;
+            color: black;
             font-size: 18px;
-            text-align: center;
-            position: relative;
-            top: -90.5%;
-            right: -22%;
+            position: absolute;
+            top: 10px;
+            left: 197px;
             font-weight: bold;
             font-style: italic;
             /* or a specific pixel value */
@@ -2105,14 +2053,14 @@
         
         .nav-rate-1 {
             position: absolute;
-            top: 160px;
-            left: 190px;
+            top: 90px;
+            left: 140px;
         }
         
         .nav-rate-2 {
-            position: relative;
-            top: -90%;
-            right: -35%;
+            position: absolute;
+            top: 90px;
+            left: 155px;
         }
         
         .nav-rate-1 li,
@@ -2122,7 +2070,7 @@
         }
         
         .rate-1 {
-            zoom: 20%;
+            zoom: 30%;
         }
         
         .par-aa-1 {
@@ -2131,7 +2079,7 @@
             /* or a specific width */
             color: black;
             font-family: Cambria, "Times New Roman", serif;
-            top: 730px;
+            top: 715px;
             left: 7%;
             font-style: italic;
             font-weight: bold;
@@ -2143,17 +2091,15 @@
             /* or a specific width */
             color: black;
             font-family: Cambria, "Times New Roman", serif;
-            top: 770px;
+            top: 755px;
             left: 7%;
         }
         
         .search-1,
         .search-2 {
-            position: absolute;
             /* or a specific width */
-            background-color: rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.8);
             font-family: Cambria, "Times New Roman", serif;
-            left: 2%;
             border-radius: 9px;
             color: white;
             padding-left: 48px;
@@ -2161,7 +2107,7 @@
             font-style: italic;
             font-weight: bold;
             border: 0px solid;
-            background-position: 10px 22px;
+            background-position: 10px 18px;
             background-size: 27px 27px;
             /* width height */
             /* or left, top, bottom */
@@ -2170,14 +2116,23 @@
         }
         
         .search-2 {
-            width: 75%;
+            width: 260px;
+            height: 55px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
         
         .search-1 {
-            top: 830px;
-            width: 258px;
-            height: 60px;
+            top: 810px;
+            width: 260px;
+            height: 55px;
             background-image: url('./icons/search_things.png');
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
         
         .search-1:focus,
@@ -2194,8 +2149,6 @@
         
         .exp-nav,
         .exp-nav-1 {
-            left: -14%;
-            position: absolute;
             white-space: nowrap;
             /* adjust gap size */
             -webkit-overflow-scrolling: touch;
@@ -2203,19 +2156,28 @@
         }
         
         .exp-nav {
-            top: 890px;
+            top: 909px;
+            left: 43%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        
+        .exp-nav-1 {
+            position: absolute;
+            left: 43%;
+            transform: translate(-50%, -50%);
         }
         
         .exp-nav li,
         .exp-nav-1 li {
             list-style: none;
-            padding-left: 15px;
+            padding-left: 10px;
             display: inline-block;
         }
         
         .divi-1 {
-            width: 65px;
-            height: 65px;
+            width: 60px;
+            height: 60px;
             background-color: rgba(242, 191, 17, 0.9);
             /* #f2bf11 with 70% opacity */
             border-radius: 15px;
@@ -2225,29 +2187,30 @@
         }
         
         .divi-img-1 {
-            zoom: 35%;
+            zoom: 33%;
         }
         
         .new-div {
             width: 100%;
-            height: 50%;
+            height: 203%;
             background-color: #e6e4e2;
             position: absolute;
-            top: 1000px;
-            border-bottom: 1px solid blue;
+            top: 950px;
+            border-bottom: 0px solid;
             left: 0;
         }
         
         .new-div-1 {
             width: 310px;
-            height: 210px;
+            height: 230px;
             background-image: url('./Pictures/photo-1419640303358-44f0d27f48e7.jpg');
             background-size: cover;
             position: absolute;
-            top: 10px;
+            top: 135px;
             border: 0px solid;
             border-radius: 20px;
-            left: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .par-new-1 {
@@ -2292,14 +2255,15 @@
         
         .audio-format {
             width: 310px;
-            height: 210px;
+            height: 230px;
             background-image: url('./Pictures/audio-test.jpg');
             background-size: cover;
             position: absolute;
-            top: 230px;
+            top: 1325px;
             border: 0px solid;
             border-radius: 10px;
-            left: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .audio-format-1 {
@@ -2360,14 +2324,15 @@
         
         .anime-format {
             width: 310px;
-            height: 210px;
+            height: 230px;
             background-image: url('./Pictures/e44d9577ec2b2752bacc74699178195f.gif');
             background-size: cover;
             position: absolute;
-            top: 450px;
+            top: 1565px;
             border: 0px solid;
             border-radius: 20px;
-            left: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .anime-1 {
@@ -2387,21 +2352,31 @@
             /* or a specific width */
             color: black;
             font-family: Cambria, "Times New Roman", serif;
-            top: 680px;
+            top: 1695px;
             left: 7%;
             font-style: italic;
             font-weight: bold;
         }
         
         .navvy-1 {
-            left: -12%;
-            top: 720px;
+            left: -10%;
+            top: 1740px;
             position: absolute;
+            white-space: nowrap;
+            overflow-x: auto;
+            width: 106%;
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .navvy-1::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
         }
         
         .navvy-1 li {
             list-style: none;
-            padding-left: 0px;
+            padding-left: 10px;
             display: inline-block;
         }
         
@@ -2450,7 +2425,7 @@
             /* or a specific width */
             color: black;
             font-family: Cambria, "Times New Roman", serif;
-            top: 875px;
+            top: 1890px;
             left: 7%;
             font-style: italic;
             font-weight: bold;
@@ -2461,10 +2436,11 @@
             height: 210px;
             background-color: rgba(0, 0, 0, 0.3);
             position: absolute;
-            top: 950px;
+            top: 2065px;
             border: 0px solid;
             border-radius: 9px;
-            left: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .img-214-1 {
@@ -2486,9 +2462,9 @@
         }
         
         .par-300 {
-            font-size: 13px;
+            font-size: 14px;
             top: 7%;
-            right: 5%;
+            right: 1%;
         }
         
         .par-301 {
@@ -2531,8 +2507,8 @@
         }
         
         .nav-500 {
-            left: 4%;
-            top: 1170px;
+            left: -5%;
+            top: 2175px;
             position: absolute;
             white-space: nowrap;
             overflow-x: auto;
@@ -2630,11 +2606,11 @@
         
         .main-500 {
             width: 100%;
-            height: 23.3%;
+            height: 650px;
             background-image: url('./Pictures/HD-wallpaper-flying-book-read-black-blue-dark-fly-magic-paper-white-wings-thumbnail.jpg');
             background-size: cover;
             position: absolute;
-            top: 2420px;
+            top: 2400px;
             background-position: center;
             border-radius: 60px;
             left: 0;
@@ -2650,23 +2626,22 @@
         
         .main-500-2 {
             width: 80%;
-            height: 45%;
+            height: 300px;
             background-color: white;
             border-radius: 50px;
             left: 0;
             position: absolute;
-            top: 24.5%;
+            top: 160px;
             /* adjusted to 50% for perfect centering */
             left: 50%;
             transform: translate(-50%, -50%);
         }
         
         .par-1000 {
-            font-size: 20.5px;
+            font-size: 18px;
             color: black;
-            position: relative;
-            top: 27px;
-            left: 26px;
+            text-align: center;
+            margin-top: 27px;
             font-family: "Cabri ", sans-serif;
             font-weight: bold;
         }
@@ -2684,25 +2659,27 @@
         
         .nav-1300 {
             top: 100px;
-            left: -40px;
-            position: absolute;
             font-size: 14px;
             font-family: "Cabri ", sans-serif;
+            text-align: center;
+            top: -1px;
+            right: 18%;
+            position: relative;
         }
         
         .nav-1300 li {
             list-style: none;
-            padding-left: 30px;
+            padding-left: 45px;
             display: inline-block;
         }
         
         .but-1600,
         .but-1800 {
-            width: 50%;
+            width: 120px;
             height: 50px;
             position: absolute;
             font-family: "Cabri ", sans-serif;
-            top: 85%;
+            top: 230px;
             font-size: 14px;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -2712,20 +2689,14 @@
             border: 1px solid #f2bf11;
         }
         
-        .but-1600 {
-            top: 85%;
-            background-color: #f2bf11;
-            color: white;
-            border: 1px solid #f2bf11;
-        }
-        
         .dets-1,
         .prev-1 {
             width: 210px;
             height: 100px;
             position: absolute;
-            left: 8%;
-            top: 127px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 128px;
             background-color: transparent;
         }
         
@@ -2741,7 +2712,7 @@
             font-size: 13.5px;
             font-family: "Cabri ", sans-serif;
             color: black;
-            left: 2%;
+            text-align: center;
             font-style: italic;
         }
         
@@ -2763,12 +2734,12 @@
         
         .stud-1 {
             width: 80%;
-            height: 40%;
+            height: 300px;
             background-color: rgba(242, 191, 17, 0.25);
             border-radius: 50px;
             left: 0;
             position: absolute;
-            top: 78%;
+            top: 490px;
             /* adjusted to 50% for perfect centering */
             left: 50%;
             transform: translate(-50%, -50%);
@@ -2777,10 +2748,9 @@
         .par-stud-1 {
             font-size: 20.5px;
             color: white;
-            position: absolute;
-            top: 30px;
-            left: 48%;
-            transform: translate(-50%, -50%);
+            position: relative;
+            top: 10px;
+            text-align: center;
             font-family: "Cabri ", sans-serif;
             font-weight: bold;
         }
@@ -2789,7 +2759,7 @@
             font-size: 13.5px;
             color: white;
             position: relative;
-            top: 65px;
+            top: 5px;
             text-align: center;
             font-family: "Cabri ", sans-serif;
         }
@@ -2798,7 +2768,7 @@
             font-size: 13.5px;
             color: white;
             position: relative;
-            top: 55px;
+            top: -2px;
             text-align: center;
             font-family: "Cabri ", sans-serif;
         }
@@ -2807,7 +2777,7 @@
             font-size: 13.5px;
             color: white;
             position: relative;
-            top: 45px;
+            top: -8px;
             text-align: center;
             font-family: "Cabri ", sans-serif;
         }
@@ -2825,24 +2795,23 @@
         }
         
         .search-2 {
-            top: 2.9%;
-            height: 10.7%;
+            top: 10px;
             background-image: url('./icons/search_things.png');
         }
         
         .exp-nav-1 {
-            top: 14%;
+            top: 110px;
         }
         
         .no-search {
-            width: 17%;
-            height: 11%;
+            width: 60px;
+            height: 60px;
             background-color: transparent;
             background-image: url('./icons/ssssssssssss.png');
             background-size: cover;
             position: absolute;
-            top: 65%;
-            left: 50%;
+            top: 50%;
+            left: 46%;
             transform: translate(-50%, -50%);
         }
         
@@ -2862,13 +2831,11 @@
             /* IE and Edge */
         }
         
-        .cat-1-dis,
         .cat-2-dis,
         .cat-3-dis,
         .cat-4-dis,
         .cat-5-dis {
             width: 100%;
-            height: 100vh;
             /* or a specific height value */
             position: fixed;
             overflow-y: auto;
@@ -2880,32 +2847,46 @@
             /* IE and Edge */
         }
         
-        .cat-1-dis,
         .cat-2-dis,
         .cat-3-dis,
         .cat-4-dis,
         .cat-5-dis {
             z-index: 1;
+            top: 37.5%;
         }
         
         .cat-1-dis {
-            background-color: #e6e4e2;
+            background-color: blue;
+            height: 100%;
+            width: 100%;
+            z-index: 4;
+            left: 0;
+            overflow-y: auto;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            position: fixed;
+            /* IE and Edge */
         }
         
         .cat-2-dis {
             background-color: #e6e4e2;
+            height: 100vh;
         }
         
         .cat-3-dis {
             background-color: #e6e4e2;
+            height: 100vh;
         }
         
         .cat-4-dis {
             background-color: #e6e4e2;
+            height: 100vh;
         }
         
         .cat-5-dis {
             background-color: #e6e4e2;
+            height: 100vh;
         }
         
         .par-cat-1000 {
