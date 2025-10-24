@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Contact IT</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+</head>
+
+<body>
+    <div class="div-min-1">
+        <button class="bnt-test-1" onclick="ExitCont1()"><img src="./icons/icons8-cancel-1jjj00.png" class="img-020"></button>
+        <script>
+            // for the live stream...
+
+            const MenuImg1 = document.querySelector('.img-020');
+
+            function ExitCont1() {
+                var menu_cont_9 = document.querySelector(".div-min-1");
+                menu_cont_9.style.display = menu_cont_9.style.display == "block" ? "none" : "block";
+            }
+            // Add event lstening for this image
+            MenuImg1.addEventListener('click', () => {
+                var menu_cont_8 = document.querySelector(".div-min-1");
+                menu_cont_8.style.display = menu_cont_8.style.display == "block" ? "none" : "block";
+
+            });
+        </script>
+        <p class="pra-222">Hi there 🙏🏼</p>
+        <p class="pra-333">How can I help you today?</p>
+    </div>
+    <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+    <div class="div-two-103">
+        <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+    </div>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        
+        .img-20k {
+            position: absolute;
+            zoom: 47%;
+            top: 20px;
+            left: 2.5%;
+        }
+        
+        .div-two-103 {
+            width: 80px;
+            height: 35px;
+            position: absolute;
+            right: 3.5%;
+            background-color: transparent;
+            top: 22px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            align-items: center;
+            border: 1px solid #B68D05;
+            border-radius: 5px;
+        }
+        
+        .img_bnt_3 {
+            zoom: 16%;
+            position: relative;
+            top: -5px;
+            left: -9px;
+        }
+        
+        .sp_par_11 {
+            font-weight: bold;
+            color: #B68D05;
+            font-size: 18px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .img_bnt_4 {
+            zoom: 16%;
+            position: relative;
+            top: -5px;
+            right: -9px;
+        }
+        
+        .div-min-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: #B68D05;
+            z-index: 2;
+        }
+        
+        .bnt-test-1 {
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            right: 6%;
+            top: 23px;
+            position: absolute;
+            border: none;
+            border-radius: 7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .bnt-test-1:hover {
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Change background on hover */
+        }
+        
+        .img-020 {
+            zoom: 15%;
+        }
+        
+        .pra-222 {
+            position: absolute;
+            left: 8%;
+            font-size: 18px;
+            font-weight: bold;
+            top: 5px;
+            font-family: "Cabri ", sans-serif;
+            color: white;
+        }
+        
+        .pra-333 {
+            position: absolute;
+            left: 8%;
+            font-size: 11px;
+            color: rgb(218, 217, 217);
+            top: 35px;
+            font-family: "Cabri ", sans-serif;
+        }
+    </style>
+</body>
+
+</html>
