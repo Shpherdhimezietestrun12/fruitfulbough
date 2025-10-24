@@ -6,102 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitful Bough - Pricing</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
-    <div class="div-two-103">
-        <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
-    </div>
-    <p class="pra-h-1">Select the right FB plan</p>
-    <p class="pra-h-2">for you</p>
-    <p class="pra-h-3">Its completely free to get started. We only</p>
-    <p class="pra-h-4">charge a <span class="sp-555">little transactional fee</span> for everybook</p>
-    <p class="pra-h-5">purchased to try optimize this platform.</p>
-    <div class="div-220">
-        <nav class="nav-20">
-            <ul>
-                <li><img src="./icons/icons8-nigeria-100.png" class="img-11"></li>
-                <li class="lis-1">|</li>
-                <li class="lis-2">NGN</li>
-                <li><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-12"></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="div-330">
-        <div class="div-set-1">
-            <p class="pra-200">Monthly</p>
-        </div>
-        <div class="div-set-2">
-            <p class="pra-200">Anually</p>
-        </div>
-    </div>
-    <div class="mont-div">
-        <div class="div-510">
-            <div class="div-610">
-                <nav class="nav-40">
-                    <ul>
-                        <li><img src="./icons/icons8-stars-100.png" class="img-023"></li>
-                        <li>BASIC PLAN</li>
-                    </ul>
-                </nav>
-            </div>
-            <p class="pra-60">CUSTOM</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
-            <p class="pra-41"><span class="sp-tt">Start your basic reading</span> plan with</p>
-            <p class="pra-42">us and enjoy <span class="sp-tt">benefits here</span> on FB</p>
-            <p class="pra-43">like - Less Ads, No book charge,</p>
-            <p class="pra-44">other features set for <span class="sp-tt">basic plan.</span></p>
-            <p class="pra-45"><span class="sp-po">₦ 25,000</span> every 2 months</p>
-        </div>
-        <div class="div-512">
-            <div class="div-612">
-                <nav class="nav-40">
-                    <ul>
-                        <li><img src="./icons/icons8-recommended-100.png" class="img-023"></li>
-                        <li>RECOMMENDED PLAN</li>
-                    </ul>
-                </nav>
-            </div>
-            <p class="pra-60">PRO</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
-            <p class="pra-41"><span class="sp-tt">All customers with this plan enjoys</span></p>
-            <p class="pra-42"><span class="sp-tt">no ads.</span> You also get advanced FB</p>
-            <p class="pra-43">features like AI optimization with</p>
-            <p class="pra-44"><span class="sp-tt">other features implemented.</span></p>
-            <p class="pra-45"><span class="sp-po">₦ 36,000</span> every 2 months</p>
-            <p></p>
-        </div>
-        <div class="div-513">
-            <div class="div-613">
-                <nav class="nav-40">
-                    <ul>
-                        <li><img src="./icons/icons8-premium-100.png" class="img-023"></li>
-                        <li>PREMIUM PLAN</li>
-                    </ul>
-                </nav>
-            </div>
-            <p class="pra-60">SUPPORT</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
-            <p class="pra-41">Support our team here, and enjoy</p>
-            <p class="pra-42">benefits here like - Animated</p>
-            <p class="pra-43"><span class="sp-tt">reading & AI implementations</span></p>
-            <p class="pra-44">with other benefits for premium plan.</span>
-                <p class="pra-45"><span class="sp-po">₦ 65,000</span> every 2 months</p>
-            </p>
-        </div>
-        <button class="bnt-001">Start Using FB</button>
-        <div class="div-713">
-            <div class="div-02">
-                <img src="./icons/icons8-bulb-100.png" class="img-03">
-            </div>
-            <p class="pra-20">Note that without checking out</p>
-            <p class="pra-21">these aspects you can still use</p>
-            <p class="pra-22">FB, but we can't ensure our</p>
-            <p class="pra-23">full FB optimization for you.</p>
-        </div>
-    </div>
-
     <style>
         body {
             background-color: #e6e4e2;
@@ -120,7 +51,7 @@
             position: absolute;
             right: 3.5%;
             background-color: transparent;
-            top: 22px;
+            top: 19.5px;
             display: flex;
             justify-content: center;
             position: absolute;
@@ -486,6 +417,98 @@
             right: 8%;
         }
     </style>
+    <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+    <div class="div-two-103">
+        <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+    </div>
+    <p class="pra-h-1">Select the right FB plan</p>
+    <p class="pra-h-2">for you</p>
+    <p class="pra-h-3">Its completely free to get started. We only</p>
+    <p class="pra-h-4">charge a <span class="sp-555">little transactional fee</span> for everybook</p>
+    <p class="pra-h-5">purchased to try optimize this platform.</p>
+    <div class="div-220">
+        <nav class="nav-20">
+            <ul>
+                <li><img src="./icons/icons8-nigeria-100.png" class="img-11"></li>
+                <li class="lis-1">|</li>
+                <li class="lis-2">NGN</li>
+                <li><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-12"></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="div-330">
+        <div class="div-set-1">
+            <p class="pra-200">Monthly</p>
+        </div>
+        <div class="div-set-2">
+            <p class="pra-200">Anually</p>
+        </div>
+    </div>
+    <div class="mont-div">
+        <div class="div-510">
+            <div class="div-610">
+                <nav class="nav-40">
+                    <ul>
+                        <li><img src="./icons/icons8-stars-100.png" class="img-023"></li>
+                        <li>BASIC PLAN</li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="pra-60">CUSTOM</p>
+            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <p class="pra-41"><span class="sp-tt">Start your basic reading</span> plan with</p>
+            <p class="pra-42">us and enjoy <span class="sp-tt">benefits here</span> on FB</p>
+            <p class="pra-43">like - Less Ads, No book charge,</p>
+            <p class="pra-44">other features set for <span class="sp-tt">basic plan.</span></p>
+            <p class="pra-45"><span class="sp-po">₦ 25,000</span> every 2 months</p>
+        </div>
+        <div class="div-512">
+            <div class="div-612">
+                <nav class="nav-40">
+                    <ul>
+                        <li><img src="./icons/icons8-recommended-100.png" class="img-023"></li>
+                        <li>RECOMMENDED PLAN</li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="pra-60">PRO</p>
+            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <p class="pra-41"><span class="sp-tt">All customers with this plan enjoys</span></p>
+            <p class="pra-42"><span class="sp-tt">no ads.</span> You also get advanced FB</p>
+            <p class="pra-43">features like AI optimization with</p>
+            <p class="pra-44"><span class="sp-tt">other features implemented.</span></p>
+            <p class="pra-45"><span class="sp-po">₦ 36,000</span> every 2 months</p>
+            <p></p>
+        </div>
+        <div class="div-513">
+            <div class="div-613">
+                <nav class="nav-40">
+                    <ul>
+                        <li><img src="./icons/icons8-premium-100.png" class="img-023"></li>
+                        <li>PREMIUM PLAN</li>
+                    </ul>
+                </nav>
+            </div>
+            <p class="pra-60">SUPPORT</p>
+            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <p class="pra-41">Support our team here, and enjoy</p>
+            <p class="pra-42">benefits here like - Animated</p>
+            <p class="pra-43"><span class="sp-tt">reading & AI implementations</span></p>
+            <p class="pra-44">with other benefits for premium plan.</span>
+                <p class="pra-45"><span class="sp-po">₦ 65,000</span> every 2 months</p>
+            </p>
+        </div>
+        <button class="bnt-001">Start Using FB</button>
+        <div class="div-713">
+            <div class="div-02">
+                <img src="./icons/icons8-bulb-100.png" class="img-03">
+            </div>
+            <p class="pra-20">Note that without checking out</p>
+            <p class="pra-21">these aspects you can still use</p>
+            <p class="pra-22">FB, but we can't ensure our</p>
+            <p class="pra-23">full FB optimization for you.</p>
+        </div>
+    </div>
 </body>
 
 </html>
