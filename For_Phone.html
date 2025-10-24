@@ -7,9 +7,34 @@
     <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
     <link>
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
 </head>
 
 <body>
+
     <style class="home-css">
         body {
             background-color: #ffffff;
@@ -1681,12 +1706,16 @@
 
         <script>
             // for the live stream...
+            const LoadSh = document.querySelector('.bnt_102');
 
 
             function LoadShow() {
                 var pop_cont_5 = document.querySelector(".dis_here");
                 pop_cont_5.style.display = pop_cont_5.style.display == "block" ? "none" : "block";
             }
+            LoadSh.addEventListener('click', () => {
+                pop_cont_5.style.display = pop_cont_5.style.display == "block" ? "none" : "block";
+            });
         </script>
     </div>
     <img src="./Pictures/Screenshot 2025-10-13 012929.png" class="img_300">
