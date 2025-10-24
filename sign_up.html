@@ -326,6 +326,15 @@
             left: 20%;
             transform: translate(-50%, -50%);
         }
+        
+        .ipt-check {
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            top: 448px;
+            left: 3%;
+            transform: translate(-50%, -50%);
+        }
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
     <div class="div-two-103">
@@ -357,10 +366,40 @@
         <p class="pra-235">Show</p>
         <p class="pra-6">Creating an FB account means you agree with our</p>
         <p class="pra-7"><span class="sp-700">privacy policy</span> and <span class="sp-700">terms & conditions</span></p>
+        <input type="checkbox" class="ipt-check">
         <button class="bnt-100">Create account</button>
         <p class="pra-500"><span class="sp-129">_____________________</span> OR <span class="sp-129">_____________________</span></p>
         <button class="bnt-102"><img src="./icons/iconffffffffs8-google-100.png" class="img-google">Sign up with Google</button>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.ipt-100, .ipt-105, .ipt-110, .ipt-115, .ipt-120');
+            const checkbox = document.querySelector('.ipt-check');
+            const button = document.querySelector('.bnt-100');
+
+            function checkAllFilled() {
+                // Check all text/password fields are filled
+                const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+                // Check checkbox is checked
+                const isChecked = checkbox.checked;
+
+                if (allFilled && isChecked) {
+                    button.style.backgroundColor = '#B68D05'; // Change color
+                    button.style.color = 'white';
+                    button.disabled = false; // Optional: enable button
+                } else {
+                    button.style.backgroundColor = ''; // Reset to default
+                    button.disabled = true; // Optional: disable button
+                }
+            }
+
+            // Listen for input changes
+            inputs.forEach(input => input.addEventListener('input', checkAllFilled));
+            checkbox.addEventListener('change', checkAllFilled);
+        });
+    </script>
 </body>
+
+</html>
 
 </html>
