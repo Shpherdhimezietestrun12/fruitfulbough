@@ -6,68 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitful Bough - Procedures</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
-    <div class="div-two-103">
-        <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
-    </div>
-    <div class="div-710">
-        <p class="pra-50">How it Works</p>
-        <p class="pra-51">Takes less than five minutes to set up. Steps</p>
-        <p class="pra-52">in FB!</p>
-        <div class="div-30">
-            <p class="pra-53">1</p>
-        </div>
-        <p class="pra-54">Click on "Get Started" and provide the</p>
-        <p class="pra-55">necessary credentials to set up your</p>
-        <p class="pra-56">FB account.</p>
-        <div class="div-31">
-            <p class="pra-53">2</p>
-        </div>
-        <p class="pra-57">After successful account set up, you will</p>
-        <p class="pra-58">you will receive a mail to prove success.</p>
-        <p class="pra-59">We commend you for being a proud member of</p>
-        <p class="pra-60">FB reading channel and request you explore.</p>
-        <div class="div-32">
-            <p class="pra-53">3</p>
-        </div>
-        <p class="pra-61">We recommend you to explore other options</p>
-        <p class="pra-62">enjoy new book knowledge here at FB,</p>
-        <p class="pra-63">no knowledge is a waist.</p>
-
-    </div>
-    <div class="div-400">
-        <p class="pra-90">Not yet Updated</p>
-    </div>
-    <div class="div-500">
-        <div class="div-510">
-            <div class="div-600"><img src="./icons/icons8-series-100.png" class="img-108"></div>
-            <p class="pra-30">Enjoy Series of Limited</p>
-            <p class="pra-31">Editions on FB</p>
-            <p class="pra-401">We offer the best editions of digital</p>
-            <p class="pra-402">books. We employ you to explore more</p>
-            <p class="pra-403">here on FB and submits reviews.</p>
-        </div>
-        <div class="div-512">
-            <div class="div-600"><img src="./icons/icons8-bbbbbai-100.png" class="img-108"></div>
-            <p class="pra-30">Re-write the History of</p>
-            <p class="pra-31">Reading Books.</p>
-            <p class="pra-401">Define the way you read with FB</p>
-            <p class="pra-402">with an integrated AI system that helps</p>
-            <p class="pra-403">you understand ideas written in our books.</p>
-        </div>
-        <div class="div-513">
-            <div class="div-600"><img src="./icons/icons8-options-100.png" class="img-108"></div>
-            <p class="pra-30">Explore the Valant Options</p>
-            <p class="pra-31">Provided by FB Teams</p>
-            <p class="pra-401">There are series of options here on</p>
-            <p class="pra-402">FB. Please ensure to touch all and give</p>
-            <p class="pra-403">remarks.</p>
-        </div>
-        <button class="bnt-300" onclick="window.location.href='sign_up.html';">Get Started</button>
-    </div>
     <style>
         body {
             background-color: #ffffff;
@@ -86,7 +51,7 @@
             position: absolute;
             right: 3.5%;
             background-color: transparent;
-            top: 22px;
+            top: 19.5px;
             display: flex;
             justify-content: center;
             position: absolute;
@@ -363,6 +328,65 @@
             top: 40px;
         }
     </style>
+    <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+    <div class="div-two-103">
+        <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+    </div>
+    <div class="div-710">
+        <p class="pra-50">How it Works</p>
+        <p class="pra-51">Takes less than five minutes to set up. Steps</p>
+        <p class="pra-52">in FB!</p>
+        <div class="div-30">
+            <p class="pra-53">1</p>
+        </div>
+        <p class="pra-54">Click on "Get Started" and provide the</p>
+        <p class="pra-55">necessary credentials to set up your</p>
+        <p class="pra-56">FB account.</p>
+        <div class="div-31">
+            <p class="pra-53">2</p>
+        </div>
+        <p class="pra-57">After successful account set up, you will</p>
+        <p class="pra-58">you will receive a mail to prove success.</p>
+        <p class="pra-59">We commend you for being a proud member of</p>
+        <p class="pra-60">FB reading channel and request you explore.</p>
+        <div class="div-32">
+            <p class="pra-53">3</p>
+        </div>
+        <p class="pra-61">We recommend you to explore other options</p>
+        <p class="pra-62">enjoy new book knowledge here at FB,</p>
+        <p class="pra-63">no knowledge is a waist.</p>
+
+    </div>
+    <div class="div-400">
+        <p class="pra-90">Not yet Updated</p>
+    </div>
+    <div class="div-500">
+        <div class="div-510">
+            <div class="div-600"><img src="./icons/icons8-series-100.png" class="img-108"></div>
+            <p class="pra-30">Enjoy Series of Limited</p>
+            <p class="pra-31">Editions on FB</p>
+            <p class="pra-401">We offer the best editions of digital</p>
+            <p class="pra-402">books. We employ you to explore more</p>
+            <p class="pra-403">here on FB and submits reviews.</p>
+        </div>
+        <div class="div-512">
+            <div class="div-600"><img src="./icons/icons8-bbbbbai-100.png" class="img-108"></div>
+            <p class="pra-30">Re-write the History of</p>
+            <p class="pra-31">Reading Books.</p>
+            <p class="pra-401">Define the way you read with FB</p>
+            <p class="pra-402">with an integrated AI system that helps</p>
+            <p class="pra-403">you understand ideas written in our books.</p>
+        </div>
+        <div class="div-513">
+            <div class="div-600"><img src="./icons/icons8-options-100.png" class="img-108"></div>
+            <p class="pra-30">Explore the Valant Options</p>
+            <p class="pra-31">Provided by FB Teams</p>
+            <p class="pra-401">There are series of options here on</p>
+            <p class="pra-402">FB. Please ensure to touch all and give</p>
+            <p class="pra-403">remarks.</p>
+        </div>
+        <button class="bnt-300" onclick="window.location.href='sign_up.html';">Get Started</button>
+    </div>
 </body>
 
 </html>
