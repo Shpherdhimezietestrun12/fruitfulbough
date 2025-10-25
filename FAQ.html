@@ -132,6 +132,133 @@
             top: 35px;
             font-family: "Cabri ", sans-serif;
         }
+        
+        .div-two-104,
+        .div-two-105 {
+            position: absolute;
+            width: 300px;
+            height: 180px;
+            top: 190px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            /* so the glow doesn’t spill inside */
+        }
+        
+        .div-two-105 {
+            width: 300px;
+            height: 60px;
+            top: 330px;
+        }
+        
+        .div-two-104::before,
+        .div-two-105::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border-radius: inherit;
+            background: rgb(226, 226, 226);
+            filter: blur(10px) black;
+            z-index: -1;
+            /* place behind the element */
+        }
+        
+        .div-two-105::before {
+            background: rgb(236, 235, 235);
+        }
+        
+        .intp-1 {
+            position: absolute;
+            width: 90%;
+            height: 35px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            bottom: -10px;
+            border: 0px solid;
+            border-radius: 5px;
+            font-size: 12px;
+            padding-left: 15px;
+            background-image: url('./icons/new-ico-1.png');
+            background-size: 21px 21px;
+            background-repeat: no-repeat;
+            background-position: 250px 10px;
+        }
+        
+        .intp-1:focus {
+            outline: none;
+            border: none;
+        }
+        
+        .intp-1::placeholder {
+            font-size: 12px;
+        }
+        
+        .pra-0201 {
+            font-size: 11px;
+            position: absolute;
+            color: rgb(104, 103, 103);
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            top: 23px;
+        }
+        
+        .pra-0301 {
+            font-size: 11px;
+            font-weight: bolder;
+            position: absolute;
+            color: rgb(0, 0, 0);
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            top: 3px;
+        }
+        
+        .pra-7000,
+        .pra-7001,
+        .pra-6000,
+        .pra-6001 {
+            top: 6px;
+            font-size: 11.5px;
+            position: absolute;
+            left: 5%;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(0, 0, 0);
+        }
+        
+        .pra-7001 {
+            top: 25px;
+        }
+        
+        .pra-6000 {
+            top: 75px;
+        }
+        
+        .pra-6001 {
+            top: 95px;
+        }
+        
+        .img-01000,
+        .img-01002,
+        .img-01003 {
+            position: absolute;
+            zoom: 25%;
+            right: 7%;
+            top: 125px;
+        }
+        
+        .img-01002 {
+            top: 375px;
+        }
+        
+        .img-01003 {
+            top: 35%;
+            zoom: 17%;
+        }
     </style>
     <div class="div-min-1">
         <button class="bnt-test-1" onclick="ExitCont1()"><img src="./icons/icons8-cancel-1jjj00.png" class="img-020"></button>
@@ -157,6 +284,20 @@
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
     <div class="div-two-103">
         <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+    </div>
+    <div class="div-two-104">
+        <p class="pra-7000">How to manually give access to your course</p>
+        <p class="pra-7001">on FB</p>
+        <p class="pra-6000">Take our youtube course on how to use FB</p>
+        <p class="pra-6001">appropriately</p>
+        <img src="./icons/new-ico-2.png" class="img-01000">
+        <img src="./icons/new-ico-2.png" class="img-01002">
+        <input type="text" class="intp-1" placeholder="Search our help desk for more">
+    </div>
+    <div class="div-two-105">
+        <p class="pra-0301">Contact FB Support</p>
+        <p class="pra-0201">Reach out to FB support team</p>
+        <img src="./icons/new-img-3.png" class="img-01003">
     </div>
 </body>
 
