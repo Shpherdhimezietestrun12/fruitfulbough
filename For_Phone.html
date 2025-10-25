@@ -38,7 +38,7 @@
     <style class="home-css">
         body {
             background-color: #ffffff;
-            padding-bottom: 7000px;
+            padding-bottom: 6940px;
         }
         
         .div-one-101 {
@@ -118,7 +118,7 @@
             position: absolute;
             right: 18%;
             background-color: transparent;
-            top: 3.2%;
+            top: 22px;
             display: flex;
             justify-content: center;
             position: absolute;
@@ -312,7 +312,7 @@
             top: 1370px;
             left: 14%;
             border-radius: 10px;
-            border: 1.5px solid black;
+            border: 1.5px solid rgb(94, 94, 94);
             z-index: 2;
         }
         
@@ -1207,7 +1207,7 @@
         .fot-cont {
             width: 100%;
             position: absolute;
-            height: 460px;
+            height: 420px;
             background-color: transparent;
             top: 7420px;
             left: 0;
@@ -1386,7 +1386,9 @@
         }
         
         .img_pop_21 {
-            zoom: 25%;
+            zoom: 28%;
+            cursor: pointer;
+            pointer-events: auto;
         }
         
         .img_bttn_213,
@@ -1632,7 +1634,7 @@
         }
         
         .dvi-2 {
-            right: -13%;
+            right: -9%;
         }
         
         .dvi-3 {
@@ -1641,7 +1643,7 @@
         }
         
         .dvi-4 {
-            right: -13%;
+            right: -9%;
             top: 510px;
         }
         
@@ -1651,7 +1653,7 @@
         }
         
         .dvi-6 {
-            right: -13%;
+            right: -9%;
             top: 580px;
         }
         
@@ -1931,6 +1933,17 @@
     <div class="dis_here" style="display: none;">
         <button class="bnt_pop_212"><img src="./icons/back_2.png" class="img_pop_21"></button>
         <script>
+            //
+            const ExitContOne = document.querySelector('.dis_here');
+            const ImgPop = document.querySelector('.img_pop_21');
+
+
+            if (ImgPop && ExitContOne) {
+                ImgPop.addEventListener('click', () => {
+                    ExitContOne.style.display = 'none';
+                });
+            }
+            //
         </script>
         <p class="par_cont_212">Popular Books</p>
         <button class="bnt_pop_213"><img src="./icons/qqqqqqqqqqqqqqq.png"  class="img_bttn_213"></button>
@@ -1976,8 +1989,7 @@
             const ExitBntOne = document.querySelector('.bnt_pop_212');
             const ChanBntOne = document.querySelector('.bnt_pop_213');
             const ImageLoad = document.querySelector('.img_bttn_213');
-            const ExitContOne = document.querySelector('.dis_here');
-            const LatestBook = document.querySelector('.img_pop_21');
+
 
 
             // Add event listener to this button
@@ -1988,16 +2000,7 @@
                 });
             }
 
-
-
             // Add event lstening for this image
-
-            LatestBook.addEventListener('click', () => {
-                ExitContOne.remove();
-
-            });
-
-
 
             // Add event lstening for this image
             ChanBntOne.addEventListener('click', () => {
