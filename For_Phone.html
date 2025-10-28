@@ -952,7 +952,7 @@
         .par-four-3,
         .par-four-4,
         .par-four-5 {
-            font-size: 14.5px;
+            font-size: 14px;
             position: absolute;
             left: 7%;
             color: black;
@@ -1407,7 +1407,7 @@
         .nav_pop_211,
         .nav_pop_212 {
             position: absolute;
-            left: -11%;
+            left: -7%;
             white-space: nowrap;
             overflow-x: auto;
             width: 108;
@@ -1673,17 +1673,190 @@
             font-family: Cambria, "Times New Roman", serif;
             font-size: 18px;
         }
+        
+        .Laugh-sel {
+            position: absolute;
+            width: 80px;
+            height: 90px;
+            top: 60px;
+            right: 45px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .one-divi,
+        .two-divi,
+        .three-divi {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .one-divi:hover,
+        .two-divi:hover,
+        .three-divi:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .one-divi {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .three-divi {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .two-divi {
+            top: 30px;
+        }
+        
+        .three-divi {
+            top: 60px;
+        }
+        
+        .pra-o1,
+        .pra-o12 {
+            font-size: 16px;
+            color: white;
+            position: absolute;
+            top: -5px;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            font-style: italic;
+        }
+        
+        .pra-o12 {
+            left: 9%;
+        }
+        
+        .chat-forum {
+            width: 45px;
+            height: 45px;
+            background-color: #B68D05;
+            position: fixed;
+            right: 6%;
+            bottom: 2.5%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+        
+        .img-lll {
+            zoom: 30%;
+        }
+        
+        .cookies-portal {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            height: 190px;
+            background-color: #B68D05;
+            z-index: 10;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        
+        .img-cookie {
+            position: absolute;
+            zoom: 45%;
+            top: 25px;
+            left: 3%;
+        }
+        
+        .pra-coo-1 {
+            position: absolute;
+            top: 5px;
+            font-size: 20px;
+            color: white;
+            left: 20%;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .pra-coo-2,
+        .pra-coo-3,
+        .pra-coo-4 {
+            position: absolute;
+            left: 13%;
+            font-size: 12px;
+            color: white;
+            top: 50px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .pra-coo-3 {
+            top: 65px;
+        }
+        
+        .pra-coo-4 {
+            top: 80px;
+        }
+        
+        .bnt-0303 {
+            position: absolute;
+            width: 190px;
+            height: 40px;
+            background-color: white;
+            border: 0px solid;
+            border-radius: 10px;
+            font-size: 13px;
+            left: 50%;
+            top: 135px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .pra-0005 {
+            position: relative;
+            font-size: 14px;
+            color: black;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+            text-decoration: underline;
+            text-align: center;
+            top: 150px;
+        }
+        
+        .pra-0005:hover {
+            color: white;
+        }
     </style>
+    <script src="translatejs"></script>
     <div class="div-one-101">
         <img src="./icons/fb_logo-2.png" class="img_logo_two">
-        <div class="div-two-102">
-            <img src="./icons/icons8-world-10vvvvvvv0.png" class="img_bnt_3"><span class="sp_par_10">EN</span><img src="./icons/icons8-down-arrow-1xxx00.png" class="img_bnt_4">
+        <div class="div-two-102" onclick="LaugDiv()">
+            <img src="./icons/icons8-world-10vvvvvvv0.png" class="img_bnt_3" onclick="LaugDiv()"><span class="sp_par_10" onclick="LaugDiv()">EN</span><img src="./icons/icons8-down-arrow-1xxx00.png" class="img_bnt_4" onclick="LaugDiv()">
         </div>
+        <div class="Laugh-sel" style="display: none;">
+            <div class="one-divi" id="french-lan">
+                <p class="pra-o12">French</p>
+            </div>
+            <div class="two-divi">
+                <p class="pra-o1">Spanish</p>
+            </div>
+            <div class="three-divi">
+                <p class="pra-o1">Chinese</p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('french-lan').addEventListener('click', () => {
+                translateElements('p', 'fr');
+            });
+        </script>
         <button class="bnt_img_1" onclick="MenuCont()"><img onclick="MenuCont()" src="./icons/icons8-menu-100-2.png" class="img_bnt_10"></button>
         <script>
             // for the live stream...
 
             const MenuImg = document.querySelector('.img_bnt_10');
+            const LagDiv = document.querySelector('.div-two-102');
+            const LagReg = document.querySelector('.Laugh-sel');
+            const FirstBox = document.querySelector('.img_bnt_4');
 
             function MenuCont() {
                 var menu_cont_1 = document.querySelector(".menu_cont");
@@ -1694,6 +1867,26 @@
                 var menu_cont_2 = document.querySelector(".menu_cont");
                 menu_cont_2.style.display = menu_cont_2.style.display == "block" ? "none" : "block";
 
+            });
+
+            function LaugDiv() {
+                LagDiv.addEventListener('click', () => {
+                    if (FirstBox.src.includes('icons8-down-arrow-1xxx00.png')) {
+                        FirstBox.src = './icons/icons8-collapse-arrow-100.png';
+                        LagReg.style.display = "block"
+                    } else {
+                        FirstBox.src = './icons/icons8-down-arrow-1xxx00.png';
+                        LagReg.style.display = "none"
+                    }
+                });
+            }
+
+
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.div-two-102')) { // If not clicking img-4000 or its children
+                    FirstBox.src = './icons/icons8-down-arrow-1xxx00.png';
+                    LagReg.style.display = "none"
+                }
             });
         </script>
         <p class="par_101">READ MORE BOOKS</p>
@@ -1804,7 +1997,7 @@
         <p class="par-8300">We interest our users to explore all</p>
         <p class="par-8400">modules on this platform and share</p>
         <p class="par-8500">their experences with the world through</p>
-        <p class="par-8600">other platfroms here without any hassle.</p>
+        <p class="par-8600">other platforms here without any hassle.</p>
         <div class="dvi-1">
             <img src="./icons/icons8-facebook-100ggggggg.png" class="igm-1">
             <p class="pra-3">Facebook</p>
@@ -1840,7 +2033,7 @@
         <p class="par-four-1">Note taking</p>
         <p class="par-four-2">Implement note taking when reading</p>
         <p class="par-four-3">with FB. It gives users a better</p>
-        <p class="par-four-4">understanding of what the actually</p>
+        <p class="par-four-4">understanding of what they actually</p>
         <p class="par-four-5">read.</p>
         <p class="par-four-6">Learn more</p>
     </div>
@@ -1913,9 +2106,113 @@
                 <li onclick="window.location.href='Terms and Conditions.html';">Terms & Conditions</li>
             </ul>
         </nav>
-        <div class="div-two-103">
-            <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+        <style>
+            .Laugh-sel1 {
+                position: absolute;
+                width: 80px;
+                height: 90px;
+                top: 90px;
+                right: 45px;
+                background-color: rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+                z-index: 3;
+            }
+            
+            .one-divi,
+            .two-divi,
+            .three-divi {
+                width: 100%;
+                height: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+            }
+            
+            .one-divi:hover,
+            .two-divi:hover,
+            .three-divi:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+            }
+            
+            .one-divi {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+            
+            .three-divi {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+            
+            .two-divi {
+                top: 30px;
+            }
+            
+            .three-divi {
+                top: 60px;
+            }
+            
+            .pra-o2,
+            .pra-o13 {
+                font-size: 16px;
+                color: #ffc400;
+                position: absolute;
+                top: -5px;
+                font-family: "Cabri ", sans-serif;
+                left: 5%;
+                font-style: italic;
+            }
+            
+            .pra-o13 {
+                left: 9%;
+            }
+            
+            .img_bnt_41 {
+                zoom: 16%;
+                position: relative;
+                top: -5px;
+                right: -9px;
+            }
+        </style>
+        <div class="div-two-103" onclick="LaugDiv1()">
+            <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_41">
         </div>
+        <div class="Laugh-sel1" style="display: none;">
+            <div class="one-divi" id="french-lan">
+                <p class="pra-o13">French</p>
+            </div>
+            <div class="two-divi">
+                <p class="pra-o2">Spanish</p>
+            </div>
+            <div class="three-divi">
+                <p class="pra-o2">Chinese</p>
+            </div>
+        </div>
+        <script>
+            // this is for the language sequence..
+            const LagDiv1 = document.querySelector('.div-two-103');
+            const LagReg1 = document.querySelector('.Laugh-sel1');
+            const FirstBox1 = document.querySelector('.img_bnt_41');
+
+            function LaugDiv1() {
+                LagDiv1.addEventListener('click', () => {
+                    if (FirstBox1.src.includes('icons8-down-arrow-10bbbbbbbb0.png')) {
+                        FirstBox1.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                        LagReg1.style.display = "block"
+                    } else {
+                        FirstBox1.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                        LagReg1.style.display = "none"
+                    }
+                });
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.div-two-103')) { // If not clicking img-4000 or its children
+                    FirstBox1.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    LagReg1.style.display = "none"
+                }
+            });
+        </script>
         <nav class="nav-20k">
             <ul>
                 <li class="list-1" onclick="window.location.href='Support_Logs.html';">Support Logs</li>
@@ -1938,17 +2235,20 @@
             const ImgPop = document.querySelector('.img_pop_21');
 
 
-            if (ImgPop && ExitContOne) {
-                ImgPop.addEventListener('click', () => {
-                    ExitContOne.style.display = 'none';
-                });
-            }
+            document.addEventListener('DOMContentLoaded', () => {
+
+
+                if (ImgPop && ExitContOne) {
+                    ImgPop.addEventListener('click', () => {
+                        ExitContOne.style.display = 'none';
+                    });
+                }
+            });
             //
         </script>
         <p class="par_cont_212">Popular Books</p>
         <button class="bnt_pop_213"><img src="./icons/qqqqqqqqqqqqqqq.png"  class="img_bttn_213"></button>
         <div class="pop_cont_2">
-
             <nav class="nav_pop_211">
                 <ul>
                     <li>
@@ -2034,7 +2334,30 @@
             <p class="pra-2">Home Page</p>
         </div>
     </div>
+    <div class="chat-forum" onclick="window.location.href='Chat.py';">
+        <img src="./icons/icons8-chat-100.png" class="img-lll" onclick="window.location.href='Chat.py';">
+    </div>
+    <div class="cookies-portal">
+        <img src="icons/icons8-cookie-100.png" class="img-cookie">
+        <p class="pra-coo-1">Cookie Settings</p>
+        <p class="pra-coo-2">Cookies helps us remember and understand</p>
+        <p class="pra-coo-3">your details. Enable all cookies now to</p>
+        <p class="pra-coo-4">enjoy advanced features.</p>
+        <button class="bnt-0303">Accept all</button>
+        <p class="pra-0005">Not now</p>
+        <script>
+            const RemCoo = document.querySelector('.pra-0005');
+            const DivCoo = document.querySelector('.cookies-portal');
+            const BntCoo = document.querySelector('.bnt-0303');
 
+            RemCoo.addEventListener('click', () => {
+                DivCoo.style.display = 'none';
+            });
+            BntCoo.addEventListener('click', () => {
+                DivCoo.style.display = 'none';
+            });
+        </script>
+    </div>
     <script src="main.js"></script>
 </body>
 
