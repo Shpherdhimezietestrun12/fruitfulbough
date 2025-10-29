@@ -6,26 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitful Bough - Forgot Password</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
 </head>
 
 <body>
-    <div class="div-set-three">
-        <div class="div-sub-set-one">
-            <div class="div-sub-set-two">
-                <p class="par-set-four">Pls input your google acct here and</p>
-                <p class="par-set-five">we will send you a verification code.</p>
-                <img src="./icons/11761320.png" class="img-set-one">
-                <p class="par-set-six">Enter your Google acct</p>
-                <input type="text" class="input-set-one">
-            </div>
-            <div class="div-sub-set-three">
-                <p class="par-set-one">Complete your registration here.</p>
-                <p class="par-set-two">Pls input your E-mail here for</p>
-                <p class="par-set-three">our two step verification.</p>
-            </div>
-        </div>
-    </div>
-
     <style>
         body {
             background-color: #e6e4e2;
@@ -170,6 +177,22 @@
             font-family: "Cabri ", sans-serif;
         }
     </style>
+    <div class="div-set-three">
+        <div class="div-sub-set-one">
+            <div class="div-sub-set-two">
+                <p class="par-set-four">Pls input your google acct here and</p>
+                <p class="par-set-five">we will send you a verification code.</p>
+                <img src="./icons/11761320.png" class="img-set-one">
+                <p class="par-set-six">Enter your Google acct</p>
+                <input type="text" class="input-set-one">
+            </div>
+            <div class="div-sub-set-three">
+                <p class="par-set-one">Complete your registration here.</p>
+                <p class="par-set-two">Pls input your E-mail here for</p>
+                <p class="par-set-three">our two step verification.</p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
