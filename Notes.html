@@ -119,7 +119,8 @@
         }
         
         .ipt-300,
-        .ipt-301 {
+        .ipt-301,
+        .ipt-320 {
             position: absolute;
             width: 65%;
             height: 70%;
@@ -135,7 +136,8 @@
         
         .ipt-300:focus,
         .ipt-301:focus,
-        .ipt-main:focus {
+        .ipt-main:focus,
+        .ipt-320:focus {
             outline: none;
             border: none;
         }
@@ -198,20 +200,213 @@
             border-radius: 10px;
             /* Change text color on hover */
         }
+        
+        .divv-1 {
+            position: absolute;
+            top: 25px;
+            right: 2%;
+            width: 200px;
+            height: 150px;
+            border: 0px solid;
+            z-index: 2;
+            background-color: #B68D05;
+            border-radius: 10px;
+        }
+        
+        .one-div1,
+        .one-div2,
+        .one-div3 {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 50px;
+            background-color: transparent;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .one-div2 {
+            top: 50px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+        
+        .one-div3 {
+            top: 100px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        
+        .one-div1:hover,
+        .one-div2:hover,
+        .one-div3:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        
+        .pra-03003,
+        .pra-03004,
+        .pra-03005 {
+            font-size: 15px;
+            font-family: "Cabri ", sans-serif;
+            color: white;
+        }
+        
+        .Laugh-sel {
+            position: absolute;
+            width: 80px;
+            height: 90px;
+            top: 60px;
+            right: 45px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            z-index: 3;
+        }
+        
+        .one-divi,
+        .two-divi,
+        .three-divi {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .one-divi:hover,
+        .two-divi:hover,
+        .three-divi:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .one-divi {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .three-divi {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .two-divi {
+            top: 30px;
+        }
+        
+        .three-divi {
+            top: 60px;
+        }
+        
+        .pra-o1,
+        .pra-o12 {
+            font-size: 16px;
+            color: #ffc400;
+            position: absolute;
+            top: -5px;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            font-style: italic;
+        }
+        
+        .pra-o12 {
+            left: 9%;
+        }
     </style>
+
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
-    <div class="div-two-103">
+    <div class="div-two-103" onclick="LaugDiv()">
         <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
     </div>
+    <div class="Laugh-sel" style="display: none;">
+        <div class="one-divi" id="french-lan">
+            <p class="pra-o12">French</p>
+        </div>
+        <div class="two-divi">
+            <p class="pra-o1">Spanish</p>
+        </div>
+        <div class="three-divi">
+            <p class="pra-o1">Chinese</p>
+        </div>
+    </div>
+    <script>
+        // this is for the language sequence..
+        const LagDiv = document.querySelector('.div-two-103');
+        const LagReg = document.querySelector('.Laugh-sel');
+        const FirstBox = document.querySelector('.img_bnt_4');
+
+
+
+        function LaugDiv() {
+            LagDiv.addEventListener('click', () => {
+                if (FirstBox.src.includes('icons8-down-arrow-10bbbbbbbb0.png')) {
+                    FirstBox.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                    LagReg.style.display = "block"
+                } else {
+                    FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    LagReg.style.display = "none"
+                }
+            });
+        }
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.div-two-103')) { // If not clicking img-4000 or its children
+                FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                LagReg.style.display = "none"
+            }
+        });
+    </script>
     <div class="div-rep-1">
         <p class="pra-50">Topic</p>
         <input class="ipt-300" type="text">
         <img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img-4000">
+        <div class="divv-1" style="display: none;">
+            <div class="one-div1">
+                <p class="pra-03003">Roseline or None Else</p>
+            </div>
+            <div class="one-div2">
+                <p class="pra-03004">Wise Companion</p>
+            </div>
+            <div class="one-div3">
+                <p class="pra-03005">Millenium Meltdown</p>
+            </div>
+        </div>
+        <script>
+            const ImgLoad1 = document.querySelector('.img-4000');
+            const DelDiv = document.querySelector('.divv-1');
+            const ChangeTopic = document.querySelector('.ipt-300');
+            const ErrorSend = document.querySelector('.error-1');
+            const AllPars = document.querySelectorAll('.pra-03003, .pra-03004, .pra-03005');
+
+            ImgLoad1.addEventListener('click', () => {
+                if (ImgLoad1.src.includes('icons8-down-arrow-10bbbbbbbb0.png')) {
+                    ImgLoad1.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                    DelDiv.style.display = 'block'
+                } else {
+                    ImgLoad1.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    DelDiv.style.display = 'none'
+                }
+            });
+
+
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-4000')) { // If not clicking img-4000 or its children
+                    ImgLoad1.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    DelDiv.style.display = 'none';
+                }
+            });
+            AllPars.forEach((AllPar) => {
+                AllPar.addEventListener('click', () => {
+                    ChangeTopic.value = AllPar.textContent;
+                });
+            });
+        </script>
     </div>
     <div class="div-rep-2">
         <p class="pra-50">Email</p>
-        <input class="ipt-300" type="text">
-        <img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img-4000">
+        <input class="ipt-320" type="text">
     </div>
     <div class="div-rep-3">
         <p class="pra-51">sub</p>
@@ -219,6 +414,99 @@
     </div>
     <textarea class="ipt-main"></textarea>
     <button class="bnt-700"><img src="./icons/forwasssssrd.png" class="img-20"></button>
+    <script>
+        const SentDiv = document.querySelector('.dis-div');
+        const SendBnt = document.querySelector('.bnt-700');
+        const TopicIpt = document.querySelector('.ipt-300');
+        const SubIpt = document.querySelector('.ipt-301');
+        const MessIpt = document.querySelector('.ipt-main');
+        const ErrorSend1 = document.querySelector('.error-1');
+
+        SendBnt.addEventListener('click', async() => { // Add async here
+            const Logo = './icons/FB-Stream.png';
+            const topic = TopicIpt.value;
+            const SubText = SubIpt.value || '';
+            const message = MessIpt.value;
+            const recipientEmail = 'fph595640@gmail.com';
+            const senderEmailInput = document.querySelectorAll('.ipt-320')[0].value; // Note using querySelectorAll
+            let senderEmail = '';
+            if (senderEmailInput) {
+                senderEmail = senderEmailInput;
+                // ...
+            } else {
+                console.error('Sender email input not found');
+                if (ErrorSend1) ErrorSend1.style.display = 'block';
+                return;
+            }
+            const currentDateTime = new Date().toLocaleString();
+            const emailData = {
+                Logo,
+                topic,
+                SubText,
+                message,
+                recipientEmail,
+                senderEmail,
+                currentDateTime,
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/send-email', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(emailData),
+                });
+
+                if (response.ok) {
+                    SentDiv.style.display = 'block';
+                    console.log('Email sent successfully');
+                } else {
+                    console.error('Error sending email:', response.statusText);
+                    if (ErrorSend1) ErrorSend1.style.display = 'block';
+                }
+            } catch (error) {
+                if (ErrorSend1) ErrorSend1.style.display = 'block';
+                console.error('Error:', error);
+                return;
+            }
+        });
+    </script>
+    <style>
+        .error-1 {
+            position: absolute;
+            top: 550px;
+            width: 150px;
+            height: 30px;
+            background-color: #B68D05;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+        }
+        
+        .par-555 {
+            color: white;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .dis-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <div class="error-1" style="display: none;">
+        <p class="par-555">Server is running</p>
+    </div>
+    <div class="dis-div" style="display: none;"></div>
+    <script src="./Server/Serverside.js"></script>
 </body>
 
 </html>
