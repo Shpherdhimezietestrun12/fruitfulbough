@@ -135,14 +135,16 @@
             color: rgb(11, 11, 134);
         }
         
-        .div-0707 {
+        .div-0707,
+        .div-0708,
+        .div-0709 {
             position: absolute;
             width: 36px;
             height: 36px;
             background-color: rgba(0, 0, 0, 0.2);
             top: 40px;
             border-radius: 50px;
-            right: -4.5%;
+            right: -2.5%;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -150,34 +152,177 @@
         }
         
         .img-6080,
+        .img-6081,
+        .img-6082,
         .img-0909 {
             zoom: 19%;
         }
     </style>
     <p class="pra-100">Audio Books</p>
     <div class="div-1">
-        <div class="div-222"><img src="./icons/icons8-play-100.png" class="img-0909"></div>
+        <div class="div-222" onclick="window.location.href='the-millenium-meltdown-1.html';"><img src="./icons/icons8-play-100.png" class="img-0909" onclick="window.location.href='the-millenium-meltdown-1.html';"></div>
         <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-000">
         <p class="pra-04040">Millenium Meltdown</p>
         <p class="pra-05055">Historical Novel</p>
         <p class="pra-0303">Novel</p>
-        <div class="div-0707"><img src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <div class="div-0707" onclick="OpenSe3()"><img onclick="OpenSe3()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <style>
+
+        </style>
+        <div class="settings3" style="display: none;">
+            <style>
+                .one,
+                .two {
+                    top: 0;
+                    width: 100%;
+                    height: 35px;
+                    left: 0;
+                    background-color: transparent;
+                    display: flex;
+                    font-family: "Cabri ", sans-serif;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    border-top-left-radius: 10px;
+                    font-style: italic;
+                    font-size: 13px;
+                    border-top-right-radius: 10px;
+                }
+                
+                .two {
+                    top: 35px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                
+                .one:hover,
+                .two:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: white;
+                }
+            </style>
+            <div class="one">
+                <p>Explore</p>
+            </div>
+            <div class="two">
+                <p>Mark</p>
+            </div>
+        </div>
+        <script>
+            const DiveLoad3 = document.querySelector('.div-0707');
+            const ImgLoad3 = document.querySelector('.img-6081');
+            const settings3 = document.querySelector('.settings3');
+
+
+
+
+            function OpenSe3() {
+                if (DiveLoad3) {
+                    DiveLoad3.addEventListener('click', () => {
+                        settings3.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6080')) { // If not clicking img-4000 or its children
+                    settings3.style.display = 'none';
+                }
+            });
+        </script>
     </div>
     <div class="div-2">
-        <div class="div-222"><img src="./icons/icons8-play-100.png" class="img-0909"></div>
+        <div class="div-222" onclick="window.location.href='the-roseline-none-else-1.html';"><img src="./icons/icons8-play-100.png" class="img-0909" onclick="window.location.href='the-roseline-none-else-1.html';"></div>
         <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="img-000">
         <p class="pra-04040">Roseline or None Else</p>
         <p class="pra-05055">Love & Romance</p>
         <p class="pra-0304">Novel</p>
-        <div class="div-0707"><img src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <div class="div-0708" onclick="OpenSe2()"><img onclick="OpenSe2()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6081"></div>
+        <style>
+
+        </style>
+        <div class="settings1" style="display: none;">
+            <div class="one">
+                <p>Explore</p>
+            </div>
+            <div class="two">
+                <p>Mark</p>
+            </div>
+        </div>
+        <script>
+            const DiveLoad2 = document.querySelector('.div-0708');
+            const ImgLoad2 = document.querySelector('.img-6081');
+            const settings1 = document.querySelector('.settings1');
+
+
+
+
+            function OpenSe2() {
+                if (DiveLoad2) {
+                    DiveLoad2.addEventListener('click', () => {
+                        settings1.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6081')) { // If not clicking img-4000 or its children
+                    settings1.style.display = 'none';
+                }
+            });
+        </script>
     </div>
     <div class="div-3">
-        <div class="div-222"><img src="./icons/icons8-play-100.png" class="img-0909"></div>
+        <div class="div-222" onclick="window.location.href='the-wise-companion-1.html';"><img onclick="window.location.href='the-wise-companion-1.html';" src="./icons/icons8-play-100.png" class="img-0909"></div>
         <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg" class="img-000">
         <p class="pra-04040">The Wise Companion</p>
         <p class="pra-05055">Poetry</p>
         <p class="pra-0305">Novel</p>
-        <div class="div-0707"><img src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <div class="div-0709" onclick="OpenSet()"><img onclick="OpenSet()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <style>
+            .settings,
+            .settings1,
+            .settings3 {
+                position: absolute;
+                top: 25%;
+                right: 4%;
+                width: 80px;
+                height: 70px;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 10px;
+            }
+        </style>
+        <div class="settings" style="display: none;">
+            <div class="one">
+                <p>Explore</p>
+            </div>
+            <div class="two">
+                <p>Mark</p>
+            </div>
+        </div>
+        <script>
+            const DiveLoad1 = document.querySelector('.div-0709');
+            const ImgLoad1 = document.querySelector('.img-6080');
+            const settings = document.querySelector('.settings');
+
+
+
+            function OpenSet() {
+                if (DiveLoad1) {
+                    DiveLoad1.addEventListener('click', () => {
+                        settings.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6080')) { // If not clicking img-4000 or its children
+                    settings.style.display = 'none';
+                }
+            });
+        </script>
     </div>
 </body>
 
