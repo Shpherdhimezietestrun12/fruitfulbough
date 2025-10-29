@@ -149,9 +149,10 @@
         
         .img-12 {
             zoom: 13%;
-            position: relative;
-            top: -65px;
-            left: 5px;
+            position: absolute;
+            right: 3.5%;
+            transform: translate(-50%, -50%);
+            top: 55%;
         }
         
         .lis-1 {
@@ -161,7 +162,9 @@
             top: -10px;
         }
         
-        .lis-2 {
+        .lis-2,
+        .lis-3,
+        .lis-4 {
             font-size: 14px;
             color: black;
             position: relative;
@@ -367,7 +370,9 @@
             top: 225px;
         }
         
-        .sp-po {
+        .sp-po,
+        .sp-po2,
+        .sp-po3 {
             font-weight: bold;
             font-size: 28px;
         }
@@ -416,26 +421,316 @@
             top: 65px;
             right: 8%;
         }
+        
+        .Laugh-sel {
+            position: absolute;
+            width: 80px;
+            height: 90px;
+            top: 60px;
+            right: 45px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            z-index: 3;
+        }
+        
+        .one-divi,
+        .two-divi,
+        .three-divi {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .one-divi:hover,
+        .two-divi:hover,
+        .three-divi:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .one-divi {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .three-divi {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .two-divi {
+            top: 30px;
+        }
+        
+        .three-divi {
+            top: 60px;
+        }
+        
+        .pra-o1,
+        .pra-o12 {
+            font-size: 16px;
+            color: #ffc400;
+            position: absolute;
+            top: -5px;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            font-style: italic;
+        }
+        
+        .pra-o12 {
+            left: 9%;
+        }
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
-    <div class="div-two-103">
+    <div class="div-two-103" onclick="LaugDiv()">
         <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
     </div>
+    <div class="Laugh-sel" style="display: none;">
+        <div class="one-divi" id="french-lan">
+            <p class="pra-o12">French</p>
+        </div>
+        <div class="two-divi">
+            <p class="pra-o1">Spanish</p>
+        </div>
+        <div class="three-divi">
+            <p class="pra-o1">Chinese</p>
+        </div>
+    </div>
+    <script>
+        // this is for the language sequence..
+        const LagDiv = document.querySelector('.div-two-103');
+        const LagReg = document.querySelector('.Laugh-sel');
+        const FirstBox = document.querySelector('.img_bnt_4');
+
+
+
+        function LaugDiv() {
+            LagDiv.addEventListener('click', () => {
+                if (FirstBox.src.includes('icons8-down-arrow-10bbbbbbbb0.png')) {
+                    FirstBox.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                    LagReg.style.display = "block"
+                } else {
+                    FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    LagReg.style.display = "none"
+                }
+            });
+        }
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.div-two-103')) { // If not clicking img-4000 or its children
+                FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                LagReg.style.display = "none"
+            }
+        });
+    </script>
     <p class="pra-h-1">Select the right FB plan</p>
     <p class="pra-h-2">for you</p>
     <p class="pra-h-3">Its completely free to get started. We only</p>
-    <p class="pra-h-4">charge a <span class="sp-555">little transactional fee</span> for everybook</p>
+    <p class="pra-h-4">charge a <span class="sp-555" onclick="DisShow()">little transactional fee</span> for everybook</p>
     <p class="pra-h-5">purchased to try optimize this platform.</p>
-    <div class="div-220">
-        <nav class="nav-20">
-            <ul>
-                <li><img src="./icons/icons8-nigeria-100.png" class="img-11"></li>
-                <li class="lis-1">|</li>
-                <li class="lis-2">NGN</li>
-                <li><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-12"></li>
-            </ul>
-        </nav>
+
+    <style>
+        .descrip-1 {
+            position: absolute;
+            top: 290px;
+            left: 45%;
+            transform: translate(-50%, -50%);
+            width: 140px;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+        
+        .par-010,
+        .par-020,
+        .par-030 {
+            position: relative;
+            top: -2%;
+            text-align: center;
+            left: 0;
+            color: white;
+            font-family: Cambria, "Times New Roman", serif;
+            font-size: 13px;
+        }
+        
+        .par-020 {
+            top: -15%;
+        }
+        
+        .par-030 {
+            top: -27%;
+        }
+    </style>
+    <div class="descrip-1" style="display: none;">
+        <p class="par-010">A 0.05% levy fee</p>
+        <p class="par-020">will be charged</p>
+        <p class="par-030">on all transactions.</p>
     </div>
+    <script>
+        const DisSp = document.querySelector('.sp-555');
+        const ContDis = document.querySelector('.descrip-1');
+
+        function DisShow() {
+            ContDis.style.display = 'block';
+        }
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.sp-555')) {
+                ContDis.style.display = 'none';
+            }
+        });
+    </script>
+    <style>
+        .main-sel {
+            position: absolute;
+            top: 0;
+            width: 110px;
+            height: 43px;
+            left: 0;
+            background-color: #ffffff;
+            z-index: 3;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border: 0.5px solid #c2c1c1;
+            border-top: 0px solid;
+            border-right: 0px solid;
+        }
+    </style>
+    <div class="div-220">
+        <div class="main-sel" onclick="Trigger()">
+            <nav class="nav-20">
+                <ul>
+                    <li class="img-1"><img src="./icons/icons8-nigeria-100.png" class="img-11"></li>
+                    <li class="lis-1">|</li>
+                    <li class="lis-2">NGN</li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+        <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-12">
+    </div>
+
+    <style>
+        .sel-con {
+            position: absolute;
+            top: 463px;
+            width: 110px;
+            height: 86px;
+            left: 45.2%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            z-index: 3;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border: 0.5px solid #c2c1c1;
+            border-top: 0px solid;
+        }
+        
+        .first-sel,
+        .second-sel {
+            width: 100%;
+            position: absolute;
+            height: 43px;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .second-sel {
+            top: 43px;
+        }
+    </style>
+
+    <div class="sel-con" style="display: none;">
+        <div class="first-sel">
+            <nav class="nav-20">
+                <ul>
+                    <li class="img-2"><img src="./icons/icons8-america-100.png" class="img-11"></li>
+                    <li class="lis-1">|</li>
+                    <li class="lis-3">USD</li>
+                    <li><img class="img-12"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="second-sel">
+            <nav class="nav-20">
+                <ul>
+                    <li class="img-3"><img src="./icons/icons8-uk-100.png" class="img-11"></li>
+                    <li class="lis-1">|</li>
+                    <li class="lis-4">GBP</li>
+                    <li><img class="img-12"></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        let isOpen = false;
+        const DivGet = document.querySelector('.div-220');
+        const SelfCon = document.querySelector('.sel-con');
+        const ImgCon1 = document.querySelector('.img-12');
+
+        let Img1 = document.querySelector('.img-1');
+        let Img2 = document.querySelector('.img-2');
+        let Img3 = document.querySelector('.img-3');
+        let Lis2 = document.querySelector('.lis-2');
+        let Lis3 = document.querySelector('.lis-3');
+        let Lis4 = document.querySelector('.lis-4');
+        let mainSel = document.querySelector('.main-sel');
+        let firstSel = document.querySelector('.first-sel');
+        let secondSel = document.querySelector('.second-sel');
+
+        function Trigger() {
+            isOpen = !isOpen;
+            ImgCon1.src = isOpen ? './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png' : './icons/icons8-down-arrow-1sssssssxxx00.png';
+            SelfCon.style.display = isOpen ? 'block' : 'none';
+        }
+
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.div-220')) {
+                isOpen = false;
+                ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                SelfCon.style.display = 'none';
+            }
+        });
+
+        Img2.addEventListener('click', () => {
+            if (isOpen) {
+                swapElements(Img1.parentNode, Img2.parentNode);
+                swapElements(Lis2, Lis3);
+                SelfCon.style.display = 'none';
+                isOpen = false;
+                ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                // Add your USD conversion logic here
+                FirDiz.click();
+            }
+        });
+
+        Img3.addEventListener('click', () => {
+            if (isOpen) {
+                swapElements(Img1.parentNode, Img3.parentNode);
+                swapElements(Lis2, Lis4);
+                SelfCon.style.display = 'none';
+                isOpen = false;
+                ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                // Add your GBP conversion logic here
+                SecDiz.click();
+            }
+        });
+
+        function swapElements(elem1, elem2) {
+            let temp = document.createElement('div');
+            elem1.parentNode.insertBefore(temp, elem1);
+            elem2.parentNode.insertBefore(elem1, elem2);
+            temp.parentNode.insertBefore(elem2, temp);
+            temp.parentNode.removeChild(temp);
+        }
+    </script>
+
     <div class="div-330">
         <div class="div-set-1">
             <p class="pra-200">Monthly</p>
@@ -460,7 +755,7 @@
             <p class="pra-42">us and enjoy <span class="sp-tt">benefits here</span> on FB</p>
             <p class="pra-43">like - Less Ads, No book charge,</p>
             <p class="pra-44">other features set for <span class="sp-tt">basic plan.</span></p>
-            <p class="pra-45"><span class="sp-po">₦ 25,000</span> every 2 months</p>
+            <p class="pra-45"><span class="sp-po"><span class="sp-o">₦</span><span class="sp-po1">25,000</span></span> every 2 months</p>
         </div>
         <div class="div-512">
             <div class="div-612">
@@ -477,7 +772,7 @@
             <p class="pra-42"><span class="sp-tt">no ads.</span> You also get advanced FB</p>
             <p class="pra-43">features like AI optimization with</p>
             <p class="pra-44"><span class="sp-tt">other features implemented.</span></p>
-            <p class="pra-45"><span class="sp-po">₦ 36,000</span> every 2 months</p>
+            <p class="pra-45"><span class="sp-po"><span class="sp-o1">₦</span><span class="sp-po2">36,000</span></span> every 2 months</p>
             <p></p>
         </div>
         <div class="div-513">
@@ -495,8 +790,85 @@
             <p class="pra-42">benefits here like - Animated</p>
             <p class="pra-43"><span class="sp-tt">reading & AI implementations</span></p>
             <p class="pra-44">with other benefits for premium plan.</span>
-                <p class="pra-45"><span class="sp-po">₦ 65,000</span> every 2 months</p>
+                <p class="pra-45"><span class="sp-po"><span class="sp-o2">₦</span><span class="sp-po3">65,000</span></span> every 2 months</p>
             </p>
+            <script>
+                const FirDiz = document.querySelector('.img-2');
+                const SecDiz = document.querySelector('.img-3');
+                const Currency = document.querySelector('.sp-o');
+                const Currency1 = document.querySelector('.sp-o1');
+                const Currency2 = document.querySelector('.sp-o2');
+                const CusPlan = document.querySelector('.sp-po1');
+                const ProPlan = document.querySelector('.sp-po2');
+                const SuppPlan = document.querySelector('.sp-po3');
+
+                let originalCusPlanValue = CusPlan.textContent;
+                let originalProPlanValue = ProPlan.textContent;
+                let originalSuppPlanValue = SuppPlan.textContent;
+
+                FirDiz.addEventListener('click', () => {
+                    if (Currency.textContent === '$') {
+                        CusPlan.textContent = originalCusPlanValue;
+                        ProPlan.textContent = originalProPlanValue;
+                        SuppPlan.textContent = originalSuppPlanValue;
+                        Currency.textContent = '₦';
+                        Currency1.textContent = '₦';
+                        Currency2.textContent = '₦';
+                    } else {
+                        const cusPlanValue = parseFloat(originalCusPlanValue.replace(/,/g, ''));
+                        const proPlanValue = parseFloat(originalProPlanValue.replace(/,/g, ''));
+                        const suppPlanValue = parseFloat(originalSuppPlanValue.replace(/,/g, ''));
+
+                        CusPlan.textContent = (cusPlanValue / 1510).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        ProPlan.textContent = (proPlanValue / 1510).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        SuppPlan.textContent = (suppPlanValue / 1510).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        Currency.textContent = '$';
+                        Currency1.textContent = '$';
+                        Currency2.textContent = '$';
+                    }
+                });
+
+                SecDiz.addEventListener('click', () => {
+                    if (Currency.textContent === '£') {
+                        CusPlan.textContent = originalCusPlanValue;
+                        ProPlan.textContent = originalProPlanValue;
+                        SuppPlan.textContent = originalSuppPlanValue;
+                        Currency.textContent = '₦';
+                        Currency1.textContent = '₦';
+                        Currency2.textContent = '₦';
+                    } else {
+                        const cusPlanValue = parseFloat(originalCusPlanValue.replace(/,/g, ''));
+                        const proPlanValue = parseFloat(originalProPlanValue.replace(/,/g, ''));
+                        const suppPlanValue = parseFloat(originalSuppPlanValue.replace(/,/g, ''));
+
+                        CusPlan.textContent = (cusPlanValue / 2060).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        ProPlan.textContent = (proPlanValue / 2060).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        SuppPlan.textContent = (suppPlanValue / 2060).toLocaleString('en-US', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        Currency.textContent = '£';
+                        Currency1.textContent = '£';
+                        Currency2.textContent = '£';
+                    }
+                });
+            </script>
+
         </div>
         <button class="bnt-001">Start Using FB</button>
         <div class="div-713">
@@ -509,6 +881,7 @@
             <p class="pra-23">full FB optimization for you.</p>
         </div>
     </div>
+
 </body>
 
 </html>
