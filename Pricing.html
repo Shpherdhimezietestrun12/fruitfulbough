@@ -616,9 +616,9 @@
         .sel-con {
             position: absolute;
             top: 463px;
-            width: 110px;
+            width: 60px;
             height: 86px;
-            left: 45.2%;
+            left: 38.6%;
             transform: translate(-50%, -50%);
             background-color: #ffffff;
             z-index: 3;
@@ -650,8 +650,8 @@
             <nav class="nav-20">
                 <ul>
                     <li class="img-2"><img src="./icons/icons8-america-100.png" class="img-11"></li>
-                    <li class="lis-1">|</li>
-                    <li class="lis-3">USD</li>
+                    <li class="lis-1"></li>
+                    <li class="lis-3"></li>
                     <li><img class="img-12"></li>
                 </ul>
             </nav>
@@ -660,8 +660,8 @@
             <nav class="nav-20">
                 <ul>
                     <li class="img-3"><img src="./icons/icons8-uk-100.png" class="img-11"></li>
-                    <li class="lis-1">|</li>
-                    <li class="lis-4">GBP</li>
+                    <li class="lis-1"></li>
+                    <li class="lis-4"></li>
                     <li><img class="img-12"></li>
                 </ul>
             </nav>
@@ -673,16 +673,18 @@
         const DivGet = document.querySelector('.div-220');
         const SelfCon = document.querySelector('.sel-con');
         const ImgCon1 = document.querySelector('.img-12');
+        const pairs = [{
+            img: document.querySelector('.img-1'),
+            list: document.querySelector('.lis-2')
+        }, {
+            img: document.querySelector('.img-2'),
+            list: document.querySelector('.lis-3')
+        }, {
+            img: document.querySelector('.img-3'),
+            list: document.querySelector('.lis-4')
+        }, ];
 
-        let Img1 = document.querySelector('.img-1');
-        let Img2 = document.querySelector('.img-2');
-        let Img3 = document.querySelector('.img-3');
-        let Lis2 = document.querySelector('.lis-2');
-        let Lis3 = document.querySelector('.lis-3');
-        let Lis4 = document.querySelector('.lis-4');
-        let mainSel = document.querySelector('.main-sel');
-        let firstSel = document.querySelector('.first-sel');
-        let secondSel = document.querySelector('.second-sel');
+        DivGet.addEventListener('click', Trigger);
 
         function Trigger() {
             isOpen = !isOpen;
@@ -698,28 +700,23 @@
             }
         });
 
-        Img2.addEventListener('click', () => {
-            if (isOpen) {
-                swapElements(Img1.parentNode, Img2.parentNode);
-                swapElements(Lis2, Lis3);
-                SelfCon.style.display = 'none';
-                isOpen = false;
-                ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
-                // Add your USD conversion logic here
-                FirDiz.click();
-            }
-        });
-
-        Img3.addEventListener('click', () => {
-            if (isOpen) {
-                swapElements(Img1.parentNode, Img3.parentNode);
-                swapElements(Lis2, Lis4);
-                SelfCon.style.display = 'none';
-                isOpen = false;
-                ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
-                // Add your GBP conversion logic here
-                SecDiz.click();
-            }
+        pairs.forEach((pair, index) => {
+            pair.img.addEventListener('click', () => {
+                if (isOpen) {
+                    const firstPair = pairs[0];
+                    swapElements(pair.img.parentNode, firstPair.img.parentNode);
+                    swapElements(pair.list, firstPair.list);
+                    SelfCon.style.display = 'none';
+                    isOpen = false;
+                    ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                    // Add your conversion logic here
+                    if (index === 1) {
+                        FirDiz.click();
+                    } else if (index === 2) {
+                        SecDiz.click();
+                    }
+                }
+            });
         });
 
         function swapElements(elem1, elem2) {
@@ -793,8 +790,8 @@
                 <p class="pra-45"><span class="sp-po"><span class="sp-o2">₦</span><span class="sp-po3">65,000</span></span> every 2 months</p>
             </p>
             <script>
-                const FirDiz = document.querySelector('.img-2');
-                const SecDiz = document.querySelector('.img-3');
+                const FirDiz1 = document.querySelector('.img-2');
+                const SecDiz1 = document.querySelector('.img-3');
                 const Currency = document.querySelector('.sp-o');
                 const Currency1 = document.querySelector('.sp-o1');
                 const Currency2 = document.querySelector('.sp-o2');
@@ -806,7 +803,7 @@
                 let originalProPlanValue = ProPlan.textContent;
                 let originalSuppPlanValue = SuppPlan.textContent;
 
-                FirDiz.addEventListener('click', () => {
+                FirDiz1.addEventListener('click', () => {
                     if (Currency.textContent === '$') {
                         CusPlan.textContent = originalCusPlanValue;
                         ProPlan.textContent = originalProPlanValue;
@@ -837,7 +834,7 @@
                     }
                 });
 
-                SecDiz.addEventListener('click', () => {
+                SecDiz1.addEventListener('click', () => {
                     if (Currency.textContent === '£') {
                         CusPlan.textContent = originalCusPlanValue;
                         ProPlan.textContent = originalProPlanValue;
