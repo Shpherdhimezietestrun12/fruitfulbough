@@ -63,9 +63,9 @@
             height: 50px;
             background-color: transparent;
             left: 0;
-            z-index: 1;
-            /* Default stacking */
             right: 0;
+            z-index: 1;
+            transition: bottom 0.25s ease;
         }
         
         .text-one {
@@ -118,13 +118,28 @@
         const textarea = document.querySelector('.text-one');
         const footer = document.querySelector('.fot-cont');
 
+        // Bring footer above other content on focus
         textarea.addEventListener('focus', () => {
-            footer.style.zIndex = '9999'; // Bring to front when focused
+            footer.style.zIndex = '9999';
+        });
+        textarea.addEventListener('blur', () => {
+            footer.style.zIndex = '1';
         });
 
-        textarea.addEventListener('blur', () => {
-            footer.style.zIndex = '1'; // Reset when focus is lost
+        // Detect keyboard open (on mobile)
+        let initialInnerHeight = window.innerHeight;
+        window.addEventListener('resize', () => {
+            const newInnerHeight = window.innerHeight;
+            const keyboardOpen = newInnerHeight < initialInnerHeight - 100; // keyboard likely open
+            if (keyboardOpen) {
+                footer.style.position = 'absolute';
+                footer.style.bottom = `${initialInnerHeight - newInnerHeight}px`;
+            } else {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+            }
         });
+    </script>
     </script>
 </body>
 
