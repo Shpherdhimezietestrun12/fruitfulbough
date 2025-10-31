@@ -208,7 +208,8 @@
             color: black;
         }
         
-        .pra-200 {
+        .pra-200,
+        .pra-201 {
             font-size: 13.5px;
             font-family: "Cabri ", sans-serif;
         }
@@ -617,9 +618,9 @@
     <style>
         .sel-con {
             position: absolute;
-            top: 463px;
+            top: 485px;
             width: 60px;
-            height: 86px;
+            height: 129px;
             left: 39%;
             transform: translate(-50%, -50%);
             background-color: #ffffff;
@@ -633,7 +634,8 @@
         }
         
         .first-sel,
-        .second-sel {
+        .second-sel,
+        .Third-sel {
             width: 100%;
             position: absolute;
             height: 43px;
@@ -644,6 +646,10 @@
         
         .second-sel {
             top: 43px;
+        }
+        
+        .Third-sel {
+            top: 86px;
         }
     </style>
 
@@ -662,6 +668,16 @@
             <nav class="nav-20">
                 <ul>
                     <li class="img-3"><img src="./icons/icons8-uk-100.png" class="img-11"></li>
+                    <li class="lis-1"></li>
+                    <li class="lis-4"></li>
+                    <li><img class="img-12"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="Third-sel">
+            <nav class="nav-20">
+                <ul>
+                    <li class="img-4"><img src="./icons/icons8-nigeria-100.png" class="img-11"></li>
                     <li class="lis-1"></li>
                     <li class="lis-4"></li>
                     <li><img class="img-12"></li>
@@ -694,6 +710,7 @@
         const FirDiz = document.querySelector('.FirDiz');
         const SecDiz = document.querySelector('.SecDiz');
 
+
         DivGet.addEventListener('click', Trigger);
 
         function Trigger() {
@@ -711,14 +728,7 @@
         });
 
 
-        nigeriaIcon.addEventListener('click', () => {
-            lis2.textContent = '';
-            lis2.textContent = 'NGN';
-            Img1.src = './icons/icons8-nigeria-100.png';
-            SelfCon.style.display = 'none';
-            isOpen = false;
-            ImgCon1.src = './icons/icons8-down-arrow-100.png';
-        });
+
 
         americaIcon.addEventListener('click', () => {
 
@@ -744,14 +754,15 @@
             ImgCon1.src = './icons/icons8-down-arrow-100.png';
             if (SecDiz) SecDiz.click();
         });
-
-        function swapElements(elem1, elem2) {
-            let temp = document.createElement('img');
-            elem1.parentNode.insertBefore(temp, elem1);
-            elem2.parentNode.insertBefore(elem1, elem2);
-            temp.parentNode.insertBefore(elem2, temp);
-            temp.parentNode.removeChild(temp);        
-        }
+        nigeriaIcon.addEventListener('click', () => {
+            lis2.textContent = '';
+            lis2.textContent = 'NGN';
+            Img1.src = './icons/icons8-nigeria-100.png';
+            SelfCon.style.display = 'none';
+            isOpen = false;
+            ImgCon1.src = './icons/icons8-down-arrow-100.png';
+            if (MainDiz1) MainDiz1.click();
+        });
     </script>
 
     <div class="div-330">
@@ -759,7 +770,7 @@
             <p class="pra-200">Monthly</p>
         </div>
         <div class="div-set-2">
-            <p class="pra-200">Anually</p>
+            <p class="pra-201">Anually</p>
         </div>
     </div>
     <div class="mont-div">
@@ -816,6 +827,7 @@
                 <p class="pra-45"><span class="sp-po"><span class="sp-o2">₦</span><span class="sp-po3">65,000</span></span> every 2 months</p>
             </p>
             <script>
+                const MainDiz1 = document.querySelector('.img-1');
                 const FirDiz1 = document.querySelector('.img-2');
                 const SecDiz1 = document.querySelector('.img-3');
                 const Currency = document.querySelector('.sp-o');
@@ -824,6 +836,10 @@
                 const CusPlan = document.querySelector('.sp-po1');
                 const ProPlan = document.querySelector('.sp-po2');
                 const SuppPlan = document.querySelector('.sp-po3');
+                const DivMont = document.querySelector('.div-set-1');
+                const DivAnual = document.querySelector('.div-set-2');
+                const ParOne = document.querySelector('.pra-200');
+                const ParTwo = document.querySelector('.pra-201');
 
                 let originalCusPlanValue = CusPlan.textContent;
                 let originalProPlanValue = ProPlan.textContent;
@@ -889,6 +905,49 @@
                         Currency1.textContent = '£';
                         Currency2.textContent = '£';
                     }
+                });
+                nigeriaIcon.addEventListener('click', () => {
+                    if (Currency.textContent === '₦') {
+                        CusPlan.textContent = originalCusPlanValue;
+                        ProPlan.textContent = originalProPlanValue;
+                        SuppPlan.textContent = originalSuppPlanValue;
+                        Currency.textContent = '₦';
+                        Currency1.textContent = '₦';
+                        Currency2.textContent = '₦';
+                    } else {
+                        const cusPlanValue = parseFloat(originalCusPlanValue.replace(/,/g, ''));
+                        const proPlanValue = parseFloat(originalProPlanValue.replace(/,/g, ''));
+                        const suppPlanValue = parseFloat(originalSuppPlanValue.replace(/,/g, ''));
+
+                        CusPlan.textContent = (cusPlanValue).toLocaleString('en-NG', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        ProPlan.textContent = (proPlanValue).toLocaleString('en-NG', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        SuppPlan.textContent = (suppPlanValue).toLocaleString('en-NG', {
+                            minimumFractionDigits: 2,
+                            maximumFractionDigits: 2
+                        });
+                        Currency.textContent = '₦';
+                        Currency1.textContent = '₦';
+                        Currency2.textContent = '₦';
+                    }
+                });
+                DivMont.addEventListener('click', () => {
+                    DivMont.style.backgroundColor = '#B68D05';
+                    DivAnual.style.backgroundColor = 'transparent';
+                    ParOne.style.color = '#ffffff';
+                    ParTwo.style.color = 'black';
+                });
+
+                DivAnual.addEventListener('click', () => {
+                    DivAnual.style.backgroundColor = '#B68D05';
+                    DivMont.style.backgroundColor = 'transparent';
+                    ParOne.style.color = 'black';
+                    ParTwo.style.color = '#ffffff';
                 });
             </script>
 
