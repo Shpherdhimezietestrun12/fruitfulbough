@@ -63,6 +63,8 @@
             height: 50px;
             background-color: transparent;
             left: 0;
+            z-index: 1;
+            /* Default stacking */
             right: 0;
         }
         
@@ -112,6 +114,18 @@
         <textarea class="text-one"></textarea>
         <div class="div-send"><img src="./icons/new-img-3aaaaaaaaa.png" class="img-send"></div>
     </footer>
+    <script>
+        const textarea = document.querySelector('.text-one');
+        const footer = document.querySelector('.fot-cont');
+
+        textarea.addEventListener('focus', () => {
+            footer.style.zIndex = '9999'; // Bring to front when focused
+        });
+
+        textarea.addEventListener('blur', () => {
+            footer.style.zIndex = '1'; // Reset when focus is lost
+        });
+    </script>
 </body>
 
 </html>
