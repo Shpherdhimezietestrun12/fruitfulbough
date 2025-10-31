@@ -143,7 +143,9 @@
             display: inline-block;
         }
         
-        .img-11 {
+        .img-11,
+        .img-14,
+        .img-15 {
             zoom: 32%
         }
         
@@ -618,7 +620,7 @@
             top: 463px;
             width: 60px;
             height: 86px;
-            left: 38.6%;
+            left: 39%;
             transform: translate(-50%, -50%);
             background-color: #ffffff;
             z-index: 3;
@@ -649,7 +651,7 @@
         <div class="first-sel">
             <nav class="nav-20">
                 <ul>
-                    <li class="img-2"><img src="./icons/icons8-america-100.png" class="img-11"></li>
+                    <li class="img-2"><img src="./icons/icons8-america-100.png" class="img-14"></li>
                     <li class="lis-1"></li>
                     <li class="lis-3"></li>
                     <li><img class="img-12"></li>
@@ -670,19 +672,27 @@
 
     <script>
         let isOpen = false;
+        let currentCurrency = 'NGN';
+
         const DivGet = document.querySelector('.div-220');
         const SelfCon = document.querySelector('.sel-con');
         const ImgCon1 = document.querySelector('.img-12');
-        const pairs = [{
-            img: document.querySelector('.img-1'),
-            list: document.querySelector('.lis-2')
-        }, {
-            img: document.querySelector('.img-2'),
-            list: document.querySelector('.lis-3')
-        }, {
-            img: document.querySelector('.img-3'),
-            list: document.querySelector('.lis-4')
-        }, ];
+        const Img1 = document.querySelector('.img-11');
+
+
+
+        // ✅ Select the icons using their image src attributes instead of class names
+        const nigeriaIcon = document.querySelector('img[src*="icons8-nigeria-100.png"]');
+        const americaIcon = document.querySelector('img[src*="icons8-america-100.png"]');
+        const ukIcon = document.querySelector('img[src*="icons8-uk-100.png"]');
+
+
+        const lis2 = document.querySelector('.lis-2');
+
+
+        // Optional (if these exist in your HTML)
+        const FirDiz = document.querySelector('.FirDiz');
+        const SecDiz = document.querySelector('.SecDiz');
 
         DivGet.addEventListener('click', Trigger);
 
@@ -700,31 +710,47 @@
             }
         });
 
-        pairs.forEach((pair, index) => {
-            pair.img.addEventListener('click', () => {
-                if (isOpen) {
-                    const firstPair = pairs[0];
-                    swapElements(pair.img.parentNode, firstPair.img.parentNode);
-                    swapElements(pair.list, firstPair.list);
-                    SelfCon.style.display = 'none';
-                    isOpen = false;
-                    ImgCon1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
-                    // Add your conversion logic here
-                    if (index === 1) {
-                        FirDiz.click();
-                    } else if (index === 2) {
-                        SecDiz.click();
-                    }
-                }
-            });
+
+        nigeriaIcon.addEventListener('click', () => {
+            lis2.textContent = '';
+            lis2.textContent = 'NGN';
+            Img1.src = './icons/icons8-nigeria-100.png';
+            SelfCon.style.display = 'none';
+            isOpen = false;
+            ImgCon1.src = './icons/icons8-down-arrow-100.png';
+        });
+
+        americaIcon.addEventListener('click', () => {
+
+            Img2 = document.querySelector('.img-2');
+            lis2.textContent = '';
+            lis2.textContent = 'USD';
+            Img1.src = './icons/icons8-america-100.png';
+
+
+            SelfCon.style.display = 'none';
+            isOpen = false;
+            ImgCon1.src = './icons/icons8-down-arrow-100.png';
+            if (FirDiz) FirDiz.click();
+        });
+
+        ukIcon.addEventListener('click', () => {
+            Img3 = document.querySelector('.img-3');
+            lis2.textContent = '';
+            lis2.textContent = 'GBP';
+            Img1.src = './icons/icons8-uk-100.png';
+            SelfCon.style.display = 'none';
+            isOpen = false;
+            ImgCon1.src = './icons/icons8-down-arrow-100.png';
+            if (SecDiz) SecDiz.click();
         });
 
         function swapElements(elem1, elem2) {
-            let temp = document.createElement('div');
+            let temp = document.createElement('img');
             elem1.parentNode.insertBefore(temp, elem1);
             elem2.parentNode.insertBefore(elem1, elem2);
             temp.parentNode.insertBefore(elem2, temp);
-            temp.parentNode.removeChild(temp);
+            temp.parentNode.removeChild(temp);        
         }
     </script>
 
@@ -803,7 +829,7 @@
                 let originalProPlanValue = ProPlan.textContent;
                 let originalSuppPlanValue = SuppPlan.textContent;
 
-                FirDiz1.addEventListener('click', () => {
+                americaIcon.addEventListener('click', () => {
                     if (Currency.textContent === '$') {
                         CusPlan.textContent = originalCusPlanValue;
                         ProPlan.textContent = originalProPlanValue;
@@ -834,7 +860,7 @@
                     }
                 });
 
-                SecDiz1.addEventListener('click', () => {
+                ukIcon.addEventListener('click', () => {
                     if (Currency.textContent === '£') {
                         CusPlan.textContent = originalCusPlanValue;
                         ProPlan.textContent = originalProPlanValue;
