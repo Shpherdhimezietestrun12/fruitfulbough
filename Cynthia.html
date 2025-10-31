@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Cynthia</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</body>
+
+</html>
