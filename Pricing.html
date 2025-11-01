@@ -307,6 +307,14 @@
             display: inline-block;
         }
         
+        .pra-130 {
+            position: relative;
+            font-family: "Cabri ", sans-serif;
+            text-align: center;
+            top: 63px;
+            font-size: 11.5px;
+        }
+        
         .img-023 {
             zoom: 20%;
             top: 30px;
@@ -323,7 +331,9 @@
             font-family: Cambria, "Times New Roman", serif;
         }
         
-        .div-cu-1 {
+        .div-cu-1,
+        .div-cu-2,
+        .div-cu-3 {
             position: absolute;
             width: 29px;
             height: 29px;
@@ -336,7 +346,9 @@
             align-items: center;
         }
         
-        .img-501 {
+        .img-501,
+        .img-502,
+        .img-503 {
             zoom: 19%;
         }
         
@@ -471,6 +483,15 @@
             top: 60px;
         }
         
+        .pra-120 {
+            position: relative;
+            font-family: "Cabri ", sans-serif;
+            text-align: center;
+            top: 70px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
         .pra-o1,
         .pra-o12 {
             font-size: 16px;
@@ -485,6 +506,8 @@
         .pra-o12 {
             left: 9%;
         }
+        
+        .div-jj-1 {}
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
     <div class="div-two-103" onclick="LaugDiv()">
@@ -545,6 +568,16 @@
             border-radius: 10px;
         }
         
+        .div-3oo {
+            position: absolute;
+            width: 305px;
+            height: 410px;
+            top: 350px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: skyblue;
+        }
+        
         .par-010,
         .par-020,
         .par-030 {
@@ -563,6 +596,36 @@
         
         .par-030 {
             top: -27%;
+        }
+        
+        .div-ooo,
+        .div-ooo1,
+        .div-ooo2 {
+            position: absolute;
+            top: 125px;
+            width: 235px;
+            height: 100px;
+            background-color: #ffffff;
+            left: 5%;
+        }
+        
+        .div-ooo1 {
+            width: 240px;
+        }
+        
+        .div-ooo2 {
+            width: 240px;
+        }
+        
+        .pay-one,
+        .pay-two,
+        .pay-three {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
         }
     </style>
     <div class="descrip-1" style="display: none;">
@@ -784,12 +847,47 @@
                 </nav>
             </div>
             <p class="pra-60">CUSTOM</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <div class="div-cu-1" onclick="DisDiv()"><img onclick="DisDiv()" src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
             <p class="pra-41"><span class="sp-tt">Start your basic reading</span> plan with</p>
             <p class="pra-42">us and enjoy <span class="sp-tt">benefits here</span> on FB</p>
             <p class="pra-43">like - Less Ads, No book charge,</p>
             <p class="pra-44">other features set for <span class="sp-tt">basic plan.</span></p>
             <p class="pra-45"><span class="sp-po"><span class="sp-o">₦</span><span class="sp-po1">25,000</span></span> every 2 months</p>
+            <div class="div-ooo" style="display: none;"></div>
+
+            <script>
+                const ResShow = document.querySelector('.div-cu-1');
+                const ResShowImg = document.querySelector('.img-501');
+                const ShowDiv1 = document.querySelector('.div-ooo');
+                const Pay1 = document.querySelector('.mont-div');
+                const Pay1Cont = document.querySelector('.div-610');
+
+                function DisDiv() {
+                    ResShow.addEventListener('click', () => {
+                        if (ResShowImg.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                            ResShowImg.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                            ShowDiv1.style.display = "block"
+                        } else {
+                            ResShowImg.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                            ShowDiv1.style.display = "none"
+                        }
+                    });
+                }
+                document.body.addEventListener('click', (event) => {
+                    if (!event.target.closest('.img-501')) { // If not clicking img-4000 or its children
+                        ResShowImg.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                        ShowDiv1.style.display = "none"
+                    }
+                });
+
+
+
+                Pay1Cont.addEventListener('click', () => {
+                    var menu_cont_10 = document.querySelector(".pay-one");
+                    menu_cont_10.style.display = menu_cont_10.style.display == "block" ? "none" : "block";
+                });
+            </script>
+
         </div>
         <div class="div-512">
             <div class="div-612">
@@ -801,13 +899,44 @@
                 </nav>
             </div>
             <p class="pra-60">PRO</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <div class="div-cu-2" onclick="DisDiv1()"><img onclick="DisDiv1()" src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-502"></div>
             <p class="pra-41"><span class="sp-tt">All customers with this plan enjoys</span></p>
             <p class="pra-42"><span class="sp-tt">no ads.</span> You also get advanced FB</p>
             <p class="pra-43">features like AI optimization with</p>
             <p class="pra-44"><span class="sp-tt">other features implemented.</span></p>
             <p class="pra-45"><span class="sp-po"><span class="sp-o1">₦</span><span class="sp-po2">36,000</span></span> every 2 months</p>
             <p></p>
+            <div class="div-ooo1" style="display: none;"></div>
+            <script>
+                const ResShow2 = document.querySelector('.div-cu-2');
+                const ResShowImg2 = document.querySelector('.img-502');
+                const ShowDiv2 = document.querySelector('.div-ooo1');
+                const Pay2Cont = document.querySelector('.div-612');
+
+                function DisDiv1() {
+                    ResShow2.addEventListener('click', () => {
+                        if (ResShowImg2.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                            ResShowImg2.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                            ShowDiv2.style.display = "block"
+                        } else {
+                            ResShowImg2.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                            ShowDiv2.style.display = "none"
+                        }
+                    });
+                }
+                document.body.addEventListener('click', (event) => {
+                    if (!event.target.closest('.img-502')) { // If not clicking img-4000 or its children
+                        ResShowImg2.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                        ShowDiv2.style.display = "none"
+                    }
+                });
+
+
+                Pay2Cont.addEventListener('click', () => {
+                    var menu_cont_10 = document.querySelector(".pay-two");
+                    menu_cont_10.style.display = menu_cont_10.style.display == "block" ? "none" : "block";
+                });
+            </script>
         </div>
         <div class="div-513">
             <div class="div-613">
@@ -819,13 +948,44 @@
                 </nav>
             </div>
             <p class="pra-60">SUPPORT</p>
-            <div class="div-cu-1"><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-501"></div>
+            <div class="div-cu-3" onclick="DisDiv2()"><img onclick="DisDiv2()" src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-503"></div>
             <p class="pra-41">Support our team here, and enjoy</p>
             <p class="pra-42">benefits here like - Animated</p>
             <p class="pra-43"><span class="sp-tt">reading & AI implementations</span></p>
             <p class="pra-44">with other benefits for premium plan.</span>
                 <p class="pra-45"><span class="sp-po"><span class="sp-o2">₦</span><span class="sp-po3">65,000</span></span> every 2 months</p>
             </p>
+            <div class="div-ooo2" style="display: none;"></div>
+            <script>
+                const ResShow3 = document.querySelector('.div-cu-3');
+                const ResShowImg3 = document.querySelector('.img-503');
+                const ShowDiv3 = document.querySelector('.div-ooo2');
+                const Pay3Cont = document.querySelector('.div-613');
+
+                function DisDiv2() {
+                    ResShow3.addEventListener('click', () => {
+                        if (ResShowImg3.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                            ResShowImg3.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                            ShowDiv3.style.display = "block"
+                        } else {
+                            ResShowImg3.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                            ShowDiv3.style.display = "none"
+                        }
+                    });
+                }
+                document.body.addEventListener('click', (event) => {
+                    if (!event.target.closest('.img-503')) { // If not clicking img-4000 or its children
+                        ResShowImg3.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                        ShowDiv3.style.display = "none"
+                    }
+                });
+
+
+                Pay3Cont.addEventListener('click', () => {
+                    var menu_cont_10 = document.querySelector(".pay-three");
+                    menu_cont_10.style.display = menu_cont_10.style.display == "block" ? "none" : "block";
+                });
+            </script>
             <script>
                 const MainDiz1 = document.querySelector('.img-1');
                 const FirDiz1 = document.querySelector('.img-2');
@@ -845,6 +1005,54 @@
                 let originalProPlanValue = ProPlan.textContent;
                 let originalSuppPlanValue = SuppPlan.textContent;
 
+
+                DivMont.addEventListener('click', () => {
+                    DivMont.style.backgroundColor = '#B68D05';
+                    DivAnual.style.backgroundColor = 'transparent';
+                    ParOne.style.color = '#ffffff';
+                    ParTwo.style.color = 'black';
+
+                    const cusPlanValue = parseFloat(originalCusPlanValue.replace(/,/g, ''));
+                    const proPlanValue = parseFloat(originalProPlanValue.replace(/,/g, ''));
+                    const suppPlanValue = parseFloat(originalSuppPlanValue.replace(/,/g, ''));
+
+                    CusPlan.textContent = (cusPlanValue + 0).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                    ProPlan.textContent = (proPlanValue + 0).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                    SuppPlan.textContent = (suppPlanValue + 0).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+
+                });
+
+                DivAnual.addEventListener('click', () => {
+                    DivAnual.style.backgroundColor = '#B68D05';
+                    DivMont.style.backgroundColor = 'transparent';
+                    ParOne.style.color = 'black';
+                    ParTwo.style.color = '#ffffff';
+                    const cusPlanValue = parseFloat(originalCusPlanValue.replace(/,/g, ''));
+                    const proPlanValue = parseFloat(originalProPlanValue.replace(/,/g, ''));
+                    const suppPlanValue = parseFloat(originalSuppPlanValue.replace(/,/g, ''));
+
+                    CusPlan.textContent = (cusPlanValue * 2).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                    ProPlan.textContent = (proPlanValue * 2).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                    SuppPlan.textContent = (suppPlanValue * 2).toLocaleString('en-US', {
+                        minimumFractionDigits: 0,
+                        maximumFractionDigits: 0
+                    });
+                });
                 americaIcon.addEventListener('click', () => {
                     if (Currency.textContent === '$') {
                         CusPlan.textContent = originalCusPlanValue;
@@ -936,23 +1144,18 @@
                         Currency2.textContent = '₦';
                     }
                 });
-                DivMont.addEventListener('click', () => {
-                    DivMont.style.backgroundColor = '#B68D05';
-                    DivAnual.style.backgroundColor = 'transparent';
-                    ParOne.style.color = '#ffffff';
-                    ParTwo.style.color = 'black';
-                });
-
-                DivAnual.addEventListener('click', () => {
-                    DivAnual.style.backgroundColor = '#B68D05';
-                    DivMont.style.backgroundColor = 'transparent';
-                    ParOne.style.color = 'black';
-                    ParTwo.style.color = '#ffffff';
-                });
             </script>
 
         </div>
-        <button class="bnt-001">Start Using FB</button>
+        <button class="bnt-001" onclick="StartPla()">Start Using FB</button>
+        <script>
+            const StartBnt = document.querySelector('.bnt-001');
+
+            StartBnt.addEventListener('click', () => {
+                var menu_cont_10 = document.querySelector(".pay-one");
+                menu_cont_10.style.display = menu_cont_10.style.display == "block" ? "none" : "block";
+            });
+        </script>
         <div class="div-713">
             <div class="div-02">
                 <img src="./icons/icons8-bulb-100.png" class="img-03">
@@ -963,7 +1166,66 @@
             <p class="pra-23">full FB optimization for you.</p>
         </div>
     </div>
-
+    <div class="pay-one" style="display: none;">
+        <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+        <div class="div-two-103" onclick="LaugDiv()">
+            <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+        </div>
+        <div class="Laugh-sel" style="display: none;">
+            <div class="one-divi" id="french-lan">
+                <p class="pra-o12">French</p>
+            </div>
+            <div class="two-divi">
+                <p class="pra-o1">Spanish</p>
+            </div>
+            <div class="three-divi">
+                <p class="pra-o1">Chinese</p>
+            </div>
+        </div>
+        <p class="pra-120">Enter valid acct details</p>
+        <p class="pra-130">Enter card details to approve payment</p>
+        <div class="div-3oo">
+            <div class="div-jj-1"></div>
+        </div>
+    </div>
+    <div class="pay-two" style="display: none;">
+        <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+        <div class="div-two-103" onclick="LaugDiv()">
+            <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+        </div>
+        <div class="Laugh-sel" style="display: none;">
+            <div class="one-divi" id="french-lan">
+                <p class="pra-o12">French</p>
+            </div>
+            <div class="two-divi">
+                <p class="pra-o1">Spanish</p>
+            </div>
+            <div class="three-divi">
+                <p class="pra-o1">Chinese</p>
+            </div>
+        </div>
+        <p class="pra-120">Enter valid acct details</p>
+        <p class="pra-130">Enter card details to approve payment</p>
+    </div>
+    <div class="pay-three" style="display: none;">
+        <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
+        <div class="div-two-103" onclick="LaugDiv()">
+            <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
+        </div>
+        <div class="Laugh-sel" style="display: none;">
+            <div class="one-divi" id="french-lan">
+                <p class="pra-o12">French</p>
+            </div>
+            <div class="two-divi">
+                <p class="pra-o1">Spanish</p>
+            </div>
+            <div class="three-divi">
+                <p class="pra-o1">Chinese</p>
+            </div>
+        </div>
+        <p class="pra-120">Enter valid acct details</p>
+        <p class="pra-130">Enter card details to approve payment</p>
+    </div>
 </body>
 
 </html>
