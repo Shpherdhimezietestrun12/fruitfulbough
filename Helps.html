@@ -409,6 +409,17 @@
         .pra-o12 {
             left: 9%;
         }
+        
+        .div-yoo {
+            position: absolute;
+            top: 625px;
+            width: 170px;
+            height: 81px;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            z-index: 2;
+        }
     </style>
     <div class="div-5001">
         <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
@@ -458,6 +469,7 @@
     </div>
     <p class="pra-0910">Select the type of issue</p>
     <p class="pra-0911">you need help with.</p>
+    <div class="div-yoo" style="display: none;"></div>
     <div class="div-lay">
         <div class="div-log">
             <p class="pra-0710">Set up <img src="./icons/icons8-collapse-arrow-ssssss100.png" class="img-0210"></p>
@@ -465,14 +477,36 @@
             <p class="pra-0720">through this process. Firstly,</p>
             <p class="pra-0725">Visit the <span class="sp-4-0" onclick="window.location.href='sign_up.html';">Sign up</span> page</p>
             <p class="pra-0730">page, then fill in the details.</p>
-            <button class="bnt-0202">Learn more</button>
+            <button class="bnt-0202" onclick="window.location.href='sign_up.html';">Try It Now</button>
             <div class="show-log">
                 <img src="./Pictures/istockphoto-1330967322-612x612.jpg" class="img-0301">
                 <img src="./Pictures/audio-test.jpg" class="img-0302">
                 <img src="./Pictures/Screenshot 2025-10-26 005851.png" class="img-300111">
                 <div class="div-bbb"></div>
+                <script>
+                    const Img00 = document.querySelector('.img-0210');
+                    const DivCnt = document.querySelector('.div-yoo');
+
+                    Img00.addEventListener('click', () => {
+                        if (Img00.src.includes('icons8-collapse-arrow-ssssss100.png')) {
+                            Img00.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                            DivCnt.style.display = "block";
+                        } else {
+                            Img00.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                            DivCnt.style.display = "none";
+                        }
+                    });
+
+                    document.addEventListener('click', (event) => {
+                        if (!event.target.closest('.img-0210')) {
+                            Img00.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                            DivCnt.style.display = "none";
+                        }
+                    });
+                </script>
             </div>
         </div>
+
         <p class="pra-0810">Login Set up<img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-0310"></p>
         <p class="pra-0815">Problems with logging in<img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-0312"></p>
         <p class="pra-0820">Problems with Creating an Acct<img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-0313"></p>
@@ -482,7 +516,7 @@
             <p class="pra-0720">follow the steps gradually and</p>
             <p class="pra-0725">build your <span class="sp-4-0" onclick="window.location.href='Pricing.html';">Plan now</span> on FB</p>
             <p class="pra-0730">pricing portal.</p>
-            <button class="bnt-0203">Learn more</button>
+            <button class="bnt-0203" onclick="window.location.href='Pricing.html';">Pay Now</button>
             <div class="show-log">
                 <img src="./Pictures/front-view-smiley-woman-holding-cup.jpg" class="img-0301">
                 <img src="./Pictures/istockphoto-1410572798-612x612.jpg" class="img-0302">
@@ -494,6 +528,9 @@
         <p class="pra-1915">How to pay<img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-0612"></p>
         <p class="pra-1920">No debit for my payment<img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-0313"></p>
     </div>
+
 </body>
+
+</html>
 
 </html>
