@@ -508,10 +508,11 @@
         }
         
         .div-jj-1,
-        .div-jj-2 {
+        .div-jj-2,
+        .img-show {
             position: absolute;
-            width: 245px;
-            height: 28px;
+            width: 252px;
+            height: 28.5px;
             top: 35px;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -533,10 +534,16 @@
         }
         
         .ipt-jj-2,
+        .ipt-jj-22,
+        .ipt-jj-23,
         .ipt-jj-3,
-        .ipt-jj-4 {
+        .ipt-jj-31,
+        .ipt-jj-32,
+        .ipt-jj-4,
+        .ipt-jj-41,
+        .ipt-jj-42 {
             position: absolute;
-            width: 245px;
+            width: 238px;
             height: 27px;
             top: 85px;
             left: 50%;
@@ -544,20 +551,52 @@
             border: 0.5px solid rgb(133, 133, 133);
             border-radius: 4px;
             color: black;
+            padding-left: 15px;
             background-color: transparent;
         }
         
-        .ipt-jj-3 {
+        .ipt-jj-2:focus,
+        .ipt-jj-22:focus,
+        .ipt-jj-23:focus,
+        .ipt-jj-3:focus,
+        .ipt-jj-31:focus,
+        .ipt-jj-32:focus,
+        .ipt-jj-4:focus,
+        .ipt-jj-41:focus,
+        .ipt-jj-42:focus {
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border: 0.5px solid rgb(133, 133, 133);
+        }
+        
+        .ipt-jj-2::placeholder,
+        .ipt-jj-22::placeholder,
+        .ipt-jj-23::placeholder,
+        .ipt-jj-3::placeholder,
+        .ipt-jj-31::placeholder,
+        .ipt-jj-32::placeholder,
+        .ipt-jj-4::placeholder,
+        .ipt-jj-41::placeholder,
+        .ipt-jj-42::placeholder {
+            color: #928f8f;
+        }
+        
+        .ipt-jj-3,
+        .ipt-jj-31,
+        .ipt-jj-32 {
             top: 135px;
             width: 80px;
-            left: 23%;
+            left: 25%;
             background-color: transparent;
         }
         
-        .ipt-jj-4 {
+        .ipt-jj-4,
+        .ipt-jj-41,
+        .ipt-jj-42 {
             top: 135px;
             width: 80px;
-            left: 77%;
+            left: 76%;
             background-color: transparent;
         }
         
@@ -584,6 +623,27 @@
             left: 6%;
         }
         
+        .img-ooo31 {
+            position: absolute;
+            zoom: 7%;
+            top: 80%;
+            left: 2.5%;
+        }
+        
+        .img-ooo32 {
+            position: absolute;
+            zoom: 7%;
+            top: 76%;
+            left: 42%;
+        }
+        
+        .img-ooo33 {
+            position: absolute;
+            zoom: 35%;
+            top: 70%;
+            left: 45%;
+        }
+        
         .img-ooo2 {
             position: absolute;
             zoom: 65%;
@@ -596,6 +656,26 @@
             zoom: 65%;
             top: 64.5%;
             left: 78%;
+        }
+        
+        .pay-2010,
+        .pay-2012,
+        .pay-2013 {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            transform: translate(-50%, -50%);
+            font-size: 12px;
+            font-family: "Cabri ", sans-serif;
+            color: #928f8f;
+        }
+        
+        .down-ar {
+            position: absolute;
+            zoom: 13%;
+            top: 55%;
+            right: 1.5%;
+            transform: translate(-50%, -50%);
         }
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
@@ -714,7 +794,25 @@
             left: 0;
             width: 100%;
             height: 100%;
+            bottom: 0;
+            right: 0;
             background-color: #ffffff;
+        }
+        
+        .nx-1,
+        .nx-2 {
+            position: absolute;
+            width: 100%;
+            height: 28.5px;
+            top: 0;
+            left: 0;
+            border: 0px solid;
+            border-bottom: 0.5px solid rgb(133, 133, 133);
+            color: black;
+        }
+        
+        .nx-2 {
+            top: 28.5px;
         }
     </style>
     <div class="descrip-1" style="display: none;">
@@ -802,6 +900,14 @@
         
         .Third-sel {
             top: 86px;
+        }
+        
+        .img-show {
+            height: 57px;
+            top: 80.5px;
+            background-color: #ffffff;
+            z-index: 2;
+            border-radius: 0px;
         }
     </style>
 
@@ -1274,14 +1380,73 @@
         <p class="pra-120">Enter valid acct details</p>
         <p class="pra-130">Enter card details to approve payment</p>
         <div class="div-3oo">
-            <div class="div-jj-1"></div>
-            <input class="ipt-jj-2" type="number">
-            <input class="ipt-jj-3" type="00/00">
-            <input class="ipt-jj-4" type="number">
+            <div class="div-jj-1">
+                <p class="pay-2010">$400000</p>
+                <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="down-ar">
+            </div>
+            <div class="img-show" style="display: none;">
+                <div class="nx-1">
+                    <p class="pay-2012">$400010</p>
+                </div>
+                <div class="nx-2">
+                    <p class="pay-2013">$400020</p>
+                </div>
+                <script>
+                    const RemImg = document.querySelector('.down-ar');
+                    const ShoDiv = document.querySelector('.img-show');
+                    const FirstPay = document.querySelector('.nx-1');
+                    const SecondPay = document.querySelector('.nx-2');
+                    const FirstDis = document.querySelector('.pay-2010');
+                    const SecondDis = document.querySelector('.pay-2012');
+                    const ThirdDis = document.querySelector('.pay-2013');
+
+
+                    RemImg.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        if (RemImg.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                            RemImg.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                            ShoDiv.style.display = "block";
+                        } else {
+                            RemImg.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                            ShoDiv.style.display = "none";
+                        }
+                    });
+
+                    document.body.addEventListener('click', (event) => {
+                        if (!event.target.closest('.down-ar')) { // If not clicking img-4000 or its children
+                            RemImg.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                            ShoDiv.style.display = "none";
+                        }
+                    });
+
+
+                    if (FirstPay && SecondPay && FirstDis && SecondDis && ThirdDis) {
+                        FirstPay.addEventListener('click', () => {
+                            console.log('FirstPay clicked');
+                            FirstDis.textContent = ''; // clear the text content 
+                            FirstDis.textContent = SecondDis.textContent;
+                        });
+
+                        SecondPay.addEventListener('click', () => {
+                            console.log('SecondPay clicked');
+                            FirstDis.textContent = ''; // clear the text content 
+                            FirstDis.textContent = ThirdDis.textContent;
+                        });
+                    } else {
+                        console.error('One or more elements not found');
+                    }
+                </script>
+            </div>
+            <input class="ipt-jj-2" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19">
+            <input class="ipt-jj-3" type="text" inputmode="numeric" placeholder="MM/YY" maxlength="5">
+            <input class="ipt-jj-4" type="text" inputmode="numeric" placeholder="CVV" maxlength="3">
             <button class="bnt-ooo1">Pay now</button>
             <img src="./icons/icons8-paypal-100.png" class="img-ooo1">
             <img src="./icons/icons8-visa-card-100.png" class="img-ooo2">
             <img src="./icons/icons8-payback-100.png" class="img-ooo3">
+            <img src="./icons/paypal_logo.png" class="img-ooo31">
+            <img src="./icons/png-transparent-logo-mastercard-graphics-font-visa-mastercard-text-label-logo-Photoroom.png" class="img-ooo32">
+            <img src="./icons/paystack-Photoroom.png" class="img-ooo33">
         </div>
     </div>
     <div class="pay-two" style="display: none;">
@@ -1303,14 +1468,20 @@
         <p class="pra-120">Enter valid acct details</p>
         <p class="pra-130">Enter card details to approve payment</p>
         <div class="div-3oo">
-            <div class="div-jj-1"></div>
-            <input class="ipt-jj-2" type="number">
-            <input class="ipt-jj-3" type="00/00">
-            <input class="ipt-jj-4" type="number">
+            <div class="div-jj-1">
+                <p class="pay-2010">$400000</p>
+            </div>
+            <input class="ipt-jj-22" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19">
+            <input class="ipt-jj-31" type="text" inputmode="numeric" placeholder="MM/YY" maxlength="5">
+            <input class="ipt-jj-41" type="text" inputmode="numeric" placeholder="CVV" maxlength="3">
             <button class="bnt-ooo1">Pay now</button>
             <img src="./icons/icons8-paypal-100.png" class="img-ooo1">
             <img src="./icons/icons8-visa-card-100.png" class="img-ooo2">
             <img src="./icons/icons8-payback-100.png" class="img-ooo3">
+            <img src="./icons/paypal_logo.png" class="img-ooo31">
+            <img src="./icons/png-transparent-logo-mastercard-graphics-font-visa-mastercard-text-label-logo-Photoroom.png" class="img-ooo32">
+            <img src="./icons/paystack-Photoroom.png" class="img-ooo33">
+
         </div>
     </div>
     <div class="pay-three" style="display: none;">
@@ -1332,16 +1503,73 @@
         <p class="pra-120">Enter valid acct details</p>
         <p class="pra-130">Enter card details to approve payment</p>
         <div class="div-3oo">
-            <div class="div-jj-1"></div>
-            <input class="ipt-jj-2" type="number">
-            <input class="ipt-jj-3" type="00/00">
-            <input class="ipt-jj-4" type="number">
+            <div class="div-jj-1">
+                <p class="pay-2010">$400000</p>
+            </div>
+            <input class="ipt-jj-23" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19">
+            <input class="ipt-jj-32" type="text" inputmode="numeric" placeholder="MM/YY" maxlength="5">
+            <input class="ipt-jj-42" type="text" inputmode="numeric" placeholder="CVV" maxlength="3">
             <button class="bnt-ooo1">Pay now</button>
             <img src="./icons/icons8-paypal-100.png" class="img-ooo1">
             <img src="./icons/icons8-visa-card-100.png" class="img-ooo2">
             <img src="./icons/icons8-payback-100.png" class="img-ooo3">
+            <img src="./icons/paypal_logo.png" class="img-ooo31">
+            <img src="./icons/png-transparent-logo-mastercard-graphics-font-visa-mastercard-text-label-logo-Photoroom.png" class="img-ooo32">
+            <img src="./icons/paystack-Photoroom.png" class="img-ooo33">
         </div>
     </div>
+    <script>
+        const inputField12 = document.querySelector('.ipt-jj-2');
+        const inputField13 = document.querySelector('.ipt-jj-22');
+        const inputField14 = document.querySelector('.ipt-jj-23');
+        const inputField21 = document.querySelector('.ipt-jj-3');
+        const inputField22 = document.querySelector('.ipt-jj-31');
+        const inputField23 = document.querySelector('.ipt-jj-32');
+        const inputField31 = document.querySelector('.ipt-jj-4');
+        const inputField32 = document.querySelector('.ipt-jj-41');
+        const inputField33 = document.querySelector('.ipt-jj-42');
+
+        function formatInput(inputField) {
+            inputField.addEventListener('input', (event) => {
+                let value = event.target.value.replace(/\D/g, ''); // remove non-numeric characters
+                value = value.replace(/(\d{4})(?=\d)/g, '$1 '); // add space after every 4 digits
+                event.target.value = value;
+            });
+        }
+
+        formatInput(inputField12);
+        formatInput(inputField13);
+        formatInput(inputField14);
+
+        // this is for the next toogle input 
+
+        function formatInput1(inputField) {
+            inputField.addEventListener('input', (event) => {
+                let value = event.target.value.replace(/\D/g, ''); // remove non-numeric characters
+                if (value.length > 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                event.target.value = value;
+            });
+        }
+
+        formatInput1(inputField21);
+        formatInput1(inputField22);
+        formatInput1(inputField23);
+
+        function formatInput2(inputField) {
+            inputField.addEventListener('input', (event) => {
+                let value = event.target.value.replace(/\D/g, ''); // remove non-numeric characters
+                value = value.replace('$1 '); // add space after every 4 digits
+                event.target.value = value;
+            });
+        }
+
+        formatInput2(inputField31);
+        formatInput2(inputField32);
+        formatInput2(inputField33);
+    </script>
+
 </body>
 
 </html>
