@@ -348,11 +348,120 @@
             left: 2%;
             transform: translate(-50%, -50%);
         }
+        
+        .Laugh-sel {
+            position: absolute;
+            width: 80px;
+            height: 90px;
+            top: 60px;
+            right: 45px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            z-index: 3;
+        }
+        
+        .one-divi,
+        .two-divi,
+        .three-divi {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+        }
+        
+        .one-divi:hover,
+        .two-divi:hover,
+        .three-divi:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .one-divi {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .three-divi {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .two-divi {
+            top: 30px;
+        }
+        
+        .three-divi {
+            top: 60px;
+        }
+        
+        .pra-o1,
+        .pra-o12 {
+            font-size: 16px;
+            color: #ffc400;
+            position: absolute;
+            top: -5px;
+            font-family: "Cabri ", sans-serif;
+            left: 5%;
+            font-style: italic;
+        }
+        
+        .pra-o12 {
+            left: 9%;
+        }
+        
+        .priv-div {
+            position: absolute;
+            top: 670px;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            height: 110px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
-    <div class="div-two-103">
+    <div class="div-two-103" onclick="LaugDiv()">
         <img src="./icons/icons8-world-1uuuuu00.png" class="img_bnt_3"><span class="sp_par_11">EN</span><img src="./icons/icons8-down-arrow-10bbbbbbbb0.png" class="img_bnt_4">
     </div>
+    <div class="Laugh-sel" style="display: none;">
+        <div class="one-divi" id="french-lan">
+            <p class="pra-o12">French</p>
+        </div>
+        <div class="two-divi">
+            <p class="pra-o1">Spanish</p>
+        </div>
+        <div class="three-divi">
+            <p class="pra-o1">Chinese</p>
+        </div>
+    </div>
+    <script>
+        // this is for the language sequence..
+        const LagDiv = document.querySelector('.div-two-103');
+        const LagReg = document.querySelector('.Laugh-sel');
+        const FirstBox = document.querySelector('.img_bnt_4');
+
+
+
+        function LaugDiv() {
+            LagDiv.addEventListener('click', () => {
+                if (FirstBox.src.includes('icons8-down-arrow-10bbbbbbbb0.png')) {
+                    FirstBox.src = './icons/icons8-collapse-arrow-ssssss100.png';
+                    LagReg.style.display = "block"
+                } else {
+                    FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                    LagReg.style.display = "none"
+                }
+            });
+        }
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.div-two-103')) { // If not clicking img-4000 or its children
+                FirstBox.src = './icons/icons8-down-arrow-10bbbbbbbb0.png';
+                LagReg.style.display = "none"
+            }
+        });
+    </script>
     <p class="pra-120">Create your FB account</p>
     <p class="pra-130">Already have an account? <span class="sp-102" onclick="window.location.href='login.html';">Log in</span></p>
     <div class="div-3oo">
@@ -365,6 +474,21 @@
         <p class="pra-215">Password</p>
         <input type="text" class="ipt-115" placeholder="Willsm_009">
         <p class="pra-220">Hide</p>
+        <script>
+            // for hiding the words when pressed
+            const inputField51 = document.querySelector('.ipt-115');
+            const toggleText = document.querySelector('.pra-220');
+
+            toggleText.addEventListener('click', () => {
+                if (inputField51.type === 'password') {
+                    inputField51.type = 'text';
+                    toggleText.textContent = 'Show';
+                } else {
+                    inputField51.type = 'password';
+                    toggleText.textContent = 'Hide';
+                }
+            });
+        </script>
         <p class="pra-225" onclick="window.location.href='re-issue.html';">Forgot password?</p>
         <nav class="nav-100">
             <ul>
@@ -377,13 +501,43 @@
         <p class="pra-230">Comfirm passcode</p>
         <input type="password" class="ipt-120" placeholder="**********">
         <p class="pra-235">Show</p>
+        <script>
+            // for hiding the words when pressed
+            const inputField41 = document.querySelector('.ipt-120');
+            const toggleText4 = document.querySelector('.pra-235');
+
+            toggleText4.addEventListener('click', () => {
+                if (inputField41.type === 'text') {
+                    inputField41.type = 'password';
+                    toggleText4.textContent = 'Hide';
+                } else {
+                    inputField41.type = 'text';
+                    toggleText4.textContent = 'Show';
+                }
+            });
+        </script>
         <p class="pra-6">Creating an FB account means you agree with our</p>
-        <p class="pra-7"><span class="sp-700">privacy policy</span> and <span class="sp-700">terms & conditions</span></p>
+        <p class="pra-7"><span class="sp-700" onclick="DisShow1()">privacy policy</span> and <span class="sp-700" onclick="window.location.href='Terms and conditions.html';">terms & conditions</span></p>
         <input type="checkbox" class="ipt-check">
         <button class="bnt-100">Create account</button>
         <p class="pra-500"><span class="sp-129">_____________________</span> <span class="sp-ww">OR</span> <span class="sp-127">_____________________</span></p>
         <button class="bnt-102"><img src="./icons/iconffffffffs8-google-100.png" class="img-google">Sign up with Google</button>
     </div>
+    <div class="priv-div" style="display: none;"></div>
+    <script>
+        const DisSp = document.querySelector('.sp-700');
+        const ContDis = document.querySelector('.priv-div');
+
+        function DisShow1() {
+            ContDis.style.display = 'block';
+        }
+
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.sp-700')) {
+                ContDis.style.display = 'none';
+            }
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const inputs = document.querySelectorAll('.ipt-100, .ipt-105, .ipt-110, .ipt-115, .ipt-120');
