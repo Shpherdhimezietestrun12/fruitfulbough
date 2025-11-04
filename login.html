@@ -78,7 +78,7 @@
             border-radius: 20px;
             background-color: white;
             z-index: 2;
-            top: 37%;
+            top: 222px;
             left: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
@@ -143,11 +143,21 @@
             border-radius: 20px;
             background-color: transparent;
             z-index: 2;
-            top: 590px;
+            top: 600px;
             left: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
             /* Add flexbox for centering */
+        }
+        
+        .loading-div {
+            position: absolute;
+            width: 70px;
+            top: 45px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 70px;
+            border-radius: 50px;
         }
         
         .par-set-one {
@@ -187,9 +197,24 @@
                 <input type="text" class="input-set-one">
             </div>
             <div class="div-sub-set-three">
+                <img src="./icons/cargando-unscreen.gif" class="loading-div" style="display: none;">
                 <p class="par-set-one">Complete your registration here.</p>
                 <p class="par-set-two">Pls input your E-mail here for</p>
                 <p class="par-set-three">our two step verification.</p>
+                <script>
+                    // for the loading format
+                    const inputField40 = document.querySelector('.input-set-one');
+                    const LoadingDiv = document.querySelector('.loading-div');
+                    let timeoutId;
+
+                    inputField40.addEventListener('input', () => {
+                        LoadingDiv.style.display = 'block';
+                        clearTimeout(timeoutId);
+                        timeoutId = setTimeout(() => {
+                            LoadingDiv.style.display = 'none';
+                        }, 50000); // hide the loading image after 1 second
+                    });
+                </script>
             </div>
         </div>
     </div>
