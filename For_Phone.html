@@ -659,7 +659,8 @@
             font-style: italic;
         }
         
-        .sp_2100 {
+        .sp_2100,
+        .sp_2101 {
             color: #B68D05;
         }
         
@@ -1978,12 +1979,31 @@
     <img src="./icons/icons8-star-10uuuuuuu0.png" class="img_6200"><img src="./icons/icons8-star-10uuuuuuu0.png" class="img_6300">
     <p class="par_4100">Folks! Give your</p>
     <p class="par_4200"><span class="sp_2100">minds</span> the ability</p>
-    <p class="par_5100">to <span class="sp_2100">expand itself!</span></p>
+    <p class="par_5100">to <span class="sp_2101">expand itself!</span></p>
     <p class="par-6100">Exploring your mind through</p>
     <p class="par-6200">reading helps to increase</p>
     <p class="par-6300">your capacity towards growth,</p>
     <p class="par-6400">efficiency, dynamism & overall</p>
     <p class="par-6500">personality tranformation.</p>
+    <script>
+        const textElement2 = document.querySelector('.sp_2101');
+        const texts2 = ['auto-expand!', 'enlarge itself!', 'increase in size!', 'auto-resize!'];
+        let index2 = 0;
+        let isBlack2 = true;
+
+        setInterval(() => {
+            textElement2.textContent = texts2[index2];
+            if (isBlack2) {
+                textElement2.style.color = '#B68D05';
+                textElement2.style.fontStyle = 'italic';
+            } else {
+                textElement2.style.color = 'black';
+                textElement2.style.fontFamily = 'Cabri ", sans-serif';
+            }
+            isBlack2 = !isBlack;
+            index2 = (index2 + 1) % texts2.length;
+        }, 2000);
+    </script>
     <button class="bnt-7000" onclick="window.location.href='Landing.html';">Explore Now</button>
     <div class="div-thirteen-113">
         <p class="par-7500">Never lose interest in reading</p>
@@ -2074,6 +2094,25 @@
         <p class="par-6000">and share your experience or <span class="sp-4000">REVIEWS LATER.</span></p>
         <button class="bnt-10k" onclick="window.location.href='Landing.html';">Get our ebook</button>
         <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.00.08_16e58641-Photoroom.png" class="img-10k">
+        <script>
+            const textElement1 = document.querySelector('.par-4100');
+            const texts = ['reading and editing', 'reviewing and revising', 'reading and refining', 'editing and revising'];
+            let index = 0;
+            let isBlack = true;
+
+            setInterval(() => {
+                textElement1.textContent = texts[index];
+                if (isBlack) {
+                    textElement1.style.color = 'black';
+                    textElement1.style.fontStyle = 'normal';
+                } else {
+                    textElement1.style.color = '#B68D05';
+                    textElement1.style.fontFamily = 'Cambria, "Times New Roman", serif';
+                }
+                isBlack = !isBlack;
+                index = (index + 1) % texts.length;
+            }, 2000);
+        </script>
     </div>
     <p class="par-10k">FB in other places</p>
     <img src="./Pictures/Google_2015_logo.svg.png" class="img-15k" onclick="window.location.href='https://g.page/r/CVAud1-kzM6NEBM/review';">
