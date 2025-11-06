@@ -1217,7 +1217,7 @@
         .img-20k {
             position: absolute;
             zoom: 47%;
-            left: 2.5%;
+            left: 5.5%;
         }
         
         .nav-5k,
@@ -1228,19 +1228,19 @@
         
         .nav-5k {
             top: 65px;
-            left: -11.5%;
+            left: -9.5%;
         }
         
         .nav-10k {
             top: 115px;
-            left: -8.5%;
+            left: -7.5%;
             font-size: 17px;
             font-family: Cambria, "Times New Roman", serif;
         }
         
         .nav-20k {
             top: 115px;
-            right: 1.5%;
+            right: 6.5%;
             font-size: 17px;
             font-family: Cambria, "Times New Roman", serif;
         }
@@ -1276,7 +1276,7 @@
             width: 80px;
             height: 35px;
             position: absolute;
-            right: 3.5%;
+            right: 6.5%;
             background-color: transparent;
             top: 11.9%;
             display: flex;
@@ -1300,7 +1300,7 @@
             background-color: transparent;
             position: absolute;
             top: 330px;
-            right: 3%;
+            right: 4%;
         }
         
         .par-90k,
@@ -1405,37 +1405,66 @@
             font-family: "Cabri ", sans-serif;
         }
         
-        .nav_pop_211,
         .nav_pop_212 {
-            position: absolute;
-            left: -7%;
+            position: relative;
+            text-align: center;
+            left: -7.5%;
             white-space: nowrap;
             overflow-x: auto;
-            width: 108;
+            width: 108%;
             /* adjust gap size */
             -webkit-overflow-scrolling: touch;
             /* for smooth scrolling on iOS */
         }
         
         .nav_pop_211 {
+            position: relative;
+            text-align: center;
+            left: -7.5%;
+            overflow-x: auto;
+            width: 108%;
             top: 3px;
+            white-space: nowrap;
+            /* adjust gap size */
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
+        }
+        
+        .nav_pop_213 {
+            position: relative;
+            text-align: center;
+            left: -7.5%;
+            overflow-x: auto;
+            width: 108%;
+            top: -7px;
+            white-space: nowrap;
+            /* adjust gap size */
+            -webkit-overflow-scrolling: touch;
+            /* for smooth scrolling on iOS */
         }
         
         .nav_pop_212 {
-            top: 255px;
+            top: -2px;
         }
         
         .nav_pop_211::-webkit-scrollbar,
-        .nav_pop_212::-webkit-scrollbar {
+        .nav_pop_212::-webkit-scrollbar,
+        .nav_pop_213::-webkit-scrollbar {
             display: none;
             /* Chrome, Safari, and Opera */
         }
         
         .nav_pop_211 li,
-        .nav_pop_212 li {
+        .nav_pop_212 li,
+        .nav_pop_213 li {
             list-style: none;
             padding-left: 7px;
             display: inline-block;
+        }
+        
+        .nav_pop_212 li,
+        .nav_pop_213 li {
+            padding-left: 10.5px;
         }
         
         .div_pop_211 {
@@ -1448,7 +1477,10 @@
         
         .div_pop_211_2,
         .div_pop_211_3,
-        .div_pop_211_4 {
+        .div_pop_211_4,
+        .div_pop_211_5,
+        .div_pop_211_6,
+        .div_pop_211_7 {
             position: absolute;
             width: 100%;
             border-top-left-radius: 10px;
@@ -1471,6 +1503,18 @@
         
         .div_pop_211_4 {
             background-color: #5760f0;
+        }
+        
+        .div_pop_211_5 {
+            background-color: #d242d4;
+        }
+        
+        .div_pop_211_6 {
+            background-color: #282222;
+        }
+        
+        .div_pop_211_7 {
+            background-color: #dd3c5c;
         }
         
         .img_pop_311 {
@@ -1545,6 +1589,15 @@
         .pop_cont_2::-webkit-scrollbar {
             display: none;
             /* Chrome, Safari, and Opera */
+        }
+        
+        .Books-div {
+            position: absolute;
+            top: 800px;
+            left: 0;
+            width: 100%;
+            height: 130px;
+            background-color: transparent;
         }
         
         .menu_cont {
@@ -2320,9 +2373,41 @@
                             <p class="par_cont_403">$1.99</p>
                             <p class="par_cont_404"><img src="./icons/icons8-star-100.png" class="img_cont_401"><span>4.3</span></p>
                         </div>
+                        <li>
+                            <div class="div_pop_211">
+                                <div class="div_pop_211_5"><img class="img_pop_312"></div>
+                                <p class="par_cont_401">..</p>
+                                <p class="par_cont_402">...</p>
+                                <p class="par_cont_403">$..</p>
+                                <p class="par_cont_404"><img src="./icons/icons8-star-100.png" class="img_cont_401"><span>0.0</span></p>
+                            </div>
+                        </li>
                     </li>
                 </ul>
             </nav>
+            <nav class="nav_pop_213">
+                <ul>
+                    <li>
+                        <div class="div_pop_211">
+                            <div class="div_pop_211_6"><img class="img_pop_311"></div>
+                            <p class="par_cont_401">......</p>
+                            <p class="par_cont_402">....</p>
+                            <p class="par_cont_403">$..</p>
+                            <p class="par_cont_404"><img class="img_cont_401"><span>0.0</span></p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="div_pop_211">
+                            <div class="div_pop_211_7"><img class="img_pop_312"></div>
+                            <p class="par_cont_401">.......</p>
+                            <p class="par_cont_402">....</p>
+                            <p class="par_cont_403">$0.00</p>
+                            <p class="par_cont_404"><img class="img_cont_401"><span>0.0</span></p>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="Books-div"></div>
         </div>
         <script>
             const ExitBntOne = document.querySelector('.bnt_pop_212');
@@ -2389,12 +2474,18 @@
             const DivCoo = document.querySelector('.cookies-portal');
             const BntCoo = document.querySelector('.bnt-0303');
 
+
+            // Using local storage to keep response of the user prefrence.. this should be corrected after to ensure users experience...
+            if (!localStorage.getItem('cookieNoticeDismissed')) {
+                DivCoo.style.display = 'block';
+            }
             RemCoo.addEventListener('click', () => {
                 DivCoo.style.display = 'none';
+                localStorage.setItem('cookieNoticeDismissed', true);
             });
             BntCoo.addEventListener('click', () => {
-
                 DivCoo.style.display = 'none';
+                localStorage.setItem('cookieNoticeDismissed', true);
             });
         </script>
     </div>
