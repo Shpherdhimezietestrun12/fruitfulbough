@@ -157,6 +157,18 @@
         .img-0909 {
             zoom: 19%;
         }
+        
+        .settings,
+        .settings1,
+        .settings3 {
+            position: absolute;
+            top: 25%;
+            right: 4%;
+            width: 50px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
     </style>
     <p class="pra-100">Audio Books</p>
     <div class="div-1">
@@ -203,12 +215,24 @@
                     background-color: rgba(0, 0, 0, 0.8);
                     color: #B68D05;
                 }
+                
+                .img-hh {
+                    zoom: 25%;
+                }
+                
+                .img-h1,
+                .img-h2,
+                .img-h3 {
+                    zoom: 30%;
+                    position: relative;
+                    left: 5%;
+                }
             </style>
             <div class="one">
-                <p>Explore</p>
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-millenium-meltdown-1.html';">
             </div>
             <div class="two">
-                <p>View</p>
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h1">
             </div>
         </div>
         <script>
@@ -246,10 +270,10 @@
         </style>
         <div class="settings1" style="display: none;">
             <div class="one">
-                <p>Explore</p>
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-roseline-none-else-1.html';">
             </div>
             <div class="two">
-                <p>View</p>
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h2">
             </div>
         </div>
         <script>
@@ -283,31 +307,37 @@
         <p class="pra-0305">Novel</p>
         <div class="div-0709" onclick="OpenSet()"><img onclick="OpenSet()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
         <style>
-            .settings,
-            .settings1,
-            .settings3 {
-                position: absolute;
-                top: 25%;
-                right: 4%;
-                width: 80px;
-                height: 70px;
-                background-color: rgba(0, 0, 0, 0.5);
-                border-radius: 10px;
-            }
+
         </style>
         <div class="settings" style="display: none;">
             <div class="one">
-                <p>Explore</p>
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-wise-companion-1.html';">
             </div>
             <div class="two">
-                <p>View</p>
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h3">
             </div>
         </div>
         <script>
             const DiveLoad1 = document.querySelector('.div-0709');
             const ImgLoad1 = document.querySelector('.img-6080');
             const settings = document.querySelector('.settings');
-
+            const ChangeIt = document.querySelector('.two');
+            const ChangeImg1 = document.querySelector('.img-h1');
+            const ChangeImg2 = document.querySelector('.img-h2');
+            const ChangeImg3 = document.querySelector('.img-h3');
+            const images = [{
+                element: ChangeImg1,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, {
+                element: ChangeImg2,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, {
+                element: ChangeImg3,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, ];
 
 
             function OpenSet() {
@@ -322,6 +352,22 @@
                 if (!event.target.closest('.img-6080')) { // If not clicking img-4000 or its children
                     settings.style.display = 'none';
                 }
+            });
+
+
+            images.forEach((image) => {
+                image.element.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    image.element.src = image.element.src.includes(image.activeSrc) ? image.defaultSrc : image.activeSrc;
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                images.forEach((image) => {
+                    if (!event.target.closest('.img-h1') && !event.target.closest('.img-h2') && !event.target.closest('.img-h3')) {
+                        image.element.src = image.defaultSrc;
+                    }
+                });
             });
         </script>
     </div>
