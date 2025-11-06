@@ -248,7 +248,9 @@
         .sel-2,
         .ipt-002,
         .ipt-007,
-        .div-0909 {
+        .div-0909,
+        .sel-1w,
+        .sel-2w {
             position: absolute;
             width: 245px;
             height: 28px;
@@ -258,6 +260,60 @@
             border: 0.5px solid rgb(133, 133, 133);
             border-radius: 4px;
             color: black;
+        }
+        
+        .sel-1w1,
+        .sel-1w2,
+        .sel-1w3,
+        .sel-1w4,
+        .sel-1w5,
+        .sel-2w1,
+        .sel-2w2 {
+            position: absolute;
+            width: 100%;
+            height: 28px;
+            top: 0;
+            left: 0;
+            border: 0px solid;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-left-width: 0px;
+            border-radius: 0px;
+            border-bottom: 0.5px solid rgb(133, 133, 133);
+            color: black;
+        }
+        
+        .sel-1w2 {
+            top: 28px;
+        }
+        
+        .sel-1w3 {
+            top: 56px;
+        }
+        
+        .sel-1w4 {
+            top: 84px;
+        }
+        
+        .sel-1w5 {
+            top: 112px;
+        }
+        
+        .sel-2w2 {
+            top: 28px;
+        }
+        
+        .sel-1w {
+            top: 860px;
+            background-color: white;
+            height: 140px;
+            z-index: 2;
+        }
+        
+        .sel-2w {
+            top: 899px;
+            background-color: white;
+            height: 56px;
         }
         
         .ipt-002,
@@ -291,7 +347,9 @@
             border: 0px solid;
         }
         
-        .down-ar {
+        .down-ar,
+        .down-ar1,
+        .down-ar2 {
             position: absolute;
             zoom: 13%;
             top: 50%;
@@ -301,7 +359,7 @@
         
         .pra-450 {
             position: absolute;
-            left: 13%;
+            left: 30px;
             top: 10%;
             transform: translate(-50%, -50%);
             font-size: 12px;
@@ -453,6 +511,25 @@
         <img src="./icons/icons8-star-10uuuuuuu0.png" class="img_6100">
         <img src="./icons/icons8-star-10uuuuuuu0.png" class="img_6200">
         <img src="./icons/icons8-star-10uuuuuuu0.png" class="img_6300">
+        <script>
+            const textElement1 = document.querySelector('.sp-22');
+            const texts = ['communicate with our', 'Talk to our', 'reach out to our', 'get in touch with our'];
+            let index = 0;
+            let isBlack = true;
+
+            setInterval(() => {
+                textElement1.textContent = texts[index];
+                if (isBlack) {
+                    textElement1.style.color = '#B68D05';
+                    textElement1.style.fontStyle = 'italic';
+                } else {
+                    textElement1.style.color = 'black';
+                    textElement1.style.fontFamily = 'Cambria, "Times New Roman", serif';
+                }
+                isBlack = !isBlack;
+                index = (index + 1) % texts.length;
+            }, 4000);
+        </script>
     </div>
     <p class="par-oop">Information</p>
     <p class="pra-oor">Please fill in the required details</p>
@@ -463,12 +540,12 @@
         <p class="par-080">Select the country you're in</p>
         <div class="sel-1">
             <p class="pra-450">Nigeria</p>
-            <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="down-ar">
+            <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="down-ar1">
         </div>
         <p class="par-081">Select your current FB plan</p>
         <div class="sel-2">
             <p class="pra-450">Custom</p>
-            <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="down-ar">
+            <img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="down-ar2">
         </div>
         <p class="par-082">Email</p>
         <input type="text" class="ipt-002">
@@ -480,6 +557,78 @@
         </div>
         <button class="bnt-8800">Apply</button>
     </div>
+    <div class="sel-1w" style="display: none;">
+        <div class="sel-1w1">
+            <p class="pra-450">America</p>
+        </div>
+        <div class="sel-1w2">
+            <p class="pra-450">Britain</p>
+        </div>
+        <div class="sel-1w3">
+            <p class="pra-450">Canada</p>
+        </div>
+        <div class="sel-1w4">
+            <p class="pra-450">Ghana</p>
+        </div>
+        <div class="sel-1w5">
+            <p class="pra-450">others</p>
+        </div>
+    </div>
+    <div class="sel-2w" style="display: none;">
+        <div class="sel-2w1">
+            <p class="pra-450">Pro</p>
+        </div>
+        <div class="sel-2w2">
+            <p class="pra-450">Support</p>
+        </div>
+    </div>
+    <script>
+        // this is  for the nigeria div...
+
+
+        const FirstSh = document.querySelector('.down-ar1');
+        const FirstSh2 = document.querySelector('.down-ar2');
+        const DivSh = document.querySelector('.sel-1w');
+        const DivSh2 = document.querySelector('.sel-2w');
+
+
+
+        FirstSh.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (FirstSh.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                FirstSh.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                DivSh.style.display = "block";
+            } else {
+                FirstSh.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                DivSh.style.display = "none";
+            }
+        });
+
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.FirstSh')) { // If not clicking img-4000 or its children
+                FirstSh.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                DivSh.style.display = "none";
+            }
+        });
+
+        FirstSh2.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (FirstSh2.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                FirstSh2.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                DivSh2.style.display = "block";
+            } else {
+                FirstSh2.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                DivSh2.style.display = "none";
+            }
+        });
+
+        document.body.addEventListener('click', (event) => {
+            if (!event.target.closest('.FirstSh2')) { // If not clicking img-4000 or its children
+                FirstSh2.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                DivSh2.style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 
