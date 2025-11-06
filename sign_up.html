@@ -415,10 +415,80 @@
             top: 670px;
             left: 40%;
             transform: translate(-50%, -50%);
-            width: 220px;
-            height: 110px;
+            width: 225px;
+            height: 125px;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
+        }
+        
+        .one-test,
+        .two-test,
+        .three-test,
+        .four-test,
+        .five-test {
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 6%;
+            font-family: "Cabri ", sans-serif;
+            font-size: 13px;
+        }
+        
+        .two-test {
+            top: 20px;
+        }
+        
+        .three-test {
+            top: 40px;
+        }
+        
+        .four-test {
+            top: 60px;
+        }
+        
+        .five-test {
+            top: 80px;
+        }
+        
+        .google-sign {
+            top: 0;
+            left: 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .Diss-div {
+            top: 45%;
+            left: 50%;
+            width: 310px;
+            background-color: black;
+            height: 350px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 15px;
+        }
+        
+        .par-5021 {
+            position: relative;
+            font-size: 19px;
+            color: white;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .dib-div {
+            top: 56%;
+            left: 50%;
+            width: 280px;
+            background-color: transparent;
+            height: 280px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 15px;
         }
     </style>
     <img src="./icons/fb_logo-3.png" class="img-20k" onclick="window.location.href='For_Phone.html';">
@@ -521,12 +591,26 @@
         <input type="checkbox" class="ipt-check">
         <button class="bnt-100">Create account</button>
         <p class="pra-500"><span class="sp-129">_____________________</span> <span class="sp-ww">OR</span> <span class="sp-127">_____________________</span></p>
-        <button class="bnt-102"><img src="./icons/iconffffffffs8-google-100.png" class="img-google">Sign up with Google</button>
+        <button class="bnt-102" onclick="ShowAccts()"><img src="./icons/iconffffffffs8-google-100.png" class="img-google">Sign up with Google</button>
     </div>
-    <div class="priv-div" style="display: none;"></div>
+    <div class="priv-div" style="display: none;">
+        <p class="one-test">At fruitful bough, we take your</p>
+        <p class="two-test">privacy seriously. We collect</p>
+        <p class="three-test">the information required to enable</p>
+        <p class="four-test">user preferences and improve our</p>
+        <p class="five-test">services for our client's usage.</p>
+    </div>
+    <div class="google-sign" style="display: none;">
+        <div class="Diss-div">
+            <p class="par-5021">Choose your Google account.</p>
+            <div class="dib-div"></div>
+        </div>
+    </div>
     <script>
         const DisSp = document.querySelector('.sp-700');
         const ContDis = document.querySelector('.priv-div');
+        const ContDis12 = document.querySelector('.bnt-102');
+        const GoogleBnt = document.querySelector('.google-sign');
 
         function DisShow1() {
             ContDis.style.display = 'block';
@@ -537,6 +621,17 @@
                 ContDis.style.display = 'none';
             }
         });
+
+        function ShowAccts() {
+            GoogleBnt.style.display = 'block';
+            var accountsContainer = document.querySelector('.dib-div');
+            accountsContainer.innerHTML = '';
+            var iframe = document.createElement('iframe');
+            iframe.src = 'https://accounts.google.com/AccountChooser?service=lso';
+            iframe.width = '100%';
+            iframe.height = '275';
+            accountsContainer.appendChild(iframe);
+        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
