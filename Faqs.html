@@ -232,7 +232,18 @@
             transform: translate(-50%, -50%);
         }
         
-        .pra-020 {
+        .pra-020,
+        .pra-021,
+        .pra-022,
+        .pra-023,
+        .pra-024,
+        .pra-025,
+        .pra-026,
+        .pra-027,
+        .pra-028,
+        .pra-029,
+        .pra-030,
+        .pra-031 {
             position: absolute;
             font-family: "Cabri ", sans-serif;
             font-size: 15px;
@@ -380,57 +391,107 @@
             <li class="list--1">For Everyone</li>
             <li><img src="./icons/icons8-down-arrow-1sssssssxxx00.png" class="img-004"></li>
         </ul>
-        <script>
-        </script>
+
     </nav>
     <div class="div-005">
         <p class="pra-020">How to read a book on FB?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-006">
-        <p class="pra-020">How to pay for my book?</p>
+        <p class="pra-021">How to pay for my book?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-007">
-        <p class="pra-020">Can I get hard copies?</p>
+        <p class="pra-022">Can I get hard copies?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-008">
-        <p class="pra-020">What is FB?</p>
+        <p class="pra-023">What is FB?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-009">
-        <p class="pra-020">Can I use international card for..?</p>
+        <p class="pra-024">Can I use international card for..?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-010">
-        <p class="pra-020">Who owns this platform?</p>
+        <p class="pra-025">Who owns this platform?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-011">
-        <p class="pra-020">How secured are my details?</p>
+        <p class="pra-026">How secured are my details?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-012">
-        <p class="pra-020">Can I communicate with the authors?</p>
+        <p class="pra-027">How can FB help me?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-013">
-        <p class="pra-020">Can I publish my book here?</p>
+        <p class="pra-028">Can I publish my book here?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-014">
-        <p class="pra-020">What are the features FB has to offer?</p>
+        <p class="pra-029">What are the features FB has to offer?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-015">
-        <p class="pra-020">Are the books free to read?</p>
+        <p class="pra-030">Are the books free to read?</p>
         <p class="pra-0100">+</p>
     </div>
     <div class="div-016">
-        <p class="pra-020">Can I invest in FB?</p>
+        <p class="pra-031">Can I invest in FB?</p>
         <p class="pra-0100">+</p>
     </div>
+    <script>
+        const ListChange1 = document.querySelector('.list--1');
+        const ImgChange1 = document.querySelector('.img-004');
+        const Parl1 = document.querySelector('.pra-020');
+        const Parl2 = document.querySelector('.pra-021');
+        const Parl3 = document.querySelector('.pra-022');
+        const Parl4 = document.querySelector('.pra-023');
+        const Parl5 = document.querySelector('.pra-024');
+        const Parl6 = document.querySelector('.pra-025');
+        const Parl7 = document.querySelector('.pra-026');
+        const Parl8 = document.querySelector('.pra-027');
+        const Parl9 = document.querySelector('.pra-028');
+        const Parl10 = document.querySelector('.pra-029');
+        const Parl11 = document.querySelector('.pra-030');
+        const Parl12 = document.querySelector('.pra-031');
+
+
+        ImgChange1.addEventListener('click', (event) => {
+            event.stopPropagation();
+            if (ImgChange1.src.includes('icons8-down-arrow-1sssssssxxx00.png')) {
+                ImgChange1.src = './icons/icons8-collapse-arrowxxxxxxxxxxxxx-100.png';
+                ListChange1.textContent = 'For Students';
+                Parl1.textContent = 'How to read FB Books?';
+                Parl2.textContent = 'What use is FB books to me?';
+                Parl3.textContent = 'Can I re-sell FB books?';
+                Parl4.textContent = 'Explain FB to me?';
+                Parl5.textContent = 'Any discount for students?';
+                Parl6.textContent = 'Publishers Info/Details?';
+                Parl7.textContent = 'Can I request an audience with an au..?';
+                Parl8.textContent = 'Importance of FB?';
+                Parl9.textContent = 'Can I write a book on FB?';
+                Parl10.textContent = 'Highlight all FB Features?';
+                Parl11.textContent = 'Do students get any discount?';
+                Parl12.textContent = 'Can I invest as a student?';
+            } else {
+                ImgChange1.src = './icons/icons8-down-arrow-1sssssssxxx00.png';
+                ListChange1.textContent = 'For Everyone';
+                Parl1.textContent = 'How to read a book on FB?';
+                Parl2.textContent = 'How to pay for my book?';
+                Parl3.textContent = 'Can I get hard copies?';
+                Parl4.textContent = 'What is FB?';
+                Parl5.textContent = 'Can I use international card for..?';
+                Parl6.textContent = 'Who owns this platform?';
+                Parl7.textContent = 'Can I communicate with the authors?';
+                Parl8.textContent = 'How can FB help me?';
+                Parl9.textContent = 'Can I publish my book here?';
+                Parl10.textContent = 'What are the features FB has to offer?';
+                Parl11.textContent = 'Can I invest in FB?';
+            }
+        });
+    </script>
 </body>
 
 </html>
