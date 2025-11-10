@@ -27,7 +27,6 @@
     <style>
         body {
             background-color: #111111;
-            background-color: #000000;
         }
         
         .div-test-one {
@@ -47,8 +46,8 @@
         
         .div-test-two {
             /* Adjust styles here */
-            width: 30%;
-            height: 95%;
+            width: 420px;
+            height: 575px;
             background-color: #e6e4e2;
             position: absolute;
             top: 50%;
@@ -60,19 +59,26 @@
         .img-test-one {
             zoom: 70%;
             position: absolute;
-            top: 30%;
+            top: 230px;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         
         .div-test-test {
             /* Adjust styles here */
-            width: 22%;
+            width: 19%;
             height: 100%;
             background-color: #111111;
             top: 0;
             left: 0;
-            position: absolute;
+            position: fixed;
+            transition: opacity 0.3s ease;
+            /* Optional fade effect */
+        }
+        
+        .div-test-test.hidden {
+            display: none;
+            /* Hide the element */
         }
         
         .par-test-one {
@@ -109,9 +115,9 @@
         }
         
         .but-test-one {
-            width: 65%;
-            height: 7%;
-            top: 78%;
+            width: 250px;
+            height: 42px;
+            top: 450px;
             position: absolute;
             left: 50%;
             font-size: 14.5px;
@@ -136,11 +142,11 @@
         }
         
         .but-test-two {
-            width: 65%;
-            height: 6.5%;
+            width: 250px;
+            height: 42px;
             position: absolute;
             font-weight: bold;
-            top: 90.5%;
+            top: 518px;
             font-size: 14.5px;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -176,21 +182,21 @@
         
         .div_100 {
             /* Adjust styles here */
-            width: 63%;
-            height: 44%;
+            width: 250px;
+            height: 270px;
             background-image: url('./icons/10622087.png');
             background-size: cover;
             background-color: transparent;
             position: absolute;
-            top: 25.5%;
+            top: 150px;
             left: 50%;
             transform: translate(-50%, -50%);
         }
         
         .div-test-four {
             /* Adjust styles here */
-            width: 30%;
-            height: 95%;
+            width: 420px;
+            height: 575px;
             background-color: #e6e4e2;
             position: absolute;
             top: 50%;
@@ -200,56 +206,49 @@
         }
         
         .par-set-seven {
-            position: absolute;
+            position: relative;
+            text-align: center;
             font-size: 27px;
-            width: 100%;
             /* or a specific width */
             text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            left: _;
             color: black;
-            top: 54%;
+            top: 300px;
             font-weight: bold;
             font-family: Cambria, "Times New Roman", serif;
         }
         
         .par-set-eight {
-            position: absolute;
-            font-size: 27px;
-            width: 100%;
-            /* or a specific width */
+            position: relative;
             text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 27px;
+            /* or a specific width */
+            left: _;
             color: black;
-            top: 61%;
+            top: 275px;
             font-weight: bold;
             font-family: Cambria, "Times New Roman", serif;
         }
         
         .par-set-nine {
-            position: absolute;
-            font-size: 14px;
-            width: 100%;
-            /* or a specific width */
+            position: relative;
             text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 14px;
+            /* or a specific width */
+            left: _;
             color: black;
-            top: 70%;
+            top: 265px;
             font-family: Cambria, "Times New Roman", serif;
         }
         
         .par-set-ten {
-            position: absolute;
-            font-size: 14px;
-            width: 100%;
-            /* or a specific width */
+            position: relative;
             text-align: center;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            font-size: 14px;
+            /* or a specific width */
+            left: _;
             color: black;
-            top: 73.5%;
+            top: 255px;
             font-family: Cambria, "Times New Roman", serif;
         }
         
@@ -271,15 +270,15 @@
         }
         
         .but_120 {
-            width: 55%;
-            height: 9%;
+            width: 250px;
+            height: 55px;
             left: 50%;
             font-size: 15px;
             background-color: black;
             color: white;
             position: absolute;
             transform: translate(-50%, -50%);
-            top: 85%;
+            top: 500px;
             border: 1px solid black;
             font-weight: bold;
             border-radius: 10px;
@@ -316,15 +315,13 @@
         
         .div_2100 {
             width: 100%;
-            height: 9%;
+            height: 48px;
             background-color: transparent;
             position: absolute;
-            top: 10%;
-            border-bottom: 0.5px solid #3f3f3f;
-            left: 0;
+            top: 0;
             z-index: 1;
-            background-position: 265px 19px;
-            background-size: 18px 18px;
+            background-position: 205px 15px;
+            background-size: 14px 14px;
             /* width height */
             /* or left, top, bottom */
             background-repeat: no-repeat;
@@ -339,11 +336,11 @@
         
         .div_3100 {
             width: 100%;
-            height: 57%;
-            background-color: transparent;
+            height: 77%;
+            background-color: #111111;
             position: absolute;
-            top: 19%;
-            border-bottom: 0.5px solid #292929;
+            top: 52px;
+            border-bottom: 0px solid;
             left: 0;
         }
         
@@ -358,13 +355,21 @@
         }
         
         .div_5100 {
-            width: 78%;
-            height: 99.9%;
-            background-color: transparent;
+            width: 81%;
+            height: 100%;
+            background-color: #111111;
             position: absolute;
             top: 0;
-            left: 22%;
+            left: 19%;
             overflow-y: auto;
+            transition: left 0.3s ease;
+            /* Smooth transition */
+        }
+        
+        .div_5100.expanded {
+            left: 1%;
+            width: 100%;
+            /* Make it full width when expanded */
         }
         
         .div_5100_sub {
@@ -374,44 +379,52 @@
             background-size: cover;
             position: absolute;
             top: 0;
-            border-bottom: 0.5px solid #292929;
+            border-bottom: 0px solid;
+            /* remove border */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* blurry bottom "border" */
+            padding-bottom: 5px;
+            /* add some space for the shadow */
             background-position: 35px 1900px;
             left: 0%;
         }
         
         .img_2000 {
-            zoom: 40%;
+            zoom: 32%;
             position: absolute;
-            top: 15%;
+            top: 48px;
             left: 1.5%;
+            cursor: pointer;
+            /* Make it clear it's clickable */
         }
         
         .img_2100 {
             zoom: 20%;
             position: absolute;
-            top: 15%;
-            left: 5.5%;
+            top: 55px;
+            left: 4.5%;
         }
         
         .par_1000 {
             position: absolute;
-            top: -20%;
-            left: 9.5%;
-            font-size: 27px;
+            top: 2px;
+            left: 7.7%;
+            font-size: 20px;
             color: white;
             font-weight: bold;
             font-family: "Cabri ", sans-serif;
         }
         
         .ipt_1000 {
-            width: 35%;
-            height: 65%;
+            width: 540px;
+            height: 45px;
             background-color: rgba(255, 255, 255, 0.2);
             padding-left: 50px;
             position: absolute;
             border-radius: 8px;
-            left: 26%;
-            top: 15%;
+            left: 42%;
+            transform: translate(-50%, -50%);
+            top: 50%;
             border: 0px solid;
             background-position: 15px 10px;
             background-size: 25px 25px;
@@ -431,12 +444,11 @@
         
         .bnt_1000,
         .bnt_1200 {
-            height: 60%;
             position: absolute;
             border-radius: 25px;
             /* width height */
             /* or left, top, bottom */
-            font-size: 15px;
+            font-size: 14px;
             /* adjust padding to fit image */
             top: 20%;
             border: 0px solid;
@@ -444,9 +456,10 @@
         
         .bnt_1000 {
             background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
-            left: 73.2%;
-            width: 11.5%;
-            font-weight: bold;
+            left: 78.1%;
+            width: 135px;
+            font-weight: normal;
+            height: 34px;
             padding-left: 16px;
         }
         
@@ -464,22 +477,24 @@
         }
         
         .bnt_1200 {
-            width: 11.5%;
+            width: 135px;
             padding-left: 25px;
-            left: 86%;
+            left: 89%;
             background-color: rgba(255, 255, 255, 0.18);
             color: #cccccc;
             background-image: url('./icons/icons8-history-100.png');
-            font-weight: bold;
+            font-weight: normal;
+            height: 34px;
             background-position: 15px 10px;
             background-size: 15px 15px;
             background-repeat: no-repeat;
         }
         
         .nav_2100 {
-            position: relative;
+            position: absolute;
             color: white;
-            left: -4.5%;
+            left: -1%;
+            top: -3.5px;
         }
         
         .nav_2100 li {
@@ -488,15 +503,15 @@
         }
         
         .img_2100_1 {
-            zoom: 25%;
+            zoom: 17%;
         }
         
         .list_2100_1 {
             position: absolute;
-            top: 16%;
-            left: 23%;
+            top: 16.5px;
+            left: 100.5%;
             font-family: "Cabri ", sans-serif;
-            font-weight: bold;
+            font-weight: normal;
             color: #9c9c9c;
         }
         
@@ -505,14 +520,16 @@
         .bnt_div_3100-3,
         .bnt_div_3100-4,
         .bnt_div_3100-5,
-        .bnt_div_3100-6 {
-            width: 89%;
-            height: 15%;
-            background-color: transparent;
+        .bnt_div_3100-6,
+        .bnt_div_3100-5,
+        .bnt_div_3100-7 {
+            width: 215px;
+            height: 38px;
+            background-color: white;
             position: absolute;
             border: 0px solid;
             border-radius: 10px;
-            left: 5%;
+            left: 1.5%;
             font-weight: bold;
             color: #6f6d6d;
             font-size: 19px;
@@ -550,13 +567,14 @@
         .bnt_div_3100-3:hover,
         .bnt_div_3100-4:hover,
         .bnt_div_3100-5:hover,
-        .bnt_div_3100-6:hover {
+        .bnt_div_3100-6:hover,
+        .bnt_div_3100-7:hover {
             color: #806508;
             background-color: rgba(255, 255, 255, 0.18);
         }
         
         .bnt_div_3100-1 {
-            top: 1.85%;
+            top: 7px;
             background-image: url('./icons/icons8-books-100-2.png');
         }
         
@@ -565,7 +583,7 @@
         }
         
         .bnt_div_3100-2 {
-            top: 18%;
+            top: 55px;
             background-image: url('./icons/icons8-love-10w0.png');
         }
         
@@ -574,7 +592,7 @@
         }
         
         .bnt_div_3100-3 {
-            top: 34.5%;
+            top: 103px;
             background-image: url('./icons/icons8-person-1007.png');
         }
         
@@ -583,7 +601,7 @@
         }
         
         .bnt_div_3100-4 {
-            top: 50.7%;
+            top: 150px;
             background-image: url('./icons/icons8-notification-100-2.png');
         }
         
@@ -592,7 +610,7 @@
         }
         
         .bnt_div_3100-5 {
-            top: 67%;
+            top: 197px;
             background-image: url('./icons/icons8-settings-100.png');
         }
         
@@ -601,12 +619,32 @@
         }
         
         .bnt_div_3100-6 {
-            top: 83%;
+            top: 244px;
             background-image: url('./icons/icons8-about-100.png');
         }
         
         .bnt_div_3100-6:hover {
             background-image: url('./icons/ccccccc1111111111111111cc.png');
+        }
+        
+        .bnt_div_3100-7 {
+            top: 291px;
+            background-image: url('./icons/icons8-about-100.png');
+        }
+        
+        .bnt_div_3100-7:hover {
+            background-image: url('./icons/ccccccc1111111111111111cc.png');
+        }
+        
+        .div-tttt-1 {
+            width: 210px;
+            height: 140px;
+            background-color: #111111;
+            top: 440px;
+            position: absolute;
+            left: 9%;
+            transform: translate(-50%, -50%);
+            border-top: 0.2px solid#2e2e2e;
         }
         
         .nav_4100 {
@@ -622,8 +660,8 @@
         
         .list_4100,
         .list_4150 {
-            width: 42px;
-            height: 42px;
+            width: 38px;
+            height: 38px;
             background-color: transparent;
             border: 1.5px solid white;
             border-radius: 32px;
@@ -631,17 +669,20 @@
         
         .list_4100 {
             position: relative;
+            left: 35%;
         }
         
         .list_4150 {
             position: absolute;
-            left: 1240%;
+            left: 1345%;
+            top: 25px;
         }
         
         .img_5100 {
-            top: 25px;
-            left: 30px;
-            zoom: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            zoom: 19%;
             position: absolute;
         }
         
@@ -754,7 +795,7 @@
         .nav_8900,
         .nav_7500 {
             position: absolute;
-            left: -2%;
+            left: -4%;
             overflow-x: auto;
             width: 110%;
             -webkit-overflow-scrolling: touch;
@@ -976,8 +1017,8 @@
         
         .nav_4110 {
             position: absolute;
-            top: -5%;
-            left: -7%;
+            top: -1%;
+            left: -20%;
         }
         
         .nav_4110 li {
@@ -986,9 +1027,29 @@
             display: inline-block;
         }
         
+        .pra-0320,
+        .pra-0321 {
+            font-size: 13px;
+            color: rgb(158, 158, 158);
+            top: 45px;
+            font-family: "Cabri ", sans-serif;
+            position: absolute;
+            left: 5%;
+        }
+        
+        .pra-0321 {
+            top: 80px;
+        }
+        
+        .tedt-200 {
+            position: relative;
+            top: 27px;
+            zoom: 19%;
+        }
+        
         .div_4100_1 {
-            width: 45px;
-            height: 45px;
+            width: 27px;
+            height: 27px;
             background-color: rgba(255, 255, 255, 0.7);
             display: flex;
             justify-content: center;
@@ -1010,24 +1071,28 @@
         }
         
         .img_4110-1 {
-            zoom: 30%;
+            zoom: 22%;
         }
         
         .img_4110-2 {
-            zoom: 56%;
+            zoom: 40%;
+        }
+        
+        .img_4110-3 {
+            zoom: 20%;
         }
         
         .but_4100_1 {
-            width: 260px;
-            height: 46px;
+            width: 220px;
+            height: 40px;
             position: absolute;
             background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
-            left: 73.2%;
-            bottom: 1%;
+            top: 36px;
             border-radius: 30px;
-            left: 7%;
             border: 0px solid;
-            font-size: 18px;
+            font-size: 16.5px;
+            left: 9.5%;
+            transform: translate(-50%, -50%);
             cursor: pointer;
             /* Often added for buttons */
             transition: background-color 0.3s, color 0.3s;
@@ -1113,22 +1178,74 @@
         }
         
         .img_20_1 {
-            zoom: 31%;
+            zoom: 25%;
             position: relative;
-            left: -6%;
-            top: 4%;
+            left: -2%;
+            top: 10%;
         }
         
         .qr_code_12 {
-            zoom: 32%;
+            zoom: 22%;
             position: relative;
-            left: 5%;
+            left: 2%;
             top: 4%;
         }
         
         .sp_bnt_3000 {
             position: relative;
-            top: -15%;
+            top: -10%;
+            font-family: Cambria, "Times New Roman", serif;
+            font-weight: normal;
+        }
+        
+        .imi-test {
+            position: fixed;
+            top: 68px;
+            width: 100%;
+            height: 560px;
+            left: 0;
+            overflow-y: auto;
+            background-color: #111111;
+        }
+        
+        .imi-test::-webkit-scrollbar {
+            display: none;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+        }
+        
+        .dib-000 {
+            height: 90px;
+            width: 100%;
+            position: absolute;
+            background-color: #111111;
+            top: 560px;
+            left: 0;
+        }
+        
+        .ini-tst {
+            position: fixed;
+            top: 541px;
+            width: 100%;
+            left: 0;
+            height: 19%;
+            background-color: #111111;
+        }
+        
+        .text-par {
+            position: absolute;
+            top: 80%;
+            left: 75%;
+            transform: translate(-5%, -50%);
+            font-size: 5px;
+            color: #a5a5a5;
+        }
+        
+        .text-par_1 {
+            position: absolute;
+            top: -5px;
+            left: 1.3%;
+            font-size: 5px;
+            color: #a5a5a5;
         }
     </style>
     <div class="div-test-one">
@@ -1197,42 +1314,57 @@
     </div>
     </div>
     <div class="div-test-test">
-        <div class="div_2100">
-            <nav class="nav_2100">
-                <ul>
-                    <li><img src="./icons/icons8-world-100.png" class="img_2100_1"></li>
-                    <li class="list_2100_1">ENGLISH</li>
-                </ul>
-            </nav>
+        <div class="imi-test">
+            <div class="div_2100">
+                <nav class="nav_2100">
+                    <ul>
+                        <li><img src="./icons/icons8-world-100.png" class="img_2100_1"></li>
+                        <li class="list_2100_1">ENGLISH</li>
+                        <li>
+                            <p class="text-par">_______________________________________________________________________________________</p>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="div_3100">
+                <button class="bnt_div_3100-1"><span class="sp_div_3100">All Books</span></button>
+                <button class="bnt_div_3100-2"><span class="sp_div_3100">Favourite</span></button>
+                <button class="bnt_div_3100-3"><span class="sp_div_3150">Profile</span></button>
+                <button class="bnt_div_3100-4"><span class="sp_div_3200">Notifications</span></button>
+                <button class="bnt_div_3100-5"><span class="sp_div_3250">Dashboard</span></button>
+                <button class="bnt_div_3100-6"><span class="sp_div_3100">Settings</span></button>
+                <button class="bnt_div_3100-7"><span class="sp_div_3100">About Us</span></button>
+
+                <div class="div-tttt-1">
+                    <nav class="nav_4110">
+                        <ul>
+                            <li>
+                                <div class="div_4100_1"><img src="./icons/icons8-facebook-100.png" class="img_4110-1"></div>
+                            </li>
+                            <li>
+                                <div class="div_4100_1"><img src="./icons/icons8-x-100.png" class="img_4110-1"></div>
+                            </li>
+                            <li>
+                                <div class="div_4100_1"><img src="./icons/icons8-instagram-100.png" class="img_4110-1"></div>
+                            </li>
+                            <li>
+                                <div class="div_4100_1"><img src="./icons/icons8-whatsapp-50 (1).png" class="img_4110-2"></div>
+                            </li>
+                            <li>
+                                <div class="div_4100_1"><img src="./icons/icons8-google-100mmmssssssmmm.png" class="img_4110-3"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="pra-0320" onclick="window.location.href='mailto:fruitfulbough26@gmail.com';">fruitfulbough26@gmail.com</p>
+                    <p class="pra-0321" onclick="window.location.href='mailto:fruitfulbough26@gmail.com';">Always find me <img src="./icons/icons8-enter-100xxxxxx.png" class="tedt-200"></p>
+                </div>
+            </div>
+            <div class="dib-000"></div>
         </div>
-        <div class="div_3100">
-            <button class="bnt_div_3100-1"><span class="sp_div_3100">All Books</span></button>
-            <button class="bnt_div_3100-2"><span class="sp_div_3100">Favourite</span></button>
-            <button class="bnt_div_3100-3"><span class="sp_div_3150">Profile</span></button>
-            <button class="bnt_div_3100-4"><span class="sp_div_3200">Notifications</span></button>
-            <button class="bnt_div_3100-5"><span class="sp_div_3250">Settings</span></button>
-            <button class="bnt_div_3100-6"><span class="sp_div_3100">About Us</span></button>
+        <div class="ini-tst">
+            <p class="text-par_1">_______________________________________________________________________________________</p>
+            <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxxxx0.png" class="img_20_1"> <span class="sp_bnt_3000">Download Link</span> <img src="./icons/icons8-qr-code-100.png" class="qr_code_12"></button>
         </div>
-        <div class="div_4100">
-            <nav class="nav_4110">
-                <ul>
-                    <li>
-                        <div class="div_4100_1"><img src="./icons/icons8-facebook-100.png" class="img_4110-1"></div>
-                    </li>
-                    <li>
-                        <div class="div_4100_1"><img src="./icons/icons8-x-100.png" class="img_4110-1"></div>
-                    </li>
-                    <li>
-                        <div class="div_4100_1"><img src="./icons/icons8-instagram-100.png" class="img_4110-1"></div>
-                    </li>
-                    <li>
-                        <div class="div_4100_1"><img src="./icons/icons8-whatsapp-50 (1).png" class="img_4110-2"></div>
-                    </li>
-                </ul>
-            </nav>
-            <p class="par_4100_1">Download FB Link Now</p>
-        </div>
-        <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxxxx0.png" class="img_20_1"> <span class="sp_bnt_3000">Download Link</span> <img src="./icons/icons8-qr-code-100.png" class="qr_code_12"></button>
     </div>
     <div class="div_5100">
         <div class="div_5100_sub">
@@ -1279,6 +1411,9 @@
                 <li>
                     <div class="div_6700"></div>
                 </li>
+                <li>
+                    <div class="div_6700"></div>
+                </li>
 
             </ul>
         </nav>
@@ -1318,6 +1453,9 @@
                 <li>
                     <div class="div_6700"></div>
                 </li>
+                <li>
+                    <div class="div_6700"></div>
+                </li>
 
             </ul>
         </nav>
@@ -1353,6 +1491,9 @@
                 </li>
                 <li>
                     <div class="div_6600"></div>
+                </li>
+                <li>
+                    <div class="div_6700"></div>
                 </li>
                 <li>
                     <div class="div_6700"></div>
@@ -1473,6 +1614,9 @@
                 <li>
                     <div class="div_6700"></div>
                 </li>
+                <li>
+                    <div class="div_6700"></div>
+                </li>
             </ul>
         </nav>
         <nav class="nav_7000">
@@ -1580,6 +1724,7 @@
         });
 
 
+
         // fav container 
         BntFav.addEventListener('click', function() {
             // Not show
@@ -1635,6 +1780,31 @@
         <button class="bnt_1000"><img src="./icons/icons8-download-100.png" class="img_bnt_1000"><span class="sp_bnt_1000">Download Link</span></button>
         <button class="bnt_1200">Read history</button>
     </div>
+    <script>
+        const HeaderCont = document.querySelector('.div_2000');
+        const ScrollCont = document.querySelector('.div_5100');
+
+
+        ScrollCont.addEventListener('scroll', () => {
+            if (ScrollCont.scrollTop > 50) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
+
+        const Menu_Cont = document.querySelector('.img_2000');
+        const Rem_1Cont = document.querySelector('.div-test-test');
+
+
+
+        Menu_Cont.addEventListener('click', () => {
+            // Toggle between both ways...
+            ScrollCont.classList.toggle('expanded');
+            // Toggle visibility of .div-test-test
+            Rem_1Cont.classList.toggle('hidden'); // Fix: applied to the correct element
+        });
+    </script>
     <script></script>
 </body>
 
