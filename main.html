@@ -74,6 +74,18 @@
             position: fixed;
             transition: opacity 0.3s ease;
             /* Optional fade effect */
+            opacity: 0;
+            animation: fadeInO 2s forwards;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes fadeInO {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
         
         .div-test-test.hidden {
@@ -305,7 +317,7 @@
         
         .div_2000 {
             width: 100%;
-            height: 10%;
+            height: 60px;
             background-color: transparent;
             position: absolute;
             top: 0;
@@ -566,6 +578,7 @@
         }
         
         .sp_div_3100,
+        .sp_div_3145,
         .sp_div_3150,
         .sp_div_3200,
         .sp_div_3250,
@@ -576,27 +589,34 @@
         }
         
         .sp_div_3100 {
-            left: -11%;
+            left: -35px;
+        }
+        
+        .sp_div_3145 {
+            left: -15px;
         }
         
         .sp_div_3150 {
-            left: -16%;
+            left: -30px;
         }
         
         .sp_div_3200 {
-            left: -4%;
+            left: -5px;
         }
         
         .sp_div_3250 {
-            left: -7.2%;
+            left: -11px;
+            top: 1px;
         }
         
         .sp_div_3310 {
-            left: -12.2%;
+            left: -22px;
+            top: 1px;
         }
         
         .sp_div_3320 {
-            left: -9.2%;
+            left: -17px;
+            top: -0.5px;
         }
         
         .bnt_div_3100-1:hover,
@@ -613,12 +633,12 @@
         .bnt_div_3100-1 {
             top: 7px;
             color: #ffc800;
-            background-image: url('./icons/icons8-books-15wwwwwwwww55500.png');
+            background-image: url('./icons/Untitlssssssed - Copy.png');
             background-color: rgba(255, 255, 255, 0.18);
         }
         
         .bnt_div_3100-1:hover {
-            background-image: url('./icons/icons8-books-15wwwwwwwww55500.png');
+            background-image: url('./icons/Untitlssssssed - Copy.png');
         }
         
         .bnt_div_3100-2 {
@@ -651,20 +671,20 @@
         
         .bnt_div_3100-5 {
             top: 197px;
-            background-image: url('./icons/icons8-settings-100.png');
+            background-image: url('./icons/icons8-dashwwwwqqqboard-100.png');
         }
         
         .bnt_div_3100-5:hover {
-            background-image: url('./icons/icons8-settings-102222222xxzxzzx20-2.png ');
+            background-image: url('./icons/icons8-dashboard-100.png');
         }
         
         .bnt_div_3100-6 {
             top: 244px;
-            background-image: url('./icons/icons8-about-100.png');
+            background-image: url('./icons/icoqswwwswwns8-cookies-100.png');
         }
         
         .bnt_div_3100-6:hover {
-            background-image: url('./icons/ccccccc11111111111wwwwww11111cc.png');
+            background-image: url('./icons/icons8-cookies-100.png');
         }
         
         .bnt_div_3100-7 {
@@ -673,7 +693,7 @@
         }
         
         .bnt_div_3100-7:hover {
-            background-image: url('./icons/ccccccc1111111111111111cc.png');
+            background-image: url('./icons/ccccccc11111111111wwwwww11111cc.png');
         }
         
         .div-tttt-1 {
@@ -826,7 +846,8 @@
         .par_6200:hover,
         .par_6300:hover,
         .par_9300:hover,
-        .par_8300:hover {
+        .par_8300:hover,
+        .par-eeee-4:hover {
             color: #806508;
         }
         
@@ -1312,6 +1333,93 @@
         .img-load {
             zoom: 31%;
         }
+        
+        .cookies-div {
+            width: 400px;
+            height: 200px;
+            background-color: #111111;
+            position: fixed;
+            right: 2%;
+            border-radius: 15px;
+            bottom: 2%;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            animation-delay: 6.5s;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .cookies-img {
+            zoom: 50%;
+            position: absolute;
+            top: 7px;
+            left: 22px;
+        }
+        
+        .par-eeee {
+            top: -9px;
+            font-size: 24px;
+            color: white;
+            position: relative;
+            font-family: Cambria, "Times New Roman", serif;
+            text-align: center;
+        }
+        
+        .par-eeee-1,
+        .par-eeee-2,
+        .par-eeee-3,
+        .par-eeee-4 {
+            top: -16px;
+            font-size: 16px;
+            color: white;
+            position: relative;
+            font-family: Cambria, "Times New Roman", serif;
+            text-align: center;
+        }
+        
+        .par-eeee-2 {
+            top: -30px;
+        }
+        
+        .par-eeee-3 {
+            top: -45px;
+        }
+        
+        .nav-pppp {
+            position: relative;
+            text-align: center;
+            top: -48px;
+            left: -20px;
+        }
+        
+        .nav-pppp li {
+            list-style: none;
+            padding-left: 5px;
+            display: inline-block;
+        }
+        
+        .but-one-1,
+        .but-one-2 {
+            width: 130px;
+            border-radius: 10px;
+            height: 42px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .par-eeee-4 {
+            top: -58px;
+            font-size: 13px;
+            cursor: pointer;
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -1392,12 +1500,12 @@
                 </nav>
             </div>
             <div class="div_3100">
-                <button class="bnt_div_3100-1"><span class="sp_div_3100">All Books</span></button>
-                <button class="bnt_div_3100-2"><span class="sp_div_3100">Favourite</span></button>
+                <button class="bnt_div_3100-1"><span class="sp_div_3100">Home</span></button>
+                <button class="bnt_div_3100-2"><span class="sp_div_3145">Favourites</span></button>
                 <button class="bnt_div_3100-3"><span class="sp_div_3150">Profile</span></button>
                 <button class="bnt_div_3100-4"><span class="sp_div_3200">Notifications</span></button>
                 <button class="bnt_div_3100-5"><span class="sp_div_3250">Dashboard</span></button>
-                <button class="bnt_div_3100-6"><span class="sp_div_3310">Settings</span></button>
+                <button class="bnt_div_3100-6"><span class="sp_div_3310">Policies</span></button>
                 <button class="bnt_div_3100-7"><span class="sp_div_3320">About Us</span></button>
 
                 <div class="div-tttt-1">
@@ -1782,10 +1890,10 @@
         // Main container 
         BntAllBooks.addEventListener('click', function() {
             // Not show  
-            HomeDiv.replaceWith(ShowHomeDiv);
+            HomeDiv.replaceWith(HomeDiv);
 
             // Show  the div to show
-            ShowHomeDiv.style.display = 'block';
+            HomeDiv.style.display = 'block';
         });
 
 
@@ -1872,6 +1980,39 @@
     </script>
     <script></script>
     <div class="Cynthia-load"><img src="./icons/icons8-chat-100.png" class="img-load"></div>
+    <div class="cookies-div">
+        <img src="./icons/icons8-cookie-100.png" class="cookies-img">
+        <p class="par-eeee">Cookie Settings</p>
+        <p class="par-eeee-1">Cookies helps us remember and understand</p>
+        <p class="par-eeee-2">your details. Enable all cookies now to</p>
+        <p class="par-eeee-3">enjoy advanced features.</p>
+        <nav class="nav-pppp">
+            <ul>
+                <li><button class="but-one-1">Accept All</button></li>
+                <li><button class="but-one-2">Reject All</button></li>
+            </ul>
+        </nav>
+        <script>
+            const RemCoo = document.querySelector('.but-one-2');
+            const DivCoo = document.querySelector('.cookies-div');
+            const BntCoo = document.querySelector('.but-one-1');
+
+
+            // Using local storage to keep response of the user prefrence.. this should be corrected after to ensure users experience...
+            if (!localStorage.getItem('cookieNoticeDismissed')) {
+                DivCoo.style.display = 'block';
+            }
+            RemCoo.addEventListener('click', () => {
+                DivCoo.style.display = 'none';
+                localStorage.setItem('cookieNoticeDismissed', true);
+            });
+            BntCoo.addEventListener('click', () => {
+                DivCoo.style.display = 'none';
+                localStorage.setItem('cookieNoticeDismissed', true);
+            });
+        </script>
+        <p class="par-eeee-4">More Information</p>
+    </div>
 </body>
 
 </html>
