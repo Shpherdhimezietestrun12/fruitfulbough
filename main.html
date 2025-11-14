@@ -371,7 +371,7 @@
             width: 81%;
             height: 100%;
             background-color: #111111;
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 19%;
             overflow-y: auto;
@@ -403,6 +403,42 @@
             }
         }
         
+        .div_favourite.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
+        .div_profile.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
+        .div_notify.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
+        .div_dashboard.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
+        .div_policy.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
+        .div_about.expanded {
+            left: 0;
+            width: 100%;
+            /* Make it full width when expanded */
+        }
+        
         .div_5100_sub {
             width: 100%;
             height: 470px;
@@ -424,8 +460,8 @@
         
         .img_2000 {
             zoom: 32%;
-            position: absolute;
-            top: 48px;
+            position: relative;
+            top: 49px;
             left: 1.5%;
             cursor: pointer;
             /* Make it clear it's clickable */
@@ -632,9 +668,7 @@
         
         .bnt_div_3100-1 {
             top: 7px;
-            color: #ffc800;
-            background-image: url('./icons/Untitlssssssed - Copy.png');
-            background-color: rgba(255, 255, 255, 0.18);
+            background-image: url('./icons/Untiqqqqtlssssssed.png');
         }
         
         .bnt_div_3100-1:hover {
@@ -1171,22 +1205,26 @@
         .div_favourite,
         .div_profile,
         .div_notify,
-        .div_setting,
+        .div_dashboard,
+        .div_policy,
         .div_about {
-            width: 78%;
-            height: 99.9%;
-            background-color: black;
-            position: absolute;
+            width: 81%;
+            height: 100%;
+            background-color: #111111;
+            position: fixed;
             top: 0;
-            left: 22%;
+            left: 19%;
             overflow-y: auto;
+            transition: left 0.1s ease;
+            /* Smooth transition */
         }
         
         .all_books::-webkit-scrollbar,
         .div_favourite::-webkit-scrollbar,
         .div_profile::-webkit-scrollbar,
         .div_notify::-webkit-scrollbar,
-        .div_setting::-webkit-scrollbar,
+        .div_dashboard::-webkit-scrollbar,
+        .div_policy::-webkit-scrollbar,
         .div_about::-webkit-scrollbar {
             display: none;
             /* hide scrollbar on Chrome, Safari, and Opera */
@@ -1330,6 +1368,28 @@
             cursor: pointer;
         }
         
+        .Cynthia-load::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            top: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            white-space: nowrap;
+            font-size: 13px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .Cynthia-load:hover::before {
+            opacity: 1;
+        }
+        
         .img-load {
             zoom: 31%;
         }
@@ -1420,6 +1480,55 @@
             font-size: 13px;
             cursor: pointer;
         }
+        
+        .content-div {
+            display: none;
+        }
+        
+        .content-div.active {
+            display: block;
+        }
+        
+        .nav-btn.active {
+            color: #ffc800;
+            background-color: rgba(255, 255, 255, 0.18);
+        }
+        /* Specific styles for each active button */
+        
+        .nav-btn.active.bnt_div_3100-1 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/Untitlssssssed - Copy.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-2 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/icons8-love-100.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-3 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/icons8-personqqqqqqqqq1011110.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-4 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/12345678qqqsssssssswww90.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-5 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/icons8-dashboard-100.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-6 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/icons8-cookies-100.png');
+        }
+        
+        .nav-btn.active.bnt_div_3100-7 {
+            /* Note: top only works if position is relative/absolute/fixed */
+            background-image: url('./icons/ccccccc11111111111wwwwww11111cc.png');
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -1500,13 +1609,13 @@
                 </nav>
             </div>
             <div class="div_3100">
-                <button class="bnt_div_3100-1"><span class="sp_div_3100">Home</span></button>
-                <button class="bnt_div_3100-2"><span class="sp_div_3145">Favourites</span></button>
-                <button class="bnt_div_3100-3"><span class="sp_div_3150">Profile</span></button>
-                <button class="bnt_div_3100-4"><span class="sp_div_3200">Notifications</span></button>
-                <button class="bnt_div_3100-5"><span class="sp_div_3250">Dashboard</span></button>
-                <button class="bnt_div_3100-6"><span class="sp_div_3310">Policies</span></button>
-                <button class="bnt_div_3100-7"><span class="sp_div_3320">About Us</span></button>
+                <button class="bnt_div_3100-1 nav-btn active"><span class="sp_div_3100">Home</span></button>
+                <button class="bnt_div_3100-2 nav-btn"><span class="sp_div_3145">Favourites</span></button>
+                <button class="bnt_div_3100-3 nav-btn"><span class="sp_div_3150">Profile</span></button>
+                <button class="bnt_div_3100-4 nav-btn"><span class="sp_div_3200">Notifications</span></button>
+                <button class="bnt_div_3100-5 nav-btn"><span class="sp_div_3250">Dashboard</span></button>
+                <button class="bnt_div_3100-6 nav-btn"><span class="sp_div_3310">Policies</span></button>
+                <button class="bnt_div_3100-7 nav-btn"><span class="sp_div_3320">About Us</span></button>
 
                 <div class="div-tttt-1">
                     <nav class="nav_4110">
@@ -1821,7 +1930,7 @@
             </ul>
         </nav>
     </div>
-    <div class="all_books" style="display: none;">
+    <div class="all_books content-div active" style="display: none;">
         <p class="pra_1000">All Collections</p>
         <nav class="nav_1_100">
             <ul>
@@ -1852,102 +1961,120 @@
             </ul>
         </nav>
     </div>
-    <div class="div_favourite" style="display: none;">
+    <div class="div_favourite content-div">
         <p class="pra_1000">Favourite</p>
     </div>
-    <div class="div_profile" style="display: none;">
+    <div class="div_profile content-div">
         <p class="pra_1000">Profile</p>
     </div>
-    <div class="div_notify" style="display: none;">
+    <div class="div_notify content-div">
         <p class="pra_1000">Notifications</p>
     </div>
-    <div class="div_setting" style="display: none;">
+    <div class="div_dashboard content-div">
         <p class="pra_1000">Settings</p>
     </div>
-    <div class="div_about" style="display: none;">
+    <div class="div_policy content-div">
+        <p class="pra_1000">Policies</p>
+    </div>
+    <div class="div_about content-div">
         <p class="pra_1000">About Us</p>
     </div>
-    <div class="div_history" style="display: none;">
-    </div>
     <script>
-        const BntAllBooks = document.querySelector('.bnt_div_3100-1');
-        const BntFav = document.querySelector('.bnt_div_3100-2');
-        const BntProfile = document.querySelector('.bnt_div_3100-3');
-        const BntNotify = document.querySelector('.bnt_div_3100-4');
-        const BntSet = document.querySelector('.bnt_div_3100-5');
-        const BntAbout = document.querySelector('.bnt_div_3100-6');
-        const ShowHomeDiv = document.querySelector('.all_books');
-        const ShowHomeDivTwo = document.querySelector('.div_favourite');
-        const ShowHomeDivThree = document.querySelector('.div_profile');
-        const ShowHomeDivFour = document.querySelector('.div_notify');
-        const ShowHomeDivFive = document.querySelector('.div_setting');
-        const ShowHomeDivSix = document.querySelector('.div_about');
-        const HomeDiv = document.querySelector('.div_5100');
-        const History = document.querySelector('.bnt_1200');
-        const ShowHistory = document.querySelector('.div_history');
+        // Select between each div's for presenting 
+        const buttons = document.querySelectorAll('.nav-btn');
+        const contents = document.querySelectorAll('.content-div');
 
 
-        // Main container 
-        BntAllBooks.addEventListener('click', function() {
-            // Not show  
-            HomeDiv.replaceWith(HomeDiv);
+        // Map button index to content class
+        const contentClasses = [
+            'div_5100', // bnt_div_3100-1
+            'div_favourite', // bnt_div_3100-2
+            'div_profile', // bnt_div_3100-3
+            'div_notify', // bnt_div_3100-4
+            'div_dashboard', // bnt_div_3100-5
+            'div_policy', // bnt_div_3100-6
+            'div_about' // bnt_div_3100-7
+        ];
 
-            // Show  the div to show
-            HomeDiv.style.display = 'block';
-        });
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Toggle active class on buttons
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
 
-
-
-        // fav container 
-        BntFav.addEventListener('click', function() {
-            // Not show
-            HomeDiv.replaceWith(ShowHomeDivTwo);
-
-            // Show  the div to show
-            ShowHomeDivTwo.style.display = 'block';
-        });
-
-        // profile container 
-        BntProfile.addEventListener('click', function() {
-            // Not show
-            HomeDiv.replaceWith(ShowHomeDivThree);
-
-            // Show  the div to show
-            ShowHomeDivThree.style.display = 'block';
-        });
-        // notifaction container 
-        BntNotify.addEventListener('click', function() {
-            // Not show
-            HomeDiv.replaceWith(ShowHomeDivFour);
-
-            // Show  the div to show
-            ShowHomeDivFour.style.display = 'block';
-        });
-        // fav container 
-        BntSet.addEventListener('click', function() {
-            // Not show
-            HomeDiv.replaceWith(ShowHomeDivFive);
-
-            // Show  the div to show
-            ShowHomeDivFive.style.display = 'block';
-        });
-        BntAbout.addEventListener('click', function() {
-            // Not show
-            HomeDiv.replaceWith(ShowHomeDivSix);
-
-            // Show  the div to show
-            ShowHomeDivSix.style.display = 'block';
-        });
-
-        History.addEventListener('click', () => {
-            // Not show
-            // Show  the div to show
-            ShowHistory.style.display = 'block';
+                // Show/hide content
+                const targetClass = contentClasses[index];
+                contents.forEach(content => {
+                    if (content.classList.contains(targetClass)) {
+                        content.classList.add('active');
+                    } else {
+                        content.classList.remove('active');
+                    }
+                });
+            });
         });
     </script>
     <div class="div_2000">
         <img src="./icons/icons8-fries-meeeeeenu-100.png" class="img_2000">
+        <style>
+            .div-menu-show,
+            .div-logo-show {
+                position: absolute;
+                top: 49px;
+                left: 12px;
+                background-color: #333;
+                font-size: 13px;
+                color: #fff;
+                padding: 5px;
+                border-radius: 4px;
+                opacity: 0;
+                /* Hidden by default */
+                visibility: hidden;
+                /* Prevent interaction */
+                transition: opacity 0.3s ease;
+                z-index: 100;
+                white-space: nowrap;
+                /* Prevent wrapping */
+            }
+            
+            .div-logo-show {
+                top: 55px;
+                left: 40px;
+                opacity: 0;
+                visibility: hidden;
+            }
+        </style>
+        <div class="div-menu-show">Menu..✅</div>
+        <script>
+            const MenuImg = document.querySelector('.img_2000');
+            const MenuDiv = document.querySelector('.div-menu-show');
+
+            MenuImg.addEventListener('mouseenter', () => {
+                MenuDiv.style.opacity = '1';
+                MenuDiv.style.visibility = 'visible';
+            });
+
+            MenuImg.addEventListener('mouseleave', () => {
+                MenuDiv.style.opacity = '0';
+                MenuDiv.style.visibility = 'hidden';
+            });
+        </script>
         <img src="./icons/FB-Stream-Photoroom.png" class="img_2100" onclick="window.location.href='main.html';">
+        <div class="div-logo-show">FB photo..🏢</div>
+        <script>
+            const LogoImg = document.querySelector('.img_2100');
+            const LogoDiv = document.querySelector('.div-logo-show');
+
+            LogoImg.addEventListener('mouseenter', () => {
+                LogoDiv.style.opacity = '1';
+                LogoDiv.style.visibility = 'visible';
+            });
+
+            LogoImg.addEventListener('mouseleave', () => {
+                LogoDiv.style.opacity = '0';
+                LogoDiv.style.visibility = 'hidden';
+            });
+        </script>
         <p class="par_1000" onclick="window.location.href='main.html';">Fruitful Bough</p>
         <input type="text" class="ipt_1000">
         <button class="bnt_1000"><img src="./icons/icons8-download-100.png" class="img_bnt_1000"><span class="sp_bnt_1000">Download Link</span></button>
@@ -1956,6 +2083,12 @@
     <script>
         const HeaderCont = document.querySelector('.div_2000');
         const ScrollCont = document.querySelector('.div_5100');
+        const ScrollCont2 = document.querySelector('.div_favourite');
+        const ScrollCont3 = document.querySelector('.div_profile');
+        const ScrollCont4 = document.querySelector('.div_notify');
+        const ScrollCont5 = document.querySelector('.div_dashboard');
+        const ScrollCont6 = document.querySelector('.div_policy');
+        const ScrollCont7 = document.querySelector('.div_about');
 
 
         ScrollCont.addEventListener('scroll', () => {
@@ -1974,12 +2107,18 @@
         Menu_Cont.addEventListener('click', () => {
             // Toggle between both ways...
             ScrollCont.classList.toggle('expanded');
+            ScrollCont2.classList.toggle('expanded');
+            ScrollCont3.classList.toggle('expanded');
+            ScrollCont4.classList.toggle('expanded');
+            ScrollCont5.classList.toggle('expanded');
+            ScrollCont6.classList.toggle('expanded');
+            ScrollCont7.classList.toggle('expanded');
             // Toggle visibility of .div-test-test
             Rem_1Cont.classList.toggle('hidden'); // Fix: applied to the correct element
         });
     </script>
     <script></script>
-    <div class="Cynthia-load"><img src="./icons/icons8-chat-100.png" class="img-load"></div>
+    <div class="Cynthia-load" data-tooltip="Chat with cynthia... 👍"><img src="./icons/icons8-chat-100.png" class="img-load"></div>
     <div class="cookies-div">
         <img src="./icons/icons8-cookie-100.png" class="cookies-img">
         <p class="par-eeee">Cookie Settings</p>
