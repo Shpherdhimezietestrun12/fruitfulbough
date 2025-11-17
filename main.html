@@ -2506,6 +2506,14 @@
                 HeaderCont.style.backgroundColor = 'transparent';
             }
         });
+        ScrollCont2.addEventListener('scroll', () => {
+            if (ScrollCont2.scrollTop > 50) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
+
 
         const Menu_Cont = document.querySelector('.img_2000');
         const Rem_1Cont = document.querySelector('.div-test-test');
