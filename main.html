@@ -1600,384 +1600,641 @@
             <div class="div_2100">
                 <nav class="nav_2100">
                     <ul>
-                        <li><img src="./icons/icons8-world-100.png" class="img_2100_1"></li>
-                        <li class="list_2100_1">ENGLISH</li>
+                        <li onclick="DisSHow()"><img src="./icons/icons8-world-100.png " class="img_2100_1 "></li>
+                        <li class="list_2100_1 ">ENGLISH</li>
+                        <style>
+                            .div-lan-show {
+                                top: 40px;
+                                left: 130px;
+                                width: 120px;
+                                height: 130px;
+                                opacity: 0;
+                                position: absolute;
+                                visibility: visible;
+                                background-color: #333;
+                                border-radius: 10px;
+                                z-index: 2;
+                                transition: opacity 0.3s ease;
+                            }
+                        </style>
+                        <div class="div-lan-show "></div>
+                        <script>
+                            const LanImg = document.querySelector('.div_2100');
+                            const LanDiv = document.querySelector('.div-lan-show');
+
+                            LanImg.addEventListener('mouseenter', () => {
+                                LanDiv.style.opacity = '1';
+                                LanDiv.style.visibility = 'visible';
+                            });
+
+
+                            LanImg.addEventListener('mouseleave', () => {
+                                LanDiv.style.opacity = '0';
+                                LanDiv.style.visibility = 'hidden';
+                            });
+                        </script>
                         <li>
-                            <p class="text-par">_______________________________________________________________________________________</p>
+                            <p class="text-par ">_______________________________________________________________________________________</p>
                         </li>
                     </ul>
                 </nav>
             </div>
-            <div class="div_3100">
-                <button class="bnt_div_3100-1 nav-btn active"><span class="sp_div_3100">Home</span></button>
-                <button class="bnt_div_3100-2 nav-btn"><span class="sp_div_3145">Favourites</span></button>
-                <button class="bnt_div_3100-3 nav-btn"><span class="sp_div_3150">Profile</span></button>
-                <button class="bnt_div_3100-4 nav-btn"><span class="sp_div_3200">Notifications</span></button>
-                <button class="bnt_div_3100-5 nav-btn"><span class="sp_div_3250">Dashboard</span></button>
-                <button class="bnt_div_3100-6 nav-btn"><span class="sp_div_3310">Policies</span></button>
-                <button class="bnt_div_3100-7 nav-btn"><span class="sp_div_3320">About Us</span></button>
+            <div class="div_3100 ">
+                <button class="bnt_div_3100-1 nav-btn active "><span class="sp_div_3100 ">Home</span></button>
+                <style>
+                    .div-home-show,
+                    .div-fav-show,
+                    .div-pro-show,
+                    .div-note-show,
+                    .div-das-show,
+                    .div-pol-show,
+                    .div-abo-show {
+                        position: absolute;
+                        top: 49px;
+                        left: 12px;
+                        background-color: #333;
+                        font-size: 13px;
+                        color: #fff;
+                        padding: 5px;
+                        border-radius: 4px;
+                        opacity: 0;
+                        /* Hidden by default */
+                        visibility: hidden;
+                        /* Prevent interaction */
+                        transition: opacity 0.3s ease;
+                        z-index: 100;
+                        white-space: nowrap;
+                        /* Prevent wrapping */
+                    }
+                    
+                    .div-home-show {
+                        top: 50px;
+                        left: 150px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-fav-show {
+                        top: 98px;
+                        left: 150px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-pro-show {
+                        top: 146px;
+                        left: 150px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-note-show {
+                        top: 194px;
+                        left: 150px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-das-show {
+                        top: 242px;
+                        left: 150px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-pol-show {
+                        top: 290px;
+                        left: 130px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-abo-show {
+                        top: 338px;
+                        left: 130px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    
+                    .div-load2-show {
+                        top: 457px;
+                        left: 280px;
+                        width: 140px;
+                        height: 140px;
+                        opacity: 0;
+                        position: fixed;
+                        visibility: visible;
+                        background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+                        border-radius: 5px;
+                        z-index: 10;
+                        transition: opacity 0.3s ease;
+                    }
+                    
+                    .tri-div {
+                        zoom: 50%;
+                        position: absolute;
+                        left: -40px;
+                        top: 208px;
+                    }
+                </style>
+                <div class="div-home-show ">All Collections</div>
+                <script>
+                    const HomImg = document.querySelector('.bnt_div_3100-1');
+                    const HomDiv = document.querySelector('.div-home-show');
 
-                <div class="div-tttt-1">
-                    <nav class="nav_4110">
+                    HomImg.addEventListener('mouseenter', () => {
+                        HomDiv.style.opacity = '1';
+                        HomDiv.style.visibility = 'visible';
+                    });
+
+
+                    HomImg.addEventListener('mouseleave', () => {
+                        HomDiv.style.opacity = '0';
+                        HomDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-2 nav-btn "><span class="sp_div_3145 ">Favourites</span></button>
+                <div class="div-fav-show ">All Favourites</div>
+                <script>
+                    const FavImg = document.querySelector('.bnt_div_3100-2');
+                    const FavDiv = document.querySelector('.div-fav-show');
+
+                    FavImg.addEventListener('mouseenter', () => {
+                        FavDiv.style.opacity = '1';
+                        FavDiv.style.visibility = 'visible';
+                    });
+
+
+                    FavImg.addEventListener('mouseleave', () => {
+                        FavDiv.style.opacity = '0';
+                        FavDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-3 nav-btn "><span class="sp_div_3150 ">Profile</span></button>
+                <div class="div-pro-show ">Profile</div>
+                <script>
+                    const ProImg = document.querySelector('.bnt_div_3100-3');
+                    const ProDiv = document.querySelector('.div-pro-show');
+
+                    ProImg.addEventListener('mouseenter', () => {
+                        ProDiv.style.opacity = '1';
+                        ProDiv.style.visibility = 'visible';
+                    });
+
+
+                    ProImg.addEventListener('mouseleave', () => {
+                        ProDiv.style.opacity = '0';
+                        ProDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-4 nav-btn "><span class="sp_div_3200 ">Notifications</span></button>
+                <div class="div-note-show ">Notifications</div>
+                <script>
+                    const NoteImg = document.querySelector('.bnt_div_3100-4');
+                    const NoteDiv = document.querySelector('.div-note-show');
+
+                    NoteImg.addEventListener('mouseenter', () => {
+                        NoteDiv.style.opacity = '1';
+                        NoteDiv.style.visibility = 'visible';
+                    });
+
+
+                    NoteImg.addEventListener('mouseleave', () => {
+                        NoteDiv.style.opacity = '0';
+                        NoteDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-5 nav-btn "><span class="sp_div_3250 ">Dashboard</span></button>
+                <div class="div-das-show ">View Dashboard</div>
+                <script>
+                    const DasImg = document.querySelector('.bnt_div_3100-5');
+                    const DasDiv = document.querySelector('.div-das-show');
+
+                    DasImg.addEventListener('mouseenter', () => {
+                        DasDiv.style.opacity = '1';
+                        DasDiv.style.visibility = 'visible';
+                    });
+
+
+                    DasImg.addEventListener('mouseleave', () => {
+                        DasDiv.style.opacity = '0';
+                        DasDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-6 nav-btn "><span class="sp_div_3310 ">Policies</span></button>
+                <div class="div-pol-show ">Terms and Conditions</div>
+                <script>
+                    const PolImg = document.querySelector('.bnt_div_3100-6');
+                    const PolDiv = document.querySelector('.div-pol-show');
+
+                    PolImg.addEventListener('mouseenter', () => {
+                        PolDiv.style.opacity = '1';
+                        PolDiv.style.visibility = 'visible';
+                    });
+
+
+                    PolImg.addEventListener('mouseleave', () => {
+                        PolDiv.style.opacity = '0';
+                        PolDiv.style.visibility = 'hidden';
+                    });
+                </script>
+                <button class="bnt_div_3100-7 nav-btn "><span class="sp_div_3320 ">About Us</span></button>
+                <div class="div-abo-show">FB About</div>
+                <script>
+                    const AboImg = document.querySelector('.bnt_div_3100-7');
+                    const AboDiv = document.querySelector('.div-abo-show');
+
+                    AboImg.addEventListener('mouseenter', () => {
+                        AboDiv.style.opacity = '1';
+                        AboDiv.style.visibility = 'visible';
+                    });
+
+
+                    AboImg.addEventListener('mouseleave', () => {
+                        AboDiv.style.opacity = '0';
+                        AboDiv.style.visibility = 'hidden';
+                    });
+                </script>
+
+                <div class="div-tttt-1 ">
+                    <nav class="nav_4110 ">
                         <ul>
                             <li>
-                                <div class="div_4100_1"><img src="./icons/icons8-facebook-100.png" class="img_4110-1"></div>
+                                <div class="div_4100_1 "><img src="./icons/icons8-facebook-100.png " class="img_4110-1 "></div>
                             </li>
                             <li>
-                                <div class="div_4100_1"><img src="./icons/icons8-x-100.png" class="img_4110-1"></div>
+                                <div class="div_4100_1 "><img src="./icons/icons8-x-100.png " class="img_4110-1 "></div>
                             </li>
                             <li>
-                                <div class="div_4100_1"><img src="./icons/icons8-instagram-100.png" class="img_4110-1"></div>
+                                <div class="div_4100_1 "><img src="./icons/icons8-instagram-100.png " class="img_4110-1 "></div>
                             </li>
                             <li>
-                                <div class="div_4100_1"><img src="./icons/icons8-whatsapp-50 (1).png" class="img_4110-2"></div>
+                                <div class="div_4100_1 "><img src="./icons/icons8-whatsapp-50 (1).png " class="img_4110-2 "></div>
                             </li>
                             <li>
-                                <div class="div_4100_1"><img src="./icons/icons8-google-100mmmssssssmmm.png" class="img_4110-3"></div>
+                                <div class="div_4100_1 "><img src="./icons/icons8-google-100mmmssssssmmm.png " class="img_4110-3 "></div>
                             </li>
                         </ul>
                     </nav>
-                    <p class="pra-0320" onclick="window.location.href='mailto:fruitfulbough26@gmail.com';">fruitfulbough26@gmail.com</p>
-                    <p class="pra-0321" onclick="window.location.href='mailto:fruitfulbough26@gmail.com';">Always find me <img src="./icons/icons8-enter-100xxxxxx.png" class="tedt-200"></p>
+                    <p class="pra-0320 " onclick="window.location.href='mailto:fruitfulbough26@gmail.com' ; ">fruitfulbough26@gmail.com</p>
+                    <p class="pra-0321 " onclick="window.location.href='mailto:fruitfulbough26@gmail.com' ; ">Always find me <img src="./icons/icons8-enter-100xxxxxx.png " class="tedt-200 "></p>
                 </div>
             </div>
-            <div class="dib-000"></div>
+            <div class="dib-000 "></div>
         </div>
-        <div class="ini-tst">
-            <p class="text-par_1">_______________________________________________________________________________________</p>
-            <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxxxx0.png" class="img_20_1"> <span class="sp_bnt_3000">Download Link</span> <img src="./icons/icons8-qr-code-100.png" class="qr_code_12"></button>
+        <div class="ini-tst ">
+            <p class="text-par_1 ">_______________________________________________________________________________________</p>
+            <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxxxx0.png " class="img_20_1 "> <span class="sp_bnt_3000 ">Download Link</span> <img src="./icons/icons8-qr-code-100.png " class="qr_code_12 "></button>
         </div>
     </div>
-    <div class="div_5100">
-        <div class="div_5100_sub">
-            <nav class="nav_4100">
+    <div class="div_5100 ">
+        <div class="div-load2-show">
+            <img src="./icons/pointer.png" class="tri-div">
+        </div>
+        <script>
+            const Load2Img = document.querySelector('.but_4100_1');
+            const Load2Div = document.querySelector('.div-load2-show');
+
+            Load2Img.addEventListener('mouseenter', () => {
+                Load2Div.style.opacity = '1';
+                Load2Div.style.visibility = 'visible';
+            });
+
+
+            Load2Img.addEventListener('mouseleave', () => {
+                Load2Div.style.opacity = '0';
+                Load2Div.style.visibility = 'hidden';
+            });
+        </script>
+        <div class="div_5100_sub ">
+            <nav class="nav_4100 ">
                 <ul>
-                    <li class="list_4100"><img src="./icons/back.png" class="img_5100"></li>
-                    <li class="list_4150"><img src="./icons/forward.png" class="img_5100"></li>
+                    <li class="list_4100 "><img src="./icons/back.png " class="img_5100 "></li>
+                    <li class="list_4150 "><img src="./icons/forward.png " class="img_5100 "></li>
                 </ul>
             </nav>
         </div>
-        <nav class="nav_1300">
+        <nav class="nav_1300 ">
             <ul>
                 <li>
-                    <p class="par_4100">Trending Books</p>
+                    <p class="par_4100 ">Trending Books</p>
                 </li>
                 <li>
-                    <p class="par_4200">more</p>
+                    <p class="par_4200 ">more</p>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_2400">
+        <nav class="nav_2400 ">
             <ul>
                 <li>
-                    <div class="div_6000" onclick="window.location.href='The%Millenium%Meltdown.html';"></div>
+                    <div class="div_6000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6100" onclick="window.location.href='The%Roseline%NoneElse.html';"></div>
+                    <div class="div_6100 " onclick="window.location.href='The%Roseline%NoneElse.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6200" onclick="window.location.href='The%Wise%Companion.html';"></div>
+                    <div class="div_6200 " onclick="window.location.href='The%Wise%Companion.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6400"></div>
+                    <div class="div_6400 "></div>
                 </li>
                 <li>
-                    <div class="div_6500"></div>
+                    <div class="div_6500 "></div>
                 </li>
                 <li>
-                    <div class="div_6600"></div>
+                    <div class="div_6600 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
 
             </ul>
         </nav>
-        <nav class="nav_1500">
+        <nav class="nav_1500 ">
             <ul>
                 <li>
-                    <p class="par_6100">Novel Books</p>
+                    <p class="par_6100 ">Novel Books</p>
                 </li>
                 <li>
-                    <p class="par_6200">more</p>
+                    <p class="par_6200 ">more</p>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_2900">
+        <nav class="nav_2900 ">
             <ul>
                 <li>
-                    <div class="div_6100" onclick="window.location.href='The%Roseline%NoneElse.html';"></div>
+                    <div class="div_6100 " onclick="window.location.href='The%Roseline%NoneElse.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6400"></div>
+                    <div class="div_6400 "></div>
                 </li>
                 <li>
-                    <div class="div_6500"></div>
+                    <div class="div_6500 "></div>
                 </li>
                 <li>
-                    <div class="div_6600"></div>
+                    <div class="div_6600 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
 
             </ul>
         </nav>
-        <nav class="nav_3500">
+        <nav class="nav_3500 ">
             <ul>
                 <li>
-                    <p class="par_6100">Sub Genre</p>
+                    <p class="par_6100 ">Sub Genre</p>
                 </li>
                 <li>
-                    <p class="par_6300">more</p>
+                    <p class="par_6300 ">more</p>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_3900">
+        <nav class="nav_3900 ">
             <ul>
                 <li>
-                    <div class="div_6000" onclick="window.location.href='The%Millenium%Meltdown.html';"></div>
+                    <div class="div_6000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6200" onclick="window.location.href='The%Wise%Companion.html';"></div>
+                    <div class="div_6200 " onclick="window.location.href='The%Wise%Companion.html' ; "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6400"></div>
+                    <div class="div_6400 "></div>
                 </li>
                 <li>
-                    <div class="div_6500"></div>
+                    <div class="div_6500 "></div>
                 </li>
                 <li>
-                    <div class="div_6600"></div>
+                    <div class="div_6600 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_9000">
+        <nav class="nav_9000 ">
             <ul>
                 <li>
-                    <p class="par_6100">Descriptions</p>
+                    <p class="par_6100 ">Descriptions</p>
                 </li>
                 <li>
-                    <p class="par_9300">more</p>
+                    <p class="par_9300 ">more</p>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_9500">
+        <nav class="nav_9500 ">
             <ul>
                 <li>
-                    <div class="div_9000" onclick="window.location.href='The%Millenium%Meltdown.html';">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img_9100">
-                        <p class="par_93_1">The Millenium Meltdown</p>
-                        <p class="par_93_2">Description: This work documents the intrigue,</p>
-                        <p class="par_93_3">anxiety, and eventual triumph over one of the</p>
-                        <p class="par_93_4">most feared technological crises in modern </p>
-                        <p class="par_93_5">history. </p>
-                        <nav class="nav-3500">
+                    <div class="div_9000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; ">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg " class="img_9100 ">
+                        <p class="par_93_1 ">The Millenium Meltdown</p>
+                        <p class="par_93_2 ">Description: This work documents the intrigue,</p>
+                        <p class="par_93_3 ">anxiety, and eventual triumph over one of the</p>
+                        <p class="par_93_4 ">most feared technological crises in modern </p>
+                        <p class="par_93_5 ">history. </p>
+                        <nav class="nav-3500 ">
                             <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
                             </ul>
                         </nav>
                     </div>
                 </li>
                 <li>
-                    <div class="div_9150" onclick="window.location.href='The%Roseline%NoneElse.html';">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="img_9150">
-                        <p class="par_94_1">Roseline or None Else</p>
-                        <p class="par_94_2">Description: This work documents the intrigue,</p>
-                        <p class="par_94_3">anxiety, and eventual triumph over one of the</p>
-                        <p class="par_94_4">most feared technological crises in modern </p>
-                        <p class="par_94_5">history. </p>
-                        <nav class="nav-3500">
+                    <div class="div_9150 " onclick="window.location.href='The%Roseline%NoneElse.html' ; ">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg " class="img_9150 ">
+                        <p class="par_94_1 ">Roseline or None Else</p>
+                        <p class="par_94_2 ">Description: This work documents the intrigue,</p>
+                        <p class="par_94_3 ">anxiety, and eventual triumph over one of the</p>
+                        <p class="par_94_4 ">most feared technological crises in modern </p>
+                        <p class="par_94_5 ">history. </p>
+                        <nav class="nav-3500 ">
                             <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
                             </ul>
                         </nav>
                     </div>
                 </li>
                 <li>
-                    <div class="div_9000" onclick="window.location.href='The%Wise%Companion.html';">
-                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg" class="img_9100">
-                        <p class="par_93_1">The Millenium Meltdown</p>
-                        <p class="par_93_2">Description: This work documents the intrigue,</p>
-                        <p class="par_93_3">anxiety, and eventual triumph over one of the</p>
-                        <p class="par_93_4">most feared technological crises in modern </p>
-                        <p class="par_93_5">history. </p>
-                        <nav class="nav-3500">
+                    <div class="div_9000 " onclick="window.location.href='The%Wise%Companion.html' ; ">
+                        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg " class="img_9100 ">
+                        <p class="par_93_1 ">The Millenium Meltdown</p>
+                        <p class="par_93_2 ">Description: This work documents the intrigue,</p>
+                        <p class="par_93_3 ">anxiety, and eventual triumph over one of the</p>
+                        <p class="par_93_4 ">most feared technological crises in modern </p>
+                        <p class="par_93_5 ">history. </p>
+                        <nav class="nav-3500 ">
                             <ul>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
-                                <li><img src="./icons/icons8-star-100.png" class="img-3500"></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
+                                <li><img src="./icons/icons8-star-100.png " class="img-3500 "></li>
                             </ul>
                         </nav>
                     </div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
 
             </ul>
         </nav>
-        <nav class="nav_8000">
+        <nav class="nav_8000 ">
             <ul>
                 <li>
-                    <p class="par_6100">Frictional Books</p>
+                    <p class="par_6100 ">Frictional Books</p>
                 </li>
                 <li>
-                    <p class="par_8300">more</p>
+                    <p class="par_8300 ">more</p>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_8900">
+        <nav class="nav_8900 ">
             <ul>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6300"></div>
+                    <div class="div_6300 "></div>
                 </li>
                 <li>
-                    <div class="div_6400"></div>
+                    <div class="div_6400 "></div>
                 </li>
                 <li>
-                    <div class="div_6500"></div>
+                    <div class="div_6500 "></div>
                 </li>
                 <li>
-                    <div class="div_6600"></div>
+                    <div class="div_6600 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
                 <li>
-                    <div class="div_6700"></div>
+                    <div class="div_6700 "></div>
                 </li>
             </ul>
         </nav>
-        <nav class="nav_7000">
+        <nav class="nav_7000 ">
             <ul>
                 <li>
-                    <p class="par_6100">Upcoming Books</p>
+                    <p class="par_6100 ">Upcoming Books</p>
                 </li>
 
             </ul>
         </nav>
-        <nav class="nav_7500">
+        <nav class="nav_7500 ">
             <ul>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
                 <li>
-                    <div class="div_9000"></div>
+                    <div class="div_9000 "></div>
                 </li>
 
             </ul>
         </nav>
     </div>
-    <div class="all_books content-div active" style="display: none;">
-        <p class="pra_1000">All Collections</p>
-        <nav class="nav_1_100">
+    <div class="all_books content-div active " style="display: none; ">
+        <p class="pra_1000 ">All Collections</p>
+        <nav class="nav_1_100 ">
             <ul>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
                 <li>
-                    <div class="div_1_120"></div>
+                    <div class="div_1_120 "></div>
                 </li>
             </ul>
         </nav>
     </div>
-    <div class="div_favourite content-div">
-        <p class="pra_1000">Favourite</p>
+    <div class="div_favourite content-div ">
+        <p class="pra_1000 ">Favourite</p>
     </div>
-    <div class="div_profile content-div">
-        <p class="pra_1000">Profile</p>
+    <div class="div_profile content-div ">
+        <p class="pra_1000 ">Profile</p>
     </div>
-    <div class="div_notify content-div">
-        <p class="pra_1000">Notifications</p>
+    <div class="div_notify content-div ">
+        <p class="pra_1000 ">Notifications</p>
     </div>
-    <div class="div_dashboard content-div">
-        <p class="pra_1000">Settings</p>
+    <div class="div_dashboard content-div ">
+        <p class="pra_1000 ">Settings</p>
     </div>
-    <div class="div_policy content-div">
-        <p class="pra_1000">Policies</p>
+    <div class="div_policy content-div ">
+        <p class="pra_1000 ">Policies</p>
     </div>
-    <div class="div_about content-div">
-        <p class="pra_1000">About Us</p>
+    <div class="div_about content-div ">
+        <p class="pra_1000 ">About Us</p>
     </div>
     <script>
         // Select between each div's for presenting 
@@ -2014,11 +2271,12 @@
             });
         });
     </script>
-    <div class="div_2000">
-        <img src="./icons/icons8-fries-meeeeeenu-100.png" class="img_2000">
+    <div class="div_2000 ">
+        <img src="./icons/icons8-fries-meeeeeenu-100.png " class="img_2000 ">
         <style>
             .div-menu-show,
-            .div-logo-show {
+            .div-logo-show,
+            .div-name-show {
                 position: absolute;
                 top: 49px;
                 left: 12px;
@@ -2043,8 +2301,45 @@
                 opacity: 0;
                 visibility: hidden;
             }
+            
+            .div-name-show {
+                top: 55px;
+                left: 97px;
+                opacity: 1;
+                visibility: hidden;
+            }
+            
+            .div-his-show {
+                top: 55px;
+                right: 0.5%;
+                width: 320px;
+                height: 400px;
+                opacity: 0;
+                position: absolute;
+                top: 49px;
+                visibility: visible;
+                background-color: #333;
+                border-radius: 4px;
+                z-index: 0;
+                transition: opacity 0.3s ease;
+            }
+            
+            .div-load-show {
+                top: 55px;
+                right: 5%;
+                width: 290px;
+                height: 280px;
+                opacity: 0;
+                position: absolute;
+                top: 49px;
+                visibility: visible;
+                background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+                border-radius: 10px;
+                z-index: 0;
+                transition: opacity 0.3s ease;
+            }
         </style>
-        <div class="div-menu-show">Menu..✅</div>
+        <div class="div-menu-show ">Menu..✅</div>
         <script>
             const MenuImg = document.querySelector('.img_2000');
             const MenuDiv = document.querySelector('.div-menu-show');
@@ -2059,8 +2354,8 @@
                 MenuDiv.style.visibility = 'hidden';
             });
         </script>
-        <img src="./icons/FB-Stream-Photoroom.png" class="img_2100" onclick="window.location.href='main.html';">
-        <div class="div-logo-show">FB photo..🏢</div>
+        <img src="./icons/FB-Stream-Photoroom.png " class="img_2100 " onclick="window.location.href='main.html' ; ">
+        <div class="div-logo-show ">FB Logo..🏢</div>
         <script>
             const LogoImg = document.querySelector('.img_2100');
             const LogoDiv = document.querySelector('.div-logo-show');
@@ -2075,10 +2370,57 @@
                 LogoDiv.style.visibility = 'hidden';
             });
         </script>
-        <p class="par_1000" onclick="window.location.href='main.html';">Fruitful Bough</p>
-        <input type="text" class="ipt_1000">
-        <button class="bnt_1000"><img src="./icons/icons8-download-100.png" class="img_bnt_1000"><span class="sp_bnt_1000">Download Link</span></button>
-        <button class="bnt_1200">Read history</button>
+        <p class="par_1000 " onclick="window.location.href='main.html' ; ">Fruitful Bough</p>
+        <div class="div-name-show ">Fruitful Bough Productions</div>
+        <script>
+            const NameImg = document.querySelector('.par_1000');
+            const NameDiv = document.querySelector('.div-name-show');
+
+            NameImg.addEventListener('mouseenter', () => {
+                NameDiv.style.opacity = '1';
+                NameDiv.style.visibility = 'visible';
+            });
+
+            NameImg.addEventListener('mouseleave', () => {
+                NameDiv.style.opacity = '0';
+                NameDiv.style.visibility = 'hidden';
+            });
+        </script>
+        <input type="text " class="ipt_1000 ">
+        <button class="bnt_1000 "><img src="./icons/icons8-download-100.png " class="img_bnt_1000 "><span class="sp_bnt_1000 ">Download Link</span></button>
+        <div class="div-load-show "></div>
+        <script>
+            const LoadImg = document.querySelector('.bnt_1000');
+            const LoadDiv = document.querySelector('.div-load-show');
+
+            LoadImg.addEventListener('mouseenter', () => {
+                LoadDiv.style.opacity = '1';
+                LoadDiv.style.visibility = 'visible';
+            });
+
+
+            LoadImg.addEventListener('mouseleave', () => {
+                LoadDiv.style.opacity = '0';
+                LoadDiv.style.visibility = 'hidden';
+            });
+        </script>
+        <button class="bnt_1200 ">Read history</button>
+        <div class="div-his-show "></div>
+        <script>
+            const HisImg = document.querySelector('.bnt_1200');
+            const HisDiv = document.querySelector('.div-his-show');
+
+            HisImg.addEventListener('mouseenter', () => {
+                HisDiv.style.opacity = '1';
+                HisDiv.style.visibility = 'visible';
+            });
+
+            HisImg.addEventListener('mouseleave', () => {
+                HisDiv.style.opacity = '0';
+                HisDiv.style.visibility = 'hidden';
+            });
+        </script>
+
     </div>
     <script>
         const HeaderCont = document.querySelector('.div_2000');
@@ -2118,17 +2460,17 @@
         });
     </script>
     <script></script>
-    <div class="Cynthia-load" data-tooltip="Chat with cynthia... 👍"><img src="./icons/icons8-chat-100.png" class="img-load"></div>
-    <div class="cookies-div">
-        <img src="./icons/icons8-cookie-100.png" class="cookies-img">
-        <p class="par-eeee">Cookie Settings</p>
-        <p class="par-eeee-1">Cookies helps us remember and understand</p>
-        <p class="par-eeee-2">your details. Enable all cookies now to</p>
-        <p class="par-eeee-3">enjoy advanced features.</p>
-        <nav class="nav-pppp">
+    <div class="Cynthia-load " data-tooltip="Chat with cynthia... 👍 "><img src="./icons/icons8-chat-100.png " class="img-load "></div>
+    <div class="cookies-div ">
+        <img src="./icons/icons8-cookie-100.png " class="cookies-img ">
+        <p class="par-eeee ">Cookie Settings</p>
+        <p class="par-eeee-1 ">Cookies helps us remember and understand</p>
+        <p class="par-eeee-2 ">your details. Enable all cookies now to</p>
+        <p class="par-eeee-3 ">enjoy advanced features.</p>
+        <nav class="nav-pppp ">
             <ul>
-                <li><button class="but-one-1">Accept All</button></li>
-                <li><button class="but-one-2">Reject All</button></li>
+                <li><button class="but-one-1 ">Accept All</button></li>
+                <li><button class="but-one-2 ">Reject All</button></li>
             </ul>
         </nav>
         <script>
@@ -2150,7 +2492,7 @@
                 localStorage.setItem('cookieNoticeDismissed', true);
             });
         </script>
-        <p class="par-eeee-4">More Information</p>
+        <p class="par-eeee-4 ">More Information</p>
     </div>
 </body>
 
