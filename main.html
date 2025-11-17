@@ -407,6 +407,12 @@
             left: 0;
             width: 100%;
             /* Make it full width when expanded */
+            .fav-div-1 {
+                left: 420px;
+            }
+            .samp-fav-div {
+                left: 200px;
+            }
         }
         
         .div_profile.expanded {
@@ -1529,6 +1535,74 @@
             /* Note: top only works if position is relative/absolute/fixed */
             background-image: url('./icons/ccccccc11111111111wwwwww11111cc.png');
         }
+        
+        .fav-div-1 {
+            top: 110px;
+            left: 380px;
+            width: 690px;
+            position: absolute;
+            height: 500px;
+            background-color: rgba(242, 191, 17, 0.18);
+            background-image: url('./Pictures/photo-1604933762161-67313106146c.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .samp-fav-div {
+            top: 200px;
+            left: 120px;
+            width: 420px;
+            position: absolute;
+            height: 300px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* White with 50% opacity */
+            backdrop-filter: blur(2px);
+        }
+        
+        .fav-001,
+        .fav-002,
+        .fav-003,
+        .fav-004,
+        .fav-005 {
+            top: 5px;
+            left: 26px;
+            font-size: 30px;
+            color: white;
+            position: absolute;
+        }
+        
+        .fav-002 {
+            top: 39px;
+        }
+        
+        .fav-003 {
+            top: 73px;
+        }
+        
+        .fav-004 {
+            top: 142px;
+            font-size: 14px;
+        }
+        
+        .fav-005 {
+            top: 162px;
+            font-size: 15px;
+        }
+        
+        .fav-but {
+            width: 120px;
+            height: 40px;
+            background-color: #ba9105;
+            position: absolute;
+            top: 222px;
+            left: 26px;
+            border: none;
+            font-size: 14px;
+            border-radius: 10px;
+            color: white;
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -1726,7 +1800,7 @@
                         visibility: visible;
                         background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
                         border-radius: 5px;
-                        z-index: 10;
+                        z-index: 100;
                         transition: opacity 0.3s ease;
                     }
                     
@@ -1887,25 +1961,8 @@
             <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxxxx0.png " class="img_20_1 "> <span class="sp_bnt_3000 ">Download Link</span> <img src="./icons/icons8-qr-code-100.png " class="qr_code_12 "></button>
         </div>
     </div>
-    <div class="div_5100 ">
-        <div class="div-load2-show">
-            <img src="./icons/pointer.png" class="tri-div">
-        </div>
-        <script>
-            const Load2Img = document.querySelector('.but_4100_1');
-            const Load2Div = document.querySelector('.div-load2-show');
+    <div class="div_5100">
 
-            Load2Img.addEventListener('mouseenter', () => {
-                Load2Div.style.opacity = '1';
-                Load2Div.style.visibility = 'visible';
-            });
-
-
-            Load2Img.addEventListener('mouseleave', () => {
-                Load2Div.style.opacity = '0';
-                Load2Div.style.visibility = 'hidden';
-            });
-        </script>
         <div class="div_5100_sub ">
             <nav class="nav_4100 ">
                 <ul>
@@ -1927,13 +1984,13 @@
         <nav class="nav_2400 ">
             <ul>
                 <li>
-                    <div class="div_6000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; "></div>
+                    <div class="div_6000 " onclick="window.location.href='the-millenium-meltdown.html';"></div>
                 </li>
                 <li>
-                    <div class="div_6100 " onclick="window.location.href='The%Roseline%NoneElse.html' ; "></div>
+                    <div class="div_6100 " onclick="window.location.href='the-roseline-none-else.html';"></div>
                 </li>
                 <li>
-                    <div class="div_6200 " onclick="window.location.href='The%Wise%Companion.html' ; "></div>
+                    <div class="div_6200 " onclick="window.location.href='the-wise-companion.html';"></div>
                 </li>
                 <li>
                     <div class="div_6300 "></div>
@@ -1969,7 +2026,7 @@
         <nav class="nav_2900 ">
             <ul>
                 <li>
-                    <div class="div_6100 " onclick="window.location.href='The%Roseline%NoneElse.html' ; "></div>
+                    <div class="div_6100 " onclick="window.location.href='the-roseline-none-else.html';"></div>
                 </li>
                 <li>
                     <div class="div_6300 "></div>
@@ -2011,10 +2068,10 @@
         <nav class="nav_3900 ">
             <ul>
                 <li>
-                    <div class="div_6000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; "></div>
+                    <div class="div_6000 " onclick="window.location.href='the-millenium-meltdown.html';"></div>
                 </li>
                 <li>
-                    <div class="div_6200 " onclick="window.location.href='The%Wise%Companion.html' ; "></div>
+                    <div class="div_6200 " onclick="window.location.href='the-wise-companion.html';"></div>
                 </li>
                 <li>
                     <div class="div_6300 "></div>
@@ -2052,7 +2109,7 @@
         <nav class="nav_9500 ">
             <ul>
                 <li>
-                    <div class="div_9000 " onclick="window.location.href='The%Millenium%Meltdown.html' ; ">
+                    <div class="div_9000 " onclick="window.location.href='the-millenium-meltdown.html';">
                         <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg " class="img_9100 ">
                         <p class="par_93_1 ">The Millenium Meltdown</p>
                         <p class="par_93_2 ">Description: This work documents the intrigue,</p>
@@ -2071,7 +2128,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="div_9150 " onclick="window.location.href='The%Roseline%NoneElse.html' ; ">
+                    <div class="div_9150 " onclick="window.location.href='the-roseline-none-else.html';">
                         <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg " class="img_9150 ">
                         <p class="par_94_1 ">Roseline or None Else</p>
                         <p class="par_94_2 ">Description: This work documents the intrigue,</p>
@@ -2090,7 +2147,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="div_9000 " onclick="window.location.href='The%Wise%Companion.html' ; ">
+                    <div class="div_9000 " onclick="window.location.href='the-wise-companion.html';">
                         <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg " class="img_9100 ">
                         <p class="par_93_1 ">The Millenium Meltdown</p>
                         <p class="par_93_2 ">Description: This work documents the intrigue,</p>
@@ -2220,6 +2277,15 @@
     </div>
     <div class="div_favourite content-div ">
         <p class="pra_1000 ">Favourite</p>
+        <div class="fav-div-1"></div>
+        <div class="samp-fav-div">
+            <p class="fav-001">YOU CAN READ</p>
+            <p class="fav-002">ALL YOUR FAVOURITE</p>
+            <p class="fav-003">FB BOOKS HERE!</p>
+            <p class="fav-004">Discover our curated collection of FB books, available</p>
+            <p class="fav-005">exclusively on our platform, with limited edition copies!</p>
+            <button class="fav-but">Get Started</button>
+        </div>
     </div>
     <div class="div_profile content-div ">
         <p class="pra_1000 ">Profile</p>
@@ -2494,6 +2560,24 @@
         </script>
         <p class="par-eeee-4 ">More Information</p>
     </div>
+    <div class="div-load2-show">
+        <img src="./icons/pointer.png" class="tri-div">
+    </div>
+    <script>
+        const Load2Img = document.querySelector('.but_4100_1');
+        const Load2Div = document.querySelector('.div-load2-show');
+
+        Load2Img.addEventListener('mouseenter', () => {
+            Load2Div.style.opacity = '1';
+            Load2Div.style.visibility = 'visible';
+        });
+
+
+        Load2Img.addEventListener('mouseleave', () => {
+            Load2Div.style.opacity = '0';
+            Load2Div.style.visibility = 'hidden';
+        });
+    </script>
 </body>
 
 </html>
