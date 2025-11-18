@@ -493,13 +493,13 @@
         }
         
         .ipt_1000 {
-            width: 540px;
-            height: 45px;
+            width: 500px;
+            height: 40px;
             background-color: rgba(255, 255, 255, 0.2);
             padding-left: 50px;
             position: absolute;
             border-radius: 8px;
-            left: 42%;
+            left: 540px;
             transform: translate(-50%, -50%);
             top: 50%;
             border: 0px solid;
@@ -1602,6 +1602,7 @@
             font-size: 14px;
             border-radius: 10px;
             color: white;
+            cursor: pointer;
         }
     </style>
     <div class="div-test-one">
@@ -2376,13 +2377,12 @@
             }
             
             .div-his-show {
-                top: 55px;
+                top: 50px;
                 right: 0.5%;
-                width: 320px;
+                width: 300px;
                 height: 400px;
                 opacity: 0;
                 position: absolute;
-                top: 49px;
                 visibility: visible;
                 background-color: #333;
                 border-radius: 4px;
@@ -2391,13 +2391,12 @@
             }
             
             .div-load-show {
-                top: 55px;
-                right: 5%;
-                width: 290px;
-                height: 280px;
+                top: 50px;
+                right: 15%;
+                width: 330px;
+                height: 310px;
                 opacity: 0;
                 position: absolute;
-                top: 49px;
                 visibility: visible;
                 background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
                 border-radius: 10px;
@@ -2452,9 +2451,9 @@
                 NameDiv.style.visibility = 'hidden';
             });
         </script>
-        <input type="text " class="ipt_1000 ">
-        <button class="bnt_1000 "><img src="./icons/icons8-download-100.png " class="img_bnt_1000 "><span class="sp_bnt_1000 ">Download Link</span></button>
-        <div class="div-load-show "></div>
+        <input type="text " class="ipt_1000">
+        <button class="bnt_1000"><img src="./icons/icons8-download-100.png " class="img_bnt_1000 "><span class="sp_bnt_1000 ">Download Link</span></button>
+        <div class="div-load-show"></div>
         <script>
             const LoadImg = document.querySelector('.bnt_1000');
             const LoadDiv = document.querySelector('.div-load-show');
@@ -2470,8 +2469,90 @@
                 LoadDiv.style.visibility = 'hidden';
             });
         </script>
+        <style>
+            .his-par-one {
+                font-family: Cambria, "Times New Roman", serif;
+                font-size: 24px;
+                color: white;
+                position: absolute;
+                top: -15px;
+                left: 15px;
+            }
+            
+            .his-one {
+                background-color: transparent;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                height: 120px;
+            }
+            
+            .his-one-div {
+                background-color: rgba(242, 191, 17, 0.18);
+                position: absolute;
+                width: 85px;
+                border-radius: 5px;
+                height: 100px;
+                left: 52px;
+                transform: translate(-50%, -50%);
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                top: 50%;
+            }
+            
+            .his-one:hover {
+                background-color: rgba(242, 191, 17, 0.18);
+            }
+            
+            .his-par-two,
+            .his-par-three,
+            .his-par-four {
+                font-family: Cambria, "Times New Roman", serif;
+                font-size: 15px;
+                color: white;
+                position: absolute;
+                top: -6px;
+                left: 105px;
+                font-weight: bold;
+            }
+            
+            .his-par-three {
+                top: 17px;
+                font-weight: normal;
+            }
+            
+            .his-par-four {
+                top: 45px;
+                color: rgb(175, 174, 174);
+                font-size: 13px;
+                font-weight: normal;
+            }
+            
+            .his-but {
+                top: 80px;
+                position: absolute;
+                width: 95px;
+                height: 30px;
+                background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+                left: 105px;
+                color: white;
+                border: none;
+                font-size: 11px;
+                border-radius: 6px;
+            }
+        </style>
         <button class="bnt_1200 ">Read history</button>
-        <div class="div-his-show "></div>
+        <div class="div-his-show">
+            <p class="his-par-one">Read History</p>
+            <div class="his-one">
+                <div class="his-one-div"></div>
+                <p class="his-par-two">Millenium Meltdown Book</p>
+                <p class="his-par-three">Millenuim Bug</p>
+                <p class="his-par-four">Enjoy unlimited access to books</p>
+                <button class="his-but">Download Now</button>
+            </div>
+        </div>
         <script>
             const HisImg = document.querySelector('.bnt_1200');
             const HisDiv = document.querySelector('.div-his-show');
