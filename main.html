@@ -1240,7 +1240,7 @@
             color: rgba(255, 255, 255, 0.7);
             font-size: 25px;
             position: absolute;
-            top: 8%;
+            top: 42px;
             left: 3%;
             font-weight: bold;
             font-family: "Cabri ", sans-serif;
@@ -1604,6 +1604,114 @@
             color: white;
             cursor: pointer;
         }
+        
+        .pro-div-one {
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 290px;
+            position: absolute;
+            background-color: rgba(242, 191, 17, 0.18);
+            background-image: url('./Pictures/original-641e2d4320e1f0f08db05cacdcfddddddd8fed2.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .change-bac-img {
+            width: 40px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            border-radius: 10px;
+            right: 2%;
+            bottom: 3%;
+            background-image: url('./icons/icons8-write-100.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+        }
+        
+        .client-img-div {
+            width: 170px;
+            height: 170px;
+            background-color: black;
+            position: absolute;
+            top: 235px;
+            left: 45px;
+            border-radius: 100px;
+            background-image: url('./icons/icons8-person-48.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .correct-img {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            border-radius: 50px;
+            right: 10%;
+            bottom: 7%;
+            background-image: url('./icons/icons8-write-100.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            cursor: pointer;
+        }
+        
+        .div-info-2 {
+            width: 250px;
+            height: 120px;
+            background-color: transparent;
+            position: absolute;
+            top: 275px;
+            left: 225px;
+            border-radius: 0px;
+        }
+        
+        .div-info-3 {
+            width: 270px;
+            height: 50px;
+            background-color: transparent;
+            position: absolute;
+            top: 305px;
+            right: 1%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .info-par-1,
+        .info-par-2,
+        .info-par-3 {
+            font-size: 18px;
+            color: white;
+            top: 12px;
+            font-weight: bold;
+            left: 16px;
+            position: absolute;
+        }
+        
+        .info-par-2,
+        .info-par-3 {
+            font-size: 15px;
+            color: rgb(179, 178, 178);
+            top: 41px;
+            left: 20px;
+            font-family: Cambria, "Times New Roman", serif;
+            position: absolute;
+            font-weight: normal;
+        }
+        
+        .info-par-3 {
+            top: 61px;
+            font-weight: normal;
+        }
+        
+        .pro-div-three {}
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -1810,6 +1918,29 @@
                         position: absolute;
                         left: -40px;
                         top: 208px;
+                    }
+                    
+                    .nav-30210 {
+                        position: relative;
+                        left: -15px;
+                    }
+                    
+                    .nav-30210 li {
+                        list-style: none;
+                        padding-left: 2px;
+                        display: inline-block;
+                    }
+                    
+                    .img-hhh {
+                        zoom: 35%;
+                    }
+                    
+                    .par-ttt {
+                        position: relative;
+                        top: -11px;
+                        font-size: 17px;
+                        left: -15px;
+                        color: white;
                     }
                 </style>
                 <div class="div-home-show ">All Collections</div>
@@ -2289,7 +2420,32 @@
         </div>
     </div>
     <div class="div_profile content-div ">
-        <p class="pra_1000 ">Profile</p>
+        <div class="pro-div-one">
+            <p class="pra_1000">Profile</p>
+            <div class="change-bac-img"></div>
+        </div>
+        <div class="client-img-div">
+            <div class="correct-img"></div>
+        </div>
+        <div class="div-info-2">
+            <p class="info-par-1">Will Smith James</p>
+            <p class="info-par-2">Male</p>
+            <p class="info-par-3">Joined <span>18/11/2025</span></p>
+        </div>
+        <div class="div-info-3">
+            <nav class="nav-30210">
+                <ul>
+                    <li class="par-ttt">Social Handles</li>
+                    <li><img src="./icons/aaaaaaaaaaaaa.png" class="img-hhh"></li>
+                    <li><img src="./icons/instaoo.png" class="img-hhh"></li>
+                    <li><img src="./icons/iconsffffff8-xssss-100.png" class="img-hhh"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="pro-div-three"></div>
+        <div class="pro-div-four"></div>
+        <div class="pro-div-five"></div>
+        <div class="pro-div-six"></div>
     </div>
     <div class="div_notify content-div ">
         <p class="pra_1000 ">Notifications</p>
@@ -2541,12 +2697,27 @@
                 font-size: 11px;
                 border-radius: 6px;
             }
+            
+            .ads-div {
+                position: absolute;
+                top: 5px;
+                left: 52px;
+                background-color: rgba(0, 0, 0, 0.7);
+                font-size: 13px;
+                color: #fff;
+                padding: 5px;
+                border-radius: 4px;
+                white-space: nowrap;
+                /* Prevent wrapping */
+            }
         </style>
         <button class="bnt_1200 ">Read history</button>
         <div class="div-his-show">
             <p class="his-par-one">Read History</p>
             <div class="his-one">
-                <div class="his-one-div"></div>
+                <div class="his-one-div">
+                    <div class="ads-div">AD</div>
+                </div>
                 <p class="his-par-two">Millenium Meltdown Book</p>
                 <p class="his-par-three">Millenuim Bug</p>
                 <p class="his-par-four">Enjoy unlimited access to books</p>
@@ -2589,6 +2760,13 @@
         });
         ScrollCont2.addEventListener('scroll', () => {
             if (ScrollCont2.scrollTop > 10) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
+        ScrollCont3.addEventListener('scroll', () => {
+            if (ScrollCont3.scrollTop > 10) { // Change the scroll threshold when  applied
                 HeaderCont.style.backgroundColor = '#111111';
             } else {
                 HeaderCont.style.backgroundColor = 'transparent';
