@@ -1851,6 +1851,65 @@
             width: 10%;
             background-color: #02a531;
         }
+        
+        .pro-div-kk1,
+        .pro-div-kk2,
+        .pro-div-kk3,
+        .pro-div-kk4,
+        .pro-div-kk5,
+        .pro-div-kk6 {
+            width: 200px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 15px;
+            border-radius: 2px;
+        }
+        
+        .pro-div-kk1,
+        .pro-div-kk3,
+        .pro-div-kk5 {
+            left: 30px;
+        }
+        
+        .pro-div-kk2,
+        .pro-div-kk4,
+        .pro-div-kk6 {
+            right: 30px;
+        }
+        
+        .pro-div-kk3,
+        .pro-div-kk4 {
+            top: 107px;
+        }
+        
+        .pro-div-kk5,
+        .pro-div-kk6 {
+            top: 200px;
+        }
+        
+        .kk1-img {
+            zoom: 35%;
+            position: absolute;
+            top: 50%;
+            left: 100px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .kk1-par,
+        .kk2-par {
+            font-size: 14px;
+            color: white;
+            position: absolute;
+            top: -2px;
+            left: 65px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .kk2-par {
+            font-size: 23px;
+            top: 10px;
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -2609,7 +2668,36 @@
             </div>
         </div>
         <div class="pro-div-four">
-            <div class=""></div>
+            <div class="pro-div-kk1">
+                <img src="./icons/icons8-redddddad-100.png" class="kk1-img">
+                <p class="kk1-par">Books Read</p>
+                <p class="kk2-par">0</p>
+            </div>
+            <div class="pro-div-kk2">
+                <img src="./icons/icons8-receipt-and-change-100-2.png" class="kk1-img">
+                <p class="kk1-par">Books Bought</p>
+                <p class="kk2-par">0</p>
+            </div>
+            <div class="pro-div-kk3">
+                <img src="./icons/icons8-available-100.png" class="kk1-img">
+                <p class="kk1-par">Books available</p>
+                <p class="kk2-par">3</p>
+            </div>
+            <div class="pro-div-kk4">
+                <img src="./icons/icons8-wwwww100.png" class="kk1-img">
+                <p class="kk1-par">Total Reviews</p>
+                <p class="kk2-par">0</p>
+            </div>
+            <div class="pro-div-kk5">
+                <img src="./icons/icons8-upload-100.png" class="kk1-img">
+                <p class="kk1-par">Books Uploaded</p>
+                <p class="kk2-par">3</p>
+            </div>
+            <div class="pro-div-kk6">
+                <img src="./icons/icons8-artificial-intelligence-100.png" class="kk1-img">
+                <p class="kk1-par">AI Functionality</p>
+                <p class="kk2-par">0.5%</p>
+            </div>
         </div>
         <div class="pro-div-five"></div>
         <div class="pro-div-six"></div>
@@ -2934,7 +3022,7 @@
             }
         });
         ScrollCont3.addEventListener('scroll', () => {
-            if (ScrollCont3.scrollTop > 50) { // Change the scroll threshold when  applied
+            if (ScrollCont3.scrollTop > 10) { // Change the scroll threshold when  applied
                 HeaderCont.style.backgroundColor = '#111111';
             } else {
                 HeaderCont.style.backgroundColor = 'transparent';
