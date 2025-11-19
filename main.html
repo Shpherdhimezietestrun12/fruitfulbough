@@ -1568,6 +1568,7 @@
         .fav-005 {
             top: 5px;
             left: 26px;
+            font-family: "Cabri", sans-serif;
             font-size: 30px;
             color: white;
             position: absolute;
@@ -1711,7 +1712,145 @@
             font-weight: normal;
         }
         
-        .pro-div-three {}
+        .pro-div-three,
+        .pro-div-four,
+        .pro-div-five,
+        .pro-div-six {
+            width: 495px;
+            height: 285px;
+            background-color: rgba(242, 191, 17, 0.13);
+            position: absolute;
+            top: 480px;
+            border-radius: 5px;
+        }
+        
+        .pro-div-three {
+            left: 47px;
+        }
+        
+        .pro-div-four {
+            right: 47px;
+        }
+        
+        .pro-div-five {
+            width: 580px;
+            top: 795px;
+            left: 47px;
+        }
+        
+        .pro-div-six {
+            width: 400px;
+            top: 795px;
+            right: 47px;
+        }
+        
+        .pro-div-seven {
+            width: 100%;
+            height: 30px;
+            background-color: transparent;
+            position: absolute;
+            top: 1070px;
+            left: 0;
+        }
+        
+        .pro-par-1 {
+            color: white;
+            font-size: 16px;
+            position: absolute;
+            top: 5px;
+            left: 32px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .pro-dib-1,
+        .pro-dib-2,
+        .pro-dib-3,
+        .pro-dib-4 {
+            width: 38px;
+            height: 38px;
+            background-color: #a70122;
+            position: absolute;
+            top: 60px;
+            left: 29px;
+            border-radius: 3.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pro-dib-2 {
+            top: 115px;
+            background-color: #7ca203;
+        }
+        
+        .pro-dib-3 {
+            top: 170px;
+            background-color: #a701aa;
+        }
+        
+        .pro-dib-4 {
+            top: 225px;
+            background-color: #02a531;
+        }
+        
+        .par-w00 {
+            font-size: 17px;
+            color: white;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .pro-div-jj1,
+        .pro-div-jj2,
+        .pro-div-jj3,
+        .pro-div-jj4 {
+            position: absolute;
+            top: 75px;
+            left: 95px;
+            width: 350px;
+            height: 6.5px;
+            background-color: rgba(255, 255, 255, 0.12);
+            border-radius: 5px;
+        }
+        
+        .pro-div-jj2 {
+            top: 130px;
+        }
+        
+        .pro-div-jj3 {
+            top: 185px;
+        }
+        
+        .pro-div-jj4 {
+            top: 240px;
+        }
+        
+        .chn-1,
+        .chn-2,
+        .chn-3,
+        .chn-4 {
+            width: 10%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #a70122;
+            border-radius: 5px;
+        }
+        
+        .chn-2 {
+            width: 5%;
+            background-color: #7ca203;
+        }
+        
+        .chn-3 {
+            width: 3%;
+            background-color: #a701aa;
+        }
+        
+        .chn-4 {
+            width: 10%;
+            background-color: #02a531;
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -2234,7 +2373,7 @@
                     <p class="par_6100 ">Descriptions</p>
                 </li>
                 <li>
-                    <p class="par_9300 ">more</p>
+                    <p class="par_9300">more</p>
                 </li>
             </ul>
         </nav>
@@ -2312,7 +2451,7 @@
                     <p class="par_6100 ">Frictional Books</p>
                 </li>
                 <li>
-                    <p class="par_8300 ">more</p>
+                    <p class="par_8300">more</p>
                 </li>
             </ul>
         </nav>
@@ -2442,10 +2581,39 @@
                 </ul>
             </nav>
         </div>
-        <div class="pro-div-three"></div>
-        <div class="pro-div-four"></div>
+        <div class="pro-div-three">
+            <p class="pro-par-1">My Current Usage</p>
+            <div class="pro-dib-1">
+                <p class="par-w00">BR</p>
+            </div>
+            <div class="pro-div-jj1">
+                <div class="chn-1"></div>
+            </div>
+            <div class="pro-dib-2">
+                <p class="par-w00">NT</p>
+            </div>
+            <div class="pro-div-jj2">
+                <div class="chn-2"></div>
+            </div>
+            <div class="pro-dib-3">
+                <p class="par-w00">AI</p>
+            </div>
+            <div class="pro-div-jj3">
+                <div class="chn-3"></div>
+            </div>
+            <div class="pro-dib-4">
+                <p class="par-w00">VI</p>
+            </div>
+            <div class="pro-div-jj4">
+                <div class="chn-4"></div>
+            </div>
+        </div>
+        <div class="pro-div-four">
+            <div class=""></div>
+        </div>
         <div class="pro-div-five"></div>
         <div class="pro-div-six"></div>
+        <div class="pro-div-seven"></div>
     </div>
     <div class="div_notify content-div ">
         <p class="pra_1000 ">Notifications</p>
@@ -2766,7 +2934,7 @@
             }
         });
         ScrollCont3.addEventListener('scroll', () => {
-            if (ScrollCont3.scrollTop > 10) { // Change the scroll threshold when  applied
+            if (ScrollCont3.scrollTop > 50) { // Change the scroll threshold when  applied
                 HeaderCont.style.backgroundColor = '#111111';
             } else {
                 HeaderCont.style.backgroundColor = 'transparent';
