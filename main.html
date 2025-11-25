@@ -398,9 +398,6 @@
             .par_8300 {
                 left: 1109px;
             }
-            .list_4150 {
-                left: 1358px;
-            }
         }
         
         .div_favourite.expanded {
@@ -448,6 +445,7 @@
         .div_5100_sub {
             width: 100%;
             height: 470px;
+            background-color: rgba(242, 191, 17, 0.18);
             background-image: url('./Pictures/books-assortment-with-dark-bssssssssssssssackground_23-2148898297.jpg');
             background-size: cover;
             background-repeat: no-repeat;
@@ -766,18 +764,58 @@
             background-color: transparent;
             border: 1.5px solid white;
             cursor: pointer;
+            position: absolute;
             border-radius: 32px;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
         
         .list_4100 {
-            position: relative;
-            left: 35%;
+            left: 3%;
         }
         
         .list_4150 {
+            right: 1%;
+        }
+        
+        .list_4160,
+        .list_4170,
+        .list_4180,
+        .list_4190,
+        .list_4200,
+        .list_4210 {
+            right: 1%;
+            width: 38px;
+            height: 38px;
+            background-color: transparent;
+            border: 1.5px solid #ffffff;
+            cursor: pointer;
             position: absolute;
-            left: 1088px;
-            top: 17.5px;
+            border-radius: 32px;
+            top: 665px;
+        }
+        
+        .list_4170 {
+            top: 960px;
+        }
+        
+        .list_4180 {
+            top: 1250px;
+        }
+        
+        .list_4190 {
+            top: 1570px;
+            z-index: 10;
+        }
+        
+        .list_4200 {
+            top: 1880px;
+            z-index: 10;
+        }
+        
+        .list_4210 {
+            top: 2200px;
+            z-index: 10;
         }
         
         .img_5100 {
@@ -893,8 +931,29 @@
         }
         
         .div_5100::-webkit-scrollbar {
-            display: none;
+            display: noe;
             /* Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .div_5100::-webkit-scrollbar-track {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .div_5100::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .div_5100::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
         }
         
         .nav_2400,
@@ -902,9 +961,10 @@
         .nav_3900,
         .nav_9500,
         .nav_8900,
-        .nav_7500 {
+        .nav_7500,
+        .nav_17500 {
             position: absolute;
-            left: -2%;
+            left: -1.5%;
             overflow-x: auto;
             width: 103.5%;
             -webkit-overflow-scrolling: touch;
@@ -934,12 +994,18 @@
             top: 2073px;
         }
         
+        .nav_17500 {
+            top: 763px;
+            width: 72%;
+        }
+        
         .nav_2400 ul,
         .nav_2900 ul,
         .nav_3900 ul,
         .nav_9500 ul,
         .nav_8900 ul,
-        .nav_7500 ul {
+        .nav_7500 ul,
+        .nav_17500 ul {
             display: flex;
             flex-wrap: nowrap;
         }
@@ -949,7 +1015,8 @@
         .nav_3900::-webkit-scrollbar,
         .nav_9500::-webkit-scrollbar,
         .nav_8900::-webkit-scrollbar,
-        .nav_7500::-webkit-scrollbar {
+        .nav_7500::-webkit-scrollbar,
+        .nav_17500::-webkit-scrollbar {
             display: none;
             /* Chrome, Safari, and Opera */
         }
@@ -959,7 +1026,8 @@
         .nav_3900 li,
         .nav_9500 li,
         .nav_8900 li,
-        .nav_7500 li {
+        .nav_7500 li,
+        .nav_17500 li {
             list-style: none;
             padding-left: 15px;
             display: inline-block;
@@ -978,6 +1046,25 @@
         .div_7000 {
             width: 145px;
             height: 210px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .div_17000,
+        .div_17010,
+        .div_17015,
+        .div_17020,
+        .div_17025,
+        .div_17030,
+        .div_17035,
+        .div_17040,
+        .div_17045 {
+            width: 105px;
+            height: 160px;
             position: relative;
             background-color: rgba(255, 255, 255, 0.18);
             border-radius: 10px;
@@ -1130,6 +1217,10 @@
             left: -20%;
         }
         
+        .catalog-img {
+            zoom: 20%;
+        }
+        
         .nav_4110 li {
             list-style: none;
             padding-left: 10px;
@@ -1233,16 +1324,67 @@
         .div_dashboard::-webkit-scrollbar,
         .div_policy::-webkit-scrollbar,
         .div_about::-webkit-scrollbar {
-            display: none;
+            display: noe;
             /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
         }
         
-        .pra_1000 {
+        .all_books::-webkit-scrollbar,
+        .div_favourite::-webkit-scrollbar,
+        .div_profile::-webkit-scrollbar,
+        .div_notify::-webkit-scrollbar,
+        .div_dashboard::-webkit-scrollbar,
+        .div_policy::-webkit-scrollbar,
+        .div_about::-webkit-scrollbar {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .all_books::-webkit-scrollbar-thumb,
+        .div_favourite::-webkit-scrollbar-thumb,
+        .div_profile::-webkit-scrollbar-thumb,
+        .div_notify::-webkit-scrollbar-thumb,
+        .div_dashboard::-webkit-scrollbar-thumb,
+        .div_policy::-webkit-scrollbar-thumb,
+        .div_about::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .all_books::-webkit-scrollbar-thumb:hover,
+        .div_favourite::-webkit-scrollbar-thumb:hover,
+        .div_profile::-webkit-scrollbar-thumb:hover,
+        .div_notify::-webkit-scrollbar-thumb:hover,
+        .div_dashboard::-webkit-scrollbar-thumb:hover,
+        .div_policy::-webkit-scrollbar-thumb:hover,
+        .div_about::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .pra_1000,
+        .pra_1002,
+        .pra_1024 {
             color: rgba(255, 255, 255, 0.7);
             font-size: 25px;
             position: absolute;
             top: 42px;
             left: 3%;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .pra_1024 {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 50px;
+            top: 122px;
+            position: relative;
+            text-align: center;
             font-weight: bold;
             font-family: "Cabri ", sans-serif;
         }
@@ -2250,6 +2392,390 @@
             top: 210px;
             right: 4%;
         }
+        
+        .div-dash-1 {
+            width: 67%;
+            height: 220px;
+            position: absolute;
+            top: 117px;
+            left: 3%;
+            border-radius: 15px;
+            background-color: rgba(242, 191, 17, 0.14);
+        }
+        
+        .profile_img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 62px;
+            right: 3%;
+            background-color: rgba(242, 191, 17, 0.14);
+            border-radius: 50px;
+            background-image: url('./icons/icons8-person-1007.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .catelog-div {
+            width: 33px;
+            height: 33px;
+            position: absolute;
+            top: 66px;
+            right: 8%;
+            background-color: rgba(242, 191, 17, 0.09);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .div-dash-2 {
+            width: 24%;
+            height: 825px;
+            position: absolute;
+            top: 117px;
+            left: 73%;
+            border-radius: 9px;
+            background-color: rgba(242, 191, 17, 0.09);
+        }
+        
+        .div-dash-3 {
+            width: 16%;
+            height: 320px;
+            position: absolute;
+            top: 397px;
+            left: 3%;
+            border-radius: 9px;
+            background-color: rgba(242, 191, 17, 0.09);
+        }
+        
+        .div-sub-dash-3,
+        .div-sub-dash-4 {
+            width: 100%;
+            height: 68%;
+            position: absolute;
+            border-top-left-radius: 9px;
+            border-top-right-radius: 9px;
+            top: 0;
+            left: 0;
+            background-color: rgba(242, 191, 17, 0.09);
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .div-sub-dash-4 {
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg');
+        }
+        
+        .div-dash-4 {
+            width: 16%;
+            height: 320px;
+            position: absolute;
+            top: 397px;
+            left: 20%;
+            border-radius: 9px;
+            background-color: rgba(242, 191, 17, 0.09);
+        }
+        
+        .div-dash-5 {
+            width: 32.5%;
+            height: 320px;
+            position: absolute;
+            top: 397px;
+            left: 38%;
+            border-radius: 9px;
+            background-color: rgba(242, 191, 17, 0.09);
+        }
+        
+        .dash-par-1,
+        .dash-par-2 {
+            font-size: 22px;
+            color: white;
+            position: absolute;
+            top: 18px;
+            left: 4.5%;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .dash-par-2 {
+            top: 50px;
+            left: 5%;
+        }
+        
+        .dash-but-1 {
+            width: 145px;
+            height: 40px;
+            border-radius: 19px;
+            position: absolute;
+            top: 120px;
+            left: 4.5%;
+            color: white;
+            border: 0px solid;
+            background-color: #806508;
+        }
+        
+        .dash-img-2 {
+            zoom: 50%;
+            top: 10px;
+            position: absolute;
+            right: 4%;
+        }
+        
+        .dash-new-div {
+            width: 90%;
+            height: 350px;
+            border-radius: 5px;
+            position: absolute;
+            top: 188px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .dash-par-3,
+        .dash-par-4 {
+            font-size: 15px;
+            color: white;
+            position: relative;
+            text-align: center;
+            top: 370px;
+            font-family: "Cabri", sans-serif
+        }
+        
+        .dash-par-4 {
+            font-size: 13px;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 363px;
+            color: rgb(129, 129, 129);
+        }
+        
+        .dash-dis-show {
+            width: 85%;
+            height: 4.5px;
+            border-radius: 5px;
+            position: absolute;
+            top: 468px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.12);
+        }
+        
+        .dash-dis-show-2 {
+            width: 10%;
+            height: 100%;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ffc800;
+        }
+        
+        .dash-par-5,
+        .dash-par-6,
+        .dash-par-7 {
+            font-size: 13px;
+            color: white;
+            position: absolute;
+            top: 431px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .dash-par-5,
+        .dash-par-7 {
+            left: 8%;
+        }
+        
+        .dash-par-6 {
+            right: 8%;
+        }
+        
+        .sp-par-6 {
+            font-size: 11px;
+            color: rgb(189, 189, 189);
+        }
+        
+        .dash-par-7 {
+            top: 484px;
+        }
+        
+        .dash-div-20,
+        .dash-div-21 {
+            width: 40px;
+            height: 40px;
+            background-color: #806508;
+            position: absolute;
+            top: 484px;
+            right: 29%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dash-div-21 {
+            right: 8%;
+            background-color: transparent;
+            border: 1px solid#806508;
+        }
+        
+        .dash-par-8 {
+            font-size: 11px;
+            color: rgb(53, 52, 52);
+            position: relative;
+            text-align: center;
+            top: 455px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .dash-par-9,
+        .dash-par-10,
+        .dash-par-11 {
+            font-size: 18px;
+            color: white;
+            position: absolute;
+            top: 330px;
+            left: 3.5%;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .dash-par-10 {
+            left: 38%;
+        }
+        
+        .dash-par-11 {
+            left: 3%;
+            top: 715px;
+        }
+        
+        .sp-par-9 {
+            font-size: 27px;
+            top: 2px;
+            left: 10px;
+            position: relative;
+            color: #ffc800;
+        }
+        
+        .sp-sub-par-10 {
+            position: relative;
+            left: 20px;
+        }
+        
+        .dash-nav-1 {
+            position: absolute;
+            top: 345px;
+            left: 27.5%;
+        }
+        
+        .dash-nav-1 li {
+            list-style: none;
+            padding-left: 10px;
+            display: inline-block;
+        }
+        
+        .next-one,
+        .next-two {
+            zoom: 18%;
+        }
+        
+        .pol-par-1 {
+            font-size: 13px;
+            top: 95px;
+            left: 3.5%;
+            position: absolute;
+            font-family: Cambria, "Times New Roman", serif;
+            color: rgb(150, 149, 149);
+        }
+        
+        .div_footer-pol {
+            width: 100%;
+            height: 70px;
+            background-color: #111111;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .pol-but-1 {
+            width: 140px;
+            height: 50px;
+            background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+            position: absolute;
+            top: 50%;
+            right: 1%;
+            transform: translate(-50%, -50%);
+            border: 0px solid;
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .pol-img-3 {
+            zoom: 30%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 5%;
+        }
+        
+        .pol-par-30 {
+            font-size: 17px;
+            position: absolute;
+            left: 17.1%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .div_p2010 {
+            width: 100%;
+            height: 350px;
+            background-color: rgba(242, 191, 17, 0.09);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('./Pictures/ancient-opened-book-stockcake.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .abo-div-1 {
+            width: 230px;
+            height: 295px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 410px;
+            left: 2%;
+            position: absolute;
+            background-image: url('./Pictures/istockphoto-1284037570-612x612.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .abo-div-2 {
+            width: 230px;
+            height: 295px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 550px;
+            right: 2%;
+            position: absolute;
+            background-image: url('./Pictures/pexels-photo-6437513.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .abo-div-3 {
+            width: 530px;
+            height: 405px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 610px;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            position: absolute;
+        }
     </style>
     <div class="div-test-one">
         <div class="div-test-two">
@@ -2621,7 +3147,7 @@
                         </ul>
                     </nav>
                     <p class="pra-0320 " onclick="window.location.href='mailto:fruitfulbough26@gmail.com' ; ">fruitfulbough26@gmail.com</p>
-                    <p class="pra-0321 " onclick="window.location.href='mailto:fruitfulbough26@gmail.com' ; ">Always find me <img src="./icons/icons8-enter-100xxxxxx.png " class="tedt-200 "></p>
+                    <p class="pra-0321 " onclick="window.location.href='mailto:fruitfulbough26@gmail.com' ; ">Always find us <img src="./icons/icons8-enter-100xxxxxx.png " class="tedt-200 "></p>
                 </div>
             </div>
             <div class="dib-000 "></div>
@@ -2632,29 +3158,23 @@
         </div>
     </div>
     <div class="div_5100">
-
         <div class="div_5100_sub ">
-            <nav class="nav_4100 ">
-                <ul>
-                    <li class="list_4100 "><img src="./icons/back.png " class="img_5100 "></li>
-                    <li class="list_4150 "><img src="./icons/forward.png " class="img_5100 "></li>
-                </ul>
-            </nav>
+            <div class="list_4100 "><img src="./icons/back.png " class="img_5100 "></div>
+            <div class="list_4150 "><img src="./icons/forward.png " class="img_5100 "></div>
         </div>
         <nav class="nav_1300 ">
             <ul>
                 <li>
                     <p class="par_4100 ">Trending Books</p>
                 </li>
-                <li>
-                    <p class="par_4200 ">more</p>
-                </li>
+
             </ul>
         </nav>
+        <div class="list_4160 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_2400 ">
             <ul>
                 <li>
-                    <div class="div_6000 " onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    <div class="div_6000" onclick="window.location.href='the-millenium-meltdown.html';"></div>
                 </li>
                 <li>
                     <div class="div_6100 " onclick="window.location.href='the-roseline-none-else.html';"></div>
@@ -2680,6 +3200,18 @@
                 <li>
                     <div class="div_6700 "></div>
                 </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
 
             </ul>
         </nav>
@@ -2688,11 +3220,9 @@
                 <li>
                     <p class="par_6100 ">Novel Books</p>
                 </li>
-                <li>
-                    <p class="par_6200 ">more</p>
-                </li>
             </ul>
         </nav>
+        <div class="list_4170 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_2900 ">
             <ul>
                 <li>
@@ -2722,6 +3252,18 @@
                 <li>
                     <div class="div_6700 "></div>
                 </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
 
             </ul>
         </nav>
@@ -2730,11 +3272,9 @@
                 <li>
                     <p class="par_6100 ">Sub Genre</p>
                 </li>
-                <li>
-                    <p class="par_6300 ">more</p>
-                </li>
             </ul>
         </nav>
+        <div class="list_4180 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_3900 ">
             <ul>
                 <li>
@@ -2764,6 +3304,12 @@
                 <li>
                     <div class="div_6700 "></div>
                 </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
             </ul>
         </nav>
         <nav class="nav_9000 ">
@@ -2771,11 +3317,9 @@
                 <li>
                     <p class="par_6100 ">Descriptions</p>
                 </li>
-                <li>
-                    <p class="par_9300">more</p>
-                </li>
             </ul>
         </nav>
+        <div class="list_4190 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_9500 ">
             <ul>
                 <li>
@@ -2841,6 +3385,12 @@
                 <li>
                     <div class="div_9000 "></div>
                 </li>
+                <li>
+                    <div class="div_9000 "></div>
+                </li>
+                <li>
+                    <div class="div_9000 "></div>
+                </li>
 
             </ul>
         </nav>
@@ -2849,11 +3399,9 @@
                 <li>
                     <p class="par_6100 ">Frictional Books</p>
                 </li>
-                <li>
-                    <p class="par_8300">more</p>
-                </li>
             </ul>
         </nav>
+        <div class="list_4200 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_8900 ">
             <ul>
                 <li>
@@ -2890,9 +3438,9 @@
                 <li>
                     <p class="par_6100 ">Upcoming Books</p>
                 </li>
-
             </ul>
         </nav>
+        <div class="list_4210 "><img src="./icons/forward.png " class="img_5100 "></div>
         <nav class="nav_7500 ">
             <ul>
                 <li>
@@ -3111,21 +3659,102 @@
             <p class="mes-time-stamp">20 Nov 2025</p>
             <img src="./icons/icons8-delete-100.png" class="del-img">
         </div>
-        <div class="not-div-2" style="display: none; "></div>
-        <div class="not-div-3" style="display: none; "></div>
-        <div class="not-div-4" style="display: none; "></div>
-        <div class="not-div-5" style="display: none; "></div>
+        <div class="not-div-2" style="display: none;"></div>
+        <div class="not-div-3" style="display: none;"></div>
+        <div class="not-div-4" style="display: none;"></div>
+        <div class="not-div-5" style="display: none;"></div>
 
 
     </div>
     <div class="div_dashboard content-div ">
-        <p class="pra_1000 ">Settings</p>
+        <p class="pra_1002">Dashboard</p>
+        <div class="profile_img"></div>
+        <div class="catelog-div"><img src="./icons/icons8-catalog-100.png" class="catalog-img"></div>
+        <div class="div-dash-1">
+            <p class="dash-par-1">TRENDING BOOKS THIS</p>
+            <p class="dash-par-2">MONTH</p>
+            <button class="dash-but-1">View Books</button>
+            <img src="./icons/240309609-pile-of-books-and-eyeglasses-icon-vector-illustration-graphic-design-Photoroom.png" class="dash-img-2">
+        </div>
+        <p class="dash-par-9">Continue reading <span class="sp-par-9">+</span></p>
+        <p class="dash-par-10"><span class="sp-par-9">+</span><span class="sp-sub-par-10">Reading time</span></p>
+        <p class="dash-par-11"><span class="sp-par-9">+</span><span class="sp-sub-par-10">Your Calender</span></p>
+
+        <nav class="dash-nav-1">
+            <ul>
+                <li><img src="./icons/Untitlessssssaaaaawwwwwwd.png" class="next-one"></li>
+                <li><img src="./icons/icons8eeeeeeeeee-play-100.png" class="next-two"></li>
+            </ul>
+        </nav>
+        <div class="div-dash-2">
+            <div class="dash-new-div"></div>
+            <p class="dash-par-3">Roseline</p>
+            <p class="dash-par-4">Roseline or None else</p>
+            <p class="dash-par-5">10%</p>
+            <p class="dash-par-6">200% <span class="sp-par-6">in ratings</span></p>
+            <div class="dash-dis-show">
+                <div class="dash-dis-show-2"></div>
+            </div>
+            <p class="dash-par-7">00:01:26</p>
+            <div class="dash-div-20"><img src="./icons/icons8-pause-100.png" class="catalog-img"></div>
+            <div class="dash-div-21"><img src="./icons/icons8eeeeeeeeee-play-100.png" class="catalog-img"></div>
+            <p class="dash-par-8">_____________________________________</p>
+        </div>
+        <div class="div-dash-3">
+            <div class="div-sub-dash-3"></div>
+        </div>
+        <div class="div-dash-4">
+            <div class="div-sub-dash-4"></div>
+        </div>
+        <div class="div-dash-5"></div>
+        <nav class="nav_17500">
+            <ul>
+                <li>
+                    <div class="div_17000" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_17010" onclick="window.location.href='the-roseline-none-else.html';"></div>
+                </li>
+                <li>
+                    <div class="div_17015" onclick="window.location.href='the-wise-companion.html';"></div>
+                </li>
+                <li>
+                    <div class="div_17020"></div>
+                </li>
+                <li>
+                    <div class="div_17025"></div>
+                </li>
+                <li>
+                    <div class="div_17030"></div>
+                </li>
+                <li>
+                    <div class="div_17035"></div>
+                </li>
+                <li>
+                    <div class="div_17040"></div>
+                </li>
+                <li>
+                    <div class="div_17045"></div>
+                </li>
+
+            </ul>
+        </nav>
     </div>
     <div class="div_policy content-div ">
-        <p class="pra_1000 ">Policies</p>
+        <p class="pra_1000 ">Terms and Conditions</p>
+        <p class="pol-par-1">Updated 24/11/2025 3:51</p>
+        <div class="div_footer-pol"><img src="./icons/icons8-card-wallet-100.png" class="pol-img-3">
+            <p class="pol-par-30">Read Carefully before agreeing</p>
+            <button class="pol-but-1">I AGREE</button>
+        </div>
     </div>
     <div class="div_about content-div ">
-        <p class="pra_1000 ">About Us</p>
+        <div class="div_p2010">
+            <p class="pra_1024">About Us</p>
+        </div>
+        <div class="abo-div-1"></div>
+        <div class="abo-div-2"></div>
+        <div class="abo-div-3"></div>
     </div>
     <script>
         // Select between each div's for presenting 
@@ -3226,6 +3855,24 @@
                 border-radius: 10px;
                 z-index: 0;
                 transition: opacity 0.3s ease;
+            }
+            
+            .cynthia-name-show {
+                position: absolute;
+                bottom: 2px;
+                right: 75px;
+                background-color: #333;
+                font-size: 13px;
+                color: #fff;
+                padding: 5px;
+                border-radius: 4px;
+                opacity: 0;
+                /* Hidden by default */
+                visibility: hidden;
+                /* Prevent interaction */
+                z-index: 100;
+                white-space: nowrap;
+                /* Prevent wrapping */
             }
         </style>
         <div class="div-menu-show ">Menu..✅</div>
@@ -3378,6 +4025,17 @@
                 white-space: nowrap;
                 /* Prevent wrapping */
             }
+            
+            .Cynthia-display {
+                width: 390px;
+                height: 530px;
+                background-color: #111111;
+                position: fixed;
+                z-index: 200;
+                bottom: 1%;
+                right: 2%;
+                border-radius: 20px;
+            }
         </style>
         <button class="bnt_1200 ">Read history</button>
         <div class="div-his-show">
@@ -3447,7 +4105,27 @@
                 HeaderCont.style.backgroundColor = 'transparent';
             }
         });
-
+        ScrollCont5.addEventListener('scroll', () => {
+            if (ScrollCont5.scrollTop > 10) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
+        ScrollCont6.addEventListener('scroll', () => {
+            if (ScrollCont6.scrollTop > 10) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
+        ScrollCont7.addEventListener('scroll', () => {
+            if (ScrollCont7.scrollTop > 10) { // Change the scroll threshold when  applied
+                HeaderCont.style.backgroundColor = '#111111';
+            } else {
+                HeaderCont.style.backgroundColor = 'transparent';
+            }
+        });
 
         const Menu_Cont = document.querySelector('.img_2000');
         const Rem_1Cont = document.querySelector('.div-test-test');
@@ -3468,7 +4146,28 @@
         });
     </script>
     <script></script>
-    <div class="Cynthia-load " data-tooltip="Chat with cynthia... 👍 "><img src="./icons/icons8-chat-100.png " class="img-load "></div>
+    <div class="Cynthia-load "><img src="./icons/icons8-chat-100.png " class="img-load "></div>
+    <div class="cynthia-name-show ">Chat with cynthia... 👍</div>
+    <div class="Cynthia-display" style="display: none; "></div>
+    <script>
+        const CynthiaImg = document.querySelector('.Cynthia-load');
+        const CynthiaDiv = document.querySelector('.cynthia-name-show');
+        const CynthiaDisplay = document.querySelector('.Cynthia-display');
+
+        CynthiaImg.addEventListener('click', () => {
+            CynthiaDisplay.style.display = 'block';
+        });
+
+        CynthiaImg.addEventListener('mouseenter', () => {
+            CynthiaDiv.style.opacity = '1';
+            CynthiaDiv.style.visibility = 'visible';
+        });
+
+        CynthiaImg.addEventListener('mouseleave', () => {
+            CynthiaDiv.style.opacity = '0';
+            CynthiaDiv.style.visibility = 'hidden';
+        });
+    </script>
     <div class="cookies-div ">
         <img src="./icons/icons8-cookie-100.png " class="cookies-img ">
         <p class="par-eeee ">Cookie Settings</p>
