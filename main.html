@@ -767,6 +767,7 @@
             position: absolute;
             border-radius: 32px;
             top: 50%;
+            z-index: 20;
             transform: translate(-50%, -50%);
         }
         
@@ -2867,6 +2868,120 @@
             left: 90px;
         }
     </style>
+    <style>
+        .presentation-2 {
+            width: 330px;
+            height: 300px;
+            background-color: #1b1b1b;
+            position: fixed;
+            bottom: 1%;
+            left: 1%;
+            z-index: 300;
+            border-radius: 5px;
+            opacity: 0;
+            animation: Pres1 2s forwards;
+            animation-delay: 30.5s;
+        }
+        
+        @keyframes Pres1 {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .pres-2 {
+            width: 35px;
+            height: 35px;
+            top: 10px;
+            right: 3%;
+            position: absolute;
+            background-color: transparent;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pres-2:hover {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+        
+        .exit-presnt-2 {
+            zoom: 20%;
+        }
+        
+        .prsent-but-1 {
+            width: 90%;
+            height: 42px;
+            position: absolute;
+            background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+            bottom: -4%;
+            transform: translate(-50%, -50%);
+            border: none;
+            left: 50%;
+            border-radius: 5px;
+            color: white;
+            font-size: 15px;
+        }
+        
+        .presnt-img-1 {
+            top: 1%;
+            zoom: 23%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        
+        .first-present,
+        .second-present,
+        .third-present,
+        .last-present {
+            font-size: 18px;
+            position: relative;
+            text-align: center;
+            font-family: Cambria, "Times New Roman", serif;
+            color: white;
+            font-weight: bold;
+            top: 90px;
+            font-style: italic;
+        }
+        
+        .second-present {
+            font-size: 17px;
+            top: 75px;
+        }
+        
+        .third-present,
+        .last-present {
+            font-size: 26px;
+            top: 55px;
+        }
+        
+        .last-present {
+            top: 25px;
+        }
+    </style>
+    <div class="presentation-2">
+        <div class="pres-2"><img src="./icons/icons8-cancel-1jjj00.png" class="exit-presnt-2"></div>
+        <img src="./Pictures/DIY-Valentine-Candy-Bouquet-Photoroom.png" class="presnt-img-1">
+        <p class="first-present">REGISTER</p>
+        <p class="second-present">with FB and get</p>
+        <p class="third-present">unlimited features</p>
+        <p class="last-present">now.</p>
+        <button class="prsent-but-1">Sign up</button>
+        <script>
+            const AdsCont = document.querySelector('.presentation-2');
+            const ExitAds1 = document.querySelector('.pres-2');
+
+
+            ExitAds1.addEventListener('click', () => {
+                AdsCont.style.display = 'none';
+            });
+        </script>
+    </div>
     <div class="div-test-one">
         <div class="div-test-two">
             <img src="./icons/please_moa.png" class="img-test-one">
@@ -3247,8 +3362,67 @@
             <button class="but_4100_1"><img src="./icons/icons8-download-10xxxxxxsssssssssxxx0.png" class="img_20_1 "> <span class="sp_bnt_3000">Download Link</span> <img src="./icons/icons8-qr-code-100.png " class="qr_code_12 "></button>
         </div>
     </div>
+    <style>
+        .blury-left-1 {
+            width: 40px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            /* White with 50% opacity */
+            backdrop-filter: blur(4px);
+            z-index: 5;
+            /* Blur the background */
+        }
+        
+        .blury-left-2 {
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            /* White with 50% opacity */
+            backdrop-filter: blur(2px);
+            z-index: 5;
+            /* Blur the background */
+        }
+        
+        .display-1 {
+            width: 100%;
+            height: 470px;
+            background-color: rgba(242, 191, 17, 0.18);
+            background-image: url('./Pictures/books-assortment-with-dark-bssssssssssssssackground_23-2148898297.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            border-bottom: 0px solid;
+            /* remove border */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            /* blurry bottom "border" */
+            padding-bottom: 5px;
+            /* add some space for the shadow */
+            background-position: center center;
+            /* Change position temporarily */
+            left: 0%;
+        }
+    </style>
     <div class="div_5100">
         <div class="div_5100_sub ">
+            <div class="display-1"></div>
+            <div class="display-2"></div>
+            <div class="display-3"></div>
+            <div class="display-4"></div>
+            <div class="display-5"></div>
+            <div class="display-6"></div>
+            <div class="display-7"></div>
+            <div class="display-8"></div>
+            <div class="display-9"></div>
+            <div class="display-10"></div>
+            <div class="blury-left-1"></div>
+            <div class="blury-left-2"></div>
             <div class="list_4100 "><img src="./icons/back.png " class="img_5100 "></div>
             <div class="list_4150 "><img src="./icons/forward.png " class="img_5100 "></div>
         </div>
@@ -4474,22 +4648,24 @@
             </ul>
         </nav>
         <script>
-            const RemCoo = document.querySelector('.but-one-2');
-            const DivCoo = document.querySelector('.cookies-div');
-            const BntCoo = document.querySelector('.but-one-1');
+            document.addEventListener('DOMContentLoaded', () => {
+                const RemCoo = document.querySelector('.but-one-2');
+                const DivCoo = document.querySelector('.cookies-div');
+                const BntCoo = document.querySelector('.but-one-1');
 
 
-            // Using local storage to keep response of the user prefrence.. this should be corrected after to ensure users experience...
-            if (!localStorage.getItem('cookieNoticeDismissed')) {
-                DivCoo.style.display = 'block';
-            }
-            RemCoo.addEventListener('click', () => {
-                DivCoo.style.display = 'none';
-                localStorage.setItem('cookieNoticeDismissed', true);
-            });
-            BntCoo.addEventListener('click', () => {
-                DivCoo.style.display = 'none';
-                localStorage.setItem('cookieNoticeDismissed', true);
+                // Using local storage to keep response of the user prefrence.. this should be corrected after to ensure users experience...
+                if (!localStorage.getItem('cookieNoticeDismissed')) {
+                    DivCoo.style.display = 'block';
+                }
+                RemCoo.addEventListener('click', () => {
+                    DivCoo.style.display = 'none';
+                    localStorage.setItem('cookieNoticeDismissed', true);
+                });
+                BntCoo.addEventListener('click', () => {
+                    DivCoo.style.display = 'none';
+                    localStorage.setItem('cookieNoticeDismissed', true);
+                });
             });
         </script>
         <p class="par-eeee-4 ">More Information</p>
@@ -4512,6 +4688,7 @@
             Load2Div.style.visibility = 'hidden';
         });
     </script>
+
 </body>
 
 </html>
