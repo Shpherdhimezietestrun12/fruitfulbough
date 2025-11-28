@@ -1519,24 +1519,6 @@
             cursor: pointer;
         }
         
-        .Cynthia-load::before {
-            content: attr(data-tooltip);
-            position: absolute;
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            border-radius: 5px;
-            top: 200px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
-            white-space: nowrap;
-            font-size: 13px;
-            font-family: "Cabri", sans-serif;
-        }
-        
         .Cynthia-load:hover::before {
             opacity: 1;
         }
@@ -4337,6 +4319,7 @@
                 left: 0;
                 background-color: #111111;
                 position: absolute;
+                overflow-y: auto;
             }
             
             .cynthia-content-div::-webkit-scrollbar {
@@ -4366,8 +4349,8 @@
             }
             
             .cynthia-img-load {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 top: 50%;
                 left: 10%;
                 transform: translate(-50%, -50%);
@@ -4422,18 +4405,16 @@
             }
             
             .cynthia-message {
-                width: 92%;
-                height: 47px;
+                left: 50%;
+                width: 90%;
+                height: 45px;
                 background-color: #242424;
                 position: absolute;
-                top: 50%;
-                left: 50%;
+                top: 58%;
                 transform: translate(-50%, -50%);
                 border: none;
-                border-radius: 30px;
-                font-size: 20px;
+                border-radius: 28px;
                 font-family: "Cabri", sans-serif;
-                padding-left: 20px;
                 color: #bb9302;
             }
             
@@ -4443,18 +4424,18 @@
             }
             
             .send-message {
-                height: 43px;
-                width: 43px;
-                background-color: #b48e05;
-                z-index: 10px;
-                top: 50%;
                 position: absolute;
-                right: -3%;
+                height: 38px;
+                width: 38px;
+                right: 1.5%;
+                top: 59%;
                 transform: translate(-50%, -50%);
+                background-color: #b48e05;
                 border-radius: 50px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
             }
             
             .send-mes {
@@ -4610,9 +4591,166 @@
                 });
             </script>
         </div>
-        <div class="cynthia-content-div"></div>
+        <div class="cynthia-content-div">
+            <style>
+                .cont-1 {
+                    width: 180px;
+                    position: absolute;
+                    height: 65px;
+                    top: 42px;
+                    text-align: center;
+                    background-color: #202020;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    position: absolute;
+                    border-radius: 5px;
+                }
+                
+                .cont-1-par,
+                .cont-2-par,
+                .cont-3-par {
+                    top: -5px;
+                    font-size: 11.5px;
+                    text-align: center;
+                    font-family: Cambria, "Times New Roman", serif;
+                    color: #cea202;
+                    position: relative;
+                }
+                
+                .cont-2-par {
+                    top: -12px;
+                }
+                
+                .cont-3-par {
+                    top: -22px;
+                }
+                
+                .cont-1-img {
+                    zoom: 16%;
+                    position: relative;
+                    top: 10px;
+                }
+                
+                .contain-1,
+                .contain-2 {
+                    position: absolute;
+                    top: 90px;
+                    left: 25px;
+                    max-width: 310px;
+                    word-wrap: break-word;
+                    padding: 12px;
+                    font-size: 15px;
+                    color: white;
+                    background-color: #977701;
+                    border-radius: 10px;
+                    border-top-left-radius: 0;
+                    font-family: "Cabri", sans-serif;
+                }
+                
+                .div-add {
+                    position: absolute;
+                    height: 38px;
+                    width: 38px;
+                    left: 12%;
+                    top: 59%;
+                    transform: translate(-50%, -50%);
+                    background-color: #b48e05;
+                    border-radius: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+                .par-3000222 {
+                    font-size: 30px;
+                    color: black;
+                }
+                
+                .tedt-one {
+                    width: 64%;
+                    height: 55%;
+                    background-color: transparent;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 15px;
+                    padding-left: 15px;
+                    padding-top: 10px;
+                    font-family: "Cabri ", sans-serif;
+                    border: none;
+                    color: #e2b100;
+                }
+                
+                .tedt-one:focus {
+                    outline: none;
+                    border: none;
+                }
+                
+                .tedt-one::placeholder {}
+            </style>
+            <div class="cont-1" onclick="window.location.href='FB-Terms and Conditions.html';">
+                <p class="cont-1-par"><img src="./icons/passworsssssswwwwwwwds.png" class="cont-1-img"> Note, messages disappear</p>
+                <p class="cont-2-par">once reloaded. Only important</p>
+                <p class="cont-3-par">messages are saved. Learn how</p>
+            </div>
+
+            <div class="contain-1">
+
+            </div>
+            <script>
+                const MainContainer = document.querySelector('.cynthia-content-div');
+                const TriggerCont = document.querySelector('.Cynthia-load');
+                const WordsOne = 'Hi there! 👋 I’m Cynthia, the assistance chatbot for FRUITFUL BOUGH PRODUCTIONS.                    We’re still in production, so I’ll guide you through a few options I have ready for you right now.                                        Please note we’re working day and night to build a responsive book‑reading and publishing website.                       Your patience means a lot—soon we’ll roll out features like AI‑powered book‑reading assistance.🙏🏼';
+                const WordsTwo = 'Kindly explore other pages or sign up using the top‑right button. We’ll be launching our chatbot prompts soon—please bear with us.                   Thank You 🙏🏼🙏🏼';
+
+                TriggerCont.addEventListener('click', () => {
+                    if (window.getComputedStyle(MainContainer).display === 'none') {
+                        console.warn('.cynthia-content-div is hidden, will not type.');
+                        return;
+                    }
+                    createTypeContainer(1, () => createTypeContainer(2));
+                });
+
+                function createTypeContainer(num, callback) {
+                    let div10002 = MainContainer.querySelector(`.contain-${num}`);
+                    if (!div10002) {
+                        div10002 = document.createElement('div');
+                        div10002.className = `contain-${num}`; // CSS handles position:absolute
+                        // Position logic
+                        const prev = MainContainer.querySelector(`.contain-${num - 1}`);
+                        if (prev) {
+                            const prevRect = prev.getBoundingClientRect();
+                            div10002.style.top = `${prevRect.bottom - MainContainer.getBoundingClientRect().top + 5}px`;
+                        } else {
+                            div10002.style.top = '90px';
+                        }
+                        MainContainer.appendChild(div10002);
+                    }
+
+                    let ii = 0;
+                    div10002.textContent = '';
+                    const ToogleWords = num == 1 ? WordsOne : WordsTwo; // pick text based on num
+
+                    function typeTwo() {
+                        if (ii < ToogleWords.length) {
+                            div10002.textContent += ToogleWords.charAt(ii);
+                            ii++;
+                            setTimeout(typeTwo, 100);
+                        } else if (callback) {
+                            callback(); // Trigger next container after finish
+                        }
+                    }
+
+                    typeTwo();
+                }
+            </script>
+        </div>
         <div class="footer-head-div">
-            <textarea class="cynthia-message"></textarea>
+            <div class="cynthia-message"><textarea class="tedt-one" placeholder="Ask Cynthia"></textarea></div>
+            <div class="div-add">
+                <p class="par-3000222">+</p>
+            </div>
             <div class="send-message"><img src="./icons/icons8-send-100.png" class="send-mes"></div>
         </div>
     </div>
