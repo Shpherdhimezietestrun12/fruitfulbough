@@ -1897,6 +1897,7 @@
             width: 100%;
             height: 100%;
             background-color: white;
+            top: 0;
             bottom: 0;
             position: fixed;
             left: 0;
@@ -2055,7 +2056,8 @@
             position: absolute;
         }
         
-        .wrong-email {
+        .wrong-email,
+        .not-saved {
             position: relative;
             text-align: center;
             top: 547px;
@@ -2792,7 +2794,7 @@
         <div class="Signing-cont2">
             <img src="./icons/fb_logo-2.png" class="first-img">
             <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img2">
-            <p class="par-first-one">UNIGUE STORIES.</p>
+            <p class="par-first-one">UNIQUE STORIES.</p>
             <p class="par-first-two">ICONIC BOOKS.</p>
             <p class="par-first-three">A TREASURE TROVE</p>
             <p class="par-first-four">OF TALES.</p>
@@ -2807,36 +2809,178 @@
             <input type="email" class="ipt-first" placeholder="Enter Email">
             <button class="but-first">SUBMIT</button>
             <p class="wrong-email" style="display: none;">Please input a correct email.</p>
+            <p class="not-saved" style="display: none;">Error saving email.</p>
             <img src="./icons/cargando-unscreen.gif" class="lod-img" style="display: none;">
             <script>
-                const Subbutton = document.querySelector('.but-first');
-                const ColEmail = document.querySelector('.ipt-first');
-                const ShowLod = document.querySelector('.lod-img');
-                const WrongEmail = document.querySelector('.wrong-email');
-
-
-                Subbutton.addEventListener('click', () => {
-                    const EmailValue = ColEmail.value.trim();
-                    const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-
-                    if (!EmailRegex.test(EmailValue)) {
-                        // Show message if email wrong 
-                        WrongEmail.style.display = 'block';
-                        ShowLod.style.display = 'none'; // Hide loader
-                    } else {
-                        // Email is correct show loader
-                        WrongEmail.style.display = 'none';
-                        ShowLod.style.display = 'block';
-                    }
-                });
             </script>
             <p class="par-first-thirteen">By clicking the submit button, you agree to fruitful bough</p>
             <p class="par-first-fourteen">Policies.</p>
         </div>
     </div>
+    <style>
+        .greetings-show {
+            width: 95%;
+            height: 85%;
+            background-color: #B68D05;
+            position: absolute;
+            top: 50%;
+            z-index: 100;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+        }
+        
+        .test-par-1,
+        .test-par-2,
+        .test-par-3 {
+            color: white;
+            font-size: 16px;
+            position: relative;
+            top: 35px;
+            text-align: center;
+            font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+            font-style: italic;
+        }
+        
+        .test-par-2 {
+            top: 18px;
+        }
+        
+        .test-par-3 {
+            top: 0px;
+        }
+        
+        .test-par-4,
+        .test-par-5 {
+            color: white;
+            font-size: 40px;
+            position: relative;
+            top: -10px;
+            text-align: center;
+            font-family: "Playfair Display", Georgia, serif;
+            font-style: italic;
+        }
+        
+        .test-par-5 {
+            top: -45px;
+        }
+        
+        .text-img-1 {
+            zoom: 95%;
+            position: absolute;
+            top: 295px;
+            left: 50px;
+        }
+        
+        .but-test-1 {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 5px;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-radius: 50px;
+            border: none;
+            right: 2%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .but-test-1:hover {
+            background-color: rgba(0, 0, 0, 0.18);
+        }
+        
+        .remove-but {
+            zoom: 20%;
+        }
+    </style>
+    <div class="greetings-show">
+        <button class="but-test-1"><img src="./icons/icons8-cancel-1jjj00.png" class="remove-but"></button>
+        <script>
+            const ExploreOne = document.querySelector('.but-test-1');
+            const ExitExplore = document.querySelector('.greetings-show');
+
+
+            ExploreOne.addEventListener('click', () => {
+                ExitExplore.style.display = 'none';
+            });
+        </script>
+        <p class="test-par-1">We welcome <span class="sp-t22">you</span> to our FB platform</p>
+        <p class="test-par-2">we ask that you bear with us for now</p>
+        <p class="test-par-3">for we are going through major maintainace</p>
+        <p class="test-par-4">Welcome</p>
+        <p class="test-par-5">presenttouble</p>
+        <img src="./icons/images (5)-Photoroom.png" class="text-img-1">
+    </div>
+    <script>
+        const Subbutton = document.querySelector('.but-first');
+        const ColEmail = document.querySelector('.ipt-first');
+        const ShowLod = document.querySelector('.lod-img');
+        const WrongEmail = document.querySelector('.wrong-email');
+        const NotSaved = document.querySelector('.not-saved');
+        const RemoveUI = document.querySelector('.Signing-cont');
+        const ChangeOne = document.querySelector('.test-par-5');
+        const ChangeTwo = document.querySelector('.sp-t22');
+
+        Subbutton.addEventListener('click', () => {
+            const EmailValue = ColEmail.value.trim();
+            const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!EmailRegex.test(EmailValue)) {
+                // Show message if email wrong
+                WrongEmail.style.display = 'block';
+                ShowLod.style.display = 'none'; // Hide loader
+            } else {
+                // Email is correct show loader
+                WrongEmail.style.display = 'none';
+                ShowLod.style.display = 'block';
+                // Fetch the email and save the records
+                fetch('http://localhost:5000/save-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: EmailValue
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // Handle response from the server
+                        if (data.message) {
+                            // Email saved successfully
+                            console.log('Email saved successfully!');
+                            RemoveUI.style.display = 'none';
+                            updateElements(ColEmail);
+                        } else {
+                            // Error saving the email
+                            console.error('Error saving the email:', data.error);
+                            // code to show error to the user
+                            NotSaved.style.display = 'block';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        });
+
+        function updateElements(element) {
+            if (!element || !element.value) return '';
+            const text = element.value;
+            const regex = /@\S+$/;
+            const name = text.replace(regex, '');
+            const words = name.split(' ');
+            const firstName = words[0];
+            if (ChangeOne && ChangeTwo) {
+                ChangeOne.textContent = firstName;
+                ChangeTwo.textContent = firstName;
+            }
+        }
+    </script>
     <script src="./creamtop.js"></script>
     <script src="./Server/Serverside.js"></script>
 </body>
+
+</html>
 
 </html>
