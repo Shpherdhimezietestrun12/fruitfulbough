@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Cynthia</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        
+        .head-cont {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12%;
+            background-color: #967707;
+        }
+        
+        .main-cont {
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: 77%;
+            background-color: #ffffff;
+            overflow-y: auto;
+        }
+        
+        .main-cont::-webkit-scrollbar {
+            display: noe;
+            /* Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .main-cont::-webkit-scrollbar-track {
+            background-color: transparent;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .main-cont::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .main-cont::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .fot-cont {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 11%;
+            background-color: #ffffff;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            transition: bottom 0.25s ease;
+        }
+        
+        .text-one {
+            position: absolute;
+            height: 45px;
+            left: 50%;
+            width: 90%;
+            background-color: #e4e3e3;
+            top: 58%;
+            transform: translate(-50%, -50%);
+            border-radius: 28px;
+            color: black;
+            border: 0.5px solid rgb(240, 235, 235);
+            font-size: 16px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .div-send {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            right: 1.5%;
+            top: 59%;
+            transform: translate(-50%, -50%);
+            background-color: #ffce2e;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .div-add {
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            left: 12%;
+            top: 59%;
+            transform: translate(-50%, -50%);
+            background-color: #ffce2e;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .par-3000222 {
+            font-size: 30px;
+            color: black;
+        }
+        
+        .img-send {
+            zoom: 25%;
+            position: relative;
+            left: 10px;
+        }
+        
+        .cynthia-img-load {
+            width: 38px;
+            height: 38px;
+            top: 45%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            background-color: #111111;
+            position: absolute;
+            border-radius: 50px;
+            background-image: url('./icons/Cynthisssssa_img.png');
+            background-size: 80% 80%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .par-main-1 {
+            font-size: 22px;
+            color: rgb(240, 240, 240);
+            position: absolute;
+            top: 15%;
+            left: 145px;
+            font-family: Cambria, "Times New Roman", serif;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+        
+        .sp-test-par {
+            left: 1px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .cynthia-img-exit,
+        .cynthia-img-exit1 {
+            width: 30px;
+            height: 30px;
+            top: 46%;
+            right: -1%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            position: absolute;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cynthia-img-exit1 {
+            right: 10.5%;
+            background-color: transparent;
+        }
+        
+        .cynthia-img-exit:hover,
+        .cynthia-img-exit1:hover {
+            background-color: rgba(242, 191, 17, 0.2);
+            /* Change background on hover */
+            /* Change text color on hover */
+        }
+        
+        .cyn-img-exit,
+        .cyn-img-exit1 {
+            zoom: 17%;
+        }
+        
+        .cont-1 {
+            width: 180px;
+            position: absolute;
+            height: 65px;
+            top: 42px;
+            text-align: center;
+            background-color: #e4e3e3;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 5px;
+        }
+        
+        .cont-1-par,
+        .cont-2-par,
+        .cont-3-par {
+            top: -5px;
+            font-size: 11.5px;
+            text-align: center;
+            font-family: Cambria, "Times New Roman", serif;
+            color: #cea202;
+            position: relative;
+        }
+        
+        .cont-2-par {
+            top: -12px;
+        }
+        
+        .cont-3-par {
+            top: -22px;
+        }
+        
+        .cont-1-img {
+            zoom: 16%;
+            position: relative;
+            top: 10px;
+        }
+        
+        .contain-1,
+        .contain-2 {
+            position: absolute;
+            top: 90px;
+            left: 25px;
+            max-width: 80%;
+            word-wrap: break-word;
+            padding: 12px;
+            font-size: 15px;
+            color: white;
+            background-color: #977701;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            font-family: "Cabri", sans-serif;
+            opacity: 1;
+        }
+        
+        .tedt-one {
+            width: 64%;
+            height: 55%;
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15px;
+            padding-left: 15px;
+            padding-top: 10px;
+            font-family: "Cabri ", sans-serif;
+            border: none;
+        }
+        
+        .tedt-one:focus {
+            outline: none;
+            border: none;
+        }
+        
+        .tedt-one::placeholder {}
+        
+        .menu_cont {
+            width: 100%;
+            height: 215px;
+            top: 0px;
+            left: 0;
+            right: 0;
+            position: fixed;
+            background-color: #ffffff;
+        }
+        
+        .exit-1 {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: transparent;
+            right: 2%;
+            top: 10px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 0px solid;
+        }
+        
+        .exit-img-1 {
+            zoom: 19%;
+        }
+        
+        .div_menu-1 {
+            width: 100%;
+            height: 75px;
+            top: 60px;
+            left: 0;
+            position: absolute;
+            background-color: transparent;
+            border-bottom: 0.5px solid #a3a2a2;
+        }
+        
+        .pra-1,
+        .pra-2 {
+            position: absolute;
+            font-size: 25px;
+            font-weight: bold;
+            color: black;
+            font-family: Cambria, "Times New Roman", serif;
+            top: 15px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .pra-1 {
+            left: 22%;
+        }
+        
+        .pra-2 {
+            left: 28.5%;
+        }
+        
+        .div_menu-2 {
+            width: 100%;
+            height: 75px;
+            top: 135px;
+            left: 0;
+            position: absolute;
+            background-color: transparent;
+        }
+        
+        .div_menu-1:hover,
+        .div_menu-2:hover,
+        .exit-1:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            /* Change background on hover */
+        }
+    </style>
+    <header class="head-cont">
+        <div class="cynthia-img-load"></div>
+        <p class="par-main-1">Cynthia<span class="sp-test-par"></span></p>
+        <div class="cynthia-img-exit1"><img src="./icons/icons8-catalog-100.png" class="cyn-img-exit1"></div>
+        <div class="cynthia-img-exit"><img src="./icons/icons8-options-100.png" class="cyn-img-exit"></div>
+
+        <script>
+            const spanTest = document.querySelector('.sp-test-par');
+            const MainDiv1 = document.querySelector('.Cynthia-display');
+            const spanExit = document.querySelector('.cynthia-img-exit');
+            const textWritten = ". . . . . . . . .";
+            let This = 0; // counter
+
+            function type() {
+                if (This < textWritten.length) {
+                    spanTest.textContent += textWritten.charAt(This); // ✅ add to span, not string
+                    This++;
+                    setTimeout(type, 250);
+                } else {
+                    setTimeout(() => {
+                        spanTest.textContent = '';
+                        This = 0;
+                        type();
+                    }, 1500);
+                }
+            }
+            type(); // start typing
+
+            // if the span button is clicked
+            spanExit.addEventListener('click', () => {
+                MainDiv1.style.display = 'none';
+            });
+        </script>
+    </header>
+    <div class="main-cont">
+        <div class="cont-1" onclick="window.location.href='Terms and conditions.html';">
+            <p class="cont-1-par"><img src="./icons/passworsssssswwwwwwwds.png" class="cont-1-img"> Note, messages disappear</p>
+            <p class="cont-2-par">once reloaded. Only important</p>
+            <p class="cont-3-par">messages are saved. Learn how</p>
+        </div>
+
+        <div class="contain-1">
+
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const MainContainer = document.querySelector('.main-cont');
+                const WordsOne = 'Hi there! 👋 I’m Cynthia, the assistance chatbot for FRUITFUL BOUGH PRODUCTIONS.                    We’re still in production, so I’ll guide you through a few options I have ready for you right now.                                        Please note we’re working day and night to build a responsive book‑reading and publishing website.                       Your patience means a lot—soon we’ll roll out features like AI‑powered book‑reading assistance.🙏🏼';
+                const WordsTwo = 'Kindly explore other pages or sign up using the top‑right button. We’ll be launching our chatbot prompts soon—please bear with us.                   Thank You 🙏🏼🙏🏼';
+                // Create container if it doesn’t exist
+
+                createTypeContainer(1, () => createTypeContainer(2));
+
+                function createTypeContainer(num, callback) {
+                    let div10002 = MainContainer.querySelector(`.contain-${num}`);
+                    if (!div10002) {
+                        div10002 = document.createElement('div');
+                        div10002.className = `contain-${num}`; // CSS handles position:absolute
+                        // Position logic
+                        const prev = MainContainer.querySelector(`.contain-${num - 1}`);
+                        if (prev) {
+                            const prevRect = prev.getBoundingClientRect();
+                            div10002.style.top = `${prevRect.bottom - MainContainer.getBoundingClientRect().top + 5}px`;
+                        } else {
+                            div10002.style.top = '90px';
+                        }
+                        MainContainer.appendChild(div10002);
+                    }
+
+                    let ii = 0;
+                    div10002.textContent = '';
+                    const ToogleWords = num == 1 ? WordsOne : WordsTwo; // pick text based on num
+
+                    function typeTwo() {
+                        if (ii < ToogleWords.length) {
+                            div10002.textContent += ToogleWords.charAt(ii);
+                            ii++;
+                            setTimeout(typeTwo, 100);
+                        } else if (callback) {
+                            callback(); // Trigger next container after finish
+                        }
+                    }
+
+                    typeTwo();
+                }
+            });
+        </script>
+
+        </script>
+
+    </div>
+    <footer class="fot-cont">
+        <div class="text-one"><textarea class="tedt-one" placeholder="Ask Cynthia"></textarea></div>
+        <div class="div-add">
+            <p class="par-3000222">+</p>
+        </div>
+        <div class="div-send"><img src="./icons/new-img-3aaaaaaaaa.png" class="img-send"></div>
+    </footer>
+    <script>
+        const textarea = document.querySelector('.text-one');
+        const footer = document.querySelector('.fot-cont');
+
+        // Bring footer above other content on focus
+        textarea.addEventListener('focus', () => {
+            footer.style.zIndex = '9999';
+        });
+        textarea.addEventListener('blur', () => {
+            footer.style.zIndex = '1';
+        });
+
+        // Detect keyboard open (on mobile)
+        let initialInnerHeight = window.innerHeight;
+        window.addEventListener('resize', () => {
+            const newInnerHeight = window.innerHeight;
+            const keyboardOpen = newInnerHeight < initialInnerHeight - 100; // keyboard likely open
+            if (keyboardOpen) {
+                footer.style.position = 'absolute';
+                footer.style.bottom = `${initialInnerHeight - newInnerHeight}px`;
+            } else {
+                footer.style.position = 'fixed';
+                footer.style.bottom = '0';
+            }
+        });
+    </script>
+    </script>
+    <div class="menu_cont" style="display: none;">
+        <button class="exit-1" onclick="RemContOne()"><img src="./icons/icons8-cancel-1jjjvvvvvv00.png" class="exit-img-1"></button>
+        <script>
+            const ShowCont2 = document.querySelector('.cynthia-img-exit');
+            const RemCont = document.querySelector('.menu_cont');
+            const ExitThree = document.querySelector('.exit-1');
+
+            // Add event lstening for this image
+            ShowCont2.addEventListener('click', () => {
+                RemCont.style.display = 'block';
+
+            });
+
+            function RemContOne() {
+                RemCont.style.display = 'none';
+            }
+            // Add event lstening for this image
+            MenuImg.addEventListener('click', () => {
+                RemCont.style.display = 'none';
+
+            });
+        </script>
+        <div class="div_menu-1" onclick="window.location.href='sign_up.html';">
+            <p class="pra-1">Sign Up</p>
+        </div>
+        <div class="div_menu-2" onclick="window.location.href='Landing.html';">
+            <p class="pra-2">Home Page</p>
+        </div>
+    </div>
+</body>
+
+</html>

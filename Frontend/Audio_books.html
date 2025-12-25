@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - All Available Audio Books</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+        
+        .pra-100 {
+            position: absolute;
+            top: 5px;
+            left: 6%;
+            font-size: 23px;
+            font-family: "Cabri ", sans-serif;
+            color: black;
+            font-weight: bold;
+        }
+        
+        .div-1,
+        .div-2,
+        .div-3 {
+            position: absolute;
+            top: 165px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            width: 331px;
+            height: 160px;
+            background-color: rgba(242, 191, 17, 0.2);
+            border-radius: 10px;
+        }
+        
+        .div-2 {
+            top: 342px;
+        }
+        
+        .div-3 {
+            top: 519px;
+        }
+        
+        .img-000 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 18%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+        }
+        
+        .div-222 {
+            position: absolute;
+            width: 38px;
+            height: 38px;
+            background-color: #B68D05;
+            top: 110px;
+            z-index: 2;
+            border-radius: 50px;
+            left: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-50%, -50%);
+        }
+        
+        .pra-04040,
+        .pra-05055,
+        .pra-0303,
+        .pra-0304,
+        .pra-0305 {
+            position: absolute;
+            font-size: 13px;
+            left: 38.5%;
+            top: 30px;
+            color: black;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .pra-05055,
+        .pra-0303,
+        .pra-0304,
+        .pra-0305 {
+            top: 60px;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        
+        .pra-0303,
+        .pra-0304,
+        .pra-0305 {
+            top: 95px;
+            color: green;
+            font-size: 12px;
+            font-weight: normal;
+        }
+        
+        .pra-0304 {
+            color: #88001b;
+        }
+        
+        .pra-0305 {
+            color: rgb(11, 11, 134);
+        }
+        
+        .div-0707,
+        .div-0708,
+        .div-0709 {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(0, 0, 0, 0.2);
+            top: 40px;
+            border-radius: 50px;
+            right: -2.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translate(-50%, -50%);
+        }
+        
+        .img-6080,
+        .img-6081,
+        .img-6082,
+        .img-0909 {
+            zoom: 19%;
+        }
+        
+        .settings,
+        .settings1,
+        .settings3 {
+            position: absolute;
+            top: 25%;
+            right: 4%;
+            width: 50px;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+    </style>
+    <p class="pra-100">Audio Books</p>
+    <div class="div-1">
+        <div class="div-222" onclick="window.location.href='the-millenium-meltdown-1.html';"><img src="./icons/icons8-play-100.png" class="img-0909" onclick="window.location.href='the-millenium-meltdown-1.html';"></div>
+        <img src="./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg" class="img-000">
+        <p class="pra-04040">Millenium Meltdown</p>
+        <p class="pra-05055">Historical Novel</p>
+        <p class="pra-0303">Novel</p>
+        <div class="div-0707" onclick="OpenSe3()"><img onclick="OpenSe3()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <style>
+
+        </style>
+        <div class="settings3" style="display: none;">
+            <style>
+                .one,
+                .two {
+                    top: 0;
+                    width: 100%;
+                    height: 35px;
+                    left: 0;
+                    background-color: transparent;
+                    display: flex;
+                    font-family: "Cabri ", sans-serif;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    border-top-left-radius: 10px;
+                    font-style: italic;
+                    color: white;
+                    font-size: 13px;
+                    border-top-right-radius: 10px;
+                }
+                
+                .two {
+                    top: 35px;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+                
+                .one:hover,
+                .two:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: #B68D05;
+                }
+                
+                .img-hh {
+                    zoom: 25%;
+                }
+                
+                .img-h1,
+                .img-h2,
+                .img-h3 {
+                    zoom: 30%;
+                    position: relative;
+                    left: 5%;
+                }
+            </style>
+            <div class="one">
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-millenium-meltdown-1.html';">
+            </div>
+            <div class="two">
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h1">
+            </div>
+        </div>
+        <script>
+            const DiveLoad3 = document.querySelector('.div-0707');
+            const ImgLoad3 = document.querySelector('.img-6081');
+            const settings3 = document.querySelector('.settings3');
+
+
+
+
+            function OpenSe3() {
+                if (DiveLoad3) {
+                    DiveLoad3.addEventListener('click', () => {
+                        settings3.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6080')) { // If not clicking img-4000 or its children
+                    settings3.style.display = 'none';
+                }
+            });
+        </script>
+    </div>
+    <div class="div-2">
+        <div class="div-222" onclick="window.location.href='the-roseline-none-else-1.html';"><img src="./icons/icons8-play-100.png" class="img-0909" onclick="window.location.href='the-roseline-none-else-1.html';"></div>
+        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg" class="img-000">
+        <p class="pra-04040">Roseline or None Else</p>
+        <p class="pra-05055">Love & Romance</p>
+        <p class="pra-0304">Novel</p>
+        <div class="div-0708" onclick="OpenSe2()"><img onclick="OpenSe2()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6081"></div>
+        <style>
+
+        </style>
+        <div class="settings1" style="display: none;">
+            <div class="one">
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-roseline-none-else-1.html';">
+            </div>
+            <div class="two">
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h2">
+            </div>
+        </div>
+        <script>
+            const DiveLoad2 = document.querySelector('.div-0708');
+            const ImgLoad2 = document.querySelector('.img-6081');
+            const settings1 = document.querySelector('.settings1');
+
+
+
+
+            function OpenSe2() {
+                if (DiveLoad2) {
+                    DiveLoad2.addEventListener('click', () => {
+                        settings1.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6081')) { // If not clicking img-4000 or its children
+                    settings1.style.display = 'none';
+                }
+            });
+        </script>
+    </div>
+    <div class="div-3">
+        <div class="div-222" onclick="window.location.href='the-wise-companion-1.html';"><img onclick="window.location.href='the-wise-companion-1.html';" src="./icons/icons8-play-100.png" class="img-0909"></div>
+        <img src="./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg" class="img-000">
+        <p class="pra-04040">The Wise Companion</p>
+        <p class="pra-05055">Poetry</p>
+        <p class="pra-0305">Novel</p>
+        <div class="div-0709" onclick="OpenSet()"><img onclick="OpenSet()" src="./icons/icons8-options-100bbbbbbbbbbbbbbb.png" class="img-6080"></div>
+        <style>
+
+        </style>
+
+        <!--
+               Site developed by StromKiller003
+               Private-consulting: https://wa.me/9078730956
+               Year: 2025
+               Brand Name: FPH - Freelance Programming Hub
+               Encoded Sequence/ID : c-young003
+            -->
+        <div class="settings" style="display: none;">
+            <div class="one">
+                <img src="./icons/icons8-enter-100.png" class="img-hh" onclick="window.location.href='the-wise-companion-1.html';">
+            </div>
+            <div class="two">
+                <img src="./icons/fffhhaaaaaaahh.png" class="img-h3">
+            </div>
+        </div>
+        <script>
+            const DiveLoad1 = document.querySelector('.div-0709');
+            const ImgLoad1 = document.querySelector('.img-6080');
+            const settings = document.querySelector('.settings');
+            const ChangeIt = document.querySelector('.two');
+            const ChangeImg1 = document.querySelector('.img-h1');
+            const ChangeImg2 = document.querySelector('.img-h2');
+            const ChangeImg3 = document.querySelector('.img-h3');
+            const images = [{
+                element: ChangeImg1,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, {
+                element: ChangeImg2,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, {
+                element: ChangeImg3,
+                defaultSrc: './icons/fffhhaaaaaaahh.png',
+                activeSrc: './icons/icons8-love-100.png'
+            }, ];
+
+
+            function OpenSet() {
+                if (DiveLoad1) {
+                    DiveLoad1.addEventListener('click', () => {
+                        settings.style.display = 'block';
+                    });
+                } else {}
+
+            }
+            document.body.addEventListener('click', (event) => {
+                if (!event.target.closest('.img-6080')) { // If not clicking img-4000 or its children
+                    settings.style.display = 'none';
+                }
+            });
+
+
+            images.forEach((image) => {
+                image.element.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    image.element.src = image.element.src.includes(image.activeSrc) ? image.defaultSrc : image.activeSrc;
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                images.forEach((image) => {
+                    if (!event.target.closest('.img-h1') && !event.target.closest('.img-h2') && !event.target.closest('.img-h3')) {
+                        image.element.src = image.defaultSrc;
+                    }
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
