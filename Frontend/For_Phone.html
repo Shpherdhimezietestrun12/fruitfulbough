@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+</head>
+
+<body>
+    <style>
+        .Signing-cont {
+            width: 100%;
+            height: 100%;
+            background-color: #9b7702;
+            top: 0;
+            bottom: 0;
+            position: fixed;
+            left: 0;
+            z-index: 200;
+            background-image: url('./Pictures/book-cover-ideas-v2-fb.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .Signing-cont2 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(206, 160, 8, 0.534);
+            top: 0;
+            position: absolute;
+            left: 0;
+            overflow-y: auto;
+        }
+        
+        .Signing-cont2::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .Signing-cont2::-webkit-scrollbar {
+            background-color: transparent;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .Signing-cont2::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .Signing-cont2::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .first-img {
+            zoom: 70%;
+            position: absolute;
+            top: 0px;
+            left: 50px;
+        }
+        
+        .first-img2 {
+            zoom: 95%;
+            position: absolute;
+            top: 65px;
+            left: 5px;
+        }
+        
+        .par-first-one,
+        .par-first-two,
+        .par-first-three,
+        .par-first-four {
+            position: absolute;
+            top: 115px;
+            left: 20px;
+            color: white;
+            font-size: 27.5px;
+            font-weight: 800;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-first-two {
+            top: 145px;
+        }
+        
+        .par-first-three {
+            top: 175px;
+        }
+        
+        .par-first-four {
+            top: 205px;
+        }
+        
+        .par-first-five,
+        .par-first-six,
+        .par-first-seven,
+        .par-first-eight,
+        .par-first-nine {
+            position: absolute;
+            top: 270px;
+            left: 20px;
+            color: white;
+            font-size: 15.5px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-first-six {
+            top: 290px;
+        }
+        
+        .par-first-seven {
+            top: 310px;
+        }
+        
+        .par-first-eight {
+            top: 330px;
+        }
+        
+        .par-first-nine {
+            top: 350px;
+        }
+        
+        .par-first-ten {
+            position: relative;
+            text-align: center;
+            color: rgba(119, 94, 5, 0.534);
+            font-size: 11.5px;
+            font-family: "Cabri ", sans-serif;
+            top: 390px;
+        }
+        
+        .par-first-eleven,
+        .par-first-twelve,
+        .par-first-thirteen,
+        .par-first-fourteen,
+        .par-first-fiveteen,
+        .par-first-sixteen,
+        .par-first-seventeen,
+        .par-first-eightteen,
+        .par-first-eightteen2,
+        .par-first-nineteen,
+        .par-first-nineteen2,
+        .par-first-nineteen3,
+        .par-first-nineteen4,
+        .par-first-nineteen5,
+        .par-first-nineteen6 {
+            position: absolute;
+            top: 415px;
+            left: 20px;
+            color: white;
+            font-size: 11px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-first-twelve {
+            top: 430px;
+        }
+        
+        .par-first-thirteen {
+            top: 580px;
+        }
+        
+        .par-first-fourteen {
+            top: 595px;
+        }
+        
+        .par-first-fiveteen {
+            top: 610px;
+        }
+        
+        .par-first-sixteen {
+            top: 625px;
+        }
+        
+        .par-first-seventeen {
+            top: 640px;
+        }
+        
+        .ipt-first {
+            width: 300px;
+            height: 50px;
+            background-color: white;
+            position: absolute;
+            top: 480px;
+            left: 20px;
+            border: none;
+            padding-left: 10px;
+            font-size: 13px;
+            border-radius: 5px;
+        }
+        
+        .ipt-first:focus {
+            outline: none;
+            border: none;
+        }
+        
+        .but-first {
+            width: 310.5px;
+            height: 40px;
+            background-color: #cc9e06;
+            position: absolute;
+            top: 540px;
+            left: 20px;
+            font-size: 12px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
+        
+        .wrong-email,
+        .not-saved {
+            position: relative;
+            text-align: center;
+            top: 543px;
+            color: red;
+            font-size: 13px;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .lod-img {
+            top: 2795px;
+            zoom: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 10;
+        }
+        
+        .sp-ooop {
+            color: #ffc800;
+            font-size: 12px;
+            position: relative;
+            left: 10px;
+        }
+        
+        .par-first-eightteen {
+            top: 670px;
+        }
+        
+        .par-first-eightteen2 {
+            top: 685px;
+        }
+        
+        .par-first-nineteen {
+            top: 715px;
+        }
+        
+        .par-first-nineteen2 {
+            top: 730px;
+        }
+        
+        .par-first-nineteen3 {
+            top: 745px;
+        }
+        
+        .par-first-nineteen4 {
+            top: 760px;
+        }
+        
+        .par-first-nineteen5 {
+            top: 775px;
+        }
+        
+        .par-first-nineteen6 {
+            top: 790px;
+            left: 35px;
+        }
+        
+        .par-first-nineteen7,
+        .par-first-nineteen8,
+        .par-first-nineteen9 {
+            position: relative;
+            top: 840px;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .par-first-nineteen8 {
+            top: 836px;
+        }
+        
+        .par-first-nineteen9 {
+            top: 838px;
+        }
+        
+        .sp-4032 {
+            position: relative;
+            left: -25px;
+        }
+        
+        .sp-4033 {
+            position: relative;
+            left: -20px;
+        }
+        
+        .sp-4043 {
+            position: relative;
+            left: -10px;
+        }
+        
+        .sp-4044 {
+            position: relative;
+            left: 10px;
+        }
+        
+        .sp-4045 {
+            position: relative;
+            left: 20px;
+        }
+        
+        .last-conit {
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            position: absolute;
+            top: 930px;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <div class="Signing-cont">
+        <div class="Signing-cont2">
+            <img src="./icons/fb_logo-2.png" class="first-img">
+            <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img2">
+            <p class="par-first-one">UNIQUE STORIES.</p>
+            <p class="par-first-two">ICONIC BOOKS.</p>
+            <p class="par-first-three">A TREASURE TROVE</p>
+            <p class="par-first-four">OF TALES.</p>
+            <p class="par-first-five">Fruitful bough, haven of Nigerian bestsellers,</p>
+            <p class="par-first-six">tales, and beloved brands, launching soon!</p>
+            <p class="par-first-seven">Prepare for phenomenal originals, exclusive</p>
+            <p class="par-first-eight">releases, top-notch reads, and an unforgettable</p>
+            <p class="par-first-nine">shopping experience at our flagship STORE!</p>
+            <p class="par-first-ten">______________________________________________________</p>
+            <p class="par-first-eleven">Share your email in order to stay up-to-date on</p>
+            <p class="par-first-twelve">Fruitful bought news</p>
+            <input type="email" class="ipt-first" placeholder="Enter Email">
+            <button class="but-first">SUBMIT</button>
+            <p class="wrong-email" style="display: none;">Please input a correct email.</p>
+            <p class="not-saved" style="display: none;">Error saving email.</p>
+            <img src="./icons/cargando-unscreen.gif" class="lod-img" style="display: none;">
+            <script>
+            </script>
+            <p class="par-first-thirteen">By clicking the submit button, you agree to fruitful bough using</p>
+            <p class="par-first-fourteen">email address to send you marketing informations, updates,</p>
+            <p class="par-first-fiveteen">special offers and other information about fruitful bough products.</p>
+            <p class="par-first-sixteen">You can unsubscribe at any time. For more information on how we</p>
+            <p class="par-first-seventeen">handle your personal data, please see our <span class="sp-ooop">Privacy policy.</span></p>
+
+            <p class="par-first-eightteen">Fruitful Bough is available in selected markets. Content varies by</p>
+            <p class="par-first-eightteen2">region and subject to change.</p>
+
+            <p class="par-first-nineteen">*Fruitful bough productions is still getting things ready - we're</p>
+            <p class="par-first-nineteen2">tweaking a few things behind the scenes. You can still sign up or</p>
+            <p class="par-first-nineteen3">register if you'd like, and we'd love for you to check out other</p>
+            <p class="par-first-nineteen4">pages while we finalize things. Thanks for your patience! We'll keep</p>
+            <p class="par-first-nineteen5">you posted with updates, so be sure to subscribe! Learn more at</p>
+            <p class="par-first-nineteen6">www.fruitfulbough.xyz</p>
+
+            <!--
+               Site developed by StromKiller003
+               Private-consulting: https://wa.me/9078730956
+               Year: 2025
+               Brand Name: FPH - Freelance Programming Hub
+               Encoded Sequence/ID : c-young003
+            -->
+
+            <p class="par-first-nineteen7"><span class="sp-4032">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Privacy Policy</span> | <span class="sp-4044">Cookies</span> <span class="sp-4045">|</span></p>
+            <p class="par-first-nineteen8">Cookie Details</p>
+
+            <p class="par-first-nineteen9">2025 Fruitful bough. All Rights Reserved.</p>
+            <div class="last-conit"></div>
+        </div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
