@@ -1,5 +1,6 @@
 [[redirects]]
 from = "/*"
-to = "./frontend/main"
+to = "/frontend/main.html"
 
 status = 200
+
