@@ -7,6 +7,21 @@
     <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
 </head>
+<script>
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    const isWindows = /Windows/i.test(navigator.userAgent);
+    const screenWidth = window.matchMedia("(max-width: 700)");
+
+    if (isAndroid) {
+        window.location.href = 'For_Phone.html';
+    } else if (isWindows) {
+        // This is to continue displaying the current file 
+    } else if (screenWidth.matches) {
+        window.location.href = 'For_Phone.html';
+    } else {
+        // This is to continue displaying the current file 
+    }
+</script>
 
 <body>
     <style>
