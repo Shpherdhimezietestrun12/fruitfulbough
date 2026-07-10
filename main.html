@@ -5,23 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
-    <link rel="icon" type="image/x-icon" href="./Frontend/icons/FB-Stream.png">
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
 </head>
-<script>
-    const isAndroid = /Android/i.test(navigator.userAgent);
-    const isWindows = /Windows/i.test(navigator.userAgent);
-    const screenWidth = window.matchMedia("(max-width: 700)");
 
-    if (isAndroid) {
-        window.location.href = './Frontend/For_Phone.html';
-    } else if (isWindows) {
-        // This is to continue displaying the current file 
-    } else if (screenWidth.matches) {
-        window.location.href = './Frontend/For_Phone.html';
-    } else {
-        // This is to continue displaying the current file 
-    }
-</script>
 
 <body>
     <style>
@@ -33,7 +19,7 @@
             position: fixed;
             left: 0;
             z-index: 500;
-            background-image: url('./Frontend/Pictures/book-cover-ideas-v2-fb.jpg');
+            background-image: _;
             background-size: cover;
             background-position: center;
         }
@@ -183,71 +169,71 @@
         }
         
         .par-first-thirteen {
-            top: 90px;
+            top: 5px;
         }
         
         .par-first-fourteen {
-            top: 85px;
+            top: 0px;
         }
         
         .par-first-fiveteen {
-            top: 80px;
+            top: -5px;
         }
         
         .par-first-sixteen {
-            top: 75px;
+            top: -10px;
         }
         
         .par-first-seventeen {
-            top: 70px;
+            top: -15px;
         }
         
         .par-first-seventeen2 {
-            top: 65px;
+            top: -20px;
         }
         
         .par-first-eightteen {
-            top: 75px;
+            top: -10px;
         }
         
         .par-first-eightteen2 {
-            top: 70px;
+            top: -15px;
         }
         
         .par-first-nineteen {
-            top: 77px;
+            top: -5px;
         }
         
         .par-first-nineteen2 {
-            top: 72px;
+            top: -10px;
         }
         
         .par-first-nineteen3 {
-            top: 67px;
+            top: -15px;
         }
         
         .par-first-nineteen4 {
-            top: 62px;
+            top: -20px;
         }
         
         .par-first-nineteen5 {
-            top: 57px;
+            top: -25px;
         }
         
         .par-first-nineteen6 {
-            top: 52px;
+            top: -30px;
         }
         
         .par-first-nineteen7 {
-            top: 47px;
+            top: -35px;
         }
         
-        .ipt-first {
+        .ipt-first-12,
+        .ipt-first-12-156 {
             width: 300px;
             height: 50px;
             background-color: white;
             position: absolute;
-            top: 530px;
             left: 50%;
             transform: translate(-50%, -50%);
             border: none;
@@ -256,26 +242,38 @@
             border-radius: 5px;
         }
         
-        .ipt-first:focus {
+        .ipt-first-12-156 {
+            top: 585px;
+            display: none;
+        }
+        
+        .ipt-first-12:focus,
+        .ipt-first-12-156:focus {
             outline: none;
             border: none;
         }
         
-        .but-first {
+        .but-first-12 {
             width: 310.5px;
             height: 40px;
             background-color: black;
             position: absolute;
-            top: 585px;
+            top: 635px;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 12px;
             border-radius: 5px;
+            display: none;
             border: none;
             color: white;
         }
         
-        .lod-img {
+        .but-first-12:hover,
+        .but-first:hover {
+            background-color: rgb(26, 26, 26);
+        }
+        
+        .lod-img-10 {
             top: 3850px;
             zoom: 30%;
             left: 50%;
@@ -283,10 +281,10 @@
             position: absolute;
         }
         
-        .wrong-email {
+        .wrong-email-ipt-2 {
             position: relative;
             text-align: center;
-            top: -445px;
+            top: -455px;
             color: red;
             font-size: 14px;
             font-weight: bold;
@@ -304,7 +302,7 @@
         .par-first-nineteen9,
         .par-first-nineteen10 {
             position: relative;
-            top: 75px;
+            top: -15px;
             text-align: center;
             color: white;
             font-size: 15px;
@@ -312,11 +310,11 @@
         }
         
         .par-first-nineteen9 {
-            top: 70px;
+            top: -10px;
         }
         
         .par-first-nineteen10 {
-            top: 65px;
+            top: -12px;
         }
         
         .sp-4032 {
@@ -343,21 +341,41 @@
             position: relative;
             left: 20px;
         }
+        /* Hide both by default */
         
-        .last-conit {
-            width: 100%;
-            height: 60px;
-            background-color: transparent;
+        .div-content-t12 {
+            width: 355px;
+            height: 545px;
             position: absolute;
-            top: 1110px;
-            left: 0;
-            right: 0;
+            top: 935px;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            background-color: transparent;
+        }
+        
+        .Signing-cont2,
+        .Phone-Signing-cont {
+            display: none;
+        }
+        /* Above 800px: show desktop version */
+        
+        @media (min-width: 801px) {
+            .Signing-cont2 {
+                display: block;
+            }
+        }
+        /* 800px and below: show mobile version */
+        
+        @media (max-width: 800px) {
+            .Phone-Signing-cont {
+                display: block;
+            }
         }
     </style>
     <div class="Signing-cont">
         <div class="Signing-cont2">
-            <img src="./Frontend/icons/fb_logo-2.png" class="first-img">
-            <img src="./Frontend/icons/Untitlesswsswsssssswwqeerd.png" class="first-img2">
+            <img src="./icons/fb_logo-2.png" class="first-img">
+            <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img2">
             <p class="par-first-one">UNIGUE STORIES.</p>
             <p class="par-first-two">ICONIC BOOKS.</p>
             <p class="par-first-three">A TREASURE TROVE</p>
@@ -370,10 +388,41 @@
             <p class="par-first-ten">______________________________________________________</p>
             <p class="par-first-eleven">Share your email in order to stay up-to-date on</p>
             <p class="par-first-twelve">Fruitful bought news</p>
-            <input type="email" class="ipt-first" placeholder="Enter Email">
-            <button class="but-first">SUBMIT</button>
+            <input type="email" class="ipt-first-12" placeholder="Enter Email">
+            <input type="email" class="ipt-first-12-156" placeholder="Enter Email">
+            <button class="but-first-12">SUBMIT</button>
 
+            <script>
+                // this is for first phase sequence
+                document.addEventListener('DOMContentLoaded', () => {
+                    const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+                    const emailInput = document.querySelector('.ipt-first-12');
+                    const nextInput = document.querySelector('.ipt-first-12-156');
+                    const nextButton = document.querySelector('.but-first-12');
+
+                    function checkEmail() {
+                        const isValid = EmailRegex.test(emailInput.value.trim());
+
+                        if (isValid) {
+                            emailInput.style.top = '530px';
+                            nextInput.style.display = 'block';
+                            nextButton.style.display = 'block';
+                        } else {
+                            // revert back if the field becomes empty/invalid again
+                            emailInput.style.top = '580px';
+                            nextInput.style.display = 'none';
+                            nextButton.style.display = 'none';
+                        }
+                    }
+
+                    // checks on every keystroke, paste, autofill, etc.
+                    emailInput.addEventListener('input', checkEmail);
+
+                    // run once on load too, in case the field is pre-filled (e.g. browser autofill)
+                    checkEmail();
+                });
+            </script>
             <!--
                Site developed by StromKiller003
                Private-consulting: https://wa.me/9078730956
@@ -381,37 +430,710 @@
                Brand Name: FPH - Freelance Programming Hub
                Encoded Sequence/ID : c-young003
             -->
-            <p class="par-first-thirteen">By clicking the submit button, you agree to fruitful bough</p>
-            <p class="par-first-fourteen">using email address to send you marketing informations,</p>
-            <p class="par-first-fiveteen">updates, special offers and other information about</p>
-            <p class="par-first-sixteen">fruitful bough products. You can unsubscribe at any time.</p>
-            <p class="par-first-seventeen">For more information on how we handle your personal data,</p>
-            <p class="par-first-seventeen2">please see our <span class="sp-ooop">Privacy policy.</span></p>
 
-            <p class="par-first-eightteen">Fruitful Bough is available in selected markets. Content</p>
-            <p class="par-first-eightteen2">varies by region and subject to change.</p>
+            <div class="div-content-t12">
+                <p class="par-first-thirteen">By clicking the submit button, you agree to fruitful bough</p>
+                <p class="par-first-fourteen">using email address to send you marketing informations,</p>
+                <p class="par-first-fiveteen">updates, special offers and other information about</p>
+                <p class="par-first-sixteen">fruitful bough products. You can unsubscribe at any time.</p>
+                <p class="par-first-seventeen">For more information on how we handle your personal data,</p>
+                <p class="par-first-seventeen2">please see our <span class="sp-ooop">Privacy policy.</span></p>
 
-            <p class="par-first-nineteen">*Fruitful bough productions is still getting things ready</p>
-            <p class="par-first-nineteen2">- we're tweaking a few things behind the scenes. You</p>
-            <p class="par-first-nineteen3">can still sign up or register if you'd like, and we'd</p>
-            <p class="par-first-nineteen4">love for you to check out other pages while we finalize</p>
-            <p class="par-first-nineteen5">things. Thanks for your patience! We'll keep you posted</p>
-            <p class="par-first-nineteen6">with updates, so be sure to subscribe! Learn more at</p>
-            <p class="par-first-nineteen7">www.fruitfulbough.xyz</p>
+                <p class="par-first-eightteen">Fruitful Bough is available in selected markets. Content</p>
+                <p class="par-first-eightteen2">varies by region and subject to change.</p>
 
+                <p class="par-first-nineteen">*Fruitful bough productions is still getting things ready</p>
+                <p class="par-first-nineteen2">- we're tweaking a few things behind the scenes. You</p>
+                <p class="par-first-nineteen3">can still sign up or register if you'd like, and we'd</p>
+                <p class="par-first-nineteen4">love for you to check out other pages while we finalize</p>
+                <p class="par-first-nineteen5">things. Thanks for your patience! We'll keep you posted</p>
+                <p class="par-first-nineteen6">with updates, so be sure to subscribe! Learn more at</p>
+                <p class="par-first-nineteen7">www.fruitfulbough.xyz</p>
 
+                <p class="par-first-nineteen8"><span class="sp-4032">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Cookies</span> |
+                    <span class="sp-4044">FB-Info</span> <span class="sp-4045">|</span></p>
+                <p class="par-first-nineteen9">Create account</p>
+                <style>
+                    .img-par-4202134 {
+                        zoom: 20%;
+                        position: relative;
+                        right: 7px;
+                        top: 20px;
+                    }
+                </style>
+                <p class="par-first-nineteen10"><img src="./icons/icons8-copyright-100.png" class="img-par-4202134">2025 Fruitful bough. All Rights Reserved.</p>
+            </div>
 
-            <p class="par-first-nineteen8"><span class="sp-4032">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Privacy Policy</span> | <span class="sp-4044">Cookies</span> <span class="sp-4045">|</span></p>
-            <p class="par-first-nineteen9">Cookie Details</p>
+            <p class="wrong-email-ipt-2" style="display: none;">Please input a correct email.</p>
+        </div>
+        <style>
+            .first-img-21 {
+                zoom: 70%;
+                position: absolute;
+                top: 0px;
+                left: 5px;
+            }
+            
+            .first-img212 {
+                zoom: 95%;
+                position: absolute;
+                top: 65px;
+                left: -20px;
+            }
+            
+            .par-first-one-1,
+            .par-first-two-2,
+            .par-first-three-3,
+            .par-first-four-4 {
+                position: absolute;
+                top: -25px;
+                left: 10px;
+                color: white;
+                font-size: 27.5px;
+                font-weight: 800;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .par-first-two-2 {
+                left: 11px;
+                top: 7px;
+            }
+            
+            .par-first-three-3 {
+                top: 40px;
+            }
+            
+            .par-first-four-4 {
+                top: 73px;
+            }
+            
+            .par-first-five-5,
+            .par-first-six-6,
+            .par-first-seven-7,
+            .par-first-eight-8,
+            .par-first-nine-9 {
+                position: absolute;
+                top: 135px;
+                left: 10px;
+                color: white;
+                font-size: 15.5px;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .par-first-six-6 {
+                top: 155px;
+            }
+            
+            .par-first-seven-7 {
+                top: 175px;
+            }
+            
+            .par-first-eight-8 {
+                top: 195px;
+            }
+            
+            .par-first-nine-9 {
+                top: 215px;
+            }
+            
+            .par-first-ten-10 {
+                position: relative;
+                text-align: center;
+                color: rgba(119, 94, 5, 0.534);
+                font-size: 11.5px;
+                font-family: "Cabri ", sans-serif;
+                top: 255px;
+            }
+            
+            .par-first-eleven-11,
+            .par-first-twelve-12,
+            .par-first-thirteen-13,
+            .par-first-fourteen-14,
+            .par-first-fiveteen-15,
+            .par-first-sixteen-16,
+            .par-first-seventeen-17,
+            .par-first-eightteen-18,
+            .par-first-eightteen2-19,
+            .par-first-nineteen-20,
+            .par-first-nineteen2-21,
+            .par-first-nineteen3-22,
+            .par-first-nineteen4-23,
+            .par-first-nineteen5-24,
+            .par-first-nineteen6-25 {
+                position: absolute;
+                top: 290px;
+                left: 10px;
+                color: white;
+                font-size: 11px;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .par-first-twelve-12 {
+                top: 307px;
+            }
+            
+            .par-first-thirteen-13 {
+                top: 0px;
+            }
+            
+            .par-first-fourteen-14 {
+                top: 15px;
+            }
+            
+            .par-first-fiveteen-15 {
+                top: 30px;
+            }
+            
+            .par-first-sixteen-16 {
+                top: 45px;
+            }
+            
+            .par-first-seventeen-17 {
+                top: 60px;
+            }
+            
+            .ipt-first,
+            .ipt-first-156 {
+                width: 300px;
+                height: 50px;
+                background-color: white;
+                position: absolute;
+                left: 50%;
+                border: none;
+                transform: translate(-50%, -50%);
+                padding-left: 10px;
+                font-size: 13px;
+                border-radius: 5px;
+            }
+            
+            .ipt-first-156 {
+                top: 550px;
+                display: none;
+            }
+            
+            .ipt-first:focus,
+            .ipt-first-156:focus {
+                outline: none;
+                border: none;
+            }
+            
+            .but-first {
+                width: 310.5px;
+                height: 40px;
+                background-color: black;
+                left: 50%;
+                position: absolute;
+                top: 605px;
+                transform: translate(-50%, -50%);
+                font-size: 12px;
+                border-radius: 5px;
+                display: none;
+                border: none;
+                color: white;
+            }
+            
+            .wrong-email,
+            .not-saved {
+                position: relative;
+                text-align: center;
+                top: 617px;
+                color: red;
+                font-size: 15px;
+                font-weight: bold;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .sp-ooop {
+                color: #ffc800;
+                font-size: 12px;
+                position: relative;
+                left: 10px;
+            }
+            
+            .par-first-eightteen-18 {
+                top: 95px;
+            }
+            
+            .par-first-eightteen2-19 {
+                top: 110px;
+            }
+            
+            .par-first-nineteen-20 {
+                top: 145px;
+            }
+            
+            .par-first-nineteen2-21 {
+                top: 160px;
+            }
+            
+            .par-first-nineteen3-22 {
+                top: 175px;
+            }
+            
+            .par-first-nineteen4-23 {
+                top: 190px;
+            }
+            
+            .par-first-nineteen5-24 {
+                top: 205px;
+            }
+            
+            .par-first-nineteen6-25 {
+                top: 235px;
+                left: 35px;
+            }
+            
+            .par-first-nineteen7-26,
+            .par-first-nineteen8-27,
+            .par-first-nineteen9-28 {
+                position: relative;
+                top: 20px;
+                text-align: center;
+                color: white;
+                font-size: 12px;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .par-first-nineteen8-27 {
+                top: 21px;
+            }
+            
+            .par-first-nineteen9-28 {
+                top: 15px;
+            }
+            
+            .sp-4032 {
+                position: relative;
+                left: -25px;
+            }
+            
+            .sp-4033 {
+                position: relative;
+                left: -20px;
+            }
+            
+            .sp-4043 {
+                position: relative;
+                left: -10px;
+            }
+            
+            .sp-4044 {
+                position: relative;
+                left: 10px;
+            }
+            
+            .sp-4045 {
+                position: relative;
+                left: 20px;
+            }
+            
+            .last-conit {
+                width: 100%;
+                height: 60px;
+                background-color: transparent;
+                position: absolute;
+                top: 930px;
+                left: 0;
+                right: 0;
+            }
+            
+            .front-cont,
+            .center-cont,
+            .center-two-cont,
+            .last-cont {
+                width: 310px;
+                height: 135px;
+                position: absolute;
+                top: 75px;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                background-color: transparent;
+            }
+            
+            .center-cont {
+                width: 325px;
+                height: 345px;
+                top: 300px;
+                background-color: transparent;
+                z-index: 20;
+            }
+            
+            .center-two-cont {
+                width: 325px;
+                height: 315px;
+                top: 800px;
+                background-color: transparent;
+                z-index: 20;
+            }
+            
+            .last-cont {
+                width: 325px;
+                height: 105px;
+                top: 945px;
+                background-color: transparent;
+                z-index: 20;
+            }
+            
+            .Signing-cont22 {
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.60);
+                top: 0;
+                position: absolute;
+                left: 0;
+                overflow-y: auto;
+            }
+            
+            .Signing-cont22::-webkit-scrollbar {
+                display: noe;
+                /* hide scrollbar on Chrome, Safari, and Opera */
+                width: 6px;
+                /* width of the scrollbar */
+                height: 100%;
+                /* height of the scrollbar (for horizontal scrollbars) */
+            }
+            
+            .Signing-cont22::-webkit-scrollbar {
+                background-color: transparent;
+                /* color of the track */
+                border-radius: 10px;
+            }
+            
+            .Signing-cont22::-webkit-scrollbar-thumb {
+                background: #ffc800;
+                /* color of the scrollbar thumb */
+                border-radius: 10px;
+            }
+            
+            .Signing-cont22::-webkit-scrollbar-thumb:hover {
+                background: #ffc800;
+                /* color of the scrollbar thumb on hover */
+            }
+        </style>
+        <div class="Phone-Signing-cont">
+            <div class="Signing-cont22">
+                <div class="front-cont">
+                    <img src="./icons/fb_logo-2.png" class="first-img-21">
+                    <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img212">
+                </div>
+                <div class="center-cont">
+                    <p class="par-first-one-1">UNIQUE STORIES.</p>
+                    <p class="par-first-two-2">ICONIC BOOKS.</p>
+                    <p class="par-first-three-3">A TREASURE TROVE</p>
+                    <p class="par-first-four-4">OF TALES.</p>
+                    <p class="par-first-five-5">Fruitful bough, haven of Nigerian bestsellers,</p>
+                    <p class="par-first-six-6">tales, and beloved brands, launching soon!</p>
+                    <p class="par-first-seven-7">Prepare for phenomenal originals, exclusive</p>
+                    <p class="par-first-eight-8">releases, top-notch reads, and unforgettable</p>
+                    <p class="par-first-nine-9">shopping experience at our flagship STORE!</p>
+                    <p class="par-first-ten-10">______________________________________________________</p>
+                    <p class="par-first-eleven-11">Share your email in order to stay up-to-date on</p>
+                    <p class="par-first-twelve-12">Fruitful bought news</p>
+                </div>
+                <input type="email" class="ipt-first" placeholder="Enter Email">
+                <input type="password" class="ipt-first-156" placeholder="Enter Password">
+                <button class="but-first">SUBMIT</button>
+                <p class="wrong-email" style="display: none;">Please input a correct email.</p>
+                <p class="not-saved" style="display: none;">Error saving email.</p>
+                <script>
+                    // this is for first phase sequence
+                    document.addEventListener('DOMContentLoaded', () => {
+                        const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+                        const emailInput = document.querySelector('.ipt-first');
+                        const nextInput = document.querySelector('.ipt-first-156');
+                        const nextButton = document.querySelector('.but-first');
 
-            <p class="par-first-nineteen10">2025 Fruitful bough. All Rights Reserved.</p>
-            <div class="last-conit"></div>
-            <p class="wrong-email" style="display: none;">Please input a correct email.</p>
-            <img src="./icons/cargando-unscreen.gif" class="lod-img" style="display: none;">
+                        function checkEmail() {
+                            const isValid = EmailRegex.test(emailInput.value.trim());
+
+                            if (isValid) {
+                                emailInput.style.top = '495px';
+                                nextInput.style.display = 'block';
+                                nextButton.style.display = 'block';
+                            } else {
+                                // revert back if the field becomes empty/invalid again
+                                emailInput.style.top = '555px';
+                                nextInput.style.display = 'none';
+                                nextButton.style.display = 'none';
+                            }
+                        }
+
+                        // checks on every keystroke, paste, autofill, etc.
+                        emailInput.addEventListener('input', checkEmail);
+
+                        // run once on load too, in case the field is pre-filled (e.g. browser autofill)
+                        checkEmail();
+                    });
+                </script>
+                <div class="center-two-cont">
+                    <p class="par-first-thirteen-13">By clicking the submit button, you agree to fruitful bough using</p>
+                    <p class="par-first-fourteen-14">email address to send you marketing informations, updates,</p>
+                    <p class="par-first-fiveteen-15">special offers & other information about fruitful bough products.</p>
+                    <p class="par-first-sixteen-16">You can unsubscribe at any time. For more information on how</p>
+                    <p class="par-first-seventeen-17">we handle your personal data, please see our <span class="sp-ooop">Privacy policy.</span></p>
+
+                    <p class="par-first-eightteen-18">Fruitful Bough is available in selected markets. Content varies</p>
+                    <p class="par-first-eightteen2-19">by region and subject to change.</p>
+
+                    <p class="par-first-nineteen-20">*Fruitful bough productions is still getting things ready - we're</p>
+                    <p class="par-first-nineteen2-21">tweaking a few things behind the scenes. You can still sign up or</p>
+                    <p class="par-first-nineteen3-22">register if you'd like, and we'd love for you to check out other</p>
+                    <p class="par-first-nineteen4-23">pages while we finalize things. Thanks for your patience! We'll k-</p>
+                    <p class="par-first-nineteen5-24">eep you posted with updates, so be sure to subscribe! Learn more at</p>
+                    <p class="par-first-nineteen6-25" onclick="window.location.href='https://fruitfulbough.xyz/';">www.fruitfulbough.xyz</p>
+
+                    <!--
+               Site developed by StromKiller003
+               Private-consulting: https://wa.me/9078730956
+               Year: 2025
+               Brand Name: FPH - Freelance Programming Hub
+               Encoded Sequence/ID : c-young003
+            -->
+
+                </div>
+                <div class="last-cont">
+                    <p class="par-first-nineteen7-26"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043" onclick="window.location.href='Information.html';">Cookies</span> | <span class="sp-4044"
+                            onclick="window.location.href='Information.html';">FB-Info</span> <span class="sp-4045">|</span></p>
+                    <p class="par-first-nineteen8-27" onclick="window.location.href='Information.html';">Create account</p>
+                    <style>
+                        .img-par-420213 {
+                            zoom: 15%;
+                            position: relative;
+                            right: 7px;
+                            top: 20px;
+                        }
+                    </style>
+                    <p class="par-first-nineteen9-28"><img src="./icons/icons8-copyright-100.png" class="img-par-420213">2025 Fruitful bough. All Rights Reserved.</p>
+
+                </div>
+            </div>
+        </div>
+        <style>
+            .loading-div-sh {
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.70);
+                z-index: 50;
+                display: none;
+            }
+            
+            .load-container {
+                width: 120px;
+                height: 120px;
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+            }
+            
+            .load-seq {
+                width: 49px;
+                height: 49px;
+                top: 50%;
+                left: 50%;
+                position: relative;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid transparent;
+                animation: drawBox 3s linear infinite;
+            }
+            /* Animation draws from 0 to 100% in building  */
+            
+            @keyframes drawBox {
+                0% {
+                    border-top-color: transparent;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                }
+                25% {
+                    border-top-color: orange;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                }
+                50% {
+                    border-top-color: orange;
+                    border-right-color: orange;
+                    border-bottom-color: transparent;
+                    border-left-color: transparent;
+                }
+                75% {
+                    border-top-color: orange;
+                    border-right-color: orange;
+                    border-bottom-color: orange;
+                    border-left-color: transparent;
+                }
+                100% {
+                    border-top-color: orange;
+                    border-right-color: orange;
+                    border-bottom-color: orange;
+                    border-left-color: orange;
+                }
+            }
+            
+            .img-presenting {
+                zoom: 26%;
+            }
+        </style>
+        <div class="loading-div-sh">
+            <div class="load-container">
+                <div class="load-seq">
+                    <img src="./icons/fb_logo-qqss.png" class="img-presenting"></div>
+            </div>
         </div>
     </div>
-    <script src="./index.js"></script>
+
+    <script>
+        // For first page email loading
+
+        const Subbutton = document.querySelector('.but-first');
+        const SubbuttonTwo = document.querySelector('.but-first-12');
+        const ColEmail = document.querySelector('.ipt-first');
+        const ShowLod = document.querySelector('.loading-div-sh');
+        const WrongEmailTwo = document.querySelector('.wrong-email-ipt-2');
+        const WrongEmail = document.querySelector('.wrong-email');
+        const NotSaved = document.querySelector('.not-saved');
+        const RemoveUI = document.querySelector('.Signing-cont');
+        const ChangeOne = document.querySelector('.test-par-5');
+        const ChangeTwo = document.querySelector('.sp-t22');
+
+        Subbutton.addEventListener('click', () => {
+            const EmailValue = ColEmail.value.trim();
+            const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!EmailRegex.test(EmailValue)) {
+                // Show message if email wrong
+                WrongEmail.style.display = 'block';
+                ShowLod.style.display = 'none'; // Hide loader
+            } else {
+                // Email is correct show loader
+                WrongEmail.style.display = 'none';
+                ShowLod.style.display = 'block';
+                // Fetch the email and save the records
+                fetch('http://localhost:5000/save-email', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            email: EmailValue
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data); // Handle response from the server
+                        if (data.message) {
+                            // Email saved successfully
+                            console.log('Email saved successfully!');
+                            updateElements(ColEmail);
+
+                        } else {
+                            // Error saving the email
+                            console.error('Error saving the email:', data.error);
+                            // code to show error to the user
+                            NotSaved.style.display = 'block';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+        });
+
+        function updateElements(element) {
+            if (!element || !element.value) return '';
+            const text = element.value;
+            const regex = /@\S+$/;
+            const name = text.replace(regex, '');
+            const words = name.split(' ');
+            const firstName = words[0];
+            fetch('http://localhost:5000/save-info-one', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: firstName
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+                    window.location.replace('./index.html');
+                })
+                .catch(error => console.error(error));
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = [
+                './Pictures/man-reading-books-stockcake.jpg',
+                './Pictures/man-reading-book-stockcake.jpg',
+                './Pictures/pexels-pixabay-247899.jpg',
+                './Pictures/man-deeply-focused-reading-quiet-library-setting-concept-quiet-library-studious-man-focused-reading_918839-32676.avif',
+                './Pictures/istockphoto-1300956931-612x612 (1).jpg',
+                './Pictures/images.jpg',
+                './Pictures/reading-in-library-stockcake.jpg'
+                // add as many image paths here as you want
+            ];
+
+            const el = document.querySelector('.Signing-cont');
+            let index = 0;
+
+            function setBackground(i) {
+                el.style.backgroundImage = `url('${images[i]}')`;
+            }
+
+            // set the first image immediately
+            setBackground(index);
+
+            // then swap every 7 seconds
+            setInterval(() => {
+                index = (index + 1) % images.length; // loop back to 0 after the last image
+                setBackground(index);
+            }, 7000); // 7000ms = 7 seconds
+        });
+    </script>
+    <script>
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        const screenWidth = window.matchMedia("(max-width: 900)");
+        const isIphone = /iPhone/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
+        const desktopCont = document.querySelector('.Signing-cont2');
+        const mobileCont = document.querySelector('.Phone-Signing-cont');
+
+
+        function toggleSignupView() {
+            // Force mobile for Android/iPhone/Safari/iOS, otherwise use width
+            const isMobileDevice = isAndroid || isIphone || isIOS || isSafari;
+
+            if (isMobileDevice || window.innerWidth <= 800) {
+                desktopCont.style.display = 'none';
+                mobileCont.style.display = 'block';
+            } else {
+                desktopCont.style.display = 'block';
+                mobileCont.style.display = 'none';
+            }
+        }
+
+        // Run on load
+        toggleSignupView();
+
+        // Run on resize
+        window.addEventListener('resize', toggleSignupView);
+    </script>
+    <script src="./Frontend/info_two.js"></script>
 </body>
 
 </html>
