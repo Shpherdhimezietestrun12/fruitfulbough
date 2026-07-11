@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - All Informations...</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #111111;
+        }
+        
+        .cont-one {
+            width: 25%;
+            height: 100%;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+        
+        .cont-one-display,
+        .cont-two-display,
+        .cont-three-display,
+        .cont-four-display,
+        .cont-five-display,
+        .cont-six-display,
+        .cont-seven-display {
+            width: 75%;
+            height: 100%;
+            background-color: #111111;
+            top: 0;
+            left: 25%;
+            position: absolute;
+        }
+        
+        .message-container {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+        
+        .cont-seven-display {
+            overflow-y: auto;
+        }
+        
+        .cont-seven-display::-webkit-scrollbar,
+        .message-container::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 5px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .cont-seven-display::-webkit-scrollbar,
+        .message-container::-webkit-scrollbar {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .cont-seven-display::-webkit-scrollbar-thumb,
+        .message-container::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .cont-seven-display::-webkit-scrollbar-thumb:hover,
+        .message-container::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .cont-one-123,
+        .cont-one-1234,
+        .cont-one-12345,
+        .cont-one-123456,
+        .cont-one-1234567,
+        .cont-one-12345678,
+        .cont-one-123456789 {
+            width: 100%;
+            height: 65px;
+            background-color: transparent;
+            top: 18px;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+        }
+        
+        .cont-one-1234 {
+            top: 100px;
+        }
+        
+        .cont-one-12345 {
+            top: 182px;
+        }
+        
+        .cont-one-123456 {
+            top: 264px;
+        }
+        
+        .cont-one-1234567 {
+            top: 345px;
+        }
+        
+        .cont-one-12345678 {
+            top: 426px;
+        }
+        
+        .cont-one-123456789 {
+            top: 508px;
+        }
+        
+        .cont-one-234,
+        .cont-one-2345,
+        .cont-one-23456,
+        .cont-one-234567,
+        .cont-one-2345678,
+        .cont-one-23456789,
+        .cont-one-234567891 {
+            width: 32px;
+            height: 32px;
+            background-color: #5e4a01;
+            position: absolute;
+            top: 27%;
+            left: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 50px;
+            font-size: 15px;
+            color: #8a8a8a;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+        }
+        
+        .cont-one-2345,
+        .cont-one-23456,
+        .cont-one-234567,
+        .cont-one-2345678,
+        .cont-one-23456789,
+        .cont-one-234567891 {
+            background-color: #5e4a01;
+            color: #8a8a8a;
+        }
+        
+        .par-cont-123,
+        .par-cont-1234 {
+            font-size: 15px;
+            font-family: "Cabri ", sans-serif;
+            color: #5e4a01;
+            position: absolute;
+            top: 15%;
+            left: 26%;
+        }
+        
+        .par-cont-1234 {
+            color: #5e4a01;
+        }
+        
+        .cont-one-123:hover,
+        .cont-one-1234:hover,
+        .cont-one-12345:hover,
+        .cont-one-123456:hover,
+        .cont-one-1234567:hover,
+        .cont-one-12345678:hover,
+        .cont-one-123456789:hover {
+            color: #e2b100;
+            background-color: rgba(242, 191, 17, 0.2);
+            /* Change background on hover */
+            /* Change text color on hover */
+        }
+        
+        .nav-btn:hover {
+            color: #e2b100;
+            background-color: rgba(242, 191, 17, 0.2);
+        }
+        
+        .nav-btn.active {
+            color: #e2b100;
+            background-color: rgba(240, 187, 14, 0.445)
+        }
+        
+        .nav-btn:hover p {
+            color: #e2b100;
+        }
+        
+        .nav-btn:hover div {
+            background-color: #e2b100;
+            color: white;
+        }
+        
+        .nav-btn.active div {
+            background-color: #e2b100;
+            color: white;
+        }
+        
+        .nav-btn.active p {
+            color: #e2b100;
+        }
+        
+        .par-dis-cont-three,
+        .par-dis-cont-two,
+        .par-dis-cont-one {
+            font-size: 35px;
+            font-family: Cambria, "Times New Roman", serif;
+            color: #e2b100;
+            position: absolute;
+            top: -5px;
+            left: 40px;
+            font-style: italic;
+        }
+        
+        .par-dis-cont-two {
+            font-size: 14px;
+            top: 62px;
+            color: #919090;
+            left: 45px;
+        }
+        
+        .nav-btn.active.par-cont-123 {
+            color: #e2b100;
+        }
+        
+        .par-dis-cont-three {
+            font-size: 17px;
+            top: 95px;
+            font-family: "Cabri ", sans-serif;
+            left: 45px;
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        .cont-bottom-disp {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            background-color: #111111;
+        }
+        
+        .pol-img-3 {
+            zoom: 30%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 5%;
+        }
+        
+        .pol-par-30 {
+            font-size: 17px;
+            position: absolute;
+            left: 17.1%;
+            top: 30%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .pol-but-1 {
+            width: 140px;
+            height: 50px;
+            background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+            position: absolute;
+            top: 50%;
+            right: 1%;
+            transform: translate(-50%, -50%);
+            border: 0px solid;
+            color: white;
+            font-size: 14px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
+        .div_p2010 {
+            width: 100%;
+            height: 350px;
+            background-color: rgba(242, 191, 17, 0.09);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url('./Frontend/Pictures/ancient-opened-book-stockcake.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .pra_1024 {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 50px;
+            top: 122px;
+            position: relative;
+            text-align: center;
+            font-weight: bold;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .abo-div-1 {
+            width: 230px;
+            height: 295px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 410px;
+            left: 2%;
+            position: absolute;
+            background-image: url('./Frontend/Pictures/istockphoto-1284037570-612x612.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .abo-div-2 {
+            width: 230px;
+            height: 295px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 550px;
+            right: 2%;
+            position: absolute;
+            background-image: url('./Frontend/Pictures/pexels-photo-6437513.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .abo-div-3 {
+            width: 500px;
+            height: 405px;
+            background-color: rgba(242, 191, 17, 0.09);
+            top: 610px;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            position: absolute;
+        }
+        
+        .div-main-cont {
+            width: 375px;
+            height: 565px;
+            border-radius: 10px;
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #ffc800;
+        }
+        
+        .div-main-cont-123 {
+            width: 330px;
+            height: 565px;
+            border-radius: 10px;
+            background-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: none;
+        }
+        
+        .par-pro-one {
+            position: relative;
+            top: 10px;
+            font-family: "Cabri ", sans-serif;
+            color: #ffc800;
+            font-weight: bold;
+            text-align: center;
+            font-size: 17px;
+        }
+        
+        .par-pro-two {
+            position: relative;
+            top: 3px;
+            font-family: "Cabri ", sans-serif;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+        }
+        
+        .sp-23021 {
+            color: rgb(3, 221, 3);
+        }
+        
+        .par-pro-three,
+        .par-pro-four,
+        .par-pro-five,
+        .par-pro-six {
+            position: absolute;
+            font-family: "Cabri ", sans-serif;
+            top: 120px;
+            font-weight: bold;
+            color: white;
+            font-size: 12.5px;
+        }
+        
+        .par-pro-three {
+            left: 22px;
+        }
+        
+        .par-pro-five {
+            top: 200px;
+            left: 22px;
+        }
+        
+        .par-pro-four {
+            right: 82px;
+        }
+        
+        .ipt-pro-one,
+        .ipt-email,
+        .ipt-pass {
+            width: 130px;
+            background-color: transparent;
+            height: 30px;
+            left: 4%;
+            top: 155px;
+            position: absolute;
+            border: 0.5px solid #ffc800;
+            border-radius: 5px;
+            padding-left: 10px;
+            color: white;
+        }
+        
+        .par-five-21-12 {
+            position: relative;
+            text-align: center;
+            color: rgb(182, 182, 182);
+            font-size: 11px;
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            top: 300px;
+        }
+        
+        .div-main-one {
+            width: 300px;
+            height: 65px;
+            background-color: transparent;
+            position: absolute;
+            top: 430px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .sp-one-21-12 {
+            color: rgb(68, 68, 68);
+            left: -2px;
+        }
+        
+        .sp-two-21-12 {
+            color: rgb(68, 68, 68);
+            position: relative;
+            right: -2px;
+        }
+        
+        .div-sub-one,
+        .div-sub-two,
+        .div-sub-three {
+            width: 80px;
+            height: 43px;
+            background-color: transparent;
+            position: absolute;
+            border-radius: 5px;
+            top: 16.5%;
+            border: 1px solid rgb(68, 68, 68);
+        }
+        
+        .div-sub-one {
+            left: 5px;
+        }
+        
+        .div-sub-two {
+            left: 106px;
+        }
+        
+        .div-sub-three {
+            right: 5px;
+        }
+        
+        .ipt-pro-two {
+            width: 130px;
+            background-color: transparent;
+            height: 30px;
+            right: 4%;
+            top: 155px;
+            position: absolute;
+            border: 0.5px solid #ffc800;
+            border-radius: 5px;
+            padding-left: 10px;
+            color: white;
+        }
+        
+        .ipt-pro-one:focus,
+        .ipt-pro-two:focus,
+        .ipt-email:focus,
+        .ipt-pass:focus {
+            outline: none;
+            border: none;
+            border: 0.5px solid #ffc800;
+        }
+        
+        .ipt-pro-one::placeholder,
+        .ipt-pro-two::placeholder,
+        .ipt-email:placeholder,
+        .ipt-pass:placeholder {
+            color: rgb(80, 80, 80);
+            font-family: "Cabri ", sans-serif;
+            font-weight: bold;
+            font-size: 12.5px;
+        }
+        
+        .ipt-email {
+            width: 330px;
+            top: 235px;
+        }
+        
+        .par-pro-six {
+            top: 285px;
+            left: 22px;
+        }
+        
+        .ipt-pass {
+            width: 330px;
+            top: 320px;
+        }
+        
+        .nav-100 {
+            position: absolute;
+            top: 360px;
+            font-family: "Cabri ", sans-serif;
+            left: -6%;
+        }
+        
+        .nav-100 li {
+            list-style: none;
+            font-size: 12px;
+            padding-bottom: 5px;
+            display: flex;
+        }
+        
+        .img-200 {
+            zoom: 17%;
+            position: relative;
+            top: -15px;
+        }
+        
+        .sp-302 {
+            position: relative;
+            left: 4%;
+            color: white;
+        }
+        
+        .pra-6 {
+            position: relative;
+            text-align: center;
+            font-size: 11.3px;
+            font-family: "Cabri ", sans-serif;
+            top: 370px;
+            color: #7a7a7a;
+        }
+        
+        .pra-7 {
+            position: relative;
+            text-align: center;
+            font-size: 11.3px;
+            font-family: "Cabri ", sans-serif;
+            top: 364px;
+            color: #7a7a7a;
+        }
+        
+        .sp-700 {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .ipt-check {
+            position: absolute;
+            top: 482px;
+            left: 8%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50px;
+            -webkit-appearance: none;
+            background-color: transparent;
+            /* unchecked bg */
+            border: 1px solid orange;
+            /* unchecked border */
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .ipt-check:checked {
+            background-color: orange;
+            /* checked bg */
+            border-color: orange;
+            /* c
+                hecked border */
+        }
+        
+        .ipt-check:checked::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 2px;
+            width: 6px;
+            height: 12px;
+            border: solid white;
+            /* arrow color */
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        
+        .ipt-check:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.3);
+        }
+        
+        .bnt-100 {
+            position: absolute;
+            top: 535px;
+            width: 285px;
+            left: 50%;
+            height: 40px;
+            transform: translate(-50%, -50%);
+            background-color: #1d180a;
+            border: 0px solid;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #7a7a7a;
+        }
+        
+        .Main-display-cont,
+        .Phone-display-cont {
+            display: none;
+        }
+        /* Above 800px: show desktop version */
+        
+        @media (min-width: 801px) {
+            .Main-display-cont {
+                display: block;
+            }
+        }
+        /* 800px and below: show mobile version */
+        
+        @media (max-width: 800px) {
+            .Phone-display-cont {
+                display: block;
+            }
+        }
+    </style>
+    <div class="Main-display-cont">
+        <div class="cont-one">
+            <div class="cont-one-123 nav-btn active" data-target="cont-one-display">
+                <div class="cont-one-234">1</div>
+                <p class="par-cont-123">Accepting the terms</p>
+            </div>
+            <div class="cont-one-1234 nav-btn" data-target="cont-two-display">
+                <div class="cont-one-2345">2</div>
+                <p class="par-cont-1234">Privacy policy</p>
+            </div>
+            <div class="cont-one-12345 nav-btn" data-target="cont-three-display">
+                <div class="cont-one-23456">3</div>
+                <p class="par-cont-1234">Fruitful Bough Informations</p>
+            </div>
+            <div class="cont-one-123456 nav-btn" data-target="cont-four-display">
+                <div class="cont-one-234567">4</div>
+                <p class="par-cont-1234">Cookies Details</p>
+            </div>
+            <div class="cont-one-1234567 nav-btn" data-target="cont-five-display">
+                <div class="cont-one-2345678">5</div>
+                <p class="par-cont-1234">FB Assistant Bot</p>
+            </div>
+            <div class="cont-one-12345678 nav-btn" data-target="cont-six-display">
+                <div class="cont-one-23456789">6</div>
+                <p class="par-cont-1234">Sign up</p>
+            </div>
+            <div class="cont-one-123456789 nav-btn" data-target="cont-seven-display">
+                <div class="cont-one-234567891">7</div>
+                <p class="par-cont-1234">About us</p>
+            </div>
+        </div>
+        <style>
+            .message-present {
+                position: absolute;
+                top: 135px;
+                left: 0px;
+            }
+            
+            .message-present li {
+                list-style: none;
+            }
+            
+            .div-present-1-sh {
+                width: 950px;
+                height: max-content;
+                background-color: transparent;
+                position: relative;
+            }
+            
+            .shift-up-content {
+                width: 950px;
+                height: 70px;
+                background-color: transparent;
+                position: relative;
+            }
+            
+            .par-sh-1,
+            .par-sh-2,
+            .par-sh-2-211 {
+                font-size: 19px;
+                color: #919090;
+                top: 7px;
+                left: 2px;
+                font-family: "Cabri ", sans-serif;
+                position: relative;
+                font-style: italic;
+            }
+            
+            .par-sh-2,
+            .par-sh-2-211 {
+                font-size: 14px;
+                position: relative;
+                left: 2px;
+                top: -5px;
+                padding-bottom: 5px;
+                font-family: Cambria, "Times New Roman", serif;
+                line-height: 1.5;
+                /* increase this to taste — 1.8, 2, 2.2 etc. */
+            }
+        </style>
+        <div class="cont-one-display" style="display: block; ">
+            <div class="message-container">
+                <p class="par-dis-cont-one">Terms of Service</p>
+                <p class="par-dis-cont-two">Updated July 10/07/2026</p>
+                <p class="par-dis-cont-three">Accepting all 20 Phases for FB Usage</p>
+                <nav class="message-present">
+                    <ul>
+                        <li>
+                            <div class="div-present-1-sh">
+                                <p class="par-sh-1">Phase 1 : Foundation</p>
+                                <p class="par-sh-2">Fruitful Bough Productions is an e-commerce platform for reading, publishing, and creating books using modern technology. Who its for: Our platform is open to readers, writers, and publishers of all ages, from students
+                                    and youth to adults. What it delivers - Phase 1: The first phase provides the foundational tools for discovering reading, creating, and understanding books in a digital environment. To continue with the first step,
+                                    pls move to the signup page as a first time user to create an account and enjoy FB Unlimited.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh">
+                                <p class="par-sh-1">Phase 2 : Governing Laws + Company Details</p>
+                                <p class="par-sh-2"></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh">
+                                <p class="par-sh-1">Phase 3 : Users Accounts & Eligibility</p>
+                                <p class="par-sh-2">Eligibility: To use Fruitful Bough Platforms, you must be at least 13 years of age. If you are under 18, one must have permission from a parent or legal guardian to use the platform. By creating an account you confirm that
+                                    the information is accurate and complete. Account Registration: To access certain features such as publishing, purchasing, or saving books, you must create an account. One is responsible for maintaining the confidentiality
+                                    of one's account. Account Termination: You can delete your account at any point in time by sending a mail to this info: "fruitulbough26@gmail.com". Account will be terminated if voilated by any means.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh">
+                                <p class="par-sh-1">Phase 4 : Acceptable Use Policy</p>
+                                <p class="par-sh-2">This is the "house rules" section. it protects FB Users from abuse, piracy and illegal content for now since users can read AND publish books. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh">
+                                <p class="par-sh-1">Phase 5 : Acceptable Use Policy</p>
+                                <p class="par-sh-2">This is the "house rules" section. it protects FB Users from abuse, piracy and illegal content for now since users can read AND publish books. </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="shift-up-content"></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="cont-bottom-disp">
+                <img src="./icons/icons8-card-wallet-100.png " class="pol-img-3 ">
+                <p class="pol-par-30 ">Read Carefully before agreeing</p>
+                <button class="pol-but-1 ">I AGREE</button>
+            </div>
+        </div>
+        <div class="cont-two-display" style="display: none; ">
+            <div class="message-container">
+                <p class="par-dis-cont-one">Privacy policy</p>
+                <p class="par-dis-cont-two">Updated July 10/07/2026</p>
+            </div>
+        </div>
+        <div class="cont-three-display" style="display: none; ">
+            <p class="par-dis-cont-one">Fruitful Bough Details</p>
+        </div>
+        <div class="cont-four-display" style="display: none; ">
+            <p class="par-dis-cont-one">Cookies Details</p>
+        </div>
+        <div class="cont-five-display" style="display: none; ">
+            <p class="par-dis-cont-one">FB Guide</p>
+        </div>
+        <div class="cont-six-display" style="display: none; ">
+            <div class="div-main-cont">
+                <p class="par-pro-one">Create your FB account</p>
+                <p class="par-pro-two">Already have an account? <span class="sp-23021" onclick="window.location.href='./main.html';">Login</span></p>
+                <p class="par-pro-three">First Name</p>
+                <input type="text" class="ipt-pro-one" placeholder="Will">
+                <p class="par-pro-four">Last Name</p>
+                <input type="text" class="ipt-pro-two" placeholder="Smith">
+                <p class="par-pro-five">Email Address</p>
+                <input type="text" class="ipt-email" placeholder="willsmith1960@gmail.com">
+                <p class="par-pro-six">Password</p>
+                <input type="text" class="ipt-pass" placeholder="Willsm_009">
+                <p class="par-five-21-12"><span class="sp-one-21-12">_________________</span> or sign up with <span class="sp-two-21-12">_________________</span></p>
+                <div class="div-main-one">
+                    <div class="div-sub-one"></div>
+                    <div class="div-sub-two"></div>
+                    <div class="div-sub-three"></div>
+                </div>
+                <p class="pra-6">Creating an FB account means you agree with our</p>
+                <p class="pra-7"><span class="sp-700" onclick="DisShow1()">privacy policy</span> and <span class="sp-700">terms & conditions</span></p>
+                <input type="checkbox" class="ipt-check">
+                <button class="bnt-100">Create account</button>
+            </div>
+        </div>
+        <div class="cont-seven-display" style="display: none; ">
+            <div class="div_p2010 ">
+                <p class="pra_1024 ">About Us</p>
+            </div>
+            <div class="abo-div-1 "></div>
+            <div class="abo-div-2 "></div>
+            <div class="abo-div-3 "></div>
+        </div>
+    </div>
+    <style>
+        .cont-one-display-2,
+        .cont-two-display-3,
+        .cont-three-display-4,
+        .cont-four-display-5,
+        .cont-five-display-6,
+        .cont-six-display-7,
+        .cont-seven-display-8 {
+            width: 100%;
+            height: 100%;
+            background-color: #111111;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+        
+        .cont-seven-display-8 {
+            overflow-y: auto;
+        }
+        
+        .cont-seven-display-8::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 5px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .cont-seven-display-8:-webkit-scrollbar {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .cont-seven-display-8::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .cont-seven-display-8::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .cont-bottom-disp-2 {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 70px;
+            background-color: #111111;
+        }
+        
+        .message-present-12 {
+            position: absolute;
+            top: 135px;
+            left: -25px;
+        }
+        
+        .message-present-12 li {
+            list-style: none;
+        }
+        
+        .div-present-1-sh-12 {
+            width: 330px;
+            min-height: 30px;
+            height: auto;
+            background-color: transparent;
+            position: relative;
+        }
+    </style>
+    <div class="Phone-display-cont">
+        <div class="cont-one-display-2">
+            <div class="message-container ">
+                <p class="par-dis-cont-one " style="left: 15px; ">Terms of Service</p>
+                <p class="par-dis-cont-two " style="left: 20px; ">Updated July 10/07/2026</p>
+                <p class="par-dis-cont-three " style="left: 20px; ">Accepting all 20 steps in FB</p>
+                <nav class="message-present-12 ">
+                    <ul>
+                        <li>
+                            <div class="div-present-1-sh-12 ">
+                                <p class="par-sh-1 ">Phase 1 : Foundation</p>
+                                <p class="par-sh-2 ">Fruitful Bough Productions is an e-commerce platform for reading, publishing, and creating books using modern technology. Who its for: Our platform is open to readers, writers, and publishers of all ages, from students
+                                    and youth to adults. What it delivers - Phase 1: The first phase provides the foundational tools for discovering reading, creating, and understanding books in a digital environment. To continue with the first step,
+                                    pls move to the signup page as a first time user to create an account and enjoy FB Unlimited.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh-12 ">
+                                <p class="par-sh-1 ">Phase 2 : Governing Laws + Company Details</p>
+                                <p class="par-sh-2 "></p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh-12 ">
+                                <p class="par-sh-1 ">Phase 3 : Users Accounts & Eligibility</p>
+                                <p class="par-sh-2 ">Eligibility: To use Fruitful Bough Platforms, you must be at least 13 years of age. If you are under 18, one must have permission from a parent or legal guardian to use the platform. By creating an account you confirm that
+                                    the information is accurate and complete. Account Registration: To access certain features such as publishing, purchasing, or saving books, you must create an account. One is responsible for maintaining the confidentiality
+                                    of one's account. Account Termination: You can delete your account at any point in time by sending a mail to this info: "fruitulbough26@gmail.com ". Account will be terminated if voilated by any means.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh-12 ">
+                                <p class="par-sh-1 ">Phase 4 : Acceptable Use Policy</p>
+                                <p class="par-sh-2 ">This is the "house rules " section. it protects FB Users from abuse, piracy and illegal content for now since users can read AND publish books. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="div-present-1-sh-12 ">
+                                <p class="par-sh-1 ">Phase 5 : Acceptable Use Policy</p>
+                                <p class="par-sh-2 ">This is the "house rules " section. it protects FB Users from abuse, piracy and illegal content for now since users can read AND publish books. </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="shift-up-content "></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="cont-bottom-disp-2 ">
+                <img src="./icons/icons8-card-wallet-100.png " class="pol-img-3 " style=" zoom: 20%; top: 53%; left: 7%; ">
+                <p class="pol-par-30 " style=" font-size: 13px; left: 120px; top: 35%; ">Read Carefully before agreeing</p>
+                <button class="pol-but-1 " style=" width: 100px; height: 40px; right: -40px; font-size: 12px; ">I AGREE</button>
+            </div>
+        </div>
+        <div class="cont-two-display-3 " style="display: none; ">
+            <div class="message-container ">
+                <p class="par-dis-cont-one ">Privacy policy</p>
+            </div>
+        </div>
+        <div class="cont-three-display-4 " style="display: none; ">
+            <div class="message-container ">
+                <p class="par-dis-cont-one ">FB Informations</p>
+            </div>
+        </div>
+        <div class="cont-four-display-5 " style="display: none; ">
+            <div class="message-container ">
+                <p class="par-dis-cont-one ">Cookies Information</p>
+            </div>
+        </div>
+        <div class="cont-five-display-6 " style="display: none; ">
+            <div class="message-container ">
+                <p class="par-dis-cont-one ">Privacy policy</p>
+            </div>
+        </div>
+        <div class="cont-six-display-7 " style="display: none; ">
+            <div class="message-container ">
+                <div class="div-main-cont-123">
+                    <p class="par-pro-one">Create your FB account</p>
+                    <p class="par-pro-two">Already have an account? <span class="sp-23021" onclick="window.location.href='./main.html';">Login</span></p>
+                    <p class="par-pro-three">First Name</p>
+                    <input type="text" class="ipt-pro-one" placeholder="Will">
+                    <p class="par-pro-four">Last Name</p>
+                    <input type="text" class="ipt-pro-two" placeholder="Smith">
+                    <p class="par-pro-five">Email Address</p>
+                    <input type="text" class="ipt-email" style="  width: 292px;" placeholder="willsmith1960@gmail.com">
+                    <p class="par-pro-six">Password</p>
+                    <input type="text" class="ipt-pass" style="  width: 292px;" placeholder="Willsm_009">
+                    <p class="par-five-21-12"><span class="sp-one-21-12">_________________</span> or sign up with <span class="sp-two-21-12">_________________</span></p>
+                    <div class="div-main-one">
+                        <div class="div-sub-one"></div>
+                        <div class="div-sub-two"></div>
+                        <div class="div-sub-three"></div>
+                    </div>
+                    <p class="pra-6">Creating an FB account means you agree with our</p>
+                    <p class="pra-7"><span class="sp-700" onclick="DisShow1()">privacy policy</span> and <span class="sp-700">terms & conditions</span></p>
+                    <input type="checkbox" style="  left: 5%;" class="ipt-check">
+                    <button class="bnt-100">Create account</button>
+                </div>
+            </div>
+        </div>
+        <div class="cont-seven-display-8 " style="display: none; ">
+            <div class="message-container ">
+                <p class="par-dis-cont-one ">Privacy policy</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        // For moving aor switching containers 
+        // Get all nav-btn elements
+        const navBtns = document.querySelectorAll('.nav-btn');
+
+        // Add event listener to each nav-btn
+        navBtns.forEach(navBtn => {
+            navBtn.addEventListener('click', () => {
+                // Remove active class from all nav-btns
+                navBtns.forEach(btn => btn.classList.remove('active'));
+
+                // Add active class to clicked nav-btn
+                navBtn.classList.add('active');
+
+                // Get the target display element
+                const target = navBtn.dataset.target;
+                const displayElements = document.querySelectorAll('[class^="cont- "][class$="-display "]');
+                displayElements.forEach(element => {
+                    element.style.display = 'none';
+                });
+                const displayElement = document.querySelector(`.${target}`);
+                if (displayElement) {
+                    displayElement.style.display = 'block';
+                }
+            });
+        });
+    </script>
+    <script>
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        const screenWidth = window.matchMedia("(max-width: 900) ");
+        const isIphone = /iPhone/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
+        const desktopCont = document.querySelector('.Main-display-cont');
+        const mobileCont = document.querySelector('.Phone-display-cont');
+
+
+        function toggleSignupView() {
+            // Force mobile for Android/iPhone/Safari/iOS, otherwise use width
+            const isMobileDevice = isAndroid || isIphone || isIOS || isSafari;
+
+            if (isMobileDevice || window.innerWidth <= 800) {
+                desktopCont.style.display = 'none';
+                mobileCont.style.display = 'block';
+            } else {
+                desktopCont.style.display = 'block';
+                mobileCont.style.display = 'none';
+            }
+        }
+
+        // Run on load
+        toggleSignupView();
+
+        // Run on resize
+        window.addEventListener('resize', toggleSignupView);
+    </script>
+    <script src="./info.js "></script>
+</body>
+
+</html>
