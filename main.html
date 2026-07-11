@@ -450,7 +450,7 @@
                 <p class="par-first-nineteen6">with updates, so be sure to subscribe! Learn more at</p>
                 <p class="par-first-nineteen7">www.fruitfulbough.xyz</p>
 
-                <p class="par-first-nineteen8"><span class="sp-4032">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Cookies</span> |
+                <p class="par-first-nineteen8"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Cookies</span> |
                     <span class="sp-4044">FB-Info</span> <span class="sp-4045">|</span></p>
                 <p class="par-first-nineteen9">Create account</p>
                 <style>
@@ -461,7 +461,7 @@
                         top: 20px;
                     }
                 </style>
-                <p class="par-first-nineteen10"><img src="./icons/icons8-copyright-100.png" class="img-par-4202134">2025 Fruitful bough. All Rights Reserved.</p>
+                <p class="par-first-nineteen10"><img src="./icons/icons8-copyright-100.png" class="img-par-4202134">2026 Fruitful bough. All Rights Reserved.</p>
             </div>
 
             <p class="wrong-email-ipt-2" style="display: none;">Please input a correct email.</p>
@@ -644,7 +644,8 @@
                 font-family: "Cabri ", sans-serif;
             }
             
-            .sp-ooop {
+            .sp-ooop,
+            .sp-ooop-12 {
                 color: #ffc800;
                 font-size: 12px;
                 position: relative;
@@ -713,12 +714,14 @@
                 left: -20px;
             }
             
-            .sp-4043 {
+            .sp-4043,
+            .sp-4043-12 {
                 position: relative;
                 left: -10px;
             }
             
-            .sp-4044 {
+            .sp-4044,
+            .sp-4044-12 {
                 position: relative;
                 left: 10px;
             }
@@ -872,7 +875,7 @@
                     <p class="par-first-fourteen-14">email address to send you marketing informations, updates,</p>
                     <p class="par-first-fiveteen-15">special offers & other information about fruitful bough products.</p>
                     <p class="par-first-sixteen-16">You can unsubscribe at any time. For more information on how</p>
-                    <p class="par-first-seventeen-17">we handle your personal data, please see our <span class="sp-ooop">Privacy policy.</span></p>
+                    <p class="par-first-seventeen-17">we handle your personal data, please see our <span class="sp-ooop-12">Privacy policy.</span></p>
 
                     <p class="par-first-eightteen-18">Fruitful Bough is available in selected markets. Content varies</p>
                     <p class="par-first-eightteen2-19">by region and subject to change.</p>
@@ -894,9 +897,8 @@
 
                 </div>
                 <div class="last-cont">
-                    <p class="par-first-nineteen7-26"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043" onclick="window.location.href='Information.html';">Cookies</span> | <span class="sp-4044"
-                            onclick="window.location.href='Information.html';">FB-Info</span> <span class="sp-4045">|</span></p>
-                    <p class="par-first-nineteen8-27" onclick="window.location.href='Information.html';">Create account</p>
+                    <p class="par-first-nineteen7-26"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043-12">Cookies</span> | <span class="sp-4044-12">FB-Info</span> <span class="sp-4045">|</span></p>
+                    <p class="par-first-nineteen8-27">Create account</p>
                     <style>
                         .img-par-420213 {
                             zoom: 15%;
@@ -905,7 +907,7 @@
                             top: 20px;
                         }
                     </style>
-                    <p class="par-first-nineteen9-28"><img src="./icons/icons8-copyright-100.png" class="img-par-420213">2025 Fruitful bough. All Rights Reserved.</p>
+                    <p class="par-first-nineteen9-28"><img src="./icons/icons8-copyright-100.png" class="img-par-420213">2026 Fruitful bough. All Rights Reserved.</p>
 
                 </div>
             </div>
@@ -985,15 +987,79 @@
             .img-presenting {
                 zoom: 26%;
             }
+            
+            .div-load-par {
+                width: 200px;
+                height: 27px;
+                background-color: transparent;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .server-com {
+                font-size: 12px;
+                color: rgb(223, 223, 223);
+                font-family: "Cabri ", sans-serif;
+            }
+            /* optional blinking cursor effect */
+            
+            .sp-count-12::after {
+                content: '';
+                animation: blink 0.7s step-end infinite;
+            }
+            
+            @keyframes blink {
+                50% {
+                    opacity: 0;
+                }
+            }
         </style>
         <div class="loading-div-sh">
             <div class="load-container">
                 <div class="load-seq">
                     <img src="./icons/fb_logo-qqss.png" class="img-presenting"></div>
             </div>
+            <div class="div-load-par">
+                <p class="server-com"><span class="print-server">Spooling server</span><span class="sp-count-12">......</span></p>
+            </div>
+            <script>
+                // Start server loop 
+                document.addEventListener('DOMContentLoaded', () => {
+                    const el = document.querySelector('.sp-count-12');
+
+                    const message = "......."; // 
+
+                    const typeSpeed = 80; // ms per character while typing
+                    const pauseAfterTyping = 1300; // ms to pause once fully typed
+                    const pauseBeforeRestart = 700; // ms pause on empty before typing again
+
+                    let charIndex = 0;
+
+                    function typeLoop() {
+                        if (charIndex <= message.length) {
+                            el.textContent = message.slice(0, charIndex);
+                            charIndex++;
+                            setTimeout(typeLoop, typeSpeed);
+                        } else {
+                            // finished typing, pause, then clear and restart from the first character
+                            setTimeout(() => {
+                                el.textContent = '';
+                                charIndex = 0;
+                                setTimeout(typeLoop, pauseBeforeRestart);
+                            }, pauseAfterTyping);
+                        }
+                    }
+
+                    typeLoop();
+                });
+            </script>
         </div>
     </div>
-
     <script>
         // For first page email loading
 
@@ -1134,7 +1200,7 @@
         // Run on resize
         window.addEventListener('resize', toggleSignupView);
     </script>
-    <script src="./Frontend/info_two.js"></script>
+    <script src="./info.js"></script>
 </body>
 
 </html>
