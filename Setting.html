@@ -20,7 +20,7 @@
         
         .main-container {
             width: 340px;
-            height: 450px;
+            height: 405px;
             background-color: transparent;
             top: 50%;
             transform: translate(-50%, -50%);
@@ -39,8 +39,8 @@
         
         .inside-container {
             width: 100%;
-            height: 245px;
-            background-color: transparent;
+            height: 205px;
+            background-color: #0f0f0f;
             top: 70px;
             position: absolute;
             left: 0;
@@ -50,7 +50,7 @@
         .div-skip {
             width: 96%;
             height: 42px;
-            top: 83%;
+            top: 81%;
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: white;
@@ -71,108 +71,22 @@
             color: rgb(119, 119, 119);
         }
         
-        .first-div-set {
-            width: 100%;
-            height: 60px;
-            transform: translate(-50%, -50%);
-            background-color: transparent;
-            top: 50%;
-            position: absolute;
+        .div-display-sh {
+            width: 95%;
+            height: 46px;
+            background-color: #1a1a1a;
             left: 50%;
-        }
-        
-        .first-div-set-12,
-        .first-div-set-13,
-        .first-div-set-14 {
-            width: 33.3%;
-            height: 100%;
-            background-color: transparent;
-            top: 0;
             position: absolute;
-            border-radius: 10px;
-            left: 0;
-        }
-        
-        .first-div-set-13 {
-            background-color: transparent;
-            position: absolute;
-            left: 33.3%;
-        }
-        
-        .first-div-set-14 {
-            background-color: transparent;
-            position: absolute;
-            left: 66.6%;
-        }
-        
-        .first-div-set-12.active,
-        .first-div-set-13.active,
-        .first-div-set-14.active {
-            background-color: rgb(24, 24, 24);
-        }
-        
-        .nav-res-12,
-        .nav-res-13,
-        .nav-res-14 {
-            position: absolute;
-            top: -16px;
-            left: -1px;
-        }
-        
-        .nav-res-12 li,
-        .nav-res-13 li,
-        .nav-res-14 li {
-            padding-bottom: 0.01px;
-            list-style: none;
-        }
-        
-        .pars-sh,
-        .pars-sh-1,
-        .pars-sh-2,
-        .pars-sh-3,
-        .pars-sh-4,
-        .pars-sh-5,
-        .pars-sh-6,
-        .pars-sh-7 {
-            font-size: 25px;
-            font-family: Cambria, "Times New Roman", serif;
-            color: white;
+            top: 50px;
+            display: flex;
+            justify-content: center;
             font-family: "Cabri ", sans-serif;
-        }
-        
-        .form-res-1,
-        .form-res-2,
-        .form-res-3 {
-            width: 33.3%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: transparent;
-        }
-        
-        .form-res-2 {
-            left: 33.3%;
-            background-color: transparent;
-        }
-        
-        .form-res-3 {
-            left: 66.6%;
-            background-color: transparent;
-        }
-        
-        .form-res-12,
-        .form-res-13,
-        .form-res-14 {
-            width: 90%;
-            height: 85%;
-            background-color: transparent;
-            border: 1px solid white;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 20px;
+            color: white;
             transform: translate(-50%, -50%);
-            top: 50%;
-            position: absolute;
-            left: 50%;
-            border-radius: 5px;
         }
     </style>
     <style>
@@ -281,6 +195,196 @@
                 opacity: 0;
             }
         }
+        
+        .ipt-year {
+            width: 100px;
+            height: 35px;
+            background-color: #1a1a1a;
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .ipt-date {
+            width: 100px;
+            height: 35px;
+            background-color: #1a1a1a;
+            position: absolute;
+            top: 100px;
+            right: 10px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .ipt-year:focus,
+        .ipt-date:focus {
+            outline: none;
+            border: 1px solid white;
+        }
+        
+        .div-month {
+            width: 95%;
+            height: 35px;
+            background-color: #1a1a1a;
+            position: absolute;
+            left: 50%;
+            top: 180px;
+            border: 1px solid rgb(59, 59, 59);
+            border-radius: 10px;
+            transform: translate(-50%, -50%);
+        }
+        
+        .div-row-12 {
+            width: 43px;
+            height: 20px;
+            background-color: #1a1a1a;
+            position: absolute;
+            top: 88px;
+            font-size: 11px;
+            color: rgb(255, 166, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Cabri ", sans-serif;
+            left: 25px;
+            border-radius: 10px;
+            transition: top 0.15s ease;
+        }
+        
+        .div-row-12.active {
+            top: 78px;
+            background-color: #0e0e0e;
+            left: 20px;
+            /* adjust this to wherever the label should float up to */
+        }
+        
+        .div-row-13 {
+            width: 43px;
+            height: 20px;
+            background-color: #1a1a1a;
+            position: absolute;
+            top: 88px;
+            font-size: 11px;
+            color: rgb(255, 166, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-family: "Cabri ", sans-serif;
+            right: 60px;
+        }
+        
+        .div-row-13.active {
+            top: 78px;
+            background-color: #0e0e0e;
+            right: 65px;
+            /* adjust this to wherever the label should float up to */
+        }
+        
+        .div-row-14 {
+            width: 43px;
+            height: 20px;
+            background-color: transparent;
+            position: absolute;
+            top: 152px;
+            font-size: 11px;
+            color: rgb(255, 166, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Cabri ", sans-serif;
+            left: 25px;
+        }
+        
+        .div-row-14.active {
+            background-color: #0e0e0e;
+            left: 20px;
+            top: 141px;
+            /* adjust this to wherever the label should float up to */
+        }
+        
+        .par-uiuiu {
+            position: relative;
+            text-align: center;
+            color: rgb(255, 166, 0);
+            font-size: 12px;
+            top: -5px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .div-month-container {
+            width: 95%;
+            height: 155px;
+            background-color: #1a1a1a;
+            position: absolute;
+            left: 50%;
+            display: none;
+            z-index: 1;
+            top: 276px;
+            transform: translate(-50%, -50%);
+            overflow-y: auto;
+        }
+        
+        .div-month-container::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 3px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .div-month-container::-webkit-scrollbar {
+            background-color: transparent;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .div-month-container::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .div-month-container::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .month-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        
+        .month-list li {
+            width: 100%;
+            height: 35px;
+            display: flex;
+            border: 1px solid rgb(94, 93, 93);
+            align-items: center;
+            color: rgb(255, 166, 0);
+            font-family: "Cabri ", sans-serif;
+            font-size: 13px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        .par-sh-shh {
+            font-family: "Cabri ", sans-serif;
+            font-size: 13px;
+            color: rgb(143, 143, 143);
+            position: absolute;
+            left: 10px;
+            top: -2px;
+        }
     </style>
     <div class="loading-div-sh">
         <div class="load-container">
@@ -324,785 +428,277 @@
     <div class="main-container">
         <p class="par-one-sh">SET BIRTHDAY</p>
         <div class="inside-container">
-            <div class="first-div-set-12 ">
-                <nav class="nav-res-12">
-                    <ul>
-                        <li>
-                            <p class="pars-sh-1" style="font-size: 10px;  color: rgb(59, 59, 59);">1920</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-2" style="font-size: 15px; position: relative; color: rgb(92, 92, 92); left:-4px;">1921</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-3" style="font-size: 18px; position:  relative; left:-7px;  color: rgb(187, 185, 185); ">1922</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-4 " style="position: relative; left:-15px;">1923</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-5 " style="font-size: 18px; position: relative; left:-7px;   color: rgb(187, 185, 185);">1924</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-6 " style="font-size: 15px; position: relative;  color: rgb(92, 92, 92); left:-4px; ">1925</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-7 " style="font-size: 10px;  color: rgb(59, 59, 59);">1926</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1927</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1928</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1929</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1930</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1931</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1932</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1933</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1934</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1935</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1936</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1937</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1938</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1939</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1940</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1941</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1942</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1943</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1944</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1945</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1946</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1947</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1948</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1950</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1951</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1952</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1953</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1954</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1955</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1956</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1957</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1958</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1959</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1960</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1961</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1962</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1963</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1964</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1965</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1966</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1967</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1968</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1969</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1970</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1971</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1972</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1973</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1974</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1975</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1976</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1977</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1978</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1979</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1980</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1981</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1982</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1983</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1984</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1985</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1986</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1987</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1988</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1989</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1990</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1991</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1992</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1993</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1994</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1995</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1996</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1997</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1998</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">1999</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2000</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2001</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2002</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2003</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2004</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2005</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2006</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2007</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2008</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2009</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2010</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2011</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2012</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2013</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2014</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2015</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2016</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2017</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2018</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">2019</p>
-                        </li>
-                        <li class="last-list">
-                            <p class="pars-sh " style="display: none;">0000</p>
-                        </li>
-                    </ul>
-                </nav>
+            <p class="par-uiuiu">Help AI - cynthia manage your details</p>
+            <div class="div-display-sh">
+                <p class=""><span class="date-par">00</span> <span class="month-par">January</span> <span class="year-par">2026</span></p>
             </div>
-            <div class="first-div-set-13 ">
-                <nav class="nav-res-13" style="  left: 5px;">
-                    <ul>
-                        <li>
-                            <p class="pars-sh-1" style="font-size: 10px;  color: rgb(59, 59, 59);">Oct</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-2" style="font-size: 15px; position: relative;  color: rgb(92, 92, 92); left:-4px;">Nov</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-3" style="font-size: 18px; position: relative; left:-7px;   color: rgb(187, 185, 185); ">Dec</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-4 " style="position: relative; left:-10px;">Jan</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-5 " style="font-size: 18px; position: relative; left:-7px;   color: rgb(187, 185, 185);">Feb</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-6 " style="font-size: 15px; position: relative;  color: rgb(92, 92, 92); left:-4px; ">Mar</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-7 " style="font-size: 10px;  color: rgb(59, 59, 59);">Apr</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh" style="display: none;">May</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Jun</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Jul</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Aug</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Sep</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Oct</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Nov</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Dec</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Jan</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">Feb</p>
-                        </li>
-                        <li class="last-list">
-                            <p class="pars-sh " style="display: none;">Mar</p>
-                        </li>
-                    </ul>
-                </nav>
+            <input class="ipt-year" placeholder="2004" maxlength="4" inputmode="numeric">
+            <input placeholder="17" class="ipt-date" maxlength="2" inputmode="numeric">
+            <div class="div-month">
+                <p class="par-sh-shh">December</p>
             </div>
-            <div class="first-div-set-14 ">
-                <nav class="nav-res-14" style="  left: 12px;">
-                    <ul>
-                        <li class="list-one">
-                            <p class="pars-sh-1" style="font-size: 10px;  color: rgb(59, 59, 59);">33</p>
-                        </li>
-                        <li class="list-two">
-                            <p class="pars-sh-2" style="font-size: 15px; position: relative;  color: rgb(92, 92, 92); left:-4px;">32</p>
-                        </li>
-                        <li class="list-three">
-                            <p class="pars-sh-3" style="font-size: 18px; position: relative; left:-7px;   color: rgb(187, 185, 185); ">31</p>
-                        </li>
-                        <li class="list-four">
-                            <p class="pars-sh-4 " style="position: relative; left:-10px;">01</p>
-                        </li>
-                        <li class="list-five">
-                            <p class="pars-sh-5 " style="font-size: 18px; position: relative; left:-5px;   color: rgb(187, 185, 185);">02</p>
-                        </li>
-                        <li class="list-one">
-                            <p class="pars-sh-6 " style="font-size: 15px; position: relative;  color: rgb(92, 92, 92); left:-3px; ">03</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh-7 " style="font-size: 10px;  color: rgb(59, 59, 59);">04</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">05</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">06</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">07</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">08</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">09</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">10</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">11</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">12</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">13</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">14</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">15</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">16</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">17</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">18</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">19</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">20</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">21</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">22</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">23</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">24</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">25</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">26</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">27</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">28</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">29</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">30</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">31</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">01</p>
-                        </li>
-                        <li>
-                            <p class="pars-sh " style="display: none;">02</p>
-                        </li>
-                        <li class="last-list">
-                            <p class="pars-sh " style="display: none;">03</p>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="div-row-12">Year</div>
+            <div class="div-row-13">Date</div>
+            <div class="div-row-14">Month</div>
+            <div class="div-month-container">
+                <ul class="month-list">
+                    <li>January</li>
+                    <li>February</li>
+                    <li>March</li>
+                    <li>April</li>
+                    <li>May</li>
+                    <li>June</li>
+                    <li>July</li>
+                    <li>August</li>
+                    <li>September</li>
+                    <li>October</li>
+                    <li>November</li>
+                    <li>December</li>
+                </ul>
             </div>
-            <div class="first-div-set">
-                <div class="form-res-1">
-                    <div class="form-res-12"></div>
-                </div>
-                <div class="form-res-2">
-                    <div class="form-res-13"></div>
-                </div>
-                <div class="form-res-3">
-                    <div class="form-res-14"></div>
-                </div>
-            </div>
-        </div>
-        <style>
-            .div-submit:hover,
-            .div-skip:hover {
-                background-color: rgb(59, 59, 59);
-            }
-            
-            .div-submit:hover {
-                color: white;
-            }
-            
-            .par-sh-21 {
-                color: red;
-                position: relative;
-                text-align: center;
-                top: 63%;
-                display: none;
-            }
-            
-            .sp-count-down {
-                font-family: "Cabri ", sans-serif;
-            }
-        </style>
-        <p class="par-sh-21">Pls Select Birthday or Skip</p>
-        <div class="div-submit ">SUBMIT</div>
-        <div class="div-skip ">Skip <span class="sp-count-down">(<span class="par-count">10</span>)</span>
-        </div>
-    </div>
-    <script>
-        //
-        document.addEventListener('DOMContentLoaded', () => {
-            const countEl = document.querySelector('.par-count');
-            const disappearEl = document.querySelector('.sp-count-down');
-            const ChnCol = document.querySelector('.div-skip');
-            const LoadSamp = document.querySelector('.loading-div-sh');
-            if (!countEl) return;
+            <script>
+                //
+                document.addEventListener('DOMContentLoaded', () => {
+                    const input = document.querySelector('.ipt-year');
+                    const label = document.querySelector('.div-row-12');
 
-            let count = parseInt(countEl.textContent, 10) || 10;
+                    if (!input || !label) return;
 
-            const timer = setInterval(() => {
-                count -= 1;
-                countEl.textContent = count;
+                    function activateLabel() {
+                        label.classList.add('active');
+                    }
 
-                if (count <= 0) {
-                    clearInterval(timer);
-                    // countdown finished — hook whatever should happen next in here
-                    if (disappearEl) {
-                        disappearEl.style.display = 'none';
-                        ChnCol.style.color = 'white';
-                        // this skip buton is clicked 
-                        ChnCol.addEventListener('click', () => {
-                            if (LoadSamp) {
-                                // show loading 
-                                LoadSamp.style.display = 'block';
-                                setTimeout(() => {
-                                    // after loading move to main page 
-                                    window.location.replace('./FruitfulBough.html');
-                                }, 6000);
+                    function deactivateLabel() {
+                        // only move the label back down if the input is empty
+                        if (input.value.trim() === '') {
+                            label.classList.remove('active');
+                        }
+                    }
+
+                    input.addEventListener('click', activateLabel);
+                    input.addEventListener('focus', activateLabel);
+                    input.addEventListener('blur', deactivateLabel);
+                });
+
+                // this is for the div second sequence 
+                document.addEventListener('DOMContentLoaded', () => {
+                    const input = document.querySelector('.ipt-date');
+                    const label = document.querySelector('.div-row-13');
+
+                    if (!input || !label) return;
+
+                    function activateLabel() {
+                        label.classList.add('active');
+                    }
+
+                    function deactivateLabel() {
+                        // only move the label back down if the input is empty
+                        if (input.value.trim() === '') {
+                            label.classList.remove('active');
+                        }
+                    }
+
+                    input.addEventListener('click', activateLabel);
+                    input.addEventListener('focus', activateLabel);
+                    input.addEventListener('blur', deactivateLabel);
+                });
+
+
+                // this is for the div second sequence
+                document.addEventListener('DOMContentLoaded', () => {
+                    const trigger = document.querySelector('.div-month');
+                    const label = document.querySelector('.div-row-14');
+                    const labelsh = document.querySelector('.div-month-container');
+
+                    if (!trigger || !label) return;
+
+                    function activateLabel() {
+                        label.classList.add('active');
+                        if (labelsh) {
+                            labelsh.style.display = 'block';
+                        }
+                    }
+
+                    function deactivateLabel() {
+                        // only move the label back down if the container has no content/selection
+                        if (trigger.textContent.trim() === '') {
+                            label.classList.remove('active');
+                            if (labelsh) {
+                                labelsh.style.display = 'none';
+                            }
+                        }
+                    }
+
+                    trigger.addEventListener('click', activateLabel);
+                    trigger.addEventListener('mouseenter', activateLabel);
+                    trigger.addEventListener('mouseleave', deactivateLabel);
+                });
+                document.addEventListener('DOMContentLoaded', () => {
+                    const labelsh = document.querySelector('.month-list');
+                    if (!labelsh) return;
+
+                    labelsh.addEventListener('click', () => {
+                        if (labelsh.style.display === 'none') {
+                            labelsh.style.display = 'block';
+                        }
+                    });
+                });
+                document.addEventListener('DOMContentLoaded', () => {
+                    const container = document.querySelector('.div-month-container');
+                    const list = document.querySelector('.month-list');
+                    const display = document.querySelector('.par-sh-shh');
+
+                    if (!list || !display || !container) return;
+
+                    list.addEventListener('click', (e) => {
+                        const clickedMonth = e.target.closest('li');
+                        if (!clickedMonth) return;
+
+                        display.textContent = clickedMonth.textContent;
+                        container.style.display = 'none';
+                    });
+                });
+                document.addEventListener('DOMContentLoaded', () => {
+                    const dateInput = document.querySelector('.ipt-date');
+                    const yearInput = document.querySelector('.ipt-year');
+
+                    const dateSpan = document.querySelector('.date-par');
+                    const monthSpan = document.querySelector('.month-par');
+                    const yearSpan = document.querySelector('.year-par');
+
+                    const container = document.querySelector('.div-month-container');
+                    const list = document.querySelector('.month-list');
+                    const display = document.querySelector('.par-sh-shh');
+
+                    // date input -> date-par
+                    if (dateInput && dateSpan) {
+                        dateInput.addEventListener('input', () => {
+                            dateSpan.textContent = dateInput.value;
+                        });
+                    }
+
+                    // year input -> year-par
+                    if (yearInput && yearSpan) {
+                        yearInput.addEventListener('input', () => {
+                            yearSpan.textContent = yearInput.value;
+                        });
+                    }
+
+                    // month list click -> par-sh-shh AND month-par, then hide dropdown
+                    if (list && display && container) {
+                        list.addEventListener('click', (e) => {
+                            const clickedMonth = e.target.closest('li');
+                            if (!clickedMonth) return;
+
+                            display.textContent = clickedMonth.textContent;
+                            if (monthSpan) {
+                                monthSpan.textContent = clickedMonth.textContent;
+                            }
+                            container.style.display = 'none';
+                        });
+                    }
+                });
+
+
+                //
+                document.addEventListener('DOMContentLoaded', () => {
+                    const yearInput = document.querySelector('.ipt-year');
+                    const dateInput = document.querySelector('.ipt-date');
+
+                    if (yearInput) {
+                        yearInput.addEventListener('input', () => {
+                            // strip anything that isn't a digit
+                            yearInput.value = yearInput.value.replace(/\D/g, '').slice(0, 4);
+                        });
+                    }
+
+                    if (dateInput) {
+                        dateInput.addEventListener('input', () => {
+                            let digitsOnly = dateInput.value.replace(/\D/g, '').slice(0, 2);
+
+                            // clamp to 31 max, but allow typing "3" before the second digit completes it to something like "35"
+                            if (digitsOnly !== '' && parseInt(digitsOnly, 10) > 31) {
+                                digitsOnly = '31';
                             }
 
+                            dateInput.value = digitsOnly;
                         });
                     }
-                }
-            }, 1000);
-        });
-    </script>
-    <script>
-        //
-        document.addEventListener('DOMContentLoaded', () => {
-            const triggerToTarget = {
-                'form-res-12': 'first-div-set-12',
-                'form-res-13': 'first-div-set-13',
-                'form-res-14': 'first-div-set-14',
-            };
-
-            let lastClicked = 'first-div-set-12'; // default active state
-
-            function activate(targetClass) {
-                document.querySelectorAll('.first-div-set-12, .first-div-set-13, .first-div-set-14')
-                    .forEach(el => el.classList.remove('active'));
-
-                const targetEl = document.querySelector('.' + targetClass);
-                if (targetEl) {
-                    targetEl.classList.add('active');
-                }
-            }
-
-            // set the initial state on load
-            activate(lastClicked);
-
-            Object.entries(triggerToTarget).forEach(([triggerClass, targetClass]) => {
-                const trigger = document.querySelector('.' + triggerClass);
-                if (!trigger) return;
-
-                // any click updates the "remembered" state and activates immediately
-                trigger.addEventListener('click', () => {
-                    lastClicked = targetClass;
-                    activate(targetClass);
                 });
-
-                if (triggerClass === 'form-res-13' || triggerClass === 'form-res-14') {
-                    // hover previews the active state...
-                    trigger.addEventListener('mouseenter', () => activate(targetClass));
-                    // ...but reverts to the last clicked one once you leave
-                    trigger.addEventListener('mouseleave', () => activate(lastClicked));
+            </script>
+            <style>
+                .div-submit:hover,
+                .div-skip:hover {
+                    background-color: rgb(59, 59, 59);
                 }
+                
+                .div-submit:hover {
+                    color: white;
+                }
+                
+                .par-sh-21 {
+                    color: red;
+                    position: relative;
+                    text-align: center;
+                    top: 63%;
+                    display: none;
+                }
+                
+                .sp-count-down {
+                    font-family: "Cabri ", sans-serif;
+                }
+            </style>
+        </div>
+        <p class="par-sh-21">Pls Select Birthday or Skip</p>
+        <div class="div-submit ">SUBMIT</div>
+        <div class="div-skip ">Skip <span class="sp-count-down">(<span class="par-count"></span>)</span>
+        </div>
+        <script>
+            //
+            document.addEventListener('DOMContentLoaded', () => {
+                const countEl = document.querySelector('.par-count');
+                const disappearEl = document.querySelector('.sp-count-down');
+                const ChnCol = document.querySelector('.div-skip');
+                const LoadSamp = document.querySelector('.loading-div-sh');
+                if (!countEl) return;
+
+                let count = parseInt(countEl.textContent, 40) || 40;
+
+                const timer = setInterval(() => {
+                    count -= 1;
+                    countEl.textContent = count;
+
+                    if (count <= 0) {
+                        clearInterval(timer);
+                        // countdown finished — hook whatever should happen next in here
+                        if (disappearEl) {
+                            disappearEl.style.display = 'none';
+                            ChnCol.style.color = 'white';
+                            // this skip buton is clicked 
+                            ChnCol.addEventListener('click', () => {
+                                if (LoadSamp) {
+                                    // show loading 
+                                    LoadSamp.style.display = 'block';
+                                    setTimeout(() => {
+                                        // after loading move to main page 
+                                        window.location.replace('./FruitfulBough.html');
+                                    }, 5000);
+                                }
+
+                            });
+                        }
+                    }
+                }, 4000);
             });
-        });
-    </script>
-    <script>
-        //
-        document.addEventListener('DOMContentLoaded', () => {
-            (function() {
-                const trigger = document.querySelector('.form-res-12');
-                const nav = document.querySelector('.nav-res-12');
+        </script>
+        <script>
+            //
+        </script>
+        <script>
+            //
+        </script>
 
-                // read every year in document order, from pars-sh-1 down through the plain pars-sh items
-                const items = Array.from(nav.querySelectorAll('li p'));
-                const sequence = items.map(p => p.textContent.trim());
-
-                const slotEls = [1, 2, 3, 4, 5, 6, 7].map(n => nav.querySelector('.pars-sh-' + n));
-                const maxStart = sequence.length - 7; // clamps automatically at the last-list item
-                let startIndex = 0;
-                let isScrolling = false; // debounce so rapid wheel events can't desync the slots
-
-                function render() {
-                    slotEls.forEach((el, i) => {
-                        el.textContent = sequence[startIndex + i];
-                    });
-                }
-                render();
-
-                function step(direction) {
-                    if (isScrolling) return;
-
-                    if (direction > 0 && startIndex < maxStart) {
-                        startIndex++;
-                    } else if (direction < 0 && startIndex > 0) {
-                        startIndex--;
-                    } else {
-                        return; // already at the first or last item — do nothing
-                    }
-
-                    isScrolling = true;
-                    slotEls.forEach(el => {
-                        el.style.transition = 'opacity 0.15s ease';
-                        el.style.opacity = '0';
-                    });
-
-                    setTimeout(() => {
-                        render();
-                        slotEls.forEach(el => {
-                            el.style.opacity = '1';
-                        });
-                        setTimeout(() => {
-                            isScrolling = false;
-                        }, 150);
-                    }, 150);
-                }
-
-                trigger.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    step(e.deltaY > 0 ? 1 : -1);
-                }, {
-                    passive: false
-                });
-            })();
-        });
-
-
-        document.addEventListener('DOMContentLoaded', () => {
-            (function() {
-                const trigger = document.querySelector('.form-res-13');
-                const nav = document.querySelector('.nav-res-13');
-
-                // read every year in document order, from pars-sh-1 down through the plain pars-sh items
-                const items = Array.from(nav.querySelectorAll('li p'));
-                const sequence = items.map(p => p.textContent.trim());
-
-                const slotEls = [1, 2, 3, 4, 5, 6, 7].map(n => nav.querySelector('.pars-sh-' + n));
-                const maxStart = sequence.length - 7; // clamps automatically at the last-list item
-                let startIndex = 0;
-                let isScrolling = false; // debounce so rapid wheel events can't desync the slots
-
-                function render() {
-                    slotEls.forEach((el, i) => {
-                        el.textContent = sequence[startIndex + i];
-                    });
-                }
-                render();
-
-                function step(direction) {
-                    if (isScrolling) return;
-
-                    if (direction > 0 && startIndex < maxStart) {
-                        startIndex++;
-                    } else if (direction < 0 && startIndex > 0) {
-                        startIndex--;
-                    } else {
-                        return; // already at the first or last item — do nothing
-                    }
-
-                    isScrolling = true;
-                    slotEls.forEach(el => {
-                        el.style.transition = 'opacity 0.15s ease';
-                        el.style.opacity = '0';
-                    });
-
-                    setTimeout(() => {
-                        render();
-                        slotEls.forEach(el => {
-                            el.style.opacity = '1';
-                        });
-                        setTimeout(() => {
-                            isScrolling = false;
-                        }, 150);
-                    }, 150);
-                }
-
-                trigger.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    step(e.deltaY > 0 ? 1 : -1);
-                }, {
-                    passive: false
-                });
-            })();
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-            (function() {
-                const trigger = document.querySelector('.form-res-14');
-                const nav = document.querySelector('.nav-res-14');
-
-                // read every year in document order, from pars-sh-1 down through the plain pars-sh items
-                const items = Array.from(nav.querySelectorAll('li p'));
-                const sequence = items.map(p => p.textContent.trim());
-
-                const slotEls = [1, 2, 3, 4, 5, 6, 7].map(n => nav.querySelector('.pars-sh-' + n));
-                const maxStart = sequence.length - 7; // clamps automatically at the last-list item
-                let startIndex = 0;
-                let isScrolling = false; // debounce so rapid wheel events can't desync the slots
-
-                function render() {
-                    slotEls.forEach((el, i) => {
-                        el.textContent = sequence[startIndex + i];
-                    });
-                }
-                render();
-
-                function step(direction) {
-                    if (isScrolling) return;
-
-                    if (direction > 0 && startIndex < maxStart) {
-                        startIndex++;
-                    } else if (direction < 0 && startIndex > 0) {
-                        startIndex--;
-                    } else {
-                        return; // already at the first or last item — do nothing
-                    }
-
-                    isScrolling = true;
-                    slotEls.forEach(el => {
-                        el.style.transition = 'opacity 0.15s ease';
-                        el.style.opacity = '0';
-                    });
-
-                    setTimeout(() => {
-                        render();
-                        slotEls.forEach(el => {
-                            el.style.opacity = '1';
-                        });
-                        setTimeout(() => {
-                            isScrolling = false;
-                        }, 150);
-                    }, 150);
-                }
-
-                trigger.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    step(e.deltaY > 0 ? 1 : -1);
-                }, {
-                    passive: false
-                });
-            })();
-        });
-    </script>
+    </div>
 </body>
 
 </html>
