@@ -390,6 +390,7 @@
         .par-pro-three,
         .par-pro-four,
         .par-pro-five,
+        .par-pro-five-12,
         .par-pro-six {
             position: absolute;
             font-family: "Cabri ", sans-serif;
@@ -403,7 +404,8 @@
             left: 22px;
         }
         
-        .par-pro-five {
+        .par-pro-five,
+        .par-pro-five-12 {
             top: 200px;
             left: 22px;
         }
@@ -413,8 +415,11 @@
         }
         
         .ipt-pro-one,
+        .ipt-pro-one-12,
         .ipt-email,
-        .ipt-pass {
+        .ipt-email-12,
+        .ipt-pass,
+        .ipt-pass-12 {
             width: 130px;
             background-color: transparent;
             height: 30px;
@@ -482,7 +487,8 @@
             right: 5px;
         }
         
-        .ipt-pro-two {
+        .ipt-pro-two,
+        .ipt-pro-two-12 {
             width: 130px;
             background-color: transparent;
             height: 30px;
@@ -496,37 +502,81 @@
         }
         
         .ipt-pro-one:focus,
+        .ipt-pro-one-12:focus,
         .ipt-pro-two:focus,
+        .ipt-pro-two-12:focus,
         .ipt-email:focus,
-        .ipt-pass:focus {
+        .ipt-email-12:focus,
+        .ipt-pass:focus,
+        .ipt-pass-12:focus {
             outline: none;
             border: none;
             border: 0.5px solid #ffc800;
         }
         
         .ipt-pro-one::placeholder,
+        .ipt-pro-one-12::placeholder,
         .ipt-pro-two::placeholder,
-        .ipt-email:placeholder,
-        .ipt-pass:placeholder {
+        .ipt-pro-two-12::placeholder,
+        .ipt-email::placeholder,
+        .ipt-email-12::placeholder,
+        .ipt-pass::placeholder,
+        .ipt-pass-12::placeholder {
             color: rgb(80, 80, 80);
             font-family: "Cabri ", sans-serif;
             font-weight: bold;
             font-size: 12.5px;
         }
         
-        .ipt-email {
+        .ipt-email,
+        .ipt-email-12 {
             width: 330px;
             top: 235px;
         }
         
         .par-pro-six {
-            top: 285px;
+            top: 280px;
             left: 22px;
         }
         
-        .ipt-pass {
+        .ipt-pass,
+        .ipt-pass-12 {
             width: 330px;
-            top: 320px;
+            top: 315px;
+        }
+        
+        .par-wrong-input,
+        .par-wrong-input-12,
+        .par-valid-self {
+            font-size: 13px;
+            position: absolute;
+            font-family: "Cabri ", sans-serif;
+            color: red;
+            left: 50%;
+            display: none;
+            top: 355px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .par-valid-self,
+        .par-valid-self-12 {
+            font-size: 13px;
+            position: absolute;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(0, 255, 0);
+            left: 50%;
+            display: none;
+            top: 350px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .img-verified {
+            zoom: 17%;
+            position: relative;
+            top: 25px;
+            left: 5px;
         }
         
         .nav-100 {
@@ -578,7 +628,8 @@
             text-decoration: underline;
         }
         
-        .ipt-check {
+        .ipt-check,
+        .ipt-check-12 {
             position: absolute;
             top: 482px;
             left: 8%;
@@ -595,7 +646,8 @@
             transition: all 0.2s ease;
         }
         
-        .ipt-check:checked {
+        .ipt-check:checked,
+        .ipt-check-12:checked {
             background-color: orange;
             /* checked bg */
             border-color: orange;
@@ -603,7 +655,8 @@
                 hecked border */
         }
         
-        .ipt-check:checked::after {
+        .ipt-check:checked::after,
+        .ipt-check-12:checked::after {
             content: '';
             position: absolute;
             left: 6px;
@@ -616,12 +669,14 @@
             transform: rotate(45deg);
         }
         
-        .ipt-check:focus {
+        .ipt-check:focus,
+        .ipt-check-12:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.3);
         }
         
-        .bnt-100 {
+        .bnt-100,
+        .bnt-100-12 {
             position: absolute;
             top: 535px;
             width: 285px;
@@ -633,6 +688,12 @@
             border-radius: 5px;
             font-weight: bold;
             color: #7a7a7a;
+        }
+        
+        .bnt-100:hover,
+        .bnt-100-12:hover {
+            background-color: rgb(82, 82, 82);
+            color: black;
         }
         
         .Main-display-cont,
@@ -654,6 +715,153 @@
             }
         }
     </style>
+    <style>
+        .loading-div-sh {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.70);
+            z-index: 50;
+            display: none;
+        }
+        
+        .load-container {
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+        }
+        
+        .load-seq {
+            width: 49px;
+            height: 49px;
+            top: 50%;
+            left: 50%;
+            position: relative;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid transparent;
+            animation: drawBox 3s linear infinite;
+        }
+        /* Animation draws from 0 to 100% in building  */
+        
+        @keyframes drawBox {
+            0% {
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            25% {
+                border-top-color: orange;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            50% {
+                border-top-color: orange;
+                border-right-color: orange;
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+            }
+            75% {
+                border-top-color: orange;
+                border-right-color: orange;
+                border-bottom-color: orange;
+                border-left-color: transparent;
+            }
+            100% {
+                border-top-color: orange;
+                border-right-color: orange;
+                border-bottom-color: orange;
+                border-left-color: orange;
+            }
+        }
+        
+        .img-presenting {
+            zoom: 26%;
+        }
+        
+        .div-load-par {
+            width: 200px;
+            height: 27px;
+            background-color: transparent;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .server-com {
+            font-size: 12px;
+            color: rgb(223, 223, 223);
+            font-family: "Cabri ", sans-serif;
+        }
+        /* optional blinking cursor effect */
+        
+        .sp-count-12::after {
+            content: '';
+            animation: blink 0.7s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <div class="loading-div-sh">
+        <div class="load-container">
+            <div class="load-seq">
+                <img src="./icons/fb_logo-qqss.png" class="img-presenting"></div>
+        </div>
+        <div class="div-load-par">
+            <p class="server-com"><span class="print-server">Creating account</span><span class="sp-count-12">......</span></p>
+        </div>
+        <script>
+            // Start server loop 
+            document.addEventListener('DOMContentLoaded', () => {
+                const el = document.querySelector('.sp-count-12');
+
+                const message = "......."; // 
+
+                const typeSpeed = 80; // ms per character while typing
+                const pauseAfterTyping = 1300; // ms to pause once fully typed
+                const pauseBeforeRestart = 700; // ms pause on empty before typing again
+
+                let charIndex = 0;
+
+                function typeLoop() {
+                    if (charIndex <= message.length) {
+                        el.textContent = message.slice(0, charIndex);
+                        charIndex++;
+                        setTimeout(typeLoop, typeSpeed);
+                    } else {
+                        // finished typing, pause, then clear and restart from the first character
+                        setTimeout(() => {
+                            el.textContent = '';
+                            charIndex = 0;
+                            setTimeout(typeLoop, pauseBeforeRestart);
+                        }, pauseAfterTyping);
+                    }
+                }
+
+                typeLoop();
+            });
+        </script>
+    </div>
     <div class="Main-display-cont">
         <div class="cont-one">
             <div class="cont-one-123 nav-btn active" data-target="cont-one-display">
@@ -815,6 +1023,8 @@
                 <input type="text" class="ipt-email" placeholder="willsmith1960@gmail.com">
                 <p class="par-pro-six">Password</p>
                 <input type="text" class="ipt-pass" placeholder="Willsm_009">
+                <p class="par-wrong-input">Pls input details</p>
+                <p class="par-valid-self">Account created - Pls login <img src="./icons/iconsssshshhs8-correct-100.png" class="img-verified"></p>
                 <p class="par-five-21-12"><span class="sp-one-21-12">_________________</span> or sign up with <span class="sp-two-21-12">_________________</span></p>
                 <div class="div-main-one">
                     <div class="div-sub-one"></div>
@@ -990,13 +1200,15 @@
                     <p class="par-pro-one">Create your FB account</p>
                     <p class="par-pro-two">Already have an account? <span class="sp-23021" onclick="window.location.href='./main.html';">Login</span></p>
                     <p class="par-pro-three">First Name</p>
-                    <input type="text" class="ipt-pro-one" placeholder="Will">
+                    <input type="text" class="ipt-pro-one-12" placeholder="Will">
                     <p class="par-pro-four">Last Name</p>
-                    <input type="text" class="ipt-pro-two" placeholder="Smith">
-                    <p class="par-pro-five">Email Address</p>
-                    <input type="text" class="ipt-email" style="  width: 292px;" placeholder="willsmith1960@gmail.com">
+                    <input type="text" class="ipt-pro-two-12" placeholder="Smith">
+                    <p class="par-pro-five-12">Email Address</p>
+                    <input type="text" class="ipt-email-12" style="  width: 292px;" placeholder="willsmith1960@gmail.com">
                     <p class="par-pro-six">Password</p>
-                    <input type="text" class="ipt-pass" style="  width: 292px;" placeholder="Willsm_009">
+                    <input type="text" class="ipt-pass-12" style="  width: 292px;" placeholder="Willsm@1234+">
+                    <p class="par-wrong-input-12">Pls input details</p>
+                    <p class="par-valid-self-12">Account created - Pls login <img src="./icons/iconsssshshhs8-correct-100.png" class="img-verified"></p>
                     <p class="par-five-21-12"><span class="sp-one-21-12">_________________</span> or sign up with <span class="sp-two-21-12">_________________</span></p>
                     <div class="div-main-one">
                         <div class="div-sub-one"></div>
@@ -1005,8 +1217,9 @@
                     </div>
                     <p class="pra-6">Creating an FB account means you agree with our</p>
                     <p class="pra-7"><span class="sp-700" onclick="DisShow1()">privacy policy</span> and <span class="sp-700">terms & conditions</span></p>
-                    <input type="checkbox" style="  left: 5%;" class="ipt-check">
-                    <button class="bnt-100">Create account</button>
+                    <input type="checkbox" style="  left: 5%;" class="ipt-check-12">
+                    <button class="bnt-100-12">Create account</button>
+
                 </div>
             </div>
         </div>
@@ -1074,6 +1287,7 @@
         window.addEventListener('resize', toggleSignupView);
     </script>
     <script src="./info.js "></script>
+    <script src="./accountOpsPort.js "></script>
 </body>
 
 </html>
