@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 if (ChnServerMessage) {
                     ChnServerMessage.textContent = 'Connection started';
-                    fetch('http://15.237.219.118:5000/login', {
+                    fetch('https://api.fruitfulbough.xyz/login', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'
