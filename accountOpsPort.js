@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // wait 15 seconds, then check if this email already exists
             setTimeout(() => {
-                fetch('http://15.237.219.118:5000/validate-credentials', {
+                fetch('https://api.fruitfulbough.xyz/validate-credentials', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(SignupData)
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
 
                         // email is available — proceed to actually create the account
-                        fetch('http://15.237.219.118:5000/create-account', {
+                        fetch('https://api.fruitfulbough.xyz/create-account', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify(SignupData)
@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // wait 15 seconds, then check if this email already exists
             setTimeout(() => {
-                fetch('http://15.237.219.118:5000/validate-credentials', {
+                fetch('https://api.fruitfulbough.xyz/validate-credentials', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(SignupData)
@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
 
                         // email is available — proceed to actually create the account
-                        fetch('http://15.237.219.118:5000/create-account', {
+                        fetch('https://api.fruitfulbough.xyz/create-account', {
                                 method: 'POST',
                                 headers: { 'Content-Type': 'application/json' },
                                 body: JSON.stringify(SignupData)
