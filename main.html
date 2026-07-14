@@ -284,9 +284,9 @@
         .wrong-email-ipt-2 {
             position: relative;
             text-align: center;
-            top: -455px;
+            top: 115px;
             color: red;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
             font-family: "Cabri ", sans-serif;
         }
@@ -380,18 +380,17 @@
             <p class="par-first-two">ICONIC BOOKS.</p>
             <p class="par-first-three">A TREASURE TROVE</p>
             <p class="par-first-four">OF TALES.</p>
-            <p class="par-first-five">Fruitful bough, haven of Nigerian bestsellers,</p>
+            <p class="par-first-five">Fruitful bough, haven of All bestsellers,</p>
             <p class="par-first-six">tales, and beloved brands, launching soon!</p>
             <p class="par-first-seven">Prepare for phenomenal originals, exclusive</p>
             <p class="par-first-eight">releases, top-notch reads, and an unforgettable</p>
             <p class="par-first-nine">shopping experience at our flagship STORE!</p>
             <p class="par-first-ten">______________________________________________________</p>
             <p class="par-first-eleven">Share your email in order to stay up-to-date on</p>
-            <p class="par-first-twelve">Fruitful bought news</p>
+            <p class="par-first-twelve">Fruitful bough news</p>
             <input type="email" class="ipt-first-12" placeholder="Enter Email">
-            <input type="email" class="ipt-first-12-156" placeholder="Enter Email">
+            <input type="password" class="ipt-first-12-156" placeholder="Enter Password">
             <button class="but-first-12">SUBMIT</button>
-
             <script>
                 // this is for first phase sequence
                 document.addEventListener('DOMContentLoaded', () => {
@@ -825,14 +824,14 @@
                     <p class="par-first-two-2">ICONIC BOOKS.</p>
                     <p class="par-first-three-3">A TREASURE TROVE</p>
                     <p class="par-first-four-4">OF TALES.</p>
-                    <p class="par-first-five-5">Fruitful bough, haven of Nigerian bestsellers,</p>
+                    <p class="par-first-five-5">Fruitful bough, haven of All bestsellers,</p>
                     <p class="par-first-six-6">tales, and beloved brands, launching soon!</p>
                     <p class="par-first-seven-7">Prepare for phenomenal originals, exclusive</p>
                     <p class="par-first-eight-8">releases, top-notch reads, and unforgettable</p>
                     <p class="par-first-nine-9">shopping experience at our flagship STORE!</p>
                     <p class="par-first-ten-10">______________________________________________________</p>
                     <p class="par-first-eleven-11">Share your email in order to stay up-to-date on</p>
-                    <p class="par-first-twelve-12">Fruitful bought news</p>
+                    <p class="par-first-twelve-12">Fruitful bough news</p>
                 </div>
                 <input type="email" class="ipt-first" placeholder="Enter Email">
                 <input type="password" class="ipt-first-156" placeholder="Enter Password">
@@ -1025,7 +1024,7 @@
                     <img src="./icons/fb_logo-qqss.png" class="img-presenting"></div>
             </div>
             <div class="div-load-par">
-                <p class="server-com"><span class="print-server">Spooling server</span><span class="sp-count-12">......</span></p>
+                <p class="server-com"><span class="print-server">Connection started</span><span class="sp-count-12">......</span></p>
             </div>
             <script>
                 // Start server loop 
@@ -1062,83 +1061,6 @@
     </div>
     <script>
         // For first page email loading
-
-        const Subbutton = document.querySelector('.but-first');
-        const SubbuttonTwo = document.querySelector('.but-first-12');
-        const ColEmail = document.querySelector('.ipt-first');
-        const ShowLod = document.querySelector('.loading-div-sh');
-        const WrongEmailTwo = document.querySelector('.wrong-email-ipt-2');
-        const WrongEmail = document.querySelector('.wrong-email');
-        const NotSaved = document.querySelector('.not-saved');
-        const RemoveUI = document.querySelector('.Signing-cont');
-        const ChangeOne = document.querySelector('.test-par-5');
-        const ChangeTwo = document.querySelector('.sp-t22');
-
-        Subbutton.addEventListener('click', () => {
-            const EmailValue = ColEmail.value.trim();
-            const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-            if (!EmailRegex.test(EmailValue)) {
-                // Show message if email wrong
-                WrongEmail.style.display = 'block';
-                ShowLod.style.display = 'none'; // Hide loader
-            } else {
-                // Email is correct show loader
-                WrongEmail.style.display = 'none';
-                ShowLod.style.display = 'block';
-                // Fetch the email and save the records
-                fetch('http://localhost:5000/save-email', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            email: EmailValue
-                        })
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log(data); // Handle response from the server
-                        if (data.message) {
-                            // Email saved successfully
-                            console.log('Email saved successfully!');
-                            updateElements(ColEmail);
-
-                        } else {
-                            // Error saving the email
-                            console.error('Error saving the email:', data.error);
-                            // code to show error to the user
-                            NotSaved.style.display = 'block';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
-            }
-        });
-
-        function updateElements(element) {
-            if (!element || !element.value) return '';
-            const text = element.value;
-            const regex = /@\S+$/;
-            const name = text.replace(regex, '');
-            const words = name.split(' ');
-            const firstName = words[0];
-            fetch('http://localhost:5000/save-info-one', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: firstName
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data.message);
-                    window.location.replace('./index.html');
-                })
-                .catch(error => console.error(error));
-        }
     </script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1201,6 +1123,7 @@
         window.addEventListener('resize', toggleSignupView);
     </script>
     <script src="./info.js"></script>
+    <script src="./port.js"></script>
 </body>
 
 </html>
