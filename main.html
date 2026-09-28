@@ -3,364 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruitful Bough - For Learning and Exploring Educational Mindset and Ideas...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <title>Fruitful Bough Productions - Platform for Advertising Fruitful Bough Products</title>
 </head>
-
 
 <body>
     <style>
-        .Signing-cont {
-            width: 100%;
-            height: 100%;
+        body {
             background-color: black;
-            bottom: 0;
-            position: fixed;
-            left: 0;
-            z-index: 500;
-            background-image: _;
-            background-size: cover;
-            background-position: center;
+            padding-bottom: 5000px;
         }
         
-        .Signing-cont2 {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.60);
-            top: 0;
-            position: absolute;
-            left: 0;
-            overflow-y: auto;
-        }
-        
-        .Signing-cont2::-webkit-scrollbar {
-            display: noe;
-            /* hide scrollbar on Chrome, Safari, and Opera */
-            width: 6px;
-            /* width of the scrollbar */
-            height: 100%;
-            /* height of the scrollbar (for horizontal scrollbars) */
-        }
-        
-        .Signing-cont2::-webkit-scrollbar {
-            background-color: transparent;
-            /* color of the track */
-            border-radius: 10px;
-        }
-        
-        .Signing-cont2::-webkit-scrollbar-thumb {
-            background: #ffc800;
-            /* color of the scrollbar thumb */
-            border-radius: 10px;
-        }
-        
-        .Signing-cont2::-webkit-scrollbar-thumb:hover {
-            background: #ffc800;
-            /* color of the scrollbar thumb on hover */
-        }
-        
-        .first-img {
-            zoom: 70%;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            top: 55px;
-        }
-        
-        .first-img2 {
-            zoom: 95%;
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 90px;
-            left: 50%;
-        }
-        
-        .par-first-one,
-        .par-first-two,
-        .par-first-three,
-        .par-first-four {
-            position: relative;
-            text-align: center;
-            top: 90px;
-            color: white;
-            font-size: 27.5px;
-            font-weight: 800;
-            font-family: "Cabri ", sans-serif;
-        }
-        
-        .par-first-two {
-            top: 55px;
-        }
-        
-        .par-first-three {
-            top: 20px;
-        }
-        
-        .par-first-four {
-            top: -15px;
-        }
-        
-        .par-first-five,
-        .par-first-six,
-        .par-first-seven,
-        .par-first-eight,
-        .par-first-nine {
-            position: relative;
-            text-align: center;
-            top: -25px;
-            color: white;
-            font-size: 15.5px;
-            font-family: "Cabri ", sans-serif;
-        }
-        
-        .par-first-six {
-            top: -35px;
-        }
-        
-        .par-first-seven {
-            top: -45px;
-        }
-        
-        .par-first-eight {
-            top: -55px;
-        }
-        
-        .par-first-nine {
-            top: -65px;
-        }
-        
-        .par-first-ten {
-            position: relative;
-            text-align: center;
-            color: rgba(56, 56, 56, 0.6);
-            font-size: 11.5px;
-            font-family: "Cabri ", sans-serif;
-            top: -55px;
-        }
-        
-        .par-first-eleven,
-        .par-first-twelve,
-        .par-first-thirteen,
-        .par-first-fourteen,
-        .par-first-fiveteen,
-        .par-first-sixteen,
-        .par-first-seventeen,
-        .par-first-seventeen2,
-        .par-first-eightteen,
-        .par-first-eightteen2,
-        .par-first-nineteen,
-        .par-first-nineteen2,
-        .par-first-nineteen3,
-        .par-first-nineteen4,
-        .par-first-nineteen5,
-        .par-first-nineteen6,
-        .par-first-nineteen7 {
-            position: relative;
-            top: -35px;
-            text-align: center;
-            color: white;
-            font-size: 13px;
-            font-family: "Cabri ", sans-serif;
-        }
-        
-        .par-first-twelve {
-            top: -40px;
-        }
-        
-        .par-first-thirteen {
-            top: 5px;
-        }
-        
-        .par-first-fourteen {
-            top: 0px;
-        }
-        
-        .par-first-fiveteen {
-            top: -5px;
-        }
-        
-        .par-first-sixteen {
-            top: -10px;
-        }
-        
-        .par-first-seventeen {
-            top: -15px;
-        }
-        
-        .par-first-seventeen2 {
-            top: -20px;
-        }
-        
-        .par-first-eightteen {
-            top: -10px;
-        }
-        
-        .par-first-eightteen2 {
-            top: -15px;
-        }
-        
-        .par-first-nineteen {
-            top: -5px;
-        }
-        
-        .par-first-nineteen2 {
-            top: -10px;
-        }
-        
-        .par-first-nineteen3 {
-            top: -15px;
-        }
-        
-        .par-first-nineteen4 {
-            top: -20px;
-        }
-        
-        .par-first-nineteen5 {
-            top: -25px;
-        }
-        
-        .par-first-nineteen6 {
-            top: -30px;
-        }
-        
-        .par-first-nineteen7 {
-            top: -35px;
-        }
-        
-        .ipt-first-12,
-        .ipt-first-12-156 {
-            width: 300px;
-            height: 50px;
-            background-color: white;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: none;
-            padding-left: 10px;
-            font-size: 13px;
-            border-radius: 5px;
-        }
-        
-        .ipt-first-12-156 {
-            top: 585px;
-            display: none;
-        }
-        
-        .ipt-first-12:focus,
-        .ipt-first-12-156:focus {
-            outline: none;
-            border: none;
-        }
-        
-        .but-first-12 {
-            width: 310.5px;
-            height: 40px;
-            background-color: black;
-            position: absolute;
-            top: 635px;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12px;
-            border-radius: 5px;
-            display: none;
-            border: none;
-            color: white;
-        }
-        
-        .but-first-12:hover,
-        .but-first:hover {
-            background-color: rgb(26, 26, 26);
-        }
-        
-        .lod-img-10 {
-            top: 3850px;
-            zoom: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: absolute;
-        }
-        
-        .wrong-email-ipt-2 {
-            position: relative;
-            text-align: center;
-            top: 115px;
-            color: red;
-            font-size: 16px;
-            font-weight: bold;
-            font-family: "Cabri ", sans-serif;
-        }
-        
-        .sp-ooop {
-            color: #ffc800;
-            font-size: 12px;
-            position: relative;
-            left: 10px;
-        }
-        
-        .par-first-nineteen8,
-        .par-first-nineteen9,
-        .par-first-nineteen10 {
-            position: relative;
-            top: -15px;
-            text-align: center;
-            color: white;
-            font-size: 15px;
-            font-family: "Cabri ", sans-serif;
-        }
-        
-        .par-first-nineteen9 {
-            top: -10px;
-        }
-        
-        .par-first-nineteen10 {
-            top: -12px;
-        }
-        
-        .sp-4032 {
-            position: relative;
-            left: -25px;
-        }
-        
-        .sp-4033 {
-            position: relative;
-            left: -20px;
-        }
-        
-        .sp-4043 {
-            position: relative;
-            left: -10px;
-        }
-        
-        .sp-4044 {
-            position: relative;
-            left: 10px;
-        }
-        
-        .sp-4045 {
-            position: relative;
-            left: 20px;
-        }
-        /* Hide both by default */
-        
-        .div-content-t12 {
-            width: 355px;
-            height: 545px;
-            position: absolute;
-            top: 935px;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            background-color: transparent;
-        }
-        
-        .Signing-cont2,
+        .Signing-cont,
         .Phone-Signing-cont {
             display: none;
         }
         /* Above 800px: show desktop version */
         
+        @media only screen and (max-width: 980px) {
+            @supports (-webkit-touch-callout: none) {
+                /*---- only matches for IOS safari---*/
+                .Phone-display-cont {
+                    display: block;
+                    aspect-ratio: 9/16;
+                    /*---- Phone portrait ---*/
+                }
+                .Main-display-cont {
+                    display: none;
+                }
+            }
+        }
+        
         @media (min-width: 801px) {
-            .Signing-cont2 {
+            .Signing-cont {
                 display: block;
             }
         }
@@ -371,727 +47,745 @@
                 display: block;
             }
         }
+        
+        .div-head-set {
+            width: 100%;
+            height: 60px;
+            background-color: #000000;
+            top: 0;
+            left: 0;
+            z-index: 50;
+            position: fixed;
+        }
+        
+        .div-img-12 {
+            width: 35px;
+            height: 35px;
+            background-color: transparent;
+            top: 49.5%;
+            left: 32px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .div-par-12 {
+            width: 175px;
+            height: 35px;
+            background-color: transparent;
+            top: 48%;
+            left: 137px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .img-tet-22 {
+            zoom: 14%;
+            position: relative;
+        }
+        
+        .par-text-12 {
+            position: relative;
+            color: rgb(255, 196, 4);
+            font-size: 28px;
+            font-family: "Cabri ", sans-serif;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .div-nav-bar {
+            width: 420px;
+            height: 35px;
+            background-color: transparent;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        
+        .nav-828-229 {
+            position: absolute;
+            top: -13.5px;
+            left: -35px;
+        }
+        
+        .nav-828-229 li {
+            list-style: none;
+            padding-left: 15px;
+            display: inline-block;
+        }
+        
+        .div-828-919 {
+            width: 75px;
+            height: 30px;
+            background-color: transparent;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+            border-radius: 10px;
+            color: rgb(121, 93, 3);
+        }
+        
+        .div-sign-up {
+            width: 80px;
+            height: 34px;
+            background-color: transparent;
+            top: 50%;
+            right: 157px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            font-size: 14px;
+            color: rgb(121, 93, 3);
+            font-family: "Cabri ", sans-serif;
+            border: 1px solid rgb(15, 15, 15);
+        }
+        
+        .start-seq {
+            width: 145px;
+            height: 35px;
+            background-color: #111111;
+            top: 50%;
+            right: -40px;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            color: rgb(255, 196, 4);
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+        
+        .div-main-phase-1,
+        .div-main-phase-2,
+        .div-main-phase-3,
+        .div-main-phase-4 {
+            top: 0;
+            background-color: #000000;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            display: none;
+            height: 3000px;
+        }
+        
+        .div-main-phase-1.active,
+        .div-main-phase-2.active,
+        .div-main-phase-3.active,
+        .div-main-phase-4.active {
+            display: block;
+        }
+        
+        .par-8282-191 {
+            position: relative;
+            top: 1225px;
+            font-size: 14px;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(121, 93, 3);
+        }
+        
+        .div-9228-199 {
+            width: 115px;
+            height: 30px;
+            top: 1850px;
+            left: 50%;
+            background-color: transparent;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 196, 4);
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+            border-radius: 10px;
+        }
+        
+        .div-mes-1,
+        .div-mes-2,
+        .div-mes-3,
+        .div-mes-4 {
+            width: 25%;
+            height: 100%;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .div-mes-2 {
+            left: 25%;
+        }
+        
+        .div-mes-3 {
+            left: 50%;
+        }
+        
+        .div-mes-4 {
+            left: 75%;
+        }
+        
+        .img-818-91 {
+            zoom: 16%;
+            position: relative;
+        }
+        
+        .sp-929-11 {
+            position: relative;
+            top: -3px;
+            color: rgb(117, 83, 2);
+            left: 7px;
+        }
+        
+        .par-828-91 {
+            position: relative;
+            top: 1685px;
+            font-size: 14px;
+            text-align: center;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(121, 93, 3);
+        }
+        
+        .par-828-91-28-11 {
+            position: absolute;
+            top: 2120px;
+            font-size: 23px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(255, 196, 4);
+            left: 60px;
+        }
+        
+        .par-828-91-88-91 {
+            position: absolute;
+            top: 2175px;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(121, 93, 3);
+            left: 61.5px;
+        }
+        
+        .div-9190-112 {
+            width: 42%;
+            height: 500px;
+            background-color: transparent;
+            border-radius: 35px;
+            position: absolute;
+            top: 2130px;
+            border-right: 1px solid rgb(10, 10, 10);
+            border-left: 1px solid rgb(10, 10, 10);
+            overflow: hidden;
+            right: 90px;
+        }
+        
+        .div-9190-112-677 {
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 35px;
+            border-top-right-radius: 35px;
+            height: 14%;
+            position: absolute;
+            background-color: #080808;
+        }
+        
+        .div-2929-191 {
+            width: 60%;
+            height: 450px;
+            background-color: red;
+            position: absolute;
+            overflow: hidden;
+            top: 1505px;
+            border-radius: 60px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .div-one-14 {
+            width: 145px;
+            height: 29px;
+            background-color: transparent;
+            top: 160px;
+            left: 125px;
+            font-size: 13px;
+            font-family: "Cabri ", sans-serif;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            color: rgb(121, 93, 3);
+            border-radius: 20px;
+            border: 1px solid rgb(27, 27, 27);
+        }
+        
+        .par-8728-181 {
+            position: absolute;
+            top: 153px;
+            font-size: 55px;
+            left: 55px;
+            font-weight: normal;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(255, 196, 4);
+        }
+        
+        .par-8728-181-232 {
+            position: relative;
+            top: 1793px;
+            font-size: 50px;
+            text-align: center;
+            font-weight: normal;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(255, 196, 4);
+        }
+        
+        .par-228288-22 {
+            position: absolute;
+            top: 325px;
+            font-size: 14px;
+            left: 60px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(121, 93, 3);
+        }
+        
+        .enter-one-12 {
+            width: 190px;
+            height: 40px;
+            background-color: rgb(202, 133, 4);
+            top: 425px;
+            position: absolute;
+            left: 60px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .div-presnt-ui {
+            width: 90.5%;
+            height: 650px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 840px;
+            left: 50%;
+            overflow: hidden;
+            border-radius: 50px;
+            background-color: transparent;
+        }
+        
+        .div-new-message-board {
+            width: 90.5%;
+            height: 280px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 2840px;
+            left: 50%;
+            overflow: hidden;
+            background-color: transparent;
+        }
+        
+        .div-presnt-ui-12 {
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+            height: 10%;
+            position: absolute;
+            background-color: #080808;
+        }
+        
+        .div-presnt-ui-13 {
+            width: 1300px;
+            top: 10%;
+            border: none;
+            left: 0;
+            height: 90%;
+            position: absolute;
+            background-color: rgb(0, 0, 0, 0.3);
+        }
+        
+        .div-presnt-ui-22,
+        .div-presnt-ui-23 {
+            width: 100%;
+            top: 14%;
+            border: none;
+            left: 0;
+            height: 86%;
+            position: absolute;
+            background-color: transparent;
+        }
+        
+        .div-presnt-ui-22 {
+            height: 600px;
+        }
+        
+        .div-presnt-ui-23 {
+            background-color: rgb(0, 0, 0, 0.4);
+        }
+        
+        .div-presnt-ui-14 {
+            top: 10%;
+            height: 90%;
+            width: 100%;
+            border: none;
+            left: 0;
+            position: absolute;
+            background-color: rgb(0, 0, 0, 0.3);
+        }
+        
+        .div-link-name {
+            width: 340px;
+            height: 30px;
+            background-color: #111111;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .par-82277-11 {
+            font-size: 14px;
+            color: rgb(121, 93, 3);
+            font-family: "Cabri ", sans-serif;
+        }
+        
+        .sp-828-92 {
+            position: relative;
+            left: -10px;
+        }
+        
+        .img-188-19 {
+            zoom: 12%;
+            left: 55px;
+            position: relative;
+        }
+        
+        .img-922-91 {
+            zoom: 13%;
+            position: relative;
+        }
+        
+        .par-626-22 {
+            position: relative;
+            top: -6.5px;
+            left: 10px;
+        }
+        
+        .div-enter-151 {
+            width: 25px;
+            height: 25px;
+            background-color: #111111;
+            top: 50%;
+            right: -10px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+        
+        .nav-0-121-21 {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .div-2929-191-882 {
+            width: 100%;
+            height: 90px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            /* White with 50% opacity */
+            backdrop-filter: blur(5px);
+            /* Blur the background */
+        }
+        
+        .nav-0-121-21 li {
+            list-style: none;
+            padding-left: 1px;
+            display: inline-block;
+        }
+        
+        .div-seq-2013 {
+            width: 13px;
+            height: 13px;
+            background-color: rgb(48, 48, 48);
+            position: relative;
+            border-radius: 50px;
+        }
+        
+        .bg-video {
+            width: 100%;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            border-radius: 20px;
+        }
+        
+        .par-92901-193 {
+            position: absolute;
+            top: 2305px;
+            font-size: 15px;
+            left: 60px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(248, 191, 2);
+        }
+        
+        .par-92901-193-771 {
+            position: absolute;
+            top: 20px;
+            font-size: 16px;
+            left: _px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(248, 191, 2);
+        }
+        
+        .img-19191-21 {
+            zoom: 20%;
+            position: relative;
+            top: 20px;
+        }
+        
+        .sp-992-11 {
+            position: relative;
+            left: 12px;
+        }
+        
+        .div-828-919.active {
+            color: rgb(255, 196, 4);
+            background-color: #111111;
+        }
+        /* new */
+        
+        div[id^="tag-"][data-active="true"] {
+            color: rgb(255, 196, 4);
+            background-color: #111111;
+        }
+        
+        .div-828-919:hover {
+            background-color: rgb(37, 37, 37);
+            cursor: pointer;
+        }
     </style>
-    <div class="Signing-cont">
-        <div class="Signing-cont2">
-            <img src="./icons/fb_logo-2.png" class="first-img">
-            <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img2">
-            <p class="par-first-one">UNIGUE STORIES.</p>
-            <p class="par-first-two">ICONIC BOOKS.</p>
-            <p class="par-first-three">A TREASURE TROVE</p>
-            <p class="par-first-four">OF TALES.</p>
-            <p class="par-first-five">Fruitful bough, haven of All bestsellers,</p>
-            <p class="par-first-six">tales, and beloved brands, launching soon!</p>
-            <p class="par-first-seven">Prepare for phenomenal originals, exclusive</p>
-            <p class="par-first-eight">releases, top-notch reads, and an unforgettable</p>
-            <p class="par-first-nine">shopping experience at our flagship STORE!</p>
-            <p class="par-first-ten">______________________________________________________</p>
-            <p class="par-first-eleven">Share your email in order to stay up-to-date on</p>
-            <p class="par-first-twelve">Fruitful bough news</p>
-            <input type="email" class="ipt-first-12" placeholder="Enter Email">
-            <input type="password" class="ipt-first-12-156" placeholder="Enter Password">
-            <button class="but-first-12">SUBMIT</button>
-            <script>
-                // this is for first phase sequence
-                document.addEventListener('DOMContentLoaded', () => {
-                    const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    <main class="Signing-cont">
+        <div class="div-head-set">
+            <div class="div-img-12"><img src="./icons/FB-Stream-Photoroom.png" class="img-tet-22"></div>
+            <div class="div-par-12">
+                <p class="par-text-12">Fruitful Bough</p>
+            </div>
+            <div class="div-nav-bar">
+                <nav class="nav-828-229">
+                    <ul>
+                        <li>
+                            <div class="div-828-919 active" data-tab="div-main-phase-1">Explore</div>
+                        </li>
+                        <li>
+                            <div class="div-828-919" data-tab="div-main-phase-2">Pricing</div>
+                        </li>
+                        <li>
+                            <div class="div-828-919 " data-tab="div-main-phase-3" style="width: 95px; ">Extensions</div>
+                        </li>
+                        <li>
+                            <div class="div-828-919" data-tab="div-main-phase-4" style="width: 95px; ">Updates</div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="div-sign-up">Sign up</div>
+            <div class="start-seq">Get Started Now</div>
+        </div>
+        <div class="div-main-phase-1 active">
+            <div class="div-one-14">
+                <p class="par-626-22">Cynthia Overview</p>
+                <div class="div-enter-151"><img src="./icons/forwasssssrd.png" class="img-922-91"></div>
+            </div>
+            <h1 class="par-8728-181">Protect your platfrom</h1>
+            <h2 class="par-8728-181" style="top: 210px;   left: 59px;">with AI agents</h2>
+            <p class="par-228288-22">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+            <p class="par-228288-22" style=" top: 358px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+            <div class="enter-one-12"><span class="sp-828-92">Get started with FB</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
+            <div class="div-presnt-ui">
+                <div class="div-presnt-ui-12">
+                    <nav class="nav-0-121-21">
+                        <ul>
+                            <li>
+                                <div class="div-seq-2013"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="div-link-name">
+                        <p class="par-82277-11">https://fruitfulbough.xyz/fruitfulbough</p>
+                    </div>
+                </div>
+                <iframe class="div-presnt-ui-13" src="./FruitfulBough.html"></iframe>
+                <div class="div-presnt-ui-14"></div>
+            </div>
+            <p class="par-8282-191">Trusted by 3.4 million users</p>
+            <div class="div-2929-191">
+                <video autoplay voice muted loop playsinline class="bg-video">
+                        <source src="./Pictures/" type="video/mp4"></source>
+                </video>
+                <div class="div-2929-191-882"></div>
+            </div>
+            <div class="div-9228-199">
+                <p clas="par-1818-19"><img src="./icons/icons8-environment-care-100.png" class="img-818-91"><span class="sp-929-11">WebGo</span></p>
+            </div>
+            <h3 class="par-8728-181-232">Verify access requests before</h3>
+            <h4 class="par-8728-181-232" style="  top: 1730px;">they leave the device</h4>
+            <p class="par-828-91">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+            <p class="par-828-91" style=" top: 1683px;">we will like to say thank you for all your support of how</p>
+            <p class="par-828-91-28-11">Product manager for innovation</p>
+            <p class="par-828-91-88-91">we will like to say thank you</p>
+            <p class="par-828-91-88-91" style="  top: 2205px;">we will like to say thank you</p>
+            <p class="par-828-91-88-91" style="  top: 2235px;">we will like to say thank you</p>
+            <div class="div-9190-112">
+                <div class="div-9190-112-677">
+                    <nav class="nav-0-121-21" style="top: 9px; left: 0px;">
+                        <ul>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="div-link-name" style="width: 190px; height: 25px;">
+                        <p class="par-82277-11" style="font-size: 13px;">https://webgo.ai</p>
+                    </div>
+                </div>
+                <iframe class="div-presnt-ui-22" src="../WebGo/Webgo.html"></iframe>
+                <div class="div-presnt-ui-23"></div>
+            </div>
+            <p class="par-92901-193"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+            <p class="par-92901-193" style=" left: 290px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+            <p class="par-92901-193" style="  top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+            <p class="par-92901-193" style=" left: 290px; top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+            <div class="enter-one-12" style="width: 170px; top: 2460px;"><span class="sp-828-92">Visit webgo today</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
+            <div class="div-new-message-board">
+                <div class="div-mes-1">
+                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                </div>
+                <div class="div-mes-2">
+                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                </div>
+                <div class="div-mes-3">
+                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                </div>
+                <div class="div-mes-4">
+                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                </div>
+            </div>
+            <div class="div-9228-199" style=" width: 150px; height: 30px; top: 3020px; background-color: transparent;">
+                <p clas="par-1818-19"><img src="./icons/Fruitful_Stream_logo-removebg-preview.png" class="img-818-91"><span class="sp-929-11">Fruitful Stream</span></p>
+            </div>
+            <h5 class="par-8728-181-232" style=" top: 2583px;">Issue tracking you'll</h5>
+            <h6 class="par-8728-181-232" style=" top: 2470px;">Issue tracking you'll</h6>
+            <p class="par-828-91" style="top: 2370px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+            <p class="par-828-91" style=" top: 2370px;">we will like to say thank you for all your support of how</p>
+            <div class="div-9190-112" style=" height: 680px; background-color:transparent; top: 3300px; width: 390px; left:70px;">
+                <div class="div-9190-112-677" style=" height: 9%;">
+                    <nav class="nav-0-121-21" style="top: 6.2px; left: -15px;">
+                        <ul>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                            <li>
+                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="div-link-name" style="width: 190px; height: 25px;">
+                        <p class="par-82277-11" style="font-size: 13px;">https://fruitfulstream.com</p>
+                    </div>
+                </div>
+                <iframe class="div-presnt-ui-22" style=" height: 91%; top:9%;" src="./features/FruitfilStream.html"></iframe>
+                <div class="div-presnt-ui-23" style=" height: 91%; top:9%;"></div>
+            </div>
+        </div>
+        <div class="div-main-phase-2"></div>
+        <div class="div-main-phase-3"></div>
+        <div class="div-main-phase-4"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const DivSets = document.querySelectorAll('.nav-828-229 div[data-tab]');
 
-                    const emailInput = document.querySelector('.ipt-first-12');
-                    const nextInput = document.querySelector('.ipt-first-12-156');
-                    const nextButton = document.querySelector('.but-first-12');
+                const containers = {
+                    'div-main-phase-1': document.querySelector('.div-main-phase-1'),
+                    'div-main-phase-2': document.querySelector('.div-main-phase-2'),
+                    'div-main-phase-3': document.querySelector('.div-main-phase-3'),
+                    'div-main-phase-4': document.querySelector('.div-main-phase-4')
+                };
 
-                    function checkEmail() {
-                        const isValid = EmailRegex.test(emailInput.value.trim());
+                function setActive(btn) {
+                    const tabName = btn.dataset.tab;
+                    if (!containers[tabName]) return;
 
-                        if (isValid) {
-                            emailInput.style.top = '530px';
-                            nextInput.style.display = 'block';
-                            nextButton.style.display = 'block';
-                        } else {
-                            // revert back if the field becomes empty/invalid again
-                            emailInput.style.top = '580px';
-                            nextInput.style.display = 'none';
-                            nextButton.style.display = 'none';
-                        }
-                    }
+                    // 1. Remove active from all buttons
+                    DivSets.forEach(b => b.classList.remove('active'));
+                    // 2. Remove active from all containers
+                    Object.values(containers).forEach(c => c && c.classList.remove('active'));
 
-                    // checks on every keystroke, paste, autofill, etc.
-                    emailInput.addEventListener('input', checkEmail);
+                    // 3. Add active to clicked button + matching container
+                    btn.classList.add('active');
+                    containers[tabName].classList.add('active');
+                    console.log('Clicked:', btn.textContent);
+                }
 
-                    // run once on load too, in case the field is pre-filled (e.g. browser autofill)
-                    checkEmail();
+                DivSets.forEach(ButtonSet => {
+                    ButtonSet.addEventListener('click', () => setActive(ButtonSet));
                 });
-            </script>
-            <!--
-               Site developed by StromKiller003
-               Private-consulting: https://wa.me/9078730956
-               Year: 2025
-               Brand Name: FPH - Freelance Programming Hub
-               Encoded Sequence/ID : c-young003
-            -->
-
-            <div class="div-content-t12">
-                <p class="par-first-thirteen">By clicking the submit button, you agree to fruitful bough</p>
-                <p class="par-first-fourteen">using email address to send you marketing informations,</p>
-                <p class="par-first-fiveteen">updates, special offers and other information about</p>
-                <p class="par-first-sixteen">fruitful bough products. You can unsubscribe at any time.</p>
-                <p class="par-first-seventeen">For more information on how we handle your personal data,</p>
-                <p class="par-first-seventeen2">please see our <span class="sp-ooop">Privacy policy.</span></p>
-
-                <p class="par-first-eightteen">Fruitful Bough is available in selected markets. Content</p>
-                <p class="par-first-eightteen2">varies by region and subject to change.</p>
-
-                <p class="par-first-nineteen">*Fruitful bough productions is still getting things ready</p>
-                <p class="par-first-nineteen2">- we're tweaking a few things behind the scenes. You</p>
-                <p class="par-first-nineteen3">can still sign up or register if you'd like, and we'd</p>
-                <p class="par-first-nineteen4">love for you to check out other pages while we finalize</p>
-                <p class="par-first-nineteen5">things. Thanks for your patience! We'll keep you posted</p>
-                <p class="par-first-nineteen6">with updates, so be sure to subscribe! Learn more at</p>
-                <p class="par-first-nineteen7">www.fruitfulbough.xyz</p>
-
-                <p class="par-first-nineteen8"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043">Cookies</span> |
-                    <span class="sp-4044">FB-Info</span> <span class="sp-4045">|</span></p>
-                <p class="par-first-nineteen9">Create account</p>
-                <style>
-                    .img-par-4202134 {
-                        zoom: 20%;
-                        position: relative;
-                        right: 7px;
-                        top: 20px;
-                    }
-                </style>
-                <p class="par-first-nineteen10"><img src="./icons/icons8-copyright-100.png" class="img-par-4202134">2026 Fruitful bough. All Rights Reserved.</p>
-            </div>
-
-            <p class="wrong-email-ipt-2" style="display: none;">Please input a correct email.</p>
-        </div>
-        <style>
-            .first-img-21 {
-                zoom: 70%;
-                position: absolute;
-                top: 0px;
-                left: 5px;
-            }
-            
-            .first-img212 {
-                zoom: 95%;
-                position: absolute;
-                top: 65px;
-                left: -20px;
-            }
-            
-            .par-first-one-1,
-            .par-first-two-2,
-            .par-first-three-3,
-            .par-first-four-4 {
-                position: absolute;
-                top: -25px;
-                left: 10px;
-                color: white;
-                font-size: 27.5px;
-                font-weight: 800;
-                font-family: "Cabri ", sans-serif;
-            }
-            
-            .par-first-two-2 {
-                left: 11px;
-                top: 7px;
-            }
-            
-            .par-first-three-3 {
-                top: 40px;
-            }
-            
-            .par-first-four-4 {
-                top: 73px;
-            }
-            
-            .par-first-five-5,
-            .par-first-six-6,
-            .par-first-seven-7,
-            .par-first-eight-8,
-            .par-first-nine-9 {
-                position: absolute;
-                top: 135px;
-                left: 10px;
-                color: white;
-                font-size: 15.5px;
-                font-family: "Cabri ", sans-serif;
-            }
-            
-            .par-first-six-6 {
-                top: 155px;
-            }
-            
-            .par-first-seven-7 {
-                top: 175px;
-            }
-            
-            .par-first-eight-8 {
-                top: 195px;
-            }
-            
-            .par-first-nine-9 {
-                top: 215px;
-            }
-            
-            .par-first-ten-10 {
-                position: relative;
-                text-align: center;
-                color: rgba(119, 94, 5, 0.534);
-                font-size: 11.5px;
-                font-family: "Cabri ", sans-serif;
-                top: 255px;
-            }
-            
-            .par-first-eleven-11,
-            .par-first-twelve-12,
-            .par-first-thirteen-13,
-            .par-first-fourteen-14,
-            .par-first-fiveteen-15,
-            .par-first-sixteen-16,
-            .par-first-seventeen-17,
-            .par-first-eightteen-18,
-            .par-first-eightteen2-19,
-            .par-first-nineteen-20,
-            .par-first-nineteen2-21,
-            .par-first-nineteen3-22,
-            .par-first-nineteen4-23,
-            .par-first-nineteen5-24,
-            .par-first-nineteen6-25 {
-                position: absolute;
-                top: 290px;
-                left: 10px;
-                color: white;
-                font-size: 11px;
-                font-family: "Cabri ", sans-serif;
-            }
-            
-            .par-first-twelve-12 {
-                top: 307px;
-            }
-            
-            .par-first-thirteen-13 {
-                top: 0px;
-            }
-            
-            .par-first-fourteen-14 {
-                top: 15px;
-            }
-            
-            .par-first-fiveteen-15 {
-                top: 30px;
-            }
-            
-            .par-first-sixteen-16 {
-                top: 45px;
-            }
-            
-            .par-first-seventeen-17 {
-                top: 60px;
-            }
-            
-            .ipt-first,
-            .ipt-first-156 {
-                width: 300px;
-                height: 50px;
-                background-color: white;
-                position: absolute;
-                top: 555px;
-                left: 50%;
-                border: none;
-                transform: translate(-50%, -50%);
-                padding-left: 10px;
-                font-size: 13px;
-                border-radius: 5px;
-            }
-            
-            .ipt-first-156 {
-                top: 550px;
-                display: none;
-            }
-            
-            .ipt-first:focus,
-            .ipt-first-156:focus {
-                outline: none;
-                border: none;
-            }
-            
-            .but-first {
-                width: 310.5px;
-                height: 40px;
-                background-color: black;
-                left: 50%;
-                position: absolute;
-                top: 605px;
-                transform: translate(-50%, -50%);
-                font-size: 12px;
-                border-radius: 5px;
-                display: none;
-                border: none;
-                color: white;
-            }
-            
-            .wrong-email,
-            .not-saved {
-                position: relative;
-                text-align: center;
-                top: 617px;
-                color: red;
-                font-size: 15px;
-                font-weight: bold;
-                font-family: "Cabri ", sans-serif;
-            }
-            
-            .sp-ooop,
-            .sp-ooop-12 {
-                color: #ffc800;
-                font-size: 12px;
-                position: relative;
-                left: 10px;
-            }
-            
-            .par-first-eightteen-18 {
-                top: 95px;
-            }
-            
-            .par-first-eightteen2-19 {
-                top: 110px;
-            }
-            
-            .par-first-nineteen-20 {
-                top: 145px;
-            }
-            
-            .par-first-nineteen2-21 {
-                top: 160px;
-            }
-            
-            .par-first-nineteen3-22 {
-                top: 175px;
-            }
-            
-            .par-first-nineteen4-23 {
-                top: 190px;
-            }
-            
-            .par-first-nineteen5-24 {
-                top: 205px;
-            }
-            
-            .par-first-nineteen6-25 {
-                top: 235px;
-                left: 35px;
-            }
-            
-            .par-first-nineteen7-26,
-            .par-first-nineteen8-27,
-            .par-first-nineteen9-28 {
-                position: relative;
-                top: 20px;
-                text-align: center;
-                color: white;
-                font-size: 12px;
-                font-family: "Cabri ", sans-serif;
-            }
-            
-            .par-first-nineteen8-27 {
-                top: 19px;
-            }
-            
-            .par-first-nineteen9-28 {
-                top: 15px;
-            }
-            
-            .sp-4032 {
-                position: relative;
-                left: -25px;
-            }
-            
-            .sp-4033 {
-                position: relative;
-                left: -20px;
-            }
-            
-            .sp-4043,
-            .sp-4043-12 {
-                position: relative;
-                left: -10px;
-            }
-            
-            .sp-4044,
-            .sp-4044-12 {
-                position: relative;
-                left: 10px;
-            }
-            
-            .sp-4045 {
-                position: relative;
-                left: 20px;
-            }
-            
-            .last-conit {
-                width: 100%;
-                height: 60px;
-                background-color: transparent;
-                position: absolute;
-                top: 930px;
-                left: 0;
-                right: 0;
-            }
-            
-            .front-cont,
-            .center-cont,
-            .center-two-cont,
-            .last-cont {
-                width: 310px;
-                height: 135px;
-                position: absolute;
-                top: 75px;
-                transform: translate(-50%, -50%);
-                left: 50%;
-                background-color: transparent;
-            }
-            
-            .center-cont {
-                width: 325px;
-                height: 345px;
-                top: 300px;
-                background-color: transparent;
-                z-index: 20;
-            }
-            
-            .center-two-cont {
-                width: 325px;
-                height: 315px;
-                top: 800px;
-                background-color: transparent;
-                z-index: 20;
-            }
-            
-            .last-cont {
-                width: 325px;
-                height: 105px;
-                top: 945px;
-                background-color: transparent;
-                z-index: 20;
-            }
-            
-            .Signing-cont22 {
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.60);
-                top: 0;
-                position: absolute;
-                left: 0;
-                overflow-y: auto;
-            }
-            
-            .Signing-cont22::-webkit-scrollbar {
-                display: noe;
-                /* hide scrollbar on Chrome, Safari, and Opera */
-                width: 6px;
-                /* width of the scrollbar */
-                height: 100%;
-                /* height of the scrollbar (for horizontal scrollbars) */
-            }
-            
-            .Signing-cont22::-webkit-scrollbar {
-                background-color: transparent;
-                /* color of the track */
-                border-radius: 10px;
-            }
-            
-            .Signing-cont22::-webkit-scrollbar-thumb {
-                background: #ffc800;
-                /* color of the scrollbar thumb */
-                border-radius: 10px;
-            }
-            
-            .Signing-cont22::-webkit-scrollbar-thumb:hover {
-                background: #ffc800;
-                /* color of the scrollbar thumb on hover */
-            }
-        </style>
-        <div class="Phone-Signing-cont">
-            <div class="Signing-cont22">
-                <div class="front-cont">
-                    <img src="./icons/fb_logo-2.png" class="first-img-21">
-                    <img src="./icons/Untitlesswsswsssssswwqeerd.png" class="first-img212">
-                </div>
-                <div class="center-cont">
-                    <p class="par-first-one-1">UNIQUE STORIES.</p>
-                    <p class="par-first-two-2">ICONIC BOOKS.</p>
-                    <p class="par-first-three-3">A TREASURE TROVE</p>
-                    <p class="par-first-four-4">OF TALES.</p>
-                    <p class="par-first-five-5">Fruitful bough, haven of All bestsellers,</p>
-                    <p class="par-first-six-6">tales, and beloved brands, launching soon!</p>
-                    <p class="par-first-seven-7">Prepare for phenomenal originals, exclusive</p>
-                    <p class="par-first-eight-8">releases, top-notch reads, and unforgettable</p>
-                    <p class="par-first-nine-9">shopping experience at our flagship STORE!</p>
-                    <p class="par-first-ten-10">______________________________________________________</p>
-                    <p class="par-first-eleven-11">Share your email in order to stay up-to-date on</p>
-                    <p class="par-first-twelve-12">Fruitful bough news</p>
-                </div>
-                <input type="email" class="ipt-first" placeholder="Enter Email">
-                <input type="password" class="ipt-first-156" placeholder="Enter Password">
-                <button class="but-first">SUBMIT</button>
-                <p class="wrong-email" style="display: none;">Please input a correct email.</p>
-                <p class="not-saved" style="display: none;">Error saving email.</p>
-                <script>
-                    // this is for first phase sequence
-                    document.addEventListener('DOMContentLoaded', () => {
-                        const EmailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-                        const emailInput = document.querySelector('.ipt-first');
-                        const nextInput = document.querySelector('.ipt-first-156');
-                        const nextButton = document.querySelector('.but-first');
-
-                        function checkEmail() {
-                            const isValid = EmailRegex.test(emailInput.value.trim());
-
-                            if (isValid) {
-                                emailInput.style.top = '495px';
-                                nextInput.style.display = 'block';
-                                nextButton.style.display = 'block';
-                            } else {
-                                // revert back if the field becomes empty/invalid again
-                                emailInput.style.top = '555px';
-                                nextInput.style.display = 'none';
-                                nextButton.style.display = 'none';
-                            }
-                        }
-
-                        // checks on every keystroke, paste, autofill, etc.
-                        emailInput.addEventListener('input', checkEmail);
-
-                        // run once on load too, in case the field is pre-filled (e.g. browser autofill)
-                        checkEmail();
-                    });
-                </script>
-                <div class="center-two-cont">
-                    <p class="par-first-thirteen-13">By clicking the submit button, you agree to fruitful bough using</p>
-                    <p class="par-first-fourteen-14">email address to send you marketing informations, updates,</p>
-                    <p class="par-first-fiveteen-15">special offers & other information about fruitful bough products.</p>
-                    <p class="par-first-sixteen-16">You can unsubscribe at any time. For more information on how</p>
-                    <p class="par-first-seventeen-17">we handle your personal data, please see our <span class="sp-ooop-12">Privacy policy.</span></p>
-
-                    <p class="par-first-eightteen-18">Fruitful Bough is available in selected markets. Content varies</p>
-                    <p class="par-first-eightteen2-19">by region and subject to change.</p>
-
-                    <p class="par-first-nineteen-20">*Fruitful bough productions is still getting things ready - we're</p>
-                    <p class="par-first-nineteen2-21">tweaking a few things behind the scenes. You can still sign up or</p>
-                    <p class="par-first-nineteen3-22">register if you'd like, and we'd love for you to check out other</p>
-                    <p class="par-first-nineteen4-23">pages while we finalize things. Thanks for your patience! We'll k-</p>
-                    <p class="par-first-nineteen5-24">eep you posted with updates, so be sure to subscribe! Learn more at</p>
-                    <p class="par-first-nineteen6-25" onclick="window.location.href='https://fruitfulbough.xyz/';">www.fruitfulbough.xyz</p>
-
-                    <!--
-               Site developed by StromKiller003
-               Private-consulting: https://wa.me/9078730956
-               Year: 2025
-               Brand Name: FPH - Freelance Programming Hub
-               Encoded Sequence/ID : c-young003
-            -->
-
-                </div>
-                <div class="last-cont">
-                    <p class="par-first-nineteen7-26"><span class="sp-4032" onclick="window.location.href='Information.html';">Terms of Use</span> <span class="sp-4033">|</span> <span class="sp-4043-12">Cookies</span> | <span class="sp-4044-12">FB-Info</span> <span class="sp-4045">|</span></p>
-                    <p class="par-first-nineteen8-27">Create account</p>
-                    <style>
-                        .img-par-420213 {
-                            zoom: 15%;
-                            position: relative;
-                            right: 7px;
-                            top: 20px;
-                        }
-                    </style>
-                    <p class="par-first-nineteen9-28"><img src="./icons/icons8-copyright-100.png" class="img-par-420213">2026 Fruitful bough. All Rights Reserved.</p>
-
-                </div>
-            </div>
-        </div>
-        <style>
-            .loading-div-sh {
-                top: 0;
-                left: 0;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(0, 0, 0, 0.70);
-                z-index: 50;
-                display: none;
-            }
-            
-            .load-container {
-                width: 120px;
-                height: 120px;
-                top: 50%;
-                left: 50%;
-                position: absolute;
-                transform: translate(-50%, -50%);
-                background-color: transparent;
-            }
-            
-            .load-seq {
-                width: 49px;
-                height: 49px;
-                top: 50%;
-                left: 50%;
-                position: relative;
-                transform: translate(-50%, -50%);
-                background-color: transparent;
-                border-radius: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border: 3px solid transparent;
-                animation: drawBox 3s linear infinite;
-            }
-            /* Animation draws from 0 to 100% in building  */
-            
-            @keyframes drawBox {
-                0% {
-                    border-top-color: transparent;
-                    border-right-color: transparent;
-                    border-bottom-color: transparent;
-                    border-left-color: transparent;
-                }
-                25% {
-                    border-top-color: orange;
-                    border-right-color: transparent;
-                    border-bottom-color: transparent;
-                    border-left-color: transparent;
-                }
-                50% {
-                    border-top-color: orange;
-                    border-right-color: orange;
-                    border-bottom-color: transparent;
-                    border-left-color: transparent;
-                }
-                75% {
-                    border-top-color: orange;
-                    border-right-color: orange;
-                    border-bottom-color: orange;
-                    border-left-color: transparent;
-                }
-                100% {
-                    border-top-color: orange;
-                    border-right-color: orange;
-                    border-bottom-color: orange;
-                    border-left-color: orange;
-                }
-            }
-            
-            .img-presenting {
-                zoom: 26%;
-            }
-            
-            .div-load-par {
-                width: 200px;
-                height: 27px;
-                background-color: transparent;
-                bottom: 0;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            
-            .server-com {
-                font-size: 12px;
-                color: rgb(223, 223, 223);
-                font-family: "Cabri ", sans-serif;
-            }
-            /* optional blinking cursor effect */
-            
-            .sp-count-12::after {
-                content: '';
-                animation: blink 0.7s step-end infinite;
-            }
-            
-            @keyframes blink {
-                50% {
-                    opacity: 0;
-                }
-            }
-        </style>
-        <div class="loading-div-sh">
-            <div class="load-container">
-                <div class="load-seq">
-                    <img src="./icons/fb_logo-qqss.png" class="img-presenting"></div>
-            </div>
-            <div class="div-load-par">
-                <p class="server-com"><span class="print-server">Connection started</span><span class="sp-count-12">......</span></p>
-            </div>
-            <script>
-                // Start server loop 
-                document.addEventListener('DOMContentLoaded', () => {
-                    const el = document.querySelector('.sp-count-12');
-
-                    const message = "......."; // 
-
-                    const typeSpeed = 80; // ms per character while typing
-                    const pauseAfterTyping = 1300; // ms to pause once fully typed
-                    const pauseBeforeRestart = 700; // ms pause on empty before typing again
-
-                    let charIndex = 0;
-
-                    function typeLoop() {
-                        if (charIndex <= message.length) {
-                            el.textContent = message.slice(0, charIndex);
-                            charIndex++;
-                            setTimeout(typeLoop, typeSpeed);
-                        } else {
-                            // finished typing, pause, then clear and restart from the first character
-                            setTimeout(() => {
-                                el.textContent = '';
-                                charIndex = 0;
-                                setTimeout(typeLoop, pauseBeforeRestart);
-                            }, pauseAfterTyping);
-                        }
-                    }
-
-                    typeLoop();
-                });
-            </script>
-        </div>
-    </div>
-    <script>
-        // For first page email loading
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = [
-                './Pictures/man-reading-books-stockcake.jpg',
-                './Pictures/man-reading-book-stockcake.jpg',
-                './Pictures/pexels-pixabay-247899.jpg',
-                './Pictures/man-deeply-focused-reading-quiet-library-setting-concept-quiet-library-studious-man-focused-reading_918839-32676.avif',
-                './Pictures/istockphoto-1300956931-612x612 (1).jpg',
-                './Pictures/images.jpg',
-                './Pictures/reading-in-library-stockcake.jpg'
-                // add as many image paths here as you want
-            ];
-
-            const el = document.querySelector('.Signing-cont');
-            let index = 0;
-
-            function setBackground(i) {
-                el.style.backgroundImage = `url('${images[i]}')`;
-            }
-
-            // set the first image immediately
-            setBackground(index);
-
-            // then swap every 7 seconds
-            setInterval(() => {
-                index = (index + 1) % images.length; // loop back to 0 after the last image
-                setBackground(index);
-            }, 7000); // 7000ms = 7 seconds
-        });
-    </script>
+            });
+        </script>
+    </main>
+    <main class="Phone-Signing-cont">
+        <div class="div-head-set"></div>
+    </main>
     <script>
         const isAndroid = /Android/i.test(navigator.userAgent);
         const isWindows = /Windows/i.test(navigator.userAgent);
@@ -1099,7 +793,7 @@
         const isIphone = /iPhone/i.test(navigator.userAgent);
         const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
-        const desktopCont = document.querySelector('.Signing-cont2');
+        const desktopCont = document.querySelector('.Signing-cont');
         const mobileCont = document.querySelector('.Phone-Signing-cont');
 
 
@@ -1122,8 +816,6 @@
         // Run on resize
         window.addEventListener('resize', toggleSignupView);
     </script>
-    <script src="./info.js"></script>
-    <script src="./port.js"></script>
 </body>
 
 </html>
