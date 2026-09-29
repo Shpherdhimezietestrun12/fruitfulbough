@@ -1,8 +1,7 @@
+[build]
+  publish = "UI"
+
 [[redirects]]
-from = "/*"
-to = "./main.html"
-
-status = 200
-
-
-
+  from = "/*"
+  to = "./main.html"
+  status = 200
