@@ -11,8 +11,7 @@
 <body>
     <style>
         body {
-            background-color: black;
-            padding-bottom: 5000px;
+            background-color: #000000;
         }
         
         .Signing-cont,
@@ -29,7 +28,7 @@
                     aspect-ratio: 9/16;
                     /*---- Phone portrait ---*/
                 }
-                .Main-display-cont {
+                .Signing-cont {
                     display: none;
                 }
             }
@@ -51,14 +50,29 @@
         .div-head-set {
             width: 100%;
             height: 60px;
-            background-color: #000000;
+            background-color: transparent;
             top: 0;
             left: 0;
-            z-index: 50;
+            z-index: 150;
             position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
         }
         
-        .div-img-12 {
+        .div-head-set-2 {
+            width: 100%;
+            height: 60px;
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            z-index: 150;
+            position: fixed;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .div-img-12,
+        .div-img-123 {
             width: 35px;
             height: 35px;
             background-color: transparent;
@@ -69,6 +83,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        
+        .div-img-123 {
+            width: 39px;
+            height: 39px;
+            left: 27.5px;
+            background-color: transparent;
         }
         
         .div-par-12 {
@@ -99,18 +120,20 @@
         
         .div-nav-bar {
             width: 420px;
-            height: 35px;
-            background-color: transparent;
-            top: 50%;
+            height: 41px;
+            background-color: rgba(255, 193, 7, .05);
+            top: 55%;
             left: 50%;
             transform: translate(-50%, -50%);
             position: absolute;
+            border-radius: 12px;
+            border: 0.5px solid rgba(255, 193, 7, .14);
         }
         
         .nav-828-229 {
             position: absolute;
-            top: -13.5px;
-            left: -35px;
+            top: -10.8px;
+            left: -44px;
         }
         
         .nav-828-229 li {
@@ -121,7 +144,7 @@
         
         .div-828-919 {
             width: 75px;
-            height: 30px;
+            height: 29px;
             background-color: transparent;
             position: relative;
             display: flex;
@@ -133,10 +156,12 @@
             color: rgb(121, 93, 3);
         }
         
-        .div-sign-up {
+        .div-sign-up,
+        .div-sign-up-12 {
             width: 80px;
             height: 34px;
             background-color: transparent;
+            border: 0.5px solid rgba(255, 193, 7, .14);
             top: 50%;
             right: 157px;
             transform: translate(-50%, -50%);
@@ -148,7 +173,10 @@
             font-size: 14px;
             color: rgb(121, 93, 3);
             font-family: "Cabri ", sans-serif;
-            border: 1px solid rgb(15, 15, 15);
+        }
+        
+        .div-sign-up-12 {
+            right: 120px;
         }
         
         .start-seq {
@@ -168,12 +196,36 @@
             border-radius: 20px;
         }
         
+        .start-seq-12 {
+            width: 145px;
+            height: 39px;
+            background: linear-gradient(135deg, #ffdb6e, #ffc107 45%, #c98a00);
+            box-shadow: 0 0 14px rgba(255, 193, 7, .45), inset 0 0 8px rgba(255, 193, 7, .15);
+            top: 50%;
+            right: -19%;
+            font-size: 14px;
+            font-family: "Cabri ", sans-serif;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+        
+        .start-seq-12:hover {
+            top: 48%;
+            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+        }
+        
         .div-main-phase-1,
         .div-main-phase-2,
         .div-main-phase-3,
         .div-main-phase-4 {
             top: 0;
-            background-color: #000000;
+            background-color: transparent;
             position: absolute;
             left: 0;
             width: 100%;
@@ -268,6 +320,15 @@
             left: 60px;
         }
         
+        .par-828-91-28-11-12 {
+            position: absolute;
+            top: 3315px;
+            font-size: 23px;
+            font-family: "Cabri ", sans-serif;
+            color: rgb(255, 196, 4);
+            right: 140px;
+        }
+        
         .par-828-91-88-91 {
             position: absolute;
             top: 2175px;
@@ -316,7 +377,7 @@
         .div-one-14 {
             width: 145px;
             height: 29px;
-            background-color: transparent;
+            background-color: rgba(255, 193, 7, .05);
             top: 160px;
             left: 125px;
             font-size: 13px;
@@ -325,7 +386,7 @@
             position: absolute;
             color: rgb(121, 93, 3);
             border-radius: 20px;
-            border: 1px solid rgb(27, 27, 27);
+            border: 0.5px solid rgba(255, 193, 7, .14);
         }
         
         .par-8728-181 {
@@ -359,10 +420,11 @@
         
         .enter-one-12 {
             width: 190px;
-            height: 40px;
-            background-color: rgb(202, 133, 4);
+            height: 43px;
+            background: linear-gradient(135deg, #ffdb6e, #ffc107 45%, #c98a00);
             top: 425px;
             position: absolute;
+            box-shadow: 0 0 14px rgba(255, 193, 7, .45), inset 0 0 8px rgba(255, 193, 7, .15);
             left: 60px;
             border-radius: 30px;
             display: flex;
@@ -370,6 +432,36 @@
             align-items: center;
             font-size: 14px;
             font-family: "Cabri ", sans-serif;
+        }
+        
+        .enter-one-123 {
+            width: 155px;
+            height: 43px;
+            background: transparent;
+            top: 425px;
+            position: absolute;
+            left: 270px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #ffdb6e;
+            font-family: "Cabri ", sans-serif;
+            border: 1px solid rgba(255, 193, 7, .14);
+        }
+        
+        .enter-one-12:hover {
+            top: 423px;
+            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            cursor: pointer;
+        }
+        
+        .enter-one-123:hover {
+            top: 423px;
+            transition: all .3s cubic-bezier(.4, 0, .2, 1);
+            border: 1px solid #ffc107;
+            cursor: pointer;
         }
         
         .div-presnt-ui {
@@ -476,7 +568,7 @@
         }
         
         .img-922-91 {
-            zoom: 13%;
+            zoom: 11%;
             position: relative;
         }
         
@@ -487,11 +579,12 @@
         }
         
         .div-enter-151 {
-            width: 25px;
-            height: 25px;
-            background-color: #111111;
+            width: 22px;
+            height: 22px;
+            background-color: rgba(255, 193, 7, .05);
+            border: 0.5px solid rgba(255, 193, 7, .14);
             top: 50%;
-            right: -10px;
+            right: -9px;
             transform: translate(-50%, -50%);
             position: absolute;
             border-radius: 20px;
@@ -574,21 +667,147 @@
         
         .div-828-919.active {
             color: rgb(255, 196, 4);
-            background-color: #111111;
+            border-radius: 10px;
+            background-color: rgba(255, 193, 7, .05);
+            border: 0.5px solid rgba(255, 193, 7, .14);
         }
         /* new */
-        
-        div[id^="tag-"][data-active="true"] {
-            color: rgb(255, 196, 4);
-            background-color: #111111;
-        }
         
         .div-828-919:hover {
             background-color: rgb(37, 37, 37);
             cursor: pointer;
+            border-radius: 10px;
+        }
+        
+        .div-des-123 {
+            position: absolute;
+            top: -50px;
+            width: 30%;
+            height: 400px;
+            left: -60px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-123-12 {
+            position: absolute;
+            top: -10px;
+            width: 200px;
+            height: 200px;
+            left: -20px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-1234-12 {
+            position: absolute;
+            top: 200px;
+            width: 200px;
+            height: 200px;
+            right: 5px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-12345-12 {
+            position: absolute;
+            top: 420px;
+            width: 200px;
+            height: 200px;
+            left: 5px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-123456-12 {
+            position: absolute;
+            top: 620px;
+            width: 200px;
+            height: 200px;
+            right: 5px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-1234567-12 {
+            position: absolute;
+            top: 820px;
+            width: 200px;
+            height: 200px;
+            left: 5px;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-1234 {
+            position: absolute;
+            top: 400px;
+            width: 30%;
+            height: 400px;
+            left: 68%;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-12345,
+        .div-des-123456,
+        .div-des-1234567 {
+            position: absolute;
+            top: 400px;
+            width: 30%;
+            height: 400px;
+            left: 34%;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-123456 {
+            top: 495px;
+            width: 30%;
+            height: 400px;
+            left: 2%;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-des-1234567 {
+            top: 895px;
+            width: 30%;
+            height: 400px;
+            left: 22%;
+            border-radius: 500px;
+            background-color: rgba(255, 167, 2, 0.678);
+        }
+        
+        .div-back-cover-12 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+        }
+        
+        .div-test-test {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            padding-bottom: 5000px;
+            z-index: 50;
+            display: block;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(30px);
         }
     </style>
     <main class="Signing-cont">
+        <div class="div-back-cover-12">
+            <div class="div-des-123"></div>
+            <div class="div-des-1234"></div>
+            <div class="div-des-12345"></div>
+            <div class="div-des-123456"></div>
+            <div class="div-des-1234567"></div>
+        </div>
         <div class="div-head-set">
             <div class="div-img-12"><img src="./icons/FB-Stream-Photoroom.png" class="img-tet-22"></div>
             <div class="div-par-12">
@@ -615,142 +834,149 @@
             <div class="div-sign-up">Sign up</div>
             <div class="start-seq">Get Started Now</div>
         </div>
-        <div class="div-main-phase-1 active">
-            <div class="div-one-14">
-                <p class="par-626-22">Cynthia Overview</p>
-                <div class="div-enter-151"><img src="./icons/forwasssssrd.png" class="img-922-91"></div>
-            </div>
-            <h1 class="par-8728-181">Protect your platfrom</h1>
-            <h2 class="par-8728-181" style="top: 210px;   left: 59px;">with AI agents</h2>
-            <p class="par-228288-22">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
-            <p class="par-228288-22" style=" top: 358px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
-            <div class="enter-one-12"><span class="sp-828-92">Get started with FB</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
-            <div class="div-presnt-ui">
-                <div class="div-presnt-ui-12">
-                    <nav class="nav-0-121-21">
-                        <ul>
-                            <li>
-                                <div class="div-seq-2013"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013"></div>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="div-link-name">
-                        <p class="par-82277-11">https://fruitfulbough.xyz/fruitfulbough</p>
-                    </div>
+        <div class="div-test-test">
+            <div class="div-main-phase-1 active">
+                <div class="div-one-14">
+                    <p class="par-626-22">Cynthia Overview</p>
+                    <div class="div-enter-151"><img src="./icons/forwasssssrd.png" class="img-922-91"></div>
                 </div>
-                <iframe class="div-presnt-ui-13" src="./FruitfulBough.html"></iframe>
-                <div class="div-presnt-ui-14"></div>
-            </div>
-            <p class="par-8282-191">Trusted by 3.4 million users</p>
-            <div class="div-2929-191">
-                <video autoplay voice muted loop playsinline class="bg-video">
+                <h1 class="par-8728-181" style="font-size: 60px;background: linear-gradient(180deg, #ffdb6e, #ffc107 100%, #c98a00);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;">Access all Fruitful Bough</h1>
+                <h2 class="par-8728-181" style="top: 210px;   left: 52px;">created products here</h2>
+                <p class="par-228288-22">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+                <p class="par-228288-22" style=" top: 358px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+                <div class="enter-one-12"><span class="sp-828-92">Get started with FB</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
+                <div class="enter-one-123">Watch our videos</div>
+                <div class="div-presnt-ui">
+                    <div class="div-presnt-ui-12">
+                        <nav class="nav-0-121-21">
+                            <ul>
+                                <li>
+                                    <div class="div-seq-2013"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013"></div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="div-link-name">
+                            <p class="par-82277-11">https://fruitfulbough.xyz/fruitfulbough</p>
+                        </div>
+                    </div>
+                    <iframe class="div-presnt-ui-13" src="./FruitfulBough.html"></iframe>
+                    <div class="div-presnt-ui-14"></div>
+                </div>
+                <p class="par-8282-191">Trusted by 3.4 million users</p>
+                <div class="div-2929-191">
+                    <video autoplay voice muted loop playsinline class="bg-video">
                         <source src="./Pictures/" type="video/mp4"></source>
                 </video>
-                <div class="div-2929-191-882"></div>
-            </div>
-            <div class="div-9228-199">
-                <p clas="par-1818-19"><img src="./icons/icons8-environment-care-100.png" class="img-818-91"><span class="sp-929-11">WebGo</span></p>
-            </div>
-            <h3 class="par-8728-181-232">Verify access requests before</h3>
-            <h4 class="par-8728-181-232" style="  top: 1730px;">they leave the device</h4>
-            <p class="par-828-91">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
-            <p class="par-828-91" style=" top: 1683px;">we will like to say thank you for all your support of how</p>
-            <p class="par-828-91-28-11">Product manager for innovation</p>
-            <p class="par-828-91-88-91">we will like to say thank you</p>
-            <p class="par-828-91-88-91" style="  top: 2205px;">we will like to say thank you</p>
-            <p class="par-828-91-88-91" style="  top: 2235px;">we will like to say thank you</p>
-            <div class="div-9190-112">
-                <div class="div-9190-112-677">
-                    <nav class="nav-0-121-21" style="top: 9px; left: 0px;">
-                        <ul>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="div-link-name" style="width: 190px; height: 25px;">
-                        <p class="par-82277-11" style="font-size: 13px;">https://webgo.ai</p>
+                    <div class="div-2929-191-882"></div>
+                </div>
+                <div class="div-9228-199">
+                    <p clas="par-1818-19"><img src="./icons/icons8-environment-care-100.png" class="img-818-91"><span class="sp-929-11">WebGo</span></p>
+                </div>
+                <h3 class="par-8728-181-232">Verify access requests before</h3>
+                <h4 class="par-8728-181-232" style="  top: 1730px;">they leave the device</h4>
+                <p class="par-828-91">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+                <p class="par-828-91" style=" top: 1683px;">we will like to say thank you for all your support of how</p>
+                <p class="par-828-91-28-11">Product manager for innovation</p>
+                <p class="par-828-91-88-91">we will like to say thank you</p>
+                <p class="par-828-91-88-91" style="  top: 2205px;">we will like to say thank you</p>
+                <p class="par-828-91-88-91" style="  top: 2235px;">we will like to say thank you</p>
+                <div class="div-9190-112">
+                    <div class="div-9190-112-677">
+                        <nav class="nav-0-121-21" style="top: 9px; left: 0px;">
+                            <ul>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="div-link-name" style="width: 190px; height: 25px;">
+                            <p class="par-82277-11" style="font-size: 13px;">https://webgo.ai</p>
+                        </div>
+                    </div>
+                    <iframe class="div-presnt-ui-22" src="../WebGo/Webgo.html"></iframe>
+                    <div class="div-presnt-ui-23"></div>
+                </div>
+                <p class="par-92901-193"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+                <p class="par-92901-193" style=" left: 290px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+                <p class="par-92901-193" style="  top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+                <p class="par-92901-193" style=" left: 290px; top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
+                <div class="enter-one-12" style="width: 170px; top: 2460px;"><span class="sp-828-92">Visit webgo today</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
+                <div class="div-new-message-board">
+                    <div class="div-mes-1">
+                        <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                        <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    </div>
+                    <div class="div-mes-2">
+                        <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                        <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    </div>
+                    <div class="div-mes-3">
+                        <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                        <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                    </div>
+                    <div class="div-mes-4">
+                        <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
+                        <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                        <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
                     </div>
                 </div>
-                <iframe class="div-presnt-ui-22" src="../WebGo/Webgo.html"></iframe>
-                <div class="div-presnt-ui-23"></div>
-            </div>
-            <p class="par-92901-193"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
-            <p class="par-92901-193" style=" left: 290px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
-            <p class="par-92901-193" style="  top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
-            <p class="par-92901-193" style=" left: 290px; top: 2365px;"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21"><span class="sp-992-11">Vercel template</span></p>
-            <div class="enter-one-12" style="width: 170px; top: 2460px;"><span class="sp-828-92">Visit webgo today</span> <img src="./icons/forwaswdwwr445srd.png" class="img-188-19"></div>
-            <div class="div-new-message-board">
-                <div class="div-mes-1">
-                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
-                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
+                <div class="div-9228-199" style=" width: 150px; height: 30px; top: 3020px; background-color: transparent;">
+                    <p clas="par-1818-19"><img src="./icons/Fruitful_Stream_logo-removebg-preview.png" class="img-818-91"><span class="sp-929-11">Fruitful Stream</span></p>
                 </div>
-                <div class="div-mes-2">
-                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
-                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                </div>
-                <div class="div-mes-3">
-                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
-                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                </div>
-                <div class="div-mes-4">
-                    <p class="par-92901-193-771"><img src="./icons/icons8-add-male-user-group-100.png" class="img-19191-21" style="zoom: 30%;"><span class="sp-992-11" style="top:-4px;">Vercel template</span></p>
-                    <p class="par-228288-22" style="  top: 70px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top:95px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                    <p class="par-228288-22" style="  top: 120px; font-size: 13px; left: 0px;">we will like to say thank you for all your</p>
-                </div>
-            </div>
-            <div class="div-9228-199" style=" width: 150px; height: 30px; top: 3020px; background-color: transparent;">
-                <p clas="par-1818-19"><img src="./icons/Fruitful_Stream_logo-removebg-preview.png" class="img-818-91"><span class="sp-929-11">Fruitful Stream</span></p>
-            </div>
-            <h5 class="par-8728-181-232" style=" top: 2583px;">Issue tracking you'll</h5>
-            <h6 class="par-8728-181-232" style=" top: 2470px;">Issue tracking you'll</h6>
-            <p class="par-828-91" style="top: 2370px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
-            <p class="par-828-91" style=" top: 2370px;">we will like to say thank you for all your support of how</p>
-            <div class="div-9190-112" style=" height: 680px; background-color:transparent; top: 3300px; width: 390px; left:70px;">
-                <div class="div-9190-112-677" style=" height: 9%;">
-                    <nav class="nav-0-121-21" style="top: 6.2px; left: -15px;">
-                        <ul>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                            <li>
-                                <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="div-link-name" style="width: 190px; height: 25px;">
-                        <p class="par-82277-11" style="font-size: 13px;">https://fruitfulstream.com</p>
+                <h5 class="par-8728-181-232" style=" top: 2583px;">Issue tracking you'll</h5>
+                <h6 class="par-8728-181-232" style=" top: 2470px;">Issue tracking you'll</h6>
+                <p class="par-828-91" style="top: 2370px;">we will like to say thank you for all your support of how u have been ther eksjshss sgtetee</p>
+                <p class="par-828-91" style=" top: 2370px;">we will like to say thank you for all your support of how</p>
+                <div class="div-9190-112" style=" height: 680px; background-color:transparent; top: 3300px; width: 390px; left:70px;">
+                    <div class="div-9190-112-677" style=" height: 9%;">
+                        <nav class="nav-0-121-21" style="top: 6.2px; left: -15px;">
+                            <ul>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                                <li>
+                                    <div class="div-seq-2013" style=" width: 9px; height: 9px;"></div>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="div-link-name" style="width: 190px; height: 25px;">
+                            <p class="par-82277-11" style="font-size: 13px;">https://fruitfulstream.com</p>
+                        </div>
                     </div>
+                    <iframe class="div-presnt-ui-22" style=" height: 91%; top:9%;" src="./features/FruitfilStream.html"></iframe>
+                    <div class="div-presnt-ui-23" style=" height: 91%; top:9%;"></div>
                 </div>
-                <iframe class="div-presnt-ui-22" style=" height: 91%; top:9%;" src="./features/FruitfilStream.html"></iframe>
-                <div class="div-presnt-ui-23" style=" height: 91%; top:9%;"></div>
+                <p class="par-828-91-28-11-12">Product manager for innovation</p>
             </div>
+            <div class="div-main-phase-2"></div>
+            <div class="div-main-phase-3"></div>
+            <div class="div-main-phase-4"></div>
         </div>
-        <div class="div-main-phase-2"></div>
-        <div class="div-main-phase-3"></div>
-        <div class="div-main-phase-4"></div>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const DivSets = document.querySelectorAll('.nav-828-229 div[data-tab]');
@@ -784,7 +1010,19 @@
         </script>
     </main>
     <main class="Phone-Signing-cont">
-        <div class="div-head-set"></div>
+        <div class="div-back-cover-12">
+            <div class="div-des-123-12"></div>
+            <div class="div-des-1234-12"></div>
+            <div class="div-des-12345-12"></div>
+            <div class="div-des-123456-12"></div>
+            <div class="div-des-1234567-12"></div>
+        </div>
+        <div class="div-head-set-2">
+            <div class="div-img-123"><img src="./icons/FB-Stream-Photoroom.png" class="img-tet-22" style="zoom: 18%;"></div>
+            <div class="div-sign-up-12">Sign up</div>
+            <div class="start-seq-12">Get Started Now</div>
+        </div>
+        <div class="div-test-test"></div>
     </main>
     <script>
         const isAndroid = /Android/i.test(navigator.userAgent);
