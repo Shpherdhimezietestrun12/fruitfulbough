@@ -3,5 +3,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "./main.html"
+  to = "./splash screen/Home.html"
   status = 200
