@@ -1,7 +1,6 @@
 [build]
-  publish = "UI"
+  publish = "splash screen"
 
 [[redirects]]
-  from = "/*"
-  to = "./splash screen/Home.html"
+  from = "./Home.html"
   status = 200
