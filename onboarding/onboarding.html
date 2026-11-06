@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose where to start - Fruitful Bough</title>
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+    <meta name="description" content="Customise your interest and select the Fruitful Bough page you want to start with today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: oklch(0 0 0);
+            --panel: oklch(.174 .013 88);
+            --panel-2: oklch(.22 .016 88);
+            --ink: oklch(.91 .012 85);
+            --muted: oklch(.662 .036 85);
+            --gold: oklch(.845 .17 88);
+            --gold-light: oklch(.899 .131 90);
+            --gold-deep: oklch(.687 .143 77);
+            --gold-soft: oklch(.845 .17 88 / .12);
+            --border: oklch(.845 .17 88 / .14);
+            --border-hover: oklch(.845 .17 88 / .5);
+            --nav: oklch(0 0 0 / .7);
+            --button-ink: var(--bg);
+            --button-gradient: linear-gradient(135deg, var(--gold-light), var(--gold) 45%, var(--gold-deep));
+            --glow: 0 0 14px oklch(.845 .17 88 / .45), inset 0 0 8px oklch(.845 .17 88 / .15);
+            --active-glow: 0 0 0 1px var(--gold), 0 0 24px -4px oklch(.845 .17 88 / .55)
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        
+        body {
+            background: var(--bg);
+            background-image: radial-gradient(60% 40% at 50% 0%, oklch(.845 .17 88 / .12), transparent 70%);
+            background-attachment: fixed;
+            color: var(--ink);
+            font-family: Manrope, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh
+        }
+        
+        h1 {
+            font-family: Fraunces, serif
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        /* Top bar */
+        
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: var(--nav);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border)
+        }
+        
+        .bar {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 16px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+        
+        .back {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            color: var(--gold-light);
+            transition: .2s
+        }
+        
+        .back:hover {
+            border-color: var(--gold);
+            background: var(--panel)
+        }
+        
+        .steps {
+            display: flex;
+            gap: 6px;
+            flex: 1;
+            justify-content: center
+        }
+        
+        .steps span {
+            width: 40px;
+            height: 4px;
+            border-radius: 99px;
+            background: var(--panel-2)
+        }
+        
+        .steps span.on {
+            background: var(--button-gradient)
+        }
+        
+        .skip {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: .9rem;
+            transition: .2s
+        }
+        
+        .skip:hover {
+            color: var(--gold-light)
+        }
+        /* Heading */
+        
+        main {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 48px 32px 170px
+        }
+        
+        header {
+            text-align: center
+        }
+        
+        .brand {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold)
+        }
+        
+        .brand span {
+            color: var(--ink)
+        }
+        
+        header h1 {
+            font-size: clamp(1.9rem, 5vw, 3rem);
+            font-weight: 800;
+            line-height: 1.12;
+            max-width: 18ch;
+            margin: 12px auto 0
+        }
+        
+        header h1 em {
+            color: var(--gold);
+            font-style: italic
+        }
+        
+        header p {
+            color: var(--muted);
+            margin-top: 12px
+        }
+        /* Cards */
+        
+        .grid {
+            margin-top: 48px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px
+        }
+        
+        .card {
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 22px 12px;
+            text-align: center;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            transition: transform .2s, border-color .2s, box-shadow .2s;
+            -webkit-tap-highlight-color: transparent
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover)
+        }
+        
+        .card:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px
+        }
+        
+        .num {
+            position: absolute;
+            top: 8px;
+            left: 12px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            color: var(--muted)
+        }
+        
+        .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--panel-2);
+            border: 1px solid var(--border);
+            color: var(--gold);
+            transition: .2s
+        }
+        
+        .label {
+            font-size: .9rem;
+            font-weight: 600;
+            line-height: 1.35
+        }
+        
+        .tick {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: none;
+            place-items: center;
+            background: var(--button-gradient);
+            color: var(--button-ink);
+            box-shadow: var(--glow)
+        }
+        /* Active state */
+        
+        .card.active {
+            border-color: var(--gold);
+            box-shadow: var(--active-glow);
+            transform: none
+        }
+        
+        .card.active .circle {
+            border-color: var(--gold);
+            background: var(--gold-soft);
+            color: var(--gold-light)
+        }
+        
+        .card.active .label {
+            color: var(--gold-light)
+        }
+        
+        .card.active .tick {
+            display: grid;
+            animation: pop .3s ease-out both
+        }
+        
+        @keyframes pop {
+            0% {
+                transform: scale(.4);
+                opacity: 0
+            }
+            70% {
+                transform: scale(1.15)
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+        }
+        /* Continue bar */
+        
+        .footer-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            background: var(--nav);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border)
+        }
+        
+        .footer-inner {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 14px 32px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px
+        }
+        
+        .hint {
+            font-size: .78rem;
+            color: var(--muted);
+            min-height: 1.2em
+        }
+        
+        .hint b {
+            color: var(--gold)
+        }
+        
+        .btn {
+            width: 100%;
+            max-width: 440px;
+            padding: 14px 26px;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 1px solid var(--border);
+            background: var(--panel-2);
+            color: var(--muted);
+            cursor: not-allowed;
+            transition: .2s
+        }
+        
+        .btn.ready {
+            background: var(--button-gradient);
+            color: var(--button-ink);
+            box-shadow: var(--glow);
+            cursor: pointer
+        }
+        
+        .btn.ready:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover)
+        }
+        /* Tablet */
+        
+        @media (max-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+        /* Phone */
+        
+        @media (max-width: 600px) {
+            .bar {
+                padding: 14px 20px
+            }
+            .steps span {
+                width: 24px
+            }
+            main {
+                padding: 32px 20px 160px
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+                margin-top: 32px
+            }
+            .circle {
+                width: 64px;
+                height: 64px
+            }
+            .circle svg {
+                width: 26px;
+                height: 26px
+            }
+            .footer-inner {
+                padding: 12px 20px 16px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="bar">
+            <!-- Back button link -->
+            <a class="back" href="../splash screen/Home.html" aria-label="Go back"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></a>
+            <div class="steps" aria-hidden="true"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+            <!-- Skip link -->
+            <a class="skip" href="../UI/dashboard/FruitfulBough.html">Skip</a>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <p class="brand">Fruitful <span>Bough</span></p>
+            <h1>Time to customise your <em>interest</em></h1>
+            <p>Select the page you want to start with today.</p>
+        </header>
+
+        <div class="grid" role="radiogroup" aria-label="Pages to start with">
+            <!-- 1. Display Page : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/FruitfulBough.html" role="radio" aria-checked="false">
+                <span class="num">01</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-play" aria-hidden="true"><path d="M15.033 9.44a.647.647 0 0 1 0 1.12l-4.065 2.352a.645.645 0 0 1-.968-.56V7.648a.645.645 0 0 1 .967-.56z"></path><path d="M12 17v4"></path><path d="M8 21h8"></path><rect x="2" y="3" width="20" height="14" rx="2"></rect></svg></span>
+                <span class="label">Display Page</span>
+            </a>
+            <!-- 2. Book collections : change href="" to your page link -->
+            <a class="card" href="..//UI/library(history)/All Collections.html" role="radio" aria-checked="false">
+                <span class="num">02</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-library" aria-hidden="true"><path d="m16 6 4 14"></path><path d="M12 6v14"></path><path d="M8 8v12"></path><path d="M4 4v16"></path></svg></span>
+                <span class="label">Book collections</span>
+            </a>
+            <!-- 3. AI automation : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/Cynthia.html" role="radio" aria-checked="false">
+                <span class="num">03</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bot" aria-hidden="true"><path d="M12 8V4H8"></path><rect width="16" height="12" x="4" y="8" rx="2"></rect><path d="M2 14h2"></path><path d="M20 14h2"></path><path d="M15 13v2"></path><path d="M9 13v2"></path></svg></span>
+                <span class="label">AI automation</span>
+            </a>
+            <!-- 4. Fruitful Stream : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/FruitfilStream.html" role="radio" aria-checked="false">
+                <span class="num">04</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clapperboard" aria-hidden="true"><path d="m12.296 3.464 3.02 3.956"></path><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"></path><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="m6.18 5.276 3.1 3.899"></path></svg></span>
+                <span class="label">Fruitful Stream</span>
+            </a>
+            <!-- 5. First read : change href="" to your page link -->
+            <a class="card" href="../UI/books/2026/the-millenium-meltdown.html" role="radio" aria-checked="false">
+                <span class="num">05</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg></span>
+                <span class="label">First read</span>
+            </a>
+            <!-- 6. My Profile : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/myprofile.html" role="radio" aria-checked="false">
+                <span class="num">06</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round" aria-hidden="true"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 0 0-16 0"></path></svg></span>
+                <span class="label">My Profile</span>
+            </a>
+            <!-- 7. Audiobook Page : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/Audiobook.html" role="radio" aria-checked="false">
+                <span class="num">07</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headphones" aria-hidden="true"><path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3"></path></svg></span>
+                <span class="label">Audiobook Page</span>
+            </a>
+            <!-- 8. Prompt animation page : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/Animation.html" role="radio" aria-checked="false">
+                <span class="num">08</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg></span>
+                <span class="label">Prompt animation page</span>
+            </a>
+            <!-- 9. History : change href="" to your page link -->
+            <a class="card" href="../UI/library(history)/history.html" role="radio" aria-checked="false">
+                <span class="num">09</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-history" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><path d="M12 7v5l4 2"></path></svg></span>
+                <span class="label">History</span>
+            </a>
+            <!-- 10. Lets talk to Cynthia : change href="" to your page link -->
+            <a class="card" href="../UI/dashboard/Cynthia.html" role="radio" aria-checked="false">
+                <span class="num">10</span>
+                <span class="tick"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+                <span class="circle"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-heart" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path><path d="M7.828 13.07A3 3 0 0 1 12 8.764a3 3 0 0 1 5.004 2.224 3 3 0 0 1-.832 2.083l-3.447 3.62a1 1 0 0 1-1.45-.001z"></path></svg></span>
+                <span class="label">Lets talk to Cynthia</span>
+            </a>
+        </div>
+    </main>
+
+    <div class="footer-bar">
+        <div class="footer-inner">
+            <p class="hint" id="hint">Pick one page to continue</p>
+            <button class="btn" id="continue" type="button" disabled>Continue</button>
+        </div>
+    </div>
+
+    <script>
+        // Tapping a card only makes it active. "Continue" then opens that card's href.
+        const cards = document.querySelectorAll(".card");
+        const btn = document.getElementById("continue");
+        const hint = document.getElementById("hint");
+        let chosen = null;
+
+        cards.forEach(card => {
+            card.addEventListener("click", e => {
+                e.preventDefault();
+                cards.forEach(c => {
+                    c.classList.remove("active");
+                    c.setAttribute("aria-checked", "false")
+                });
+                card.classList.add("active");
+                card.setAttribute("aria-checked", "true");
+                chosen = card.getAttribute("href");
+                btn.disabled = false;
+                btn.classList.add("ready");
+                hint.innerHTML = "Starting with <b>" + card.querySelector(".label").textContent + "</b>";
+            });
+        });
+
+        btn.addEventListener("click", () => {
+            if (chosen) window.location.href = chosen;
+        });
+    </script>
+</body>
+
+</html>
