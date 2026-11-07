@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>403 Forbidden - Fruitful Bough</title>
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+    <meta name="description" content="Sorry, you don't have permission to open this page.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: oklch(0 0 0);
+            --panel: oklch(.174 .013 88);
+            --panel-2: oklch(.22 .016 88);
+            --ink: oklch(.91 .012 85);
+            --muted: oklch(.662 .036 85);
+            --gold: oklch(.845 .17 88);
+            --gold-light: oklch(.899 .131 90);
+            --gold-deep: oklch(.687 .143 77);
+            --gold-soft: oklch(.845 .17 88 / .12);
+            --border: oklch(.845 .17 88 / .14);
+            --border-hover: oklch(.845 .17 88 / .5);
+            --button-ink: var(--bg);
+            --button-gradient: linear-gradient(135deg, var(--gold-light), var(--gold) 45%, var(--gold-deep));
+            --glow: 0 0 14px oklch(.845 .17 88 / .45), inset 0 0 8px oklch(.845 .17 88 / .15)
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+        
+        body {
+            background: var(--bg);
+            background-image: radial-gradient(60% 40% at 50% 0%, oklch(.845 .17 88 / .12), transparent 70%);
+            background-attachment: fixed;
+            color: var(--ink);
+            font-family: Manrope, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column
+        }
+        
+        h1 {
+            font-family: Fraunces, serif
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+        /* Top brand */
+        
+        .top {
+            padding: 24px 32px;
+            text-align: center
+        }
+        
+        .brand {
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold)
+        }
+        
+        .brand span {
+            color: var(--ink)
+        }
+        /* Page */
+        
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 16px 32px 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center
+        }
+        /* Container that carries the error image */
+        
+        .img-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%
+        }
+        
+        .img-82828-92 {
+            width: 100%;
+            max-width: 460px;
+            height: auto;
+            mix-blend-mode: lighten/* lets the black of the image melt into the page */
+        }
+        
+        .code {
+            margin-top: 8px;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 99px;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: var(--gold-soft);
+            border: 1px solid var(--border)
+        }
+        
+        h1 {
+            font-size: clamp(2.4rem, 7vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-top: 16px
+        }
+        
+        .text {
+            color: var(--muted);
+            font-size: clamp(1rem, 2.4vw, 1.2rem);
+            margin-top: 12px;
+            max-width: 34ch
+        }
+        
+        .status {
+            font-size: .8rem;
+            color: var(--muted);
+            margin-top: 10px;
+            min-height: 1.3em
+        }
+        
+        .status.on {
+            color: var(--gold)
+        }
+        
+        .actions {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            width: 100%
+        }
+        
+        .btn {
+            width: 100%;
+            max-width: 320px;
+            padding: 14px 26px;
+            border-radius: 999px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            border: 1px solid var(--border);
+            background: var(--button-gradient);
+            color: var(--button-ink);
+            box-shadow: var(--glow);
+            transition: .2s
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--border-hover)
+        }
+        
+        .home {
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 1.05rem;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 2px;
+            transition: .2s
+        }
+        
+        .home:hover {
+            color: var(--gold);
+            border-color: var(--gold-light)
+        }
+        
+        .btn:focus-visible,
+        .home:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 4px
+        }
+        /* Phone */
+        
+        @media (max-width: 600px) {
+            .top {
+                padding: 20px
+            }
+            main {
+                padding: 8px 20px 48px
+            }
+            .img-82828-92 {
+                max-width: 320px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <p class="brand">Fruitful <span>Bough</span></p>
+    </div>
+
+    <main>
+        <!-- Image container: put your own image in src="" -->
+        <div class="img-box"><img src="../icons/403-forbidden.jpg" alt="Robot standing at a closed gate" class="img-82828-92"></div>
+
+        <p class="code">Error 403 &middot; Forbidden</p>
+        <h1>No entry!</h1>
+        <p class="text">Sorry, you don't have permission to open this page.</p>
+
+        <div class="actions">
+            <!-- Home link: change href to your home page -->
+            <a class="home" href="../splash screen/Home.html">Go to Home Page</a>
+        </div>
+    </main>
+</body>
+
+</html>

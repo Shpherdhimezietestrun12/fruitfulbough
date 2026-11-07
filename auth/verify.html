@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Account created — Fruitful Bough</title>
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+    <meta name="description" content="Your Fruitful Bough account was created successfully.">
+    <meta property="og:title" content="Account created — Fruitful Bough">
+    <meta property="og:description" content="Your Fruitful Bough account was created successfully.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root {
+            --bg: oklch(0 0 0);
+            --panel: oklch(.174 .013 88);
+            --ink: oklch(.91 .012 85);
+            --muted: oklch(.662 .036 85);
+            --gold: oklch(.845 .17 88);
+            --gold-light: oklch(.899 .131 90);
+            --gold-deep: oklch(.687 .143 77);
+            --border: oklch(.845 .17 88 / .14);
+            --border-hover: oklch(.845 .17 88 / .5);
+            --gradient: linear-gradient(135deg, var(--gold-light), var(--gold) 45%, var(--gold-deep));
+            --shadow: 0 30px 60px -30px var(--bg);
+            --glow: 0 0 14px oklch(.845 .17 88 / .2)
+        }
+        
+        * {
+            box-sizing: border-box
+        }
+        
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: Manrope, sans-serif;
+            line-height: 1.6
+        }
+        
+        a {
+            color: var(--gold-light);
+            text-underline-offset: 4px
+        }
+        
+        nav {
+            padding: 22px 6%;
+            border-bottom: 1px solid var(--border)
+        }
+        
+        .logo {
+            font-family: Fraunces, serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin-left: 40px;
+            text-decoration: none
+        }
+        
+        .logo span {
+            color: var(--gold)
+        }
+        
+        main {
+            min-height: calc(100svh - 155px);
+            display: grid;
+            place-items: center;
+            padding: 48px 20px
+        }
+        
+        .panel {
+            width: 100%;
+            max-width: 460px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 36px;
+            box-shadow: var(--shadow)
+        }
+        
+        .eyebrow {
+            color: var(--gold);
+            font-size: .75rem;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+            font-weight: 700
+        }
+        
+        h1 {
+            font-family: Fraunces, serif;
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin: 0 0 12px
+        }
+        
+        p {
+            margin: 0 0 24px;
+            color: var(--muted);
+            font-size: .95rem
+        }
+        
+        label {
+            display: block;
+            font-size: .875rem;
+            font-weight: 600;
+            margin-bottom: 7px
+        }
+        
+        .field {
+            margin: 0 0 20px
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            border-radius: 6px;
+            color: var(--ink);
+            font: inherit;
+            padding: 11px 13px
+        }
+        
+        input:focus-visible,
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--gold);
+            outline-offset: 3px
+        }
+        
+        input::placeholder {
+            color: var(--muted)
+        }
+        
+        small {
+            display: block;
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: 6px
+        }
+        
+        .password-label {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px
+        }
+        
+        .password-label a {
+            font-size: .75rem
+        }
+        
+        .submit {
+            width: 100%;
+            min-height: 48px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: var(--gradient);
+            color: var(--bg);
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: var(--glow)
+        }
+        
+        .submit:hover {
+            border-color: var(--border-hover)
+        }
+        
+        .links {
+            text-align: center;
+            margin: 24px 0 0;
+            font-size: .875rem
+        }
+        
+        .links a {
+            font-weight: 600
+        }
+        
+        .secondary {
+            margin-top: 12px;
+            text-align: center;
+            font-size: .85rem
+        }
+        
+        .status {
+            margin: 18px 0 0;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--gold-light);
+            font-size: .85rem
+        }
+        
+        .status[hidden] {
+            display: none
+        }
+        
+        footer {
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding: 22px 20px;
+            font-size: .8rem;
+            color: var(--muted)
+        }
+        
+        .div-88282-929 {
+            width: 45px;
+            height: 45px;
+            background-color: transparent;
+            position: absolute;
+            top: 38px;
+            left: 6%;
+            z-index: 20;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .img-82828-92 {
+            zoom: 30%;
+            position: relative;
+        }
+        
+        .panel {
+            max-width: 620px;
+            text-align: center
+        }
+        
+        .vid {
+            position: relative;
+            aspect-ratio: 16/9;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg);
+            margin: 0 0 24px
+        }
+        
+        .vid video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+        
+        .ph {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px
+        }
+        
+        .ph strong {
+            font-family: Fraunces, serif;
+            font-size: 1.6rem;
+            color: var(--gold)
+        }
+        
+        .vid.has-video .ph {
+            display: none
+        }
+        
+        .img-882-p8 {
+            zoom: 70%;
+            top: 32px;
+            left: -35px;
+            position: relative;
+        }
+        
+        .user {
+            font-family: Fraunces, serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin: 0 0 8px
+        }
+        
+        .user b {
+            color: var(--gold);
+            letter-spacing: .1em;
+            font-size: .8rem;
+            display: block
+        }
+        
+        #email {
+            text-decoration: underline;
+            font-weight: 700;
+            word-break: break-all
+        }
+        
+        @media(max-width:480px) {
+            main {
+                padding: 32px 16px
+            }
+            .panel {
+                padding: 28px 22px
+            }
+            h1 {
+                font-size: 2rem
+            }
+            .password-label {
+                flex-wrap: wrap;
+                gap: 4px
+            }
+            .div-88282-929 {
+                width: 35px;
+                height: 35px;
+                top: 38px;
+                left: 10%;
+                background-color: transparent;
+            }
+            .img-82828-92 {
+                zoom: 29%;
+                position: relative;
+            }
+            .img-882-p8 {
+                zoom: 40%;
+                top: 112px;
+                left: -25px;
+                position: relative;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a class="div-88282-929" href="../splash screen/Home.html"><img src="../icons/icons8-tsssree-100.png" alt="Fruitful Bough Logo" class="img-82828-92"></a>
+    <nav><a class="logo" href="../splash screen/Home.html">Fruitful <span>Bough</span></a></nav>
+    <main>
+        <section class="panel" aria-labelledby="heading">
+            <div class="vid"><video src="videos/account-success.mp4" autoplay muted loop playsinline></video>
+                <div class="ph"><span style="font-size:3rem"><img src="../icons/undraw_sweeeeuccess_288d-remddddovebg-preview.png" alt="Checkmark" class="img-882-p8"></span><strong>Account creation successful</strong></div>
+            </div>
+            <p class="eyebrow">Welcome to Fruitful Bough</p>
+            <h1 id="heading">Account creation successful</h1>
+            <p class="user"><b>USER</b><span id="name">Guest</span></p>
+            <p>We sent a verification link to <a id="email" href="mailto:">your email</a>. Open it to confirm your account.</p><a class="submit" style="display:grid;place-items:center;text-decoration:none" href="../splash screen/Home.html">Visit Home</a>
+            <p class="links"><a href="login.html">Go to log in</a></p>
+        </section>
+    </main>
+    <footer>© Fruitful Bough · Every story bears fruit.</footer>
+    <script>
+        const q = new URLSearchParams(location.search),
+            n = q.get('name') || localStorage.getItem('fb_name'),
+            m = q.get('email') || localStorage.getItem('fb_email');
+        if (n) document.getElementById('name').textContent = n;
+        if (m) {
+            const a = document.getElementById('email');
+            a.textContent = m;
+            a.href = 'mailto:' + m
+        }
+        const v = document.querySelector('video');
+        v.onloadeddata = () => v.parentElement.classList.add('has-video');
+        v.onerror = () => v.remove();
+    </script>
+</body>
+
+</html>
