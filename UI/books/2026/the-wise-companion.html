@@ -1,0 +1,2818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Millenium Meltdown</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+    <script>
+        // Force the page to always reload
+        window.onload = function() {
+            // Check if the page is being loaded from the server (like pressing back)
+            if (performance.navigation.type != performance.navigation.TYPE_RELOAD) {
+                // Force the reload 
+                location.reload(true);
+            }
+        };
+
+
+        // preventing caching 
+        // This is to ensure that the browser request the load each time
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                for (let registration of registrations) {
+                    registration.unregister();
+                    console.log('Service worker unregistered:', registration);
+                }
+            }).catch(function(error) {
+                console.error('Service worker unregister failed:', error);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: black;
+            padding-bottom: 3000px;
+        }
+        
+        body::-webkit-scrollbar,
+        .upcoming-channel::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .reviews-channel::-webkit-scrollbar {
+            display: none;
+        }
+        
+        body::-webkit-scrollbar,
+        .upcoming-channel::-webkit-scrollbar {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .reviews-channel::-webkit-scrollbar {
+            background: none;
+        }
+        
+        body::-webkit-scrollbar-thumb,
+        .upcoming-channel::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover,
+        .upcoming-channel::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .img-preview {
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: rgba(242, 191, 17, 0.15);
+            width: 100%;
+            border-bottom-left-radius: 70px;
+            border-bottom-right-radius: 70px;
+            height: 520px;
+            z-index: 20;
+            backdrop-filter: blur(60px);
+        }
+        
+        .like-it {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            position: absolute;
+            top: 30px;
+            right: 2%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid#ffffff;
+            cursor: pointer;
+        }
+        
+        .like-it2 {
+            width: 50px;
+            height: 50px;
+            background-color: transparent;
+            position: absolute;
+            top: 30px;
+            left: 2%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+            align-items: center;
+            border: 1px solid#ffffff;
+        }
+        
+        .like-img,
+        .like-img1 {
+            zoom: 40%;
+        }
+        
+        .Cynthia-load,
+        .Show-Divi {
+            width: 50px;
+            height: 50px;
+            background-color: #111111;
+            position: fixed;
+            right: 2%;
+            bottom: 2%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: pointer;
+        }
+        
+        .Show-Divi {
+            background-color: #000000;
+        }
+        
+        .note-load {
+            width: 50px;
+            height: 50px;
+            background-color: #111111;
+            position: fixed;
+            right: 2%;
+            bottom: 11%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .Cynthia-load:hover::before {
+            opacity: 1;
+        }
+        
+        .img-load {
+            zoom: 31%;
+        }
+        
+        .img-load1 {
+            zoom: 40%;
+        }
+        
+        .new_divi {
+            width: 50px;
+            height: 50px;
+            background-color: #111111;
+            position: fixed;
+            right: 2%;
+            bottom: 29%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            cursor: pointer;
+        }
+        
+        .cynthia-name-show {
+            position: absolute;
+            bottom: 2px;
+            right: 75px;
+            background-color: #333;
+            font-size: 13px;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+            opacity: 0;
+            /* Hidden by default */
+            visibility: hidden;
+            /* Prevent interaction */
+            z-index: 100;
+            white-space: nowrap;
+            /* Prevent wrapping */
+        }
+        
+        .main-head {
+            width: 100%;
+            height: 80px;
+            top: 0;
+            left: 0;
+            position: absolute;
+            background-color: rgba(242, 191, 17, 0.2);
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+        
+        .cynthia-img-load {
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            left: 10%;
+            transform: translate(-50%, -50%);
+            background-color: #111111;
+            position: absolute;
+            border-radius: 50px;
+            background-image: url('./icons/Cynthisssssa_img.png');
+            background-size: 80% 80%;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        
+        .par-main-1 {
+            font-size: 25px;
+            color: rgb(240, 240, 240);
+            position: absolute;
+            top: 15%;
+            left: 145px;
+            font-family: Cambria, "Times New Roman", serif;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+        
+        .sp-test-par {
+            left: 1px;
+            position: relative;
+            font-size: 15px;
+        }
+        
+        .cynthia-img-exit {
+            width: 35px;
+            height: 35px;
+            top: 50%;
+            right: -2%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            position: absolute;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .cyn-img-exit {
+            zoom: 17%;
+        }
+        
+        .cynthia-content-div {
+            width: 100%;
+            height: 400px;
+            top: 80px;
+            left: 0;
+            background-color: #111111;
+            position: absolute;
+            overflow-y: auto;
+        }
+        
+        .cynthia-content-div::-webkit-scrollbar {
+            display: noe;
+            /* Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        .cynthia-content-div::-webkit-scrollbar-track {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .cynthia-content-div::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .cynthia-content-div::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .cynthia-img-exit:hover,
+        .but-like:hover {
+            background-color: rgba(242, 191, 17, 0.2);
+            /* Change background on hover */
+            /* Change text color on hover */
+        }
+        
+        .but-like:hover,
+        .like-it2:hover,
+        .like-it2-211:hover,
+        .like-it:hover,
+        .like-it-211:hover,
+        .forward-arrow:hover,
+        .backward-arrow:hover,
+        .div-not:hover,
+        .play-div:hover,
+        .play-div-211:hover,
+        .chng-one-211:hover,
+        .div-not-211:hover {
+            background-color: rgb(56, 56, 56);
+            /* Change background on hover */
+        }
+        
+        .footer-head-div {
+            width: 100%;
+            height: 70px;
+            bottom: 0;
+            left: 0;
+            background-color: #111111;
+            position: absolute;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+        
+        .cynthia-message {
+            left: 50%;
+            width: 90%;
+            height: 45px;
+            background-color: #242424;
+            position: absolute;
+            top: 58%;
+            transform: translate(-50%, -50%);
+            border: none;
+            border-radius: 28px;
+            font-family: "Cabri", sans-serif;
+            color: #bb9302;
+        }
+        
+        .send-message {
+            position: absolute;
+            height: 38px;
+            width: 38px;
+            right: 1.5%;
+            top: 59%;
+            transform: translate(-50%, -50%);
+            background-color: #b48e05;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .send-mes {
+            zoom: 35%;
+        }
+        
+        .front-cover,
+        .back-cover {
+            width: 350px;
+            transform: translate(-50%, -50%);
+            height: 470px;
+            position: absolute;
+            top: 50%;
+            background-image: url('./icons/for_div_1.png');
+            background-size: cover;
+            left: 50%;
+            border-radius: 15px;
+        }
+        
+        .back-cover {
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+        }
+        
+        .small-prev {
+            width: 170px;
+            height: 220px;
+            position: absolute;
+            bottom: 5.5%;
+            left: 70px;
+            background-color: transparent;
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+            background-size: cover;
+            border-radius: 7px;
+        }
+        
+        .descrip-one {
+            width: 400px;
+            height: 470px;
+            position: absolute;
+            top: 570px;
+            left: 70px;
+            border: 1px solid white;
+            background-color: transparent;
+            border-radius: 10px;
+        }
+        
+        .descrip-two {
+            width: 400px;
+            height: 220px;
+            position: absolute;
+            top: 570px;
+            right: 70px;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 1px solid white;
+        }
+        
+        .descrip-three {
+            width: 400px;
+            height: 220px;
+            position: absolute;
+            top: 820px;
+            right: 70px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        
+        .descrip-four {
+            width: 65%;
+            height: 115px;
+            position: absolute;
+            top: 1100px;
+            left: 70px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        
+        .par-tpop,
+        .par-tpop-4 {
+            font-size: 22px;
+            color: white;
+            top: 1330px;
+            font-family: "Cabri", sans-serif;
+            position: absolute;
+        }
+        
+        .par-tpop {
+            left: 80px;
+        }
+        
+        .par-tpop-4 {
+            font-size: 22px;
+            color: white;
+            top: 1330px;
+            right: 23%;
+            font-family: "Cabri", sans-serif;
+            position: absolute;
+        }
+        
+        .descrip-five {
+            width: 500px;
+            height: 52px;
+            position: absolute;
+            top: 1250px;
+            right: 70px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        
+        .descrip-six {
+            width: 680px;
+            height: 302px;
+            position: absolute;
+            top: 1400px;
+            left: 70px;
+            background-color: transparent;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+        
+        .descrip-par-1,
+        .descrip-par-2,
+        .descrip-par-3 {
+            font-size: 21px;
+            color: white;
+            position: absolute;
+            top: 16px;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .descrip-par-1 {
+            left: 15px;
+        }
+        
+        .descrip-par-2 {
+            font-size: 29px;
+            top: 9px;
+            color: rgba(255, 255, 255, 0.89);
+            right: 20px;
+            font-family: "Cabri", sans-serif;
+            font-weight: bold;
+        }
+        
+        .sp-change,
+        .sp-chan {
+            position: relative;
+            font-size: 14.5px;
+            color: #bb9302;
+            top: -7px;
+            font-style: italic;
+        }
+        
+        .sp-chan {
+            position: relative;
+            left: 2px;
+        }
+        
+        .descrip-par-3 {
+            font-size: 12px;
+            top: 55px;
+            color: rgb(150, 149, 149);
+            left: 18px;
+        }
+        
+        .stats-display {
+            width: 85%;
+            height: 70px;
+            position: absolute;
+            top: 140px;
+            left: 50%;
+            background-color: transparent;
+            border: 0.5px solid #bb9302;
+            transform: translate(-50%, -50%);
+            border-radius: 7px;
+        }
+        
+        .rev-num,
+        .rat-num {
+            font-size: 22px;
+            left: 40px;
+            transform: translate(-50%, -50%);
+            color: white;
+            position: absolute;
+            top: 6px;
+            font-family: Cambria, "Times New Roman", serif;
+            cursor: pointer;
+        }
+        
+        .rat-num {
+            left: 45%;
+        }
+        
+        .language {
+            font-size: 22px;
+            right: -10px;
+            transform: translate(-50%, -50%);
+            color: white;
+            position: absolute;
+            top: 6px;
+            font-family: Cambria, "Times New Roman", serif;
+            cursor: pointer;
+        }
+        
+        .rev-descrip,
+        .rat-descrip {
+            font-size: 13px;
+            left: 40px;
+            transform: translate(-50%, -50%);
+            color: rgb(150, 149, 149);
+            position: absolute;
+            top: 36px;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .rat-descrip {
+            left: 44%;
+            top: 36px;
+        }
+        
+        .lan-descrip {
+            font-size: 13px;
+            right: 15px;
+            transform: translate(-50%, -50%);
+            color: rgb(150, 149, 149);
+            position: absolute;
+            top: 36px;
+            font-family: Cambria, "Times New Roman", serif;
+        }
+        
+        .descript-info,
+        .descript-info-2 {
+            width: 85%;
+            height: 195px;
+            position: absolute;
+            top: 290px;
+            left: 50%;
+            background-color: transparent;
+            border: 0.5px solid #bb9302;
+            transform: translate(-50%, -50%);
+            border-radius: 7px;
+        }
+        
+        .descript-info-2 {
+            background-color: black;
+        }
+        
+        .ipt-sear {
+            width: 74%;
+            height: 45px;
+            position: absolute;
+            top: 430px;
+            left: 50%;
+            background-color: transparent;
+            border: 1px solid white;
+            transform: translate(-50%, -50%);
+            border-radius: 7px;
+            color: white;
+            padding-left: 45px;
+            border: 1px solid white;
+            background-position: 10px 12px;
+            background-size: 25px 25px;
+            background-repeat: no-repeat;
+            background-image: url('./icons/search_things.png');
+        }
+        
+        .ipt-sear:focus {
+            outline: none;
+            border: 1px solid white;
+        }
+        
+        .descrip-par-4,
+        .descrip-par-5,
+        .descrip-par-6,
+        .descrip-par-7,
+        .descrip-par-8,
+        .descrip-par-9,
+        .descrip-par-10,
+        .descrip-par-11,
+        .descrip-par-12 {
+            font-size: 20px;
+            top: 5px;
+            color: white;
+            left: 18px;
+            font-family: Cambria, "Times New Roman", serif;
+            position: absolute;
+        }
+        
+        .descrip-par-5,
+        .descrip-par-6,
+        .descrip-par-7,
+        .descrip-par-8,
+        .descrip-par-9,
+        .descrip-par-10,
+        .descrip-par-11,
+        .descrip-par-12 {
+            font-size: 14px;
+            top: 50px;
+            left: 19px;
+        }
+        
+        .descrip-par-6 {
+            top: 70px;
+        }
+        
+        .descrip-par-7 {
+            top: 90px;
+        }
+        
+        .descrip-par-8 {
+            top: 110px;
+        }
+        
+        .descrip-par-9 {
+            top: 130px;
+        }
+        
+        .descrip-par-10 {
+            top: 150px;
+        }
+        
+        .descrip-par-11 {
+            top: 170px;
+        }
+        
+        .descrip-par-12 {
+            top: 190px;
+        }
+        
+        .div-not {
+            position: absolute;
+            height: 45px;
+            width: 45px;
+            left: 40px;
+            top: 40px;
+            transform: translate(-50%, -50%);
+            background-color: rgba(242, 191, 17, 0.05);
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            border: 1px solid #bb9302;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .descrip-but-1 {
+            position: absolute;
+            width: 220px;
+            height: 45px;
+            right: 20px;
+            top: 20px;
+            background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+            border-radius: 30px;
+            display: flex;
+            justify-content: center;
+            font-size: 14px;
+            align-items: center;
+            border: 0px solid;
+            cursor: pointer;
+            color: white;
+            font-family: "Cabri", sans-serif;
+            font-weight: bold;
+        }
+        
+        .img-eeee {
+            zoom: 30%;
+        }
+        
+        .presnt-20 {
+            position: absolute;
+            width: 90%;
+            height: 135px;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            background-color: transparent;
+            border: 1px solid #bb9302;
+            top: 145px;
+            border-radius: 10px;
+        }
+        
+        .par-pre-1 {
+            font-size: 16px;
+            position: relative;
+            text-align: center;
+            color: white;
+            top: 5px;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .pdf-form,
+        .word-form {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            left: 25px;
+            background-color: #9b0523;
+            top: 47px;
+            font-family: "Cabri", sans-serif;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .word-form {
+            left: 140px;
+            background-color: #181d5e;
+        }
+        
+        .some-form {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            right: 25px;
+            background-color: #471e02;
+            top: 47px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 23px;
+            font-family: "Cabri", sans-serif;
+            color: white;
+        }
+        
+        .img-23410 {
+            zoom: 50%;
+        }
+        
+        .par-des-3 {
+            font-size: 20px;
+            position: absolute;
+            top: 9px;
+            font-family: "Cabri", sans-serif;
+            left: 25px;
+            color: white;
+        }
+        
+        .div-show-img {
+            position: absolute;
+            width: 110px;
+            height: 145px;
+            top: 65px;
+            background-color: rgba(242, 191, 17, 0.2);
+            left: 20px;
+            border-radius: 5px;
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+            background-size: cover;
+        }
+        
+        .div-listen-pre {
+            position: absolute;
+            width: 231px;
+            height: 5px;
+            top: 115px;
+            background-color: rgba(255, 255, 255, 0.12);
+            right: 15px;
+            border-radius: 5px;
+        }
+        
+        .div-listen-pre-2 {
+            width: 5%;
+            height: 100%;
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #ffc800;
+        }
+        
+        .par-tm-1 {
+            font-size: 12px;
+            position: absolute;
+            top: 77px;
+            font-family: "Cabri", sans-serif;
+            left: 157px;
+            color: white;
+        }
+        
+        .par-tm-2 {
+            font-size: 12px;
+            position: absolute;
+            top: 77px;
+            font-family: "Cabri", sans-serif;
+            right: 20px;
+            color: white;
+        }
+        
+        .play-div {
+            position: absolute;
+            width: 41px;
+            height: 41px;
+            left: 245px;
+            background-color: transparent;
+            top: 140px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+        
+        .forward-agin {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            left: 170px;
+            background-color: transparent;
+            top: 140px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 0px solid;
+        }
+        
+        .backward-agin {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            right: 35px;
+            background-color: transparent;
+            top: 140px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 0px solid;
+        }
+        
+        .play-img {
+            zoom: 30%;
+        }
+        
+        .play-img2 {
+            zoom: 40%;
+        }
+        
+        .play-img3 {
+            zoom: 35%;
+            position: relative;
+            text-align: center;
+        }
+        
+        .sp-par {
+            position: absolute;
+            font-size: 9px;
+            color: white;
+        }
+        
+        .nav_2400 {
+            position: absolute;
+            left: 70px;
+            overflow-x: auto;
+            width: 50%;
+            top: 1802px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav_3400,
+        .nav_3401,
+        .nav_3402,
+        .nav_3403,
+        .nav_3404 {
+            position: absolute;
+            right: -55px;
+            overflow-x: auto;
+            width: 50%;
+            top: 1390px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav_3401 {
+            top: 1685px;
+        }
+        
+        .nav_3402 {
+            top: 1985px;
+        }
+        
+        .nav_3403 {
+            top: 2285px;
+        }
+        
+        .nav_3404 {
+            top: 2585px;
+        }
+        
+        .nav_3400 li,
+        .nav_3401 li,
+        .nav_3402 li,
+        .nav_3403 li,
+        .nav_3404 li {
+            list-style: none;
+            padding-left: 60px;
+            display: inline-block;
+        }
+        
+        .nav_3405 {
+            position: absolute;
+            left: 30px;
+            overflow-x: auto;
+            width: 60%;
+            top: 2105px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav_3405 li {
+            list-style: none;
+            padding-bottom: 15px;
+        }
+        
+        .nav_2400 ul {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        
+        .nav_2400::-webkit-scrollbar {
+            display: nne;
+            height: 6px;
+            /* Chrome, Safari, and Opera */
+        }
+        
+        .nav_2400::-webkit-scrollbar-track {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        .nav_2400::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        .nav_2400::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
+        }
+        
+        .nav_2400 li {
+            list-style: none;
+            padding-left: 15px;
+            display: inline-block;
+        }
+        
+        .div_6000,
+        .div_6100,
+        .div_6200,
+        .div_6300,
+        .div_6400,
+        .div_6500,
+        .div_6600,
+        .div_6700,
+        .div_6800,
+        .div_6900,
+        .div_7000 {
+            width: 145px;
+            height: 210px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .div_6000 {
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg');
+            background-size: cover;
+        }
+        
+        .div_6100 {
+            background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg');
+            background-size: cover;
+        }
+        
+        .div_6001 {
+            width: 165px;
+            height: 250px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .div_6150 {
+            width: 705px;
+            height: 120px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 10px;
+            cursor: pointer;
+            /* Often added for buttons */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .par-construct {
+            font-size: 12.5px;
+            position: absolute;
+            text-align: center;
+            color: rgb(150, 149, 149);
+            top: 2935px;
+            left: 25%;
+            font-family: "Cabri", sans-serif;
+        }
+        
+        .Main-display-cont,
+        .Phone-display-cont {
+            display: none;
+        }
+        /* Above 800px: show desktop version */
+        
+        @media (min-width: 801px) {
+            .Main-display-cont {
+                display: block;
+            }
+        }
+        /* 800px and below: show mobile version */
+        
+        @media (max-width: 800px) {
+            .Phone-display-cont {
+                display: block;
+            }
+        }
+    </style>
+    <style>
+        .color-representation {
+            width: 950px;
+            height: 520px;
+            top: 0;
+            right: 15%;
+            border-radius: 300px;
+            position: absolute;
+        }
+    </style>
+    <main class="Main-display-cont">
+        <div class="color-representation"></div>
+        <script>
+            const colors = [
+                'rgba(255, 239, 100, 0.685)',
+                'rgba(0, 0, 255, 0.527)',
+                'rgba(255, 253, 253, 0.308)',
+                'rgba(255, 105, 180, 0.479)',
+                'rgb(146, 7, 7)',
+                'rgba(255, 168, 6, 0.664)',
+                'rgba(202, 41, 41, 0.87)'
+            ];
+
+            const colorRepresentation = document.querySelector('.color-representation');
+            let currentIndex = 0;
+
+            function changeColor() {
+                colorRepresentation.style.backgroundColor = colors[currentIndex];
+                currentIndex = (currentIndex + 1) % colors.length;
+                setTimeout(changeColor, 4000); // 20 seconds
+            }
+
+            changeColor();
+        </script>
+        <div class="Cynthia-display" style="display: none; ">
+
+            <div class="main-head">
+                <div class="cynthia-img-load"></div>
+                <p class="par-main-1">Cynthia<span class="sp-test-par"></span></p>
+                <div class="cynthia-img-exit"><img src="./icons/icons8-cancel-1jjj00.png" class="cyn-img-exit"></div>
+                <script>
+                    const spanTest = document.querySelector('.sp-test-par');
+                    const MainDiv1 = document.querySelector('.Cynthia-display');
+                    const spanExit = document.querySelector('.cynthia-img-exit');
+                    const textWritten = ". . . . . . . . .";
+                    let This = 0; // counter
+
+                    function type() {
+                        if (This < textWritten.length) {
+                            spanTest.textContent += textWritten.charAt(This); // ✅ add to span, not string
+                            This++;
+                            setTimeout(type, 250);
+                        } else {
+                            setTimeout(() => {
+                                spanTest.textContent = '';
+                                This = 0;
+                                type();
+                            }, 1500);
+                        }
+                    }
+
+                    type(); // start typing
+                    // if the span button is clicked
+                    spanExit.addEventListener('click', () => {
+                        MainDiv1.style.display = 'none';
+                    });
+                </script>
+            </div>
+            <div class="cynthia-content-div">
+                <style>
+                    .cont-1 {
+                        width: 180px;
+                        position: absolute;
+                        height: 65px;
+                        top: 42px;
+                        text-align: center;
+                        background-color: #202020;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        position: absolute;
+                        border-radius: 5px;
+                    }
+                    
+                    .cont-1-par,
+                    .cont-2-par,
+                    .cont-3-par {
+                        top: -5px;
+                        font-size: 11.5px;
+                        text-align: center;
+                        font-family: Cambria, "Times New Roman", serif;
+                        color: #cea202;
+                        position: relative;
+                    }
+                    
+                    .cont-2-par {
+                        top: -12px;
+                    }
+                    
+                    .cont-3-par {
+                        top: -22px;
+                    }
+                    
+                    .cont-1-img {
+                        zoom: 16%;
+                        position: relative;
+                        top: 10px;
+                    }
+                    
+                    .div-add {
+                        position: absolute;
+                        height: 38px;
+                        width: 38px;
+                        left: 12%;
+                        top: 59%;
+                        transform: translate(-50%, -50%);
+                        background-color: #b48e05;
+                        border-radius: 50px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    
+                    .par-3000222 {
+                        font-size: 30px;
+                        color: black;
+                    }
+                    
+                    .tedt-one {
+                        width: 64%;
+                        height: 55%;
+                        background-color: transparent;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 15px;
+                        padding-left: 15px;
+                        padding-top: 10px;
+                        font-family: "Cabri ", sans-serif;
+                        border: none;
+                        color: #e2b100;
+                    }
+                    
+                    .tedt-one:focus {
+                        outline: none;
+                        border: none;
+                    }
+                    
+                    .tedt-one::placeholder {}
+                    
+                    .tedt-one::-webkit-scrollbar {
+                        display: noe;
+                        /* Chrome, Safari, and Opera */
+                        width: 5px;
+                        /* width of the scrollbar */
+                        height: 100%;
+                        /* height of the scrollbar (for horizontal scrollbars) */
+                    }
+                    
+                    .par-img-32134 {
+                        font-size: 35px;
+                        font-weight: bold;
+                        color: white;
+                    }
+                    
+                    .tedt-one::-webkit-scrollbar-track {
+                        background-color: transparent;
+                        /* color of the track */
+                        border-radius: 10px;
+                    }
+                    
+                    .tedt-one::-webkit-scrollbar-thumb {
+                        background: #ffc800;
+                        /* color of the scrollbar thumb */
+                        border-radius: 10px;
+                    }
+                    
+                    .tedt-one::-webkit-scrollbar-thumb:hover {
+                        background: #ffc800;
+                        /* color of the scrollbar thumb on hover */
+                    }
+                    
+                    .Cynthia-display {
+                        width: 390px;
+                        height: 550px;
+                        background-color: #111111;
+                        position: fixed;
+                        z-index: 200;
+                        bottom: 1%;
+                        right: 2%;
+                        border-radius: 15px;
+                    }
+                    
+                    .book-ads {
+                        width: 90px;
+                        height: 50px;
+                        background-color: rgba(0, 0, 0, 0.73);
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        font-size: 20px;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        font-style: italic;
+                        border-top-left-radius: 15px;
+                        align-items: center;
+                        font-family: Cambria, "Times New Roman", serif;
+                    }
+                    
+                    .forward-arrow,
+                    .backward-arrow {
+                        width: 45px;
+                        height: 45px;
+                        background-color: transparent;
+                        position: absolute;
+                        bottom: 3%;
+                        right: 3%;
+                        color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 1px solid white;
+                        border-radius: 50px;
+                        cursor: pointer;
+                    }
+                    
+                    .backward-arrow {
+                        right: 8%;
+                    }
+                    
+                    .forward-rep {
+                        zoom: 25%;
+                    }
+                    
+                    .change-rep {
+                        width: 130px;
+                        height: 40px;
+                        background-color: transparent;
+                        position: absolute;
+                        bottom: 13.5%;
+                        right: 2.5%;
+                        color: white;
+                        display: flex;
+                        font-size: 18px;
+                        justify-content: center;
+                        align-items: center;
+                        border-bottom: 0.5px solid white;
+                        font-weight: bold;
+                        font-family: Cambria, "Times New Roman", serif;
+                    }
+                    
+                    .par-cynthia {
+                        position: relative;
+                        font-size: 20px;
+                        top: 40%;
+                        color: rgb(71, 71, 71);
+                        font-family: "Cabri ", sans-serif;
+                        font-style: italic;
+                        text-align: center;
+                    }
+                    
+                    .not_div {
+                        width: 50px;
+                        height: 50px;
+                        background-color: #111111;
+                        position: fixed;
+                        right: 2%;
+                        bottom: 20%;
+                        border-radius: 50px;
+                        z-index: 100;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+                </style>
+
+                <div class="cont-1" onclick="window.location.href='FB-Terms and Conditions.html';">
+                    <p class="cont-1-par"><img src="./icons/passworsssssswwwwwwwds.png" class="cont-1-img"> Note, messages disappear</p>
+                    <p class="cont-2-par">once reloaded. Only important</p>
+                    <p class="cont-3-par">messages are saved. Learn how</p>
+                </div>
+                <div class="contain-1"></div>
+                <p class="par-cynthia">Chat with FB Assistant AI, Cynthia..</p>
+                <script>
+                    const MainContainer = document.querySelector('.cynthia-content-div');
+                    const TriggerCont = document.querySelector('.Cynthia-load');
+                    const WordsOne = 'Hi there! 👋 I’m Cynthia, the assistance chatbot for FRUITFUL BOUGH PRODUCTIONS.                    We’re still in production, so I’ll guide you through a few options I have ready for you right now.                                        Please note we’re working day and night to build a responsive book‑reading and publishing website.                       Your patience means a lot—soon we’ll roll out features like AI‑powered book‑reading assistance.🙏🏼';
+                    const WordsTwo = 'Kindly explore other pages or sign up using the top‑right button. We’ll be launching our chatbot prompts soon—please bear with us.                   Thank You 🙏🏼🙏🏼';
+
+                    TriggerCont.addEventListener('click', () => {
+                        if (window.getComputedStyle(MainContainer).display === 'none') {
+                            console.warn('.cynthia-content-div is hidden, will not type.');
+                            return;
+                        }
+                        createTypeContainer(1, () => createTypeContainer(2));
+                    });
+
+                    function createTypeContainer(num, callback) {
+                        let div10002 = MainContainer.querySelector(`.contain-${num}`);
+                        if (!div10002) {
+                            div10002 = document.createElement('div');
+                            div10002.className = `contain-${num}`; // CSS handles position:absolute
+                            // Position logic
+                            const prev = MainContainer.querySelector(`.contain-${num - 1}`);
+                            if (prev) {
+                                const prevRect = prev.getBoundingClientRect();
+                                div10002.style.top = `${prevRect.bottom - MainContainer.getBoundingClientRect().top + 5}px`;
+                            } else {
+                                div10002.style.top = '90px';
+                            }
+                            MainContainer.appendChild(div10002);
+                        }
+
+                        let ii = 0;
+                        div10002.textContent = '';
+                        const ToogleWords = num == 1 ? WordsOne : WordsTwo; // pick text based on num
+
+                        function typeTwo() {
+                            if (ii < ToogleWords.length) {
+                                div10002.textContent += ToogleWords.charAt(ii);
+                                ii++;
+                                setTimeout(typeTwo, 100);
+                            } else if (callback) {
+                                callback(); // Trigger next container after finish
+                            }
+                        }
+
+                        typeTwo();
+                    }
+                </script>
+            </div>
+            <div class="footer-head-div">
+                <div class="cynthia-message"><textarea class="tedt-one" placeholder="Ask Cynthia"></textarea></div>
+                <div class="div-add">
+                    <p class="par-3000222">+</p>
+                </div>
+                <div class="send-message"><img src="./icons/icons8-send-100.png" class="send-mes"></div>
+            </div>
+        </div>
+        <style>
+            .show-like-presentation {
+                width: 320px;
+                height: 130px;
+                background-color: rgba(242, 191, 17, 0.2);
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                z-index: 100;
+                border-radius: 10px;
+            }
+            
+            .like-pres-img {
+                zoom: 50%;
+                position: absolute;
+                top: 10px;
+                left: 0;
+            }
+            
+            .par-like-134,
+            .par-like-135,
+            .par-like-136 {
+                font-size: 17px;
+                top: 5px;
+                color: white;
+                position: absolute;
+                font-family: Cambria, "Times New Roman", serif;
+                font-style: italic;
+                left: 110px;
+            }
+            
+            .par-like-135 {
+                top: 25px;
+            }
+            
+            .par-like-136 {
+                top: 45px;
+            }
+            
+            .but-like {
+                width: 100px;
+                height: 37px;
+                position: absolute;
+                bottom: 5px;
+                background-color: black;
+                border-radius: 6px;
+                border: 0px solid;
+                color: white;
+                right: 75px;
+            }
+        </style>
+        <div class="show-like-presentation" style="display: none; ">
+            <img src="./icons/images (5)-Photoroom.png" class="like-pres-img">
+            <p class="par-like-134">Thanks for liking this</p>
+            <p class="par-like-135">book page, we exploy you</p>
+            <p class="par-like-136">To explore features here.</p>
+            <button class="but-like">Explore</button>
+        </div>
+
+        <div class="img-preview" style="display: nne; ">
+            <div class="like-it"><img class="like-img1" src="./icons/fgggggggg.png"></div>
+            <script>
+                const FavouriteOption = document.querySelector('.like-it');
+                const Favouriteimg = document.querySelector('.like-img1');
+                const LikePresentation = document.querySelector('.show-like-presentation'); // ..
+                FavouriteOption.addEventListener('click', () => {
+                    if (Favouriteimg.src.includes('fgggggggg.png')) {
+                        Favouriteimg.src = './icons/icons8-love-100.png';
+                    } else {
+                        Favouriteimg.src = './icons/fgggggggg.png';
+
+                    }
+                    LikePresentation.style.display = 'block';
+                    setTimeout(() => {
+                        LikePresentation.style.display = 'none';
+                    }, 5000); // 1 minute = 60000 ms
+                });
+            </script>
+            <div class="like-it2"><img class="like-img" src="./icons/icons8-home-100.png"></div>
+            <div class="front-cover"></div>
+            <div class="back-cover"></div>
+            <div class="small-prev">
+                <div class="book-ads">Premium</div>
+            </div>
+
+            <div class="change-rep">Change Cover</div>
+            <div class="forward-arrow"><img src="./icons/forward.png" class="forward-rep"></div>
+            <div class="backward-arrow"><img src="./icons/back.png" class="forward-rep"></div>
+
+        </div>
+        <div class="Cynthia-load " style="display: none; "><img src="./icons/icons8-chat-100.png " class="img-load "></div>
+        <div class="cynthia-name-show ">Chat with cynthia... 👍</div>
+        <script>
+            const CynthiaImg = document.querySelector('.Cynthia-load');
+            const CynthiaDiv = document.querySelector('.cynthia-name-show');
+            const CynthiaDisplay = document.querySelector('.Cynthia-display');
+
+            CynthiaImg.addEventListener('click', () => {
+                CynthiaDisplay.style.display = 'block';
+            });
+
+            CynthiaImg.addEventListener('mouseenter', () => {
+                CynthiaDiv.style.opacity = '1';
+                CynthiaDiv.style.visibility = 'visible';
+            });
+
+            CynthiaImg.addEventListener('mouseleave', () => {
+                CynthiaDiv.style.opacity = '0';
+                CynthiaDiv.style.visibility = 'hidden';
+            });
+        </script>
+        <div class="descrip-one">
+            <p class="descrip-par-1">The Millenium Meltdown</p>
+            <p class="descrip-par-3">Historical Novel of technology</p>
+            <p class="descrip-par-2"><span class="sp-change">$</span>10<span class="sp-chan">00</span></p>
+            <div class="stats-display">
+                <p class="rev-num">000</p>
+                <p class="rev-descrip">Viewed</p>
+                <p class="rat-num">0.3%</p>
+                <p class="rat-descrip">ratings</p>
+                <p class="language">English</p>
+                <p class="lan-descrip">language</p>
+            </div>
+            <style>
+                .sp-412345 {
+                    position: relative;
+                    color: #e2b100;
+                    left: 5px;
+                    cursor: pointer;
+                }
+            </style>
+            <div class="descript-info">
+                <p class="descrip-par-4">Description</p>
+                <p class="descrip-par-5">The Millenium Meltdown is a powerful documentary</p>
+                <p class="descrip-par-6">that chronicles the global race against time to</p>
+                <p class="descrip-par-7">avert the Y2k computer bug crisis. For over three</p>
+                <p class="descrip-par-8">decades (1970-2000), the fear loomed that computer</p>
+                <p class="descrip-par-9">systems, limited by two-digit year formats, would</p>
+                <p class="descrip-par-10">fail to recognize the new century <span class="sp-412345">Read More.</span></p>
+            </div>
+            <div class="descript-info-2" style="display: none; ">
+            </div>
+            <script>
+                //
+                const ChnText = document.querySelector('.sp-412345');
+                const TextDiv = document.querySelector('.descript-info');
+                const TextDivTwo = document.querySelector('.descript-info-2');
+                ChnText.addEventListener('click', () => {
+                    TextDiv.style.display = 'none';
+                    TextDivTwo.style.display = 'block';
+                })
+            </script>
+            <input type="text" class="ipt-sear" placeholder="Search for another book">
+            <script>
+                const InputPlace = document.querySelector('.ipt-sear');
+                const placeholderText1 = 'Search for another book';
+                let iii = 0;
+                let placeholder = '';
+
+                // Clear the placeholder initially
+                InputPlace.placeholder = '';
+
+                // Function to add letters one by one
+                function addLetter() {
+                    if (iii < placeholderText1.length) {
+                        placeholder += placeholderText1[iii];
+                        InputPlace.placeholder = placeholder;
+                        iii++;
+                        setTimeout(addLetter, 500); // 500ms delay between each letter
+                    } else {
+                        // Reset when done
+                        setTimeout(() => {
+                            InputPlace.placeholder = '';
+                            placeholder = '';
+                            iii = 0;
+                            addLetter();
+                        }, 1000); // Wait 1s before restarting
+                    }
+                }
+
+                // Start adding letters
+                addLetter();
+            </script>
+        </div>
+        <div class="descrip-two">
+            <div class="div-not"><img src="./icons/1234567890.png" class="img-eeee"></div>
+            <button class="descrip-but-1">Buy Now</button>
+            <div class="presnt-20">
+                <p class="par-pre-1">Get this book in these formats</p>
+                <div class="pdf-form"><img src="./icons/icons8-pdf-100.png" class="img-23410"></div>
+                <div class="word-form"><img src="./icons/icons8-word-100.png" class="img-23410"></div>
+                <div class="some-form"><img src="./icons/icons8-txt-100.png" class="img-23410"></div>
+            </div>
+        </div>
+        <div class="descrip-three">
+            <p class="par-des-3">Let's start Listening<span class="sp-200110">......</span></p>
+            <script>
+                const Words2 = document.querySelector('.sp-200110');
+                const placeholderText2 = '...........';
+                let iiii = 0;
+                let placeholder2 = '';
+
+                // Clear the placeholder initially
+                Words2.textContent = '';
+
+                // Function to add letters one by one
+                function addLetter2() {
+                    if (iiii < placeholderText2.length) {
+                        placeholder2 += placeholderText2[iiii];
+                        Words2.textContent = placeholder2;
+                        iiii++;
+                        setTimeout(addLetter2, 500); // 200ms delay between each letter
+                    } else {
+                        // Reset when done
+                        setTimeout(() => {
+                            Words2.textContent = '';
+                            placeholder2 = '';
+                            iiii = 0;
+                            addLetter2();
+                        }, 1000); // Wait 1s before restarting
+                    }
+                }
+
+                // Start adding letters
+                addLetter2();
+            </script>
+            <div class="div-show-img"></div>
+            <p class="par-tm-1">0.10</p>
+            <p class="par-tm-2">1.20.30</p>
+            <div class="div-listen-pre">
+                <div class="div-listen-pre-2"></div>
+            </div>
+            <div class="play-div"><img src="./icons/icons8-play-100.png" class="play-img"></div>
+            <div class="forward-agin"><img src="./icons/icons8-undo-alt-100.png" class="play-img2"><span class="sp-par">10x</span></div>
+            <div class="backward-agin"><img src="./icons/icons8-reboot-100.png" class="play-img3"><span class="sp-par">10x</span></div>
+        </div>
+        <div class="descrip-four"></div>
+        <div class="descrip-five"></div>
+        <p class="par-tpop">Book Trailer</p>
+        <div class="descrip-six"></div>
+        <nav class="nav_2400 ">
+            <ul>
+                <li>
+                    <div class="div_6000" onclick="window.location.href='the-roseline-none-else.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6100 " onclick="window.location.href='the-wise-companion.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6200 "></div>
+                </li>
+                <li>
+                    <div class="div_6300 "></div>
+                </li>
+                <li>
+                    <div class="div_6400 "></div>
+                </li>
+                <li>
+                    <div class="div_6500 "></div>
+                </li>
+                <li>
+                    <div class="div_6600 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+                <li>
+                    <div class="div_6700 "></div>
+                </li>
+
+            </ul>
+        </nav>
+        <p class="par-tpop-4">Upcoming Book Versions</p>
+        <nav class="nav_3400">
+            <ul>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav_3401">
+            <ul>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav_3402">
+            <ul>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav_3403">
+            <ul>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav_3404">
+            <ul>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6001" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <nav class="nav_3405">
+            <ul>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6150" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                </li>
+            </ul>
+        </nav>
+        <p class="par-construct">-No more content for now-</p>
+        <div class="note-load " style="display: none; "><img src="./icons/icons8-write-100.png" class="img-load "></div>
+        <div class="not_div " style="display: none; "><img src="./icons/icons8-notification-100-2.png " class="img-load1 "></div>
+        <div class="new_divi " style="display: none; " onclick="window.location.href='All_Books_Collections.html' ; "><img src="./icons/icons8-series-100.png " class="img-load1 "></div>
+        <div class="Show-Divi ">
+            <p class="par-img-32134 ">+</p>
+        </div>
+        <script>
+            // This is for the more seqence...
+            const showDivi = document.querySelector('.Show-Divi');
+            const hiddenDivs = document.querySelectorAll('.Cynthia-load, .not_div,  .new_divi, .note-load');
+
+            showDivi.addEventListener('click', () => {
+                hiddenDivs.forEach(div => {
+                    div.style.display = '';
+                });
+                showDivi.style.display = 'none';
+            });
+        </script>
+    </main>
+    <div class="Phone-display-cont">
+        <style>
+            .color-representation-211 {
+                width: 300px;
+                height: 300px;
+                top: 170px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 300px;
+                position: absolute;
+                background-color: red;
+            }
+            
+            .img-preview-211 {
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(242, 191, 17, 0.15);
+                width: 100%;
+                border-bottom-left-radius: 80px;
+                border-bottom-right-radius: 80px;
+                height: 380px;
+                z-index: 20;
+                backdrop-filter: blur(60px);
+            }
+            
+            .like-it-211 {
+                width: 38px;
+                height: 38px;
+                background-color: transparent;
+                position: absolute;
+                top: 15px;
+                right: 2%;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid#ffffff;
+                cursor: pointer;
+            }
+            
+            .like-img1-211,
+            .like-img-211 {
+                zoom: 28%;
+            }
+            
+            .like-it2-211 {
+                width: 38px;
+                height: 38px;
+                background-color: transparent;
+                position: absolute;
+                top: 15px;
+                left: 2%;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                cursor: pointer;
+                align-items: center;
+                border: 1px solid#ffffff;
+            }
+            
+            .front-cover-211,
+            .back-cover-211 {
+                width: 130px;
+                transform: translate(-50%, -50%);
+                height: 170px;
+                position: absolute;
+                top: 40%;
+                background-image: url('./icons/for_div_1.png');
+                background-size: cover;
+                left: 50%;
+                border-radius: 15px;
+            }
+            
+            .back-cover-211 {
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+            }
+            
+            .small-prev-211 {
+                width: 65px;
+                height: 80px;
+                position: absolute;
+                bottom: 9%;
+                left: 20px;
+                background-color: transparent;
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+                background-size: cover;
+                border-radius: 7px;
+            }
+            
+            .book-ads-211 {
+                width: 60px;
+                height: 30px;
+                background-color: rgba(0, 0, 0, 0.73);
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                font-size: 12px;
+                color: white;
+                display: flex;
+                justify-content: center;
+                font-style: italic;
+                border-top-left-radius: 15px;
+                align-items: center;
+                font-family: Cambria, "Times New Roman", serif;
+            }
+            
+            .chng-one-211 {
+                width: 53px;
+                height: 53px;
+                background-color: transparent;
+                position: absolute;
+                bottom: 13%;
+                right: 4.5%;
+                border-radius: 8px;
+                border: 1px solid white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .like-img3-211 {
+                zoom: 35%;
+            }
+            
+            .descrip-one-211 {
+                width: 335px;
+                height: 450px;
+                position: absolute;
+                top: 640px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border: 1px solid white;
+                background-color: transparent;
+                border-radius: 10px;
+            }
+            
+            .descrip-par-1-211,
+            .descrip-par-2-211,
+            .descrip-par-3-211 {
+                font-size: 17px;
+                color: white;
+                position: absolute;
+                top: 17px;
+                font-family: Cambria, "Times New Roman", serif;
+            }
+            
+            .descrip-par-1-211 {
+                left: 15px;
+            }
+            
+            .descrip-par-3-211 {
+                font-size: 11px;
+                top: 48px;
+                color: rgb(150, 149, 149);
+                left: 17px;
+            }
+            
+            .stats-display-211 {
+                width: 85%;
+                height: 70px;
+                position: absolute;
+                top: 130px;
+                left: 50%;
+                background-color: transparent;
+                border: 0.5px solid #bb9302;
+                transform: translate(-50%, -50%);
+                border-radius: 7px;
+            }
+            
+            .rev-num-211,
+            .rat-num-211 {
+                font-size: 19px;
+                left: 40px;
+                transform: translate(-50%, -50%);
+                color: white;
+                position: absolute;
+                top: 9px;
+                font-family: Cambria, "Times New Roman", serif;
+                cursor: pointer;
+            }
+            
+            .rat-num-211 {
+                left: 47%;
+            }
+            
+            .rev-descrip-211,
+            .rat-descrip-211 {
+                font-size: 12px;
+                left: 40px;
+                transform: translate(-50%, -50%);
+                color: rgb(150, 149, 149);
+                position: absolute;
+                top: 38px;
+                font-family: Cambria, "Times New Roman", serif;
+            }
+            
+            .rat-descrip-211 {
+                left: 46.5%;
+                top: 38px;
+            }
+            
+            .language-211 {
+                font-size: 19px;
+                right: -10px;
+                transform: translate(-50%, -50%);
+                color: white;
+                position: absolute;
+                top: 6px;
+                font-family: Cambria, "Times New Roman", serif;
+                cursor: pointer;
+            }
+            
+            .lan-descrip-211 {
+                font-size: 12px;
+                right: 3px;
+                transform: translate(-50%, -50%);
+                color: rgb(150, 149, 149);
+                position: absolute;
+                top: 36px;
+                font-family: Cambria, "Times New Roman", serif;
+            }
+            
+            .descript-info-211,
+            .descript-info-211 {
+                width: 85%;
+                height: 175px;
+                position: absolute;
+                top: 272px;
+                left: 50%;
+                background-color: transparent;
+                border: 0.5px solid #bb9302;
+                transform: translate(-50%, -50%);
+                border-radius: 7px;
+            }
+            
+            .descript-info-211 {
+                background-color: black;
+            }
+            
+            .descrip-par-4-211,
+            .descrip-par-5-211,
+            .descrip-par-6-211,
+            .descrip-par-7-211,
+            .descrip-par-8-211,
+            .descrip-par-9-211,
+            .descrip-par-10-211,
+            .descrip-par-11-211,
+            .descrip-par-12-211 {
+                font-size: 16px;
+                top: 10px;
+                color: white;
+                left: 18px;
+                font-family: Cambria, "Times New Roman", serif;
+                position: absolute;
+            }
+            
+            .descrip-par-5-211,
+            .descrip-par-6-211,
+            .descrip-par-7-211,
+            .descrip-par-8-211,
+            .descrip-par-9-211,
+            .descrip-par-10-211,
+            .descrip-par-11-211,
+            .descrip-par-12-211 {
+                font-size: 11.2px;
+                top: 53px;
+                left: 19px;
+            }
+            
+            .descrip-par-6-211 {
+                top: 70px;
+            }
+            
+            .descrip-par-7-211 {
+                top: 87px;
+            }
+            
+            .descrip-par-8-211 {
+                top: 104px;
+            }
+            
+            .descrip-par-9-211 {
+                top: 121px;
+            }
+            
+            .descrip-par-10-211 {
+                top: 138px;
+            }
+            
+            .descrip-par-11 {
+                top: 170px;
+            }
+            
+            .descrip-par-12 {
+                top: 190px;
+            }
+            
+            .ipt-sear-211 {
+                width: 74%;
+                height: 45px;
+                position: absolute;
+                top: 410px;
+                left: 50%;
+                background-color: transparent;
+                border: 1px solid white;
+                transform: translate(-50%, -50%);
+                border-radius: 7px;
+                color: white;
+                padding-left: 45px;
+                border: 1px solid white;
+                background-position: 10px 12px;
+                background-size: 25px 25px;
+                background-repeat: no-repeat;
+                background-image: url('./icons/search_things.png');
+            }
+            
+            .ipt-sear-211:focus {
+                outline: none;
+                border: 1px solid white;
+            }
+            
+            .descrip-two-211 {
+                width: 335px;
+                height: 220px;
+                position: absolute;
+                top: 1025px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border-radius: 10px;
+                border: 1px solid white;
+            }
+            
+            .div-not-211 {
+                position: absolute;
+                height: 39px;
+                width: 39px;
+                left: 35px;
+                top: 35px;
+                transform: translate(-50%, -50%);
+                background-color: rgba(242, 191, 17, 0.05);
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                border: 1px solid #bb9302;
+                align-items: center;
+                cursor: pointer;
+            }
+            
+            .img-eeee-211 {
+                zoom: 25%;
+            }
+            
+            .descrip-but-1-211 {
+                position: absolute;
+                width: 170px;
+                height: 39px;
+                right: 15px;
+                top: 15px;
+                background: linear-gradient(to right, rgb(240, 205, 0) 20%, rgb(054, 046, 2) 80%) !important;
+                border-radius: 30px;
+                display: flex;
+                justify-content: center;
+                font-size: 13px;
+                align-items: center;
+                border: 0px solid;
+                cursor: pointer;
+                color: white;
+                font-family: "Cabri", sans-serif;
+                font-weight: bold;
+            }
+            
+            .par-pre-1-211 {
+                font-size: 16px;
+                position: relative;
+                text-align: center;
+                color: white;
+                top: 5px;
+                font-family: "Cabri", sans-serif;
+            }
+            
+            .pdf-form-211,
+            .word-form-211 {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                left: 25px;
+                background-color: #9b0523;
+                top: 59px;
+                font-family: "Cabri", sans-serif;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 20px;
+                color: white;
+            }
+            
+            .some-form-211 {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                right: 25px;
+                background-color: #471e02;
+                top: 59px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 23px;
+                font-family: "Cabri", sans-serif;
+                color: white;
+            }
+            
+            .img-23410-211 {
+                zoom: 40%;
+            }
+            
+            .word-form-211 {
+                left: 120px;
+                background-color: #181d5e;
+            }
+            
+            .descrip-three-211 {
+                width: 335px;
+                height: 195px;
+                position: absolute;
+                top: 1285px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
+            
+            .par-des-3-211 {
+                font-size: 18px;
+                position: absolute;
+                top: 9px;
+                font-family: "Cabri", sans-serif;
+                left: 25px;
+                color: white;
+            }
+            
+            .div-show-img-211 {
+                position: absolute;
+                width: 90px;
+                height: 125px;
+                top: 60px;
+                background-color: rgba(242, 191, 17, 0.2);
+                left: 20px;
+                border-radius: 5px;
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 01.03.09_42056866.jpg');
+                background-size: cover;
+            }
+            
+            .par-tm-1-211 {
+                font-size: 12px;
+                position: absolute;
+                top: 70px;
+                font-family: "Cabri", sans-serif;
+                left: 130px;
+                color: white;
+            }
+            
+            .par-tm-2-211 {
+                font-size: 12px;
+                position: absolute;
+                top: 70px;
+                font-family: "Cabri", sans-serif;
+                right: 20px;
+                color: white;
+            }
+            
+            .div-listen-pre-211 {
+                position: absolute;
+                width: 190px;
+                height: 5px;
+                top: 105px;
+                background-color: rgba(255, 255, 255, 0.12);
+                right: 15px;
+                border-radius: 5px;
+            }
+            
+            .div-listen-pre-2 {
+                width: 5%;
+                height: 100%;
+                border-radius: 5px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #ffc800;
+            }
+            
+            .play-div-211 {
+                position: absolute;
+                width: 35px;
+                height: 35px;
+                left: 203px;
+                background-color: transparent;
+                top: 133px;
+                border-radius: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                border: 2px solid white;
+            }
+            
+            .play-img-211 {
+                zoom: 20%;
+            }
+            
+            .descrip-four-211 {
+                width: 335px;
+                height: 115px;
+                position: absolute;
+                top: 1495px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
+            
+            .descrip-five-211 {
+                width: 335px;
+                height: 52px;
+                position: absolute;
+                top: 1635px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
+            
+            .par-tpop-211,
+            .par-tpop-4-211 {
+                font-size: 18px;
+                color: white;
+                top: 1685px;
+                font-family: "Cabri", sans-serif;
+                position: absolute;
+            }
+            
+            .par-tpop-211 {
+                left: 12px;
+            }
+            
+            .par-tpop-4-211 {
+                overflow-y: auto;
+                left: 12px;
+                top: 2260px;
+            }
+            
+            .descrip-six-211 {
+                width: 335px;
+                height: 252px;
+                position: absolute;
+                top: 1870px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 5px;
+            }
+            
+            .nav_2400-211 {
+                position: absolute;
+                left: 5px;
+                overflow-x: auto;
+                width: 98%;
+                top: 2042px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav_2400-211 ul {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            
+            .nav_2400-211::-webkit-scrollbar {
+                display: nne;
+                height: 6px;
+                /* Chrome, Safari, and Opera */
+            }
+            
+            .nav_2400-211::-webkit-scrollbar-track {
+                background-color: #111111;
+                /* color of the track */
+                border-radius: 10px;
+            }
+            
+            .nav_2400-211::-webkit-scrollbar-thumb {
+                background: #ffc800;
+                /* color of the scrollbar thumb */
+                border-radius: 10px;
+            }
+            
+            .nav_2400-211::-webkit-scrollbar-thumb:hover {
+                background: #ffc800;
+                /* color of the scrollbar thumb on hover */
+            }
+            
+            .nav_2400-211 li {
+                list-style: none;
+                padding-left: 15px;
+                display: inline-block;
+            }
+            
+            .div_6000-211,
+            .div_6100-211,
+            .div_6200-211,
+            .div_6300-211,
+            .div_6400-211,
+            .div_6500-211,
+            .div_6600-211,
+            .div_6700-211,
+            .div_6800-211,
+            .div_6900-211,
+            .div_7000-211 {
+                width: 110px;
+                height: 150px;
+                position: relative;
+                background-color: rgba(255, 255, 255, 0.18);
+                border-radius: 10px;
+                cursor: pointer;
+                /* Often added for buttons */
+                transition: background-color 0.3s, color 0.3s;
+            }
+            
+            .div_6000-211 {
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.36.31_c3190022.jpg');
+                background-size: cover;
+            }
+            
+            .div_6100-211 {
+                background-image: url('./Pictures/WhatsApp Image 2025-10-01 at 00.50.21_b4fe749b.jpg');
+                background-size: cover;
+            }
+            
+            .upcoming-channel {
+                width: 335px;
+                height: 460px;
+                position: absolute;
+                top: 2555px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border: 1px solid white;
+                border-radius: 5px;
+                overflow-y: auto;
+            }
+            
+            .nav_3400-211,
+            .nav_3401-211,
+            .nav_3402-211,
+            .nav_3403-211,
+            .nav_3404-211 {
+                position: absolute;
+                left: -22.5px;
+                overflow-x: auto;
+                width: 100%;
+                top: 10px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav_3401-211 {
+                top: 185px;
+            }
+            
+            .nav_3402-211 {
+                top: 360px;
+            }
+            
+            .nav_3403-211 {
+                top: 535px;
+            }
+            
+            .nav_3404-211 {
+                top: 710px;
+            }
+            
+            .nav_3400-211 li,
+            .nav_3401-211 li,
+            .nav_3402-211 li,
+            .nav_3403-211 li,
+            .nav_3404-211 li {
+                list-style: none;
+                padding-left: 25px;
+                display: inline-block;
+            }
+            
+            .div_6001-211 {
+                width: 110px;
+                height: 150px;
+                position: relative;
+                background-color: rgba(255, 255, 255, 0.18);
+                border-radius: 10px;
+                cursor: pointer;
+                /* Often added for buttons */
+                transition: background-color 0.3s, color 0.3s;
+            }
+            
+            .div_6150-211 {
+                width: 98%;
+                height: 100px;
+                position: relative;
+                background-color: rgba(255, 255, 255, 0.18);
+                border-radius: 10px;
+                cursor: pointer;
+                /* Often added for buttons */
+                transition: background-color 0.3s, color 0.3s;
+            }
+            
+            .reviews-channel {
+                width: 100%;
+                height: 230px;
+                background-color: transparent;
+                position: absolute;
+                top: 2830px;
+                left: 0;
+                overflow-y: auto;
+            }
+            
+            .nav_3405-211 {
+                position: absolute;
+                left: -17px;
+                overflow-x: auto;
+                width: 100%;
+                top: 5px;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .nav_3405-211 li {
+                list-style: none;
+                padding-bottom: 15px;
+            }
+            
+            .par-construct-211 {
+                font-size: 12.5px;
+                position: absolute;
+                text-align: center;
+                color: rgb(150, 149, 149);
+                top: 700px;
+                left: 25%;
+                font-family: "Cabri", sans-serif;
+            }
+        </style>
+        <div class="color-representation-211"></div>
+        <div class="img-preview-211" style="display: nne; ">
+            <div class="like-it-211"><img class="like-img1-211" src="./icons/fgggggggg.png"></div>
+            <div class="like-it2-211"><img class="like-img-211" src="./icons/icons8-home-100.png"></div>
+            <div class="front-cover-211"></div>
+            <div class="back-cover-211"></div>
+            <div class="small-prev-211">
+                <div class="book-ads-211">Premium</div>
+            </div>
+            <div class="chng-one-211"><img class="like-img3-211" src="./icons/icons8-change-100sggwgwgw.png"></div>
+        </div>
+        <div class="descrip-one-211">
+            <p class="descrip-par-1-211">The Millenium Meltdown</p>
+            <p class="descrip-par-3-211">Historical Novel of technology</p>
+            <div class="stats-display-211">
+                <p class="rev-num-211">000</p>
+                <p class="rev-descrip-211">Viewed</p>
+                <p class="rat-num-211">0.3%</p>
+                <p class="rat-descrip-211">ratings</p>
+                <p class="language-211">English</p>
+                <p class="lan-descrip-211">language</p>
+            </div>
+            <div class="descript-info-211">
+                <p class="descrip-par-4-211">Description</p>
+                <p class="descrip-par-5-211">The Millenium Meltdown is a powerful documentary</p>
+                <p class="descrip-par-6-211">that chronicles the global race against time to</p>
+                <p class="descrip-par-7-211">avert the Y2k computer bug crisis. For over three</p>
+                <p class="descrip-par-8-211">decades (1970-2000), the fear loomed that computer</p>
+                <p class="descrip-par-9-211">systems, limited by two-digit year formats, would</p>
+                <p class="descrip-par-10-211">fail to recognize the new century <span class="sp-412345">Read More.</span></p>
+            </div>
+            <input type="text" class="ipt-sear-211" placeholder="Search for another book">
+        </div>
+        <div class="descrip-two-211">
+            <div class="div-not-211"><img src="./icons/1234567890.png" class="img-eeee-211"></div>
+            <button class="descrip-but-1-211">Buy Now</button>
+            <div class="presnt-20">
+                <p class="par-pre-1-211">Get this book in these formats</p>
+                <div class="pdf-form-211"><img src="./icons/icons8-pdf-100.png" class="img-23410-211"></div>
+                <div class="word-form-211"><img src="./icons/icons8-word-100.png" class="img-23410-211"></div>
+                <div class="some-form-211"><img src="./icons/icons8-txt-100.png" class="img-23410"></div>
+            </div>
+        </div>
+        <div class="descrip-three-211">
+            <p class="par-des-3-211">Let's start Listening<span class="sp-200110-211">......</span></p>
+            <script>
+                //
+                const Words211 = document.querySelector('.sp-200110-211');
+                const placeholderText211 = '...........';
+                let iiii211 = 0;
+                let displayed211 = ''; // rename this to avoid confusion
+
+                // Clear initially
+                Words211.textContent = '';
+
+                // Add letters one by one
+                function addLetter211() {
+                    if (iiii211 < placeholderText211.length) {
+                        displayed211 += placeholderText211[iiii211]; // use placeholderText211 here
+                        Words211.textContent = displayed211;
+                        iiii211++;
+                        setTimeout(addLetter211, 200); // you wrote 200ms in comment
+                    } else {
+                        // Reset when done
+                        setTimeout(() => {
+                            Words211.textContent = '';
+                            displayed211 = '';
+                            iiii211 = 0;
+                            addLetter211();
+                        }, 1000); // Wait 1s before restarting
+                    }
+                }
+
+                // Start
+                addLetter211();
+            </script>
+            <div class="div-show-img-211"></div>
+            <p class="par-tm-1-211">0.10</p>
+            <p class="par-tm-2-211">1.20.30</p>
+            <div class="div-listen-pre-211">
+                <div class="div-listen-pre-2"></div>
+            </div>
+            <div class="play-div-211"><img src="./icons/icons8-play-100.png" class="play-img-211"></div>
+        </div>
+        <div class="descrip-four-211"></div>
+        <div class="descrip-five-211"></div>
+        <p class="par-tpop-211">Book Trailer</p>
+        <div class="descrip-six-211"></div>
+        <nav class="nav_2400-211 ">
+            <ul>
+                <li>
+                    <div class="div_6000-211" onclick="window.location.href='the-roseline-none-else.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6100-211 " onclick="window.location.href='the-wise-companion.html';"></div>
+                </li>
+                <li>
+                    <div class="div_6200-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6300-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6400-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6500-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6600-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+                <li>
+                    <div class="div_6700-211 "></div>
+                </li>
+
+            </ul>
+        </nav>
+        <p class="par-tpop-4-211">Upcoming Book Versions</p>
+        <div class="upcoming-channel">
+            <nav class="nav_3400-211">
+                <ul>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav_3401-211">
+                <ul>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav_3402-211">
+                <ul>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav_3403-211">
+                <ul>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="nav_3404-211">
+                <ul>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6001-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="reviews-channel">
+            <nav class="nav_3405-211">
+                <ul>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                    <li>
+                        <div class="div_6150-211" onclick="window.location.href='the-millenium-meltdown.html';"></div>
+                    </li>
+                </ul>
+            </nav>
+            <p class="par-construct-211">-No more content for now-</p>
+        </div>
+    </div>
+    </div>
+    <script>
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        const screenWidth = window.matchMedia("(max-width: 800)");
+        const isIphone = /iPhone/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
+        const desktopCont = document.querySelector('.Main-display-cont');
+        const mobileCont = document.querySelector('.Phone-display-cont');
+
+
+        function toggleSignupView() {
+            // Force mobile for Android/iPhone/Safari/iOS, otherwise use width
+            const isMobileDevice = isAndroid || isIphone || isIOS || isSafari;
+
+            if (isMobileDevice || window.innerWidth <= 800) {
+                desktopCont.style.display = 'none';
+                mobileCont.style.display = 'block';
+            } else {
+                desktopCont.style.display = 'block';
+                mobileCont.style.display = 'none';
+            }
+        }
+
+        // Run on load
+        toggleSignupView();
+
+        // Run on resize
+        window.addEventListener('resize', toggleSignupView);
+    </script>
+</body>
+
+</html>

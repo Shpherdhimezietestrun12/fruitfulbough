@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Turning Ideas to Reality...</title>
+    <link rel="icon" type="image/x-icon" href="../icons/FB-Stream.png">
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: #111111;
+            user-select: none;
+            -webkit-user-select: none;
+            /* Safari, older Chrome */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* older IE/Edge */
+        }
+        
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        input,
+        textarea {
+            user-select: text;
+            -webkit-user-select: text;
+        }
+        
+        input::selection,
+        textarea::selection {
+            background-color: rgb(19, 12, 0);
+            color: white;
+        }
+        
+        input::-moz-selection,
+        textarea::-moz-selection {
+            background-color: rgb(19, 12, 0);
+            color: white;
+        }
+        
+        .Main-display-cont,
+        .Phone-display-cont {
+            display: none;
+        }
+        /* Above 800px: show desktop version */
+        
+        @media only screen and (max-width: 980px) {
+            @supports (-webkit-touch-callout: none) {
+                /*---- only matches for IOS safari---*/
+                .Phone-display-cont {
+                    display: block;
+                    aspect-ratio: 9/16;
+                    /*---- Phone portrait ---*/
+                }
+                .Main-display-cont {
+                    display: none;
+                }
+            }
+        }
+        
+        @media (min-width: 801px) {
+            .Main-display-cont {
+                display: block;
+            }
+        }
+        /* 800px and below: show mobile version */
+        
+        @media (max-width: 800px) {
+            .Phone-display-cont {
+                display: block;
+            }
+        }
+    </style>
+    <main class="Main-display-cont"></main>
+    <main class="Phone-display-cont"></main>
+    <script>
+        //
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+    </script>
+    <script>
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        const screenWidth = window.matchMedia("(max-width: 900) ");
+        const isIphone = /iPhone/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
+        const desktopCont = document.querySelector('.Main-display-cont');
+        const mobileCont = document.querySelector('.Phone-display-cont');
+
+
+        function toggleSignupView() {
+            // Force mobile for Android/iPhone/Safari/iOS, otherwise use width
+            const isMobileDevice = isAndroid || isIphone || isIOS || isSafari;
+
+            if (isMobileDevice || window.innerWidth <= 800) {
+                desktopCont.style.display = 'none';
+                mobileCont.style.display = 'block';
+            } else {
+                desktopCont.style.display = 'block';
+                mobileCont.style.display = 'none';
+            }
+        }
+
+        // Run on load
+        toggleSignupView();
+
+        // Run on resize
+        window.addEventListener('resize', toggleSignupView);
+    </script>
+</body>
+
+</html>

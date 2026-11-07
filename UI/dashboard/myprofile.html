@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitful Bough - Agu Chimezie</title>
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
+</head>
+
+<body>
+    <style>
+        body {
+            user-select: none;
+            -webkit-user-select: none;
+            /* Safari, older Chrome */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* older IE/Edge */
+        }
+        
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        input,
+        textarea {
+            user-select: text;
+            -webkit-user-select: text;
+        }
+        
+        input::selection,
+        textarea::selection {
+            background-color: rgb(19, 12, 0);
+            color: white;
+        }
+        
+        input::-moz-selection,
+        textarea::-moz-selection {
+            background-color: rgb(19, 12, 0);
+            color: white;
+        }
+        
+        .Main-display-cont,
+        .Phone-display-cont {
+            display: none;
+        }
+        /* Above 800px: show desktop version */
+        
+        @media only screen and (max-width: 980px) {
+            @supports (-webkit-touch-callout: none) {
+                /*---- only matches for IOS safari---*/
+                .Phone-display-cont {
+                    display: block;
+                    aspect-ratio: 9/16;
+                    /*---- Phone portrait ---*/
+                }
+                .Main-display-cont {
+                    display: none;
+                }
+            }
+        }
+        
+        @media (min-width: 801px) {
+            .Main-display-cont {
+                display: block;
+            }
+        }
+        /* 800px and below: show mobile version */
+        
+        @media (max-width: 800px) {
+            .Phone-display-cont {
+                display: block;
+            }
+        }
+        
+        .other-construct {
+            width: 150px;
+            height: 50px;
+            background-color: rgba(165, 127, 2, 0.4);
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            cursor: grab;
+            z-index: 1;
+            border-radius: 70px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0, 0.3);
+        }
+        
+        .other-construct:active {
+            cursor: grabbing;
+        }
+        
+        .nav-sh-123 {
+            position: absolute;
+            top: -11.5px;
+            left: -40px;
+        }
+        
+        .nav-sh-123 li {
+            list-style: none;
+            padding-left: 5px;
+            display: inline-block;
+        }
+        
+        .div-sh-123,
+        .viewer-div {
+            width: 41px;
+            height: 41px;
+            position: relative;
+            background-color: transparent;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .viewer-div {
+            width: 38px;
+            height: 38px;
+            top: -15.5px;
+            border: 1.5px solid rgb(139, 139, 139);
+            background-image: url('./icons/person_two.png');
+            background-size: cover;
+        }
+        
+        .img-con-12 {
+            zoom: 28%;
+        }
+    </style>
+    <div class="other-construct">
+        <nav class="nav-sh-123">
+            <ul>
+                <li>
+                    <div class="div-sh-123"><img src="./icons/icons8-nigeria-100.png" class="img-con-12"></div>
+                </li>
+                <li>
+                    <div class="div-sh-123"><img src="./icons/icons8-add-male-user-group-100.png" class="img-con-12"></div>
+                </li>
+                <li>
+                    <div class="viewer-div"><img class="img-con-12"></div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <script>
+        // To make this function of dragging work...
+        const el = document.querySelector('.other-construct');
+        let isDragging = false,
+            offsetX, offsetY;
+        el.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            offsetX = e.clientX - el.offsetLeft;
+            offsetY = e.clientY - el.offsetTop;
+        });
+        document.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            el.style.left = e.clientX - offsetX + 'px';
+            el.style.right = 'auto'; // stop using 'right' once we start dragging
+            el.style.bottom = 'auto';
+            el.style.top = e.clientY - offsetY + 'px';
+        });
+        document.addEventListener('mouseup', () => isDragging = false);
+    </script>
+    <main class="Main-display-cont">
+        <style>
+            body {
+                background-color: black;
+            }
+            
+            body::-webkit-scrollbar,
+            .div-toogle-reels-1-211::-webkit-scrollbar,
+            .div-toogle-links-1-211::-webkit-scrollbar,
+            .div-toogle-book-1-211::-webkit-scrollbar,
+            .div-toogle-reels-1::-webkit-scrollbar,
+            .div-toogle-links-1::-webkit-scrollbar,
+            .div-toogle-book-1::-webkit-scrollbar {
+                display: noe;
+                /* hide scrollbar on Chrome, Safari, and Opera */
+                width: 5px;
+                /* width of the scrollbar */
+                height: 100%;
+                /* height of the scrollbar (for horizontal scrollbars) */
+            }
+            
+            body::-webkit-scrollbar-track,
+            .div-toogle-reels-1-211::-webkit-scrollbar-track,
+            .div-toogle-links-1-211::-webkit-scrollbar-track,
+            .div-toogle-book-1-211::-webkit-scrollbar-track,
+            .div-toogle-reels-1::-webkit-scrollbar-track,
+            .div-toogle-links-1::-webkit-scrollbar-track,
+            .div-toogle-book-1::-webkit-scrollbar-track {
+                background-color: #111111;
+                /* color of the track */
+                border-radius: 10px;
+            }
+            
+            body::-webkit-scrollbar-thumb,
+            .div-toogle-reels-1-211::-webkit-scrollbar-thumb,
+            .div-toogle-links-1-211::-webkit-scrollbar-thumb,
+            .div-toogle-book-1-211::-webkit-scrollbar-thumb,
+            .div-toogle-reels-1::-webkit-scrollbar-thumb,
+            .div-toogle-links-1::-webkit-scrollbar-thumb,
+            .div-toogle-book-1::-webkit-scrollbar-thumb {
+                background: #ffc800;
+                /* color of the scrollbar thumb on hover */
+                border-radius: 10px;
+            }
+            
+            body::-webkit-scrollbar-thumb:hover,
+            .div-toogle-reels-1-211::-webkit-scrollbar-thumb:hover,
+            .div-toogle-links-1-211::-webkit-scrollbar-thumb:hover,
+            .div-toogle-book-1-211::-webkit-scrollbar-thumb:hover,
+            .div-toogle-reels-1::-webkit-scrollbar-thumb:hover,
+            .div-toogle-links-1::-webkit-scrollbar-thumb:hover,
+            .div-toogle-book-1::-webkit-scrollbar-thumb:hover {
+                background: #ffc800;
+                /* color of the scrollbar thumb on hover */
+            }
+            
+            .div-main-one {
+                width: 95%;
+                height: 430px;
+                background-color: rgb(19, 12, 0);
+                top: 240px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                border-radius: 50px;
+                overflow: hidden;
+                /* use hidden instead of clip */
+                /* keep this for stacking */
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+            
+            .div-profile-one {
+                width: 150px;
+                height: 150px;
+                background-image: url('./Pictures/360_F_560706812_0GNEvn3tqo6OVQtE0JIvlwZx8fu6S2SR.jpg');
+                background-size: cover;
+                left: 60px;
+                position: absolute;
+                top: 80px;
+                border-radius: 100px;
+                border: 1px solid rgb(255, 166, 0);
+            }
+            
+            .div-name-one {
+                width: 500px;
+                height: 150px;
+                left: 230px;
+                position: absolute;
+                top: 80px;
+                background-color: transparent;
+            }
+            
+            .div-stats-client {
+                width: 270px;
+                height: 70px;
+                left: 215px;
+                position: absolute;
+                top: 232px;
+                background-color: transparent;
+            }
+            
+            .div-cont-client {
+                width: 282px;
+                height: 75px;
+                left: 230px;
+                position: absolute;
+                top: 360px;
+                background-color: transparent;
+            }
+            
+            .div-show-prev {
+                width: 400px;
+                height: 400px;
+                right: -40px;
+                position: absolute;
+                top: -50px;
+                border-radius: 300px;
+                border: 0px solid transparent;
+                background-image: url('./Pictures/original-641e2d4320e1f0f08db05cacdcfddddddd8fed2.gif');
+                background-size: cover;
+            }
+            
+            .div-signal-out {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                border-radius: 300px;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.6);
+            }
+            
+            .blur-out {
+                left: -px;
+                bottom: 0;
+                width: 100%;
+                height: 65%;
+                position: absolute;
+                border-bottom-right-radius: 200px;
+                border-bottom-left-radius: 200px;
+                border-top-left-radius: 200px;
+                border-top-left-radius: 45px;
+                background-color: rgb(0, 0, 0, 0.01);
+                backdrop-filter: blur(2.5px);
+                -webkit-backdrop-filter: blur(10px);
+                clip-path: polygon(0 0, 100% 100%, 100% 100%, 0 100%, 0px 0);
+            }
+            
+            .par-div-one,
+            .par-div-two,
+            .par-div-three,
+            .par-div-four {
+                font-size: 22px;
+                position: absolute;
+                left: 0px;
+                color: white;
+                top: -10px;
+                font-family: Cambria, "Times New Roman", serif;
+                font-weight: bold;
+            }
+            
+            .par-div-two,
+            .par-div-three,
+            .par-div-four {
+                font-size: 12px;
+                left: 0;
+                top: 32px;
+                font-family: "Cabri ", sans-serif;
+                font-weight: normal;
+                color: white;
+            }
+            
+            .par-div-three {
+                top: 59px;
+            }
+            
+            .par-div-four {
+                top: 78px;
+                color: rgb(163, 162, 162);
+            }
+            
+            .nav-social-align,
+            .nav-social-align-211 {
+                position: absolute;
+                top: 0px;
+                left: -5px;
+            }
+            
+            .nav-social-align-211 {
+                top: -27px;
+            }
+            
+            .nav-social-align li,
+            .nav-social-align-211 li {
+                list-style: none;
+                display: inline-block;
+            }
+            
+            .div-120,
+            .div-121,
+            .div-122,
+            .div-123 {
+                width: 42px;
+                height: 42px;
+                background-color: blue;
+                top: 130px;
+                left: 9px;
+                position: absolute;
+                border-radius: 50px;
+            }
+            
+            .div-121 {
+                left: 55px;
+            }
+            
+            .div-122 {
+                left: 100px;
+            }
+            
+            .div-123 {
+                left: 147px;
+            }
+            
+            .par-score-one,
+            .par-score-two,
+            .par-score-three {
+                font-size: 19px;
+                position: absolute;
+                right: 10px;
+                color: white;
+                top: px;
+                font-family: Cambria, "Times New Roman", serif;
+                font-weight: normal;
+            }
+            
+            .par-score-two {
+                top: 30px;
+            }
+            
+            .par-score-three {
+                top: 62px;
+            }
+            
+            .but-one,
+            .but-one-211,
+            .but-one-no {
+                width: 115px;
+                height: 45px;
+                background-color: rgb(255, 166, 0);
+                position: relative;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: "Cabri ", sans-serif;
+                border-radius: 7px;
+                font-weight: bold;
+                color: black;
+                font-size: 15.4px;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+            
+            .but-one.connected,
+            .but-one-211.connected {
+                background-color: rgba(165, 127, 2, 0.13) !important;
+                ;
+                color: white;
+            }
+            
+            .but-one,
+            .but-one-211 {
+                top: -1.5px;
+            }
+            
+            .but-one-no {
+                background-color: rgba(165, 127, 2, 0.13);
+                color: white;
+            }
+            
+            .but-two {
+                width: 47px;
+                height: 45px;
+                background-color: rgba(165, 127, 2, 0.13);
+                position: relative;
+                border: none;
+                border-radius: 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .but-two {
+                top: 5.5px;
+            }
+            
+            .nav-show-one {
+                position: absolute;
+                top: 335px;
+                left: 80px;
+                font-size: 17px;
+                font-family: "Cabri ", sans-serif;
+                color: rgb(153, 153, 153);
+            }
+            
+            .nav-show-one li {
+                list-style: none;
+                padding: 30px;
+                display: inline-block;
+            }
+            
+            .show-list.active {
+                font-weight: bold;
+                font-size: 19px;
+                color: white;
+            }
+            
+            .div-rep-one {
+                width: 360px;
+                height: 2px;
+                background-color: red;
+                top: 420px;
+                left: 110px;
+                position: absolute;
+                border-radius: 50px;
+            }
+            
+            .div-rep-sub {
+                width: 34%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: blue;
+            }
+            
+            .books-cont {
+                width: 100%;
+                height: 700px;
+                background-color: red;
+                top: 470px;
+                left: 0;
+                position: absolute;
+            }
+            
+            .img-sh-verified {
+                position: relative;
+                top: 30px;
+                zoom: 18%;
+                left: 20px;
+            }
+        </style>
+
+        <div class="div-main-one">
+            <div class="div-profile-one"></div>
+            <div class="div-name-one">
+                <p class="par-div-one">Agu Chimezie Stanley</p>
+                <script>
+                    const EndPoint13 = document.querySelector('.par-div-one');
+                    let textThree13 = EndPoint13.textContent; // use textcontent, not name
+                    if (textThree13.length > 40) {
+                        textThree13 = textThree13.slice(0, 40) + '...';
+                    }
+                    EndPoint13.textContent = textThree13;
+                </script>
+                <p class="par-div-two">Ambassador / Writer / Publisher<img src="./icons/icons8-membership-100.png" class="img-sh-verified"></p>
+                <p class="par-div-three">Owner and Investor</p>
+                <p class="par-div-four">Joined 19/10/2025</p>
+                <nav class="nav-social-align">
+                    <ul>
+                        <li>
+                            <div class="div-120"></div>
+                        </li>
+                        <li>
+                            <div class="div-121"></div>
+                        </li>
+                        <li>
+                            <div class="div-122"></div>
+                        </li>
+                        <li>
+                            <div class="div-123"></div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <style>
+                .stats-clie-1,
+                .stats-clie-2,
+                .stats-clie-3 {
+                    position: absolute;
+                    top: 0;
+                    width: 33.3%;
+                    height: 100%;
+                    left: 0;
+                    background-color: transparent;
+                }
+                
+                .stats-clie-2 {
+                    background-color: transparent;
+                    left: 33.3%;
+                }
+                
+                .stats-clie-3 {
+                    background-color: transparent;
+                    left: 66.6%;
+                }
+                
+                .par-client-cont {
+                    font-size: 13px;
+                    left: 0;
+                    top: -10px;
+                    position: absolute;
+                    font-family: "Cabri ", sans-serif;
+                    line-height: 1.3;
+                    /* increase this to taste — 1.8, 2, 2.2 etc. */
+                    width: 100%;
+                    color: rgb(214, 213, 213);
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    word-break: break-word;
+                }
+                
+                .par-book-up,
+                .par-book-12,
+                .par-book-123 {
+                    font-size: 19px;
+                    left: 0;
+                    top: 0px;
+                    text-align: center;
+                    position: relative;
+                    font-family: "Cabri ", sans-serif;
+                    font-weight: normal;
+                    color: white;
+                }
+                
+                .par-book-12 {
+                    font-size: 12px;
+                    top: -17px;
+                    color: rgb(163, 162, 162);
+                }
+                
+                .par-book-123 {
+                    font-size: 14px;
+                    text-align: end;
+                    top: -60px;
+                    color: rgb(85, 84, 84);
+                }
+                
+                .nav-align-btn,
+                .nav-align-btn-211 {
+                    position: absolute;
+                    top: 285px;
+                    left: 188px;
+                }
+                
+                .nav-align-btn-211 {
+                    position: absolute;
+                    top: -10px;
+                    left: -40px;
+                }
+                
+                .nav-align-btn li,
+                .nav-align-btn-211 li {
+                    list-style: none;
+                    display: inline-block;
+                }
+                
+                .but-one:hover,
+                .div-old-div-1-ext:hover,
+                .div-lat-div-1-ext:hover,
+                .div-pop-div-1-ext:hover,
+                .but-one-211:hover,
+                .but-one-no:hover,
+                .but-two:hover,
+                .div-sh-123:hover,
+                .viewer-div:hover {
+                    background-color: rgb(56, 56, 56);
+                    /* Change background on hover */
+                    cursor: pointer;
+                    color: white;
+                }
+                
+                .viewer-div:hover {
+                    border: 0.5px solid rgb(56, 56, 56);
+                    /* Change background on hover */
+                    cursor: pointer;
+                    color: white;
+                }
+            </style>
+            <div class="div-stats-client">
+                <div class="stats-clie-1">
+                    <p class="par-book-up">10</p>
+                    <p class="par-book-12">Books</p>
+                    <p class="par-book-123">|</p>
+                </div>
+                <div class="stats-clie-2">
+                    <p class="par-book-up">1k</p>
+                    <p class="par-book-12">Connected</p>
+                    <p class="par-book-123">|</p>
+                </div>
+                <div class="stats-clie-3">
+                    <p class="par-book-up">1k</p>
+                    <p class="par-book-12">Reads</p>
+                </div>
+            </div>
+            <nav class="nav-align-btn">
+                <ul>
+                    <li>
+                        <div class="but-one">Connect</div>
+                    </li>
+                    <li>
+                        <div class="but-one-no">Ask me 👈</div>
+                    </li>
+                    <li>
+                        <style>
+                            .img-share-page {
+                                zoom: 22%;
+                            }
+                        </style>
+                        <div class="but-two"><img src="./icons/icons8-share-100.png" class="img-share-page"></div>
+                    </li>
+                    <li>
+                        <div class="but-two"><img src="./icons/icons8-share-100.png" class="img-share-page"></div>
+                    </li>
+                    <li>
+                        <div class="but-two"><img src="./icons/icons8-three-ddjddddyots-100.png" class="img-share-page"></div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="div-cont-client">
+                <p class="par-client-cont">https://fruitfulbough.xyz chimezie nosike the owner of fruitful bough group and and enterprise, I am here to inform you that this work will be a work of art on my asect of life and my work will be shown on all the platforms when i am done
+                    with constructions pls be well informed that this will be a note of warning to all</p>
+            </div>
+            <script>
+                const EndPointFour = document.querySelector('.par-client-cont');
+                let textFour = EndPointFour.textContent; // use textcontent, not name
+                if (textFour.length > 138) {
+                    textFour = textFour.slice(0, 189) + '...';
+                }
+                EndPointFour.textContent = textFour;
+            </script>
+            <div class="div-show-prev">
+                <div class="div-signal-out">
+                    <div class="blur-out">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .div-toogle-sh-12-311 {
+                width: 432px;
+                height: 80px;
+                background-color: transparent;
+                top: 500px;
+                left: 60px;
+                position: absolute;
+            }
+            
+            .div-toogle-book-1-211,
+            .div-toogle-reels-1-211,
+            .div-toogle-links-1-211 {
+                width: 1250px;
+                height: 750px;
+                display: none;
+                background-color: transparent;
+                overflow-y: auto;
+                top: 580px;
+                left: 60px;
+                position: absolute;
+            }
+            
+            .div-toogle-reels-1-211 {
+                background-color: transparent;
+            }
+            
+            .div-toogle-links-1-211 {
+                background-color: transparent;
+            }
+            
+            .div-toogle-book-1-211.active,
+            .div-toogle-reels-1-211.active,
+            .div-toogle-links-1-211.active {
+                display: block;
+                /* only show the one with.active */
+            }
+            
+            .img-dis-12-311 {
+                zoom: 35%;
+                transition: 0.2s;
+            }
+            
+            .scroll-check-211 {
+                font-size: 15px;
+                left: 10%;
+                /* default matches books since it's active on load */
+                transition: left 0.3s ease;
+                bottom: -15px;
+                position: absolute;
+                font-family: "Cabri ", sans-serif;
+                color: white;
+                font-weight: bold;
+            }
+            
+            .div-toogle-sh-12-extra {
+                width: 290px;
+                height: 36px;
+                background-color: rgba(165, 127, 2, 0.13);
+                position: absolute;
+                top: 543px;
+                font-size: 13px;
+                font-weight: bold;
+                font-family: "Cabri ", sans-serif;
+                right: 51px;
+                color: white;
+                border-radius: 4px;
+            }
+        </style>
+        <div class="div-toogle-sh-12-311">
+            <p class="scroll-check-211">_______</p>
+            <div class="div-books-div-1 active" data-tab="show-books-211"><img src="./icons/icons8-books-100dsgsgg.png" class="img-dis-12-311" data-active="./icons/icons8-books-100dsgsgg.png" data-original="./icons/icons8-books-100forone.png"></div>
+            <div class="div-reels-div-1" data-tab="show-reels-211"><img src="./icons/icons8-reels-100.png" class="img-dis-12-311" data-active="./icons/icons8-reels-100-2sssssgsggsgssgwiwidf.png" data-original="./icons/icons8-reels-100.png"></div>
+            <div class="div-links-div-1" data-tab="show-links-211"><img src="./icons/icons8-resources-and-links-100fffff.png" class="img-dis-12-311" style="zoom: 47%;" data-active="./icons/icons8-resources-and-links-100bbbbbactive.png" data-original="./icons/icons8-resources-and-links-100fffff.png"></div>
+        </div>
+
+        <style>
+            .info-listing-books {
+                position: absolute;
+                top: 235px;
+                left: -40px;
+            }
+            
+            .info-listing-books li {
+                list-style: none;
+                padding-left: 9px;
+                padding-bottom: 5px;
+                display: inline-block;
+            }
+            
+            .list-one {
+                width: 270px;
+                height: 340px;
+                background-color: rgb(19, 12, 0);
+            }
+            
+            .par-set-par {
+                font-size: 15px;
+                left: 5px;
+                /* default matches books since it's active on load */
+                top: 20px;
+                position: absolute;
+                font-family: "Cabri ", sans-serif;
+                color: white;
+            }
+            
+            .nav-first-ach-12 {
+                position: absolute;
+                top: 50px;
+                left: -40px;
+                overflow-x: auto;
+                width: 100%;
+            }
+            
+            .nav-first-ach-12 ul {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            
+            .nav-first-ach-12 li {
+                list-style: none;
+                padding-left: 8px;
+                display: inline-block;
+            }
+            
+            .div-first-ach {
+                width: 325px;
+                position: relative;
+                height: 110px;
+                border-radius: 2px;
+                background-color: rgb(19, 12, 0);
+            }
+            
+            .nav-first-ach-12::-webkit-scrollbar {
+                display: none;
+                /* Chrome, Safari, and Opera */
+            }
+            
+            .div-lat-div-1-ext.active,
+            .div-pop-div-1-ext.active,
+            .div-old-div-1-ext.active {
+                background-color: rgb(56, 56, 56);
+                /* only show the one with.active */
+            }
+            
+            .pres-cont-12 {
+                width: 98px;
+                height: 90px;
+                background-color: red;
+                position: absolute;
+                top: 50%;
+                left: 18%;
+                background-image: url('./Pictures/WhatsApp\ Image\ 2025-10-01\ at\ 00.36.31_c3190022.jpg');
+                background-size: cover;
+                border-radius: 2px;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+        <div class="div-toogle-sh-12-extra">
+            <div class="div-lat-div-1-ext active" data-tab="show-books-211">Latest</div>
+            <div class="div-pop-div-1-ext" data-tab="show-reels-211">Popular</div>
+            <div class="div-old-div-1-ext" data-tab="show-links-211">Oldest</div>
+        </div>
+        <div class="div-toogle-book-1-211 active">
+            <p class="par-set-par">Recently viewed</p>
+            <nav class="nav-first-ach-12">
+                <ul>
+                    <li>
+                        <div class="div-first-ach">
+                            <div class="pres-cont-12"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="div-first-ach"></div>
+                    </li>
+
+                </ul>
+            </nav>
+            <p class="par-set-par" style="top: 195px;">Launched Books</p>
+            <nav class="info-listing-books">
+                <ul>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-toogle-reels-1-211">
+            <p class="par-set-par">Recently viewed</p>
+            <nav class="nav-first-ach-12">
+                <ul>
+                    <li>
+                        <div class="div-first-ach"></div>
+                    </li>
+                    <li>
+                        <div class="div-first-ach"></div>
+                    </li>
+
+                </ul>
+            </nav>
+            <p class="par-set-par" style="top: 195px;">Posted videos</p>
+            <nav class="info-listing-books">
+                <ul>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-toogle-links-1-211">
+            <p class="par-set-par">Uploaded Links</p>
+            <nav class="info-listing-books" style=" top: 50px;">
+                <ul>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                    <li>
+                        <div class="list-one"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            // the active for the pc version loadin...
+            document.addEventListener('DOMContentLoaded', () => {
+                const toggleTabs211 = document.querySelectorAll('.div-toogle-sh-12-311 > div[data-tab]');
+                const scrollBar211 = document.querySelector('.scroll-check-211');
+
+                const contentSections211 = {
+                    'show-books-211': document.querySelector('.div-toogle-book-1-211'),
+                    'show-reels-211': document.querySelector('.div-toogle-reels-1-211'),
+                    'show-links-211': document.querySelector('.div-toogle-links-1-211')
+                };
+
+                const scrollPositions211 = {
+                    'show-books-211': '10%',
+                    'show-reels-211': '43%',
+                    'show-links-211': '76%'
+                };
+
+                function activateTab211(clickedTab) {
+                    const tabKey211 = clickedTab.dataset.tab;
+                    const targetSection211 = contentSections211[tabKey211];
+                    if (!targetSection211) return;
+
+                    // 1. Remove active from all tabs + content + reset images
+                    toggleTabs211.forEach(t => {
+                        t.classList.remove('active');
+                        const tabImg211 = t.querySelector('.img-dis-12-311');
+                        if (tabImg211 && !tabImg211.dataset.original) tabImg211.dataset.original = tabImg211.src;
+                        if (tabImg211 && tabImg211.dataset.original) tabImg211.src = tabImg211.dataset.original;
+                    });
+                    Object.values(contentSections211).forEach(sec => sec && sec.classList.remove('active'));
+
+                    // 2. Add active to clicked tab + matching content
+                    clickedTab.classList.add('active');
+                    targetSection211.classList.add('active');
+
+                    // 3. Swap image to active version
+                    const activeTabImg211 = clickedTab.querySelector('.img-dis-12-311');
+                    if (activeTabImg211 && activeTabImg211.dataset.active) {
+                        activeTabImg211.src = activeTabImg211.dataset.active;
+                    }
+
+                    // 4. Move scroll bar
+                    if (scrollBar211 && scrollPositions211[tabKey211]) {
+                        scrollBar211.style.left = scrollPositions211[tabKey211];
+                    }
+                }
+
+                // Click events
+                toggleTabs211.forEach(tab => {
+                    tab.addEventListener('click', () => activateTab211(tab));
+                });
+            });
+        </script>
+    </main>
+    <div class="Phone-display-cont">
+        <style>
+            .bg-video {
+                width: 100%;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                z-index: 0;
+                border-radius: 300px;
+            }
+            
+            .div-main-one-211 {
+                width: 330px;
+                height: 195px;
+                background-color: rgb(19, 12, 0);
+                top: 125px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+            }
+            
+            .div-profile-one-211 {
+                width: 110px;
+                height: 110px;
+                position: absolute;
+                left: 12px;
+                background-image: url('./Pictures/360_F_560706812_0GNEvn3tqo6OVQtE0JIvlwZx8fu6S2SR.jpg');
+                background-size: cover;
+                top: 80px;
+                border-radius: 70px;
+                border: 1px solid orange;
+            }
+            
+            .div-name-one-211 {
+                width: 195px;
+                height: 105px;
+                background-color: transparent;
+                position: absolute;
+                left: 130px;
+                z-index: 1;
+                top: 85px;
+                border-radius: 0px;
+            }
+            
+            .par-div-one-211,
+            .par-div-two-211 {
+                font-size: 16px;
+                position: absolute;
+                left: 0px;
+                top: -10px;
+                color: white;
+                font-family: Cambria, "Times New Roman", serif;
+                font-weight: bold;
+            }
+            
+            .par-div-two-211 {
+                font-size: 11px;
+                top: 18px;
+                font-weight: normal;
+                font-family: "Cabri ", sans-serif;
+                color: white;
+            }
+            
+            .par-div-three-211,
+            .par-div-four-211 {
+                font-size: 11px;
+                position: absolute;
+                top: 39px;
+                font-family: "Cabri ", sans-serif;
+                font-weight: normal;
+                color: white;
+            }
+            
+            .par-div-four-211 {
+                top: 55px;
+                color: rgb(199, 198, 198);
+            }
+            
+            .div-show-score-211 {
+                width: 165px;
+                height: 90px;
+                background-color: transparent;
+                position: absolute;
+                left: 10px;
+                top: 260px;
+                border-radius: 10px;
+            }
+            
+            .div-show-score-311 {
+                width: 135px;
+                height: 90px;
+                background-color: transparent;
+                position: absolute;
+                right: 10px;
+                top: 260px;
+                border-radius: 10px;
+            }
+            
+            .nav-show-one-211 {
+                position: absolute;
+                top: 350px;
+                color: white;
+                left: 0px;
+                font-size: 14px;
+                font-family: "Cabri ", sans-serif;
+            }
+            
+            .nav-show-one-211 li {
+                list-style: none;
+                padding: 23px;
+                display: inline-block;
+            }
+            
+            .show-list-211.active {
+                font-weight: bold;
+                font-size: 15px;
+            }
+            
+            .div-rep-one-211 {
+                width: 300px;
+                height: 2px;
+                background-color: red;
+                top: 420px;
+                left: 32px;
+                position: absolute;
+                border-radius: 50px;
+            }
+            
+            .div-rep-sub {
+                width: 34%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: blue;
+            }
+            
+            .par-score-one,
+            .par-score-two,
+            .par-score-three {
+                font-size: 12px;
+                position: absolute;
+                left: 10px;
+                top: 2px;
+                font-family: Cambria, "Times New Roman", serif;
+                font-weight: bold;
+            }
+            
+            .par-score-two {
+                top: 27px;
+            }
+            
+            .par-score-three {
+                top: 52px;
+            }
+            
+            .books-cont-211 {
+                width: 100%;
+                height: 400px;
+                background-color: red;
+                top: 430px;
+                left: 0;
+                position: absolute;
+            }
+            
+            .div-120,
+            .div-121,
+            .div-122,
+            .div-123 {
+                width: 30px;
+                height: 30px;
+                background-color: red;
+                top: 113px;
+                z-index: 1;
+                left: 5px;
+                position: absolute;
+                border-radius: 50px;
+            }
+            
+            .div-121 {
+                left: 40px;
+            }
+            
+            .div-122 {
+                left: 75px;
+            }
+            
+            .div-123 {
+                left: 110px;
+            }
+            
+            .img-sh-verified-211 {
+                position: relative;
+                top: 28px;
+                zoom: 15%;
+                left: 15px;
+            }
+        </style>
+        <div class="div-main-one-211">
+            <div class="div-profile-one-211"></div>
+            <div class="div-name-one-211">
+                <p class="par-div-one-211">Agu Chimezie Stanley</p>
+                <script>
+                    const EndPoint12 = document.querySelector('.par-div-one-211');
+                    let textThree12 = EndPoint12.textContent; // use textcontent, not name
+                    if (textThree12.length > 22) {
+                        textThree12 = textThree12.slice(0, 22) + '...';
+                    }
+                    EndPoint12.textContent = textThree12;
+                </script>
+                <p class="par-div-two-211">Ambassador / Writer / Publisher<img src="./icons/icons8-membership-100.png" class="img-sh-verified-211"></p>
+                <p class="par-div-three-211">Owner and Investor</p>
+                <p class="par-div-four-211">Joined 19/10/2025</p>
+                <nav class="nav-social-align-211">
+                    <ul>
+                        <li>
+                            <div class="div-120"></div>
+                        </li>
+                        <li>
+                            <div class="div-121"></div>
+                        </li>
+                        <li>
+                            <div class="div-122"></div>
+                        </li>
+                        <li>
+                            <div class="div-123"></div>
+                        </li>
+                    </ul>
+                </nav>
+                <style>
+                    .div-show-prev-211 {
+                        width: 160px;
+                        height: 160px;
+                        right: -20px;
+                        position: absolute;
+                        top: -15px;
+                        border-radius: 300px;
+                        border: 0px solid transparent;
+                        background-image: url('./Pictures/original-641e2d4320e1f0f08db05cacdcfddddddd8fed2.gif');
+                        background-size: cover;
+                    }
+                    
+                    .div-show {
+                        width: 200px;
+                        overflow: hidden;
+                        height: 150px;
+                        background-color: transparent;
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+                        overflow: hidden;
+                        border-top-right-radius: 30px;
+                    }
+                </style>
+            </div>
+            <div class="div-show">
+                <div class="div-show-prev-211">
+                    <div class="div-signal-out">
+                        <div class="blur-out">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .div-stats-client-211 {
+                width: 270px;
+                height: 70px;
+                left: 50%;
+                position: absolute;
+                top: 275px;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+            }
+            
+            .connect-track {
+                width: 285px;
+                height: 55px;
+                left: 50%;
+                position: absolute;
+                top: 330px;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+            }
+            
+            .div-cont-client-211 {
+                width: 285px;
+                height: 100px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                top: 416px;
+                background-color: transparent;
+            }
+            
+            .par-client-cont-211 {
+                font-size: 14px;
+                left: 0;
+                top: -10px;
+                text-align: center;
+                position: relative;
+                font-family: "Cabri ", sans-serif;
+                color: rgb(214, 213, 213);
+                line-height: 1.17;
+                /* increase this to taste — 1.8, 2, 2.2 etc. */
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                word-break: break-word;
+            }
+            
+            .par-client-cont a,
+            .par-client-cont-211 a {
+                color: #ffffff;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+            
+            .par-client-cont a:visited,
+            .par-client-cont-211 a:visited {
+                color: #ffffff;
+                font-weight: bold;
+            }
+        </style>
+        <div class="div-stats-client-211">
+            <div class="stats-clie-1">
+                <p class="par-book-up">10</p>
+                <p class="par-book-12">Books</p>
+                <p class="par-book-123">|</p>
+            </div>
+            <div class="stats-clie-2">
+                <p class="par-book-up">1k</p>
+                <p class="par-book-12">Connected</p>
+                <p class="par-book-123">|</p>
+            </div>
+            <div class="stats-clie-3">
+                <p class="par-book-up">1k</p>
+                <p class="par-book-12">Reads</p>
+            </div>
+        </div>
+        <div class="connect-track">
+            <nav class="nav-align-btn-211">
+                <ul>
+                    <li>
+                        <div class="but-one-211">Connect</div>
+                    </li>
+                    <li>
+                        <div class="but-one-no">Ask me 👈</div>
+                    </li>
+                    <li>
+                        <div class="but-two"><img src="./icons/icons8-three-ddjddddyots-100.png" class="img-share-page"></div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            // Toggle connect sequence for all buttons
+            document.addEventListener('DOMContentLoaded', () => {
+                const connectBtns = document.querySelectorAll('.but-one, .but-one-211');
+                if (connectBtns.length === 0) return;
+
+                connectBtns.forEach(btn => {
+                    // Save original text for each button separately
+                    btn.dataset.originalText = btn.textContent;
+
+                    btn.addEventListener('click', () => {
+                        btn.classList.toggle('connected');
+                        btn.textContent = btn.classList.contains('connected') ?
+                            'Connected' :
+                            btn.dataset.originalText;
+                    });
+                });
+            });
+        </script>
+        <div class="div-cont-client-211">
+            <p class="par-client-cont-211">She was there https://calendar.app.google/nRQnRCxdyF89NUNQ6 This is Shepherd chimezie nosike the owner of fruitful bough group and and enterprise, I am here to inform you that this work will be a work of art on my asect of life and my work
+                will be shown on all the platforms when i am done with constructions pls be https://calendar.app.google/nRQnRCxdyF89NUNQ6 well informed that this will be a note of warning to all</p>
+        </div>
+        <script>
+            const EndPointThree = document.querySelector('.par-client-cont-211');
+            let textThree = EndPointThree.textContent; // use textcontent, not name
+            if (textThree.length > 138) {
+                textThree = textThree.slice(0, 260) + '...';
+            }
+            EndPointThree.textContent = textThree;
+        </script>
+        <style>
+            .div-toogle-sh-12 {
+                width: 100%;
+                height: 52px;
+                background-color: transparent;
+                position: absolute;
+                top: 472px;
+                left: 0;
+            }
+            
+            .div-toogle-book-1,
+            .div-toogle-reels-1,
+            .div-toogle-links-1 {
+                width: 100%;
+                height: 555px;
+                background-color: transparent;
+                position: absolute;
+                top: 524px;
+                left: 0;
+                display: none;
+                overflow-y: auto;
+            }
+            
+            .div-toogle-reels-1 {
+                background-color: transparent;
+            }
+            
+            .div-toogle-links-1 {
+                background-color: transparent;
+            }
+            
+            .div-books-div-1,
+            .div-lat-div-1-ext,
+            .div-pop-div-1-ext,
+            .div-old-div-1-ext,
+            .div-reels-div-1,
+            .div-links-div-1 {
+                width: 33.3%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                border-radius: 4px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+            }
+            
+            .div-pop-div-1-ext,
+            .div-reels-div-1 {
+                left: 33.3%;
+            }
+            
+            .div-pop-div-1-ext {
+                border-radius: 0px;
+            }
+            
+            .div-old-div-1-ext,
+            .div-links-div-1 {
+                left: 66.6%;
+            }
+            
+            .div-old-div-1-ext {
+                border-radius: 4px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+                left: 66.6%;
+            }
+            
+            .div-pop-div-1-ext {
+                border-radius: 0px;
+                left: 33.3%;
+            }
+            
+            .img-dis-12 {
+                transition: 0.2s;
+                zoom: 27%;
+            }
+            
+            .scroll-check {
+                font-size: 15px;
+                left: 13%;
+                /* default matches books since it's active on load */
+                transition: left 0.3s ease;
+                bottom: -15px;
+                position: absolute;
+                font-family: "Cabri ", sans-serif;
+                color: white;
+                font-weight: bold;
+            }
+            
+            .div-toogle-book-1.active,
+            .div-toogle-reels-1.active,
+            .div-toogle-links-1.active {
+                display: block;
+                /* only show the one with.active */
+            }
+        </style>
+        <div class="div-toogle-sh-12">
+            <p class="scroll-check">____</p>
+            <div class="div-books-div-1 active" data-tab="show-books"><img src="./icons/icons8-books-100dsgsgg.png" class="img-dis-12" data-active="./icons/icons8-books-100dsgsgg.png" data-original="./icons/icons8-books-100forone.png"></div>
+            <div class="div-reels-div-1" data-tab="show-reels"><img src="./icons/icons8-reels-100.png" class="img-dis-12" data-active="./icons/icons8-reels-100-2sssssgsggsgssgwiwidf.png" data-original="./icons/icons8-reels-100.png"></div>
+            <div class="div-links-div-1" data-tab="show-links"><img src="./icons/icons8-resources-and-links-100fffff.png" class="img-dis-12" style="zoom: 38%;" data-active="./icons/icons8-resources-and-links-100bbbbbactive.png" data-original="./icons/icons8-resources-and-links-100fffff.png"></div>
+        </div>
+        <style>
+            .info-listing-books-211 {
+                position: absolute;
+                top: -15px;
+                left: -39px;
+            }
+            
+            .info-listing-books-211 li {
+                list-style: none;
+                display: inline-block;
+            }
+            
+            .list-one-211 {
+                width: 108px;
+                height: 170px;
+                background-color: rgb(19, 12, 0);
+            }
+        </style>
+        <div class="div-toogle-book-1 active">
+            <nav class="info-listing-books-211">
+                <ul>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-toogle-reels-1">
+            <nav class="info-listing-books-211">
+                <ul>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="div-toogle-links-1">
+            <nav class="info-listing-books-211">
+                <ul>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                    <li class="list-one-211"></li>
+                </ul>
+            </nav>
+        </div>
+        <script>
+            // this is for the active toogle of the  icons
+            document.addEventListener('DOMContentLoaded', () => {
+                const tabs = document.querySelectorAll('.div-toogle-sh-12 > div[data-tab]');
+                const scrollCheck = document.querySelector('.scroll-check');
+
+                const contentMap = {
+                    'show-books': document.querySelector('.div-toogle-book-1'),
+                    'show-reels': document.querySelector('.div-toogle-reels-1'),
+                    'show-links': document.querySelector('.div-toogle-links-1')
+                };
+
+                // Position map for scroll-check bar
+                const scrollPositions = {
+                    'show-books': '13%',
+                    'show-reels': '45%',
+                    'show-links': '78%'
+                };
+
+                function setActive(tab) {
+                    const tabName = tab.dataset.tab;
+                    const targetContent = contentMap[tabName];
+                    if (!targetContent) return;
+
+                    // 1. Remove active from all tabs + content + reset all images
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        const img = t.querySelector('.img-dis-12');
+                        if (img && !img.dataset.original) img.dataset.original = img.src;
+                        if (img && img.dataset.original) img.src = img.dataset.original;
+                    });
+                    Object.values(contentMap).forEach(c => c && c.classList.remove('active'));
+
+                    // 2. Add active to clicked tab + matching content
+                    tab.classList.add('active');
+                    targetContent.classList.add('active');
+
+                    // 3. Swap image to active version for clicked tab only
+                    const activeImg = tab.querySelector('.img-dis-12');
+                    if (activeImg && activeImg.dataset.active) {
+                        activeImg.src = activeImg.dataset.active;
+                    }
+
+                    // 4. Move scroll-check bar
+                    if (scrollCheck && scrollPositions[tabName]) {
+                        scrollCheck.style.left = scrollPositions[tabName];
+                    }
+                }
+
+                // Click events
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => setActive(tab));
+                });
+            });
+        </script>
+    </div>
+    <script>
+        // Turns any URL found inside a text node into a clickable, underlined <a> link.
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Turns any URL found inside a text node into a clickable, underlined <a> link.
+            function autoLinkElement(el) {
+                // Matches http(s)://, www., or bare domains like example.com
+                const urlRegex = /((https?:\/\/|www\.)[^\s<]+|\b[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\/[^\s<]*)?\b)/g;
+
+                function walk(node) {
+                    if (node.nodeType === Node.TEXT_NODE) {
+                        const text = node.textContent;
+                        if (!urlRegex.test(text)) return;
+                        urlRegex.lastIndex = 0; // reset regex state after test()
+
+                        const frag = document.createDocumentFragment();
+                        let lastIndex = 0;
+                        let match;
+
+                        while ((match = urlRegex.exec(text)) !== null) {
+                            // text before the link
+                            if (match.index > lastIndex) {
+                                frag.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+                            }
+
+                            let url = match[0];
+                            let href = url;
+                            if (!/^https?:\/\//i.test(href)) {
+                                href = 'https://' + href;
+                            }
+
+                            const a = document.createElement('a');
+                            a.href = href;
+                            a.textContent = url;
+                            a.target = '_blank';
+                            a.rel = 'noopener noreferrer';
+                            a.style.color = '#ffffff'; // link text color
+                            a.style.textDecoration = 'underline';
+                            frag.appendChild(a);
+
+                            lastIndex = match.index + url.length;
+                        }
+
+                        // remaining text after the last link
+                        if (lastIndex < text.length) {
+                            frag.appendChild(document.createTextNode(text.slice(lastIndex)));
+                        }
+
+                        node.replaceWith(frag);
+                    } else if (node.nodeType === Node.ELEMENT_NODE && node.childNodes) {
+                        // walk children (skip anchors already created)
+                        if (node.tagName !== 'A') {
+                            Array.from(node.childNodes).forEach(walk);
+                        }
+                    }
+                }
+
+                walk(el);
+            }
+
+            document.querySelectorAll('.par-client-cont, .par-client-cont-211').forEach(autoLinkElement);
+
+        });
+    </script>
+    <script>
+        //
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+    </script>
+    <script>
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isWindows = /Windows/i.test(navigator.userAgent);
+        const screenWidth = window.matchMedia("(max-width: 800)");
+        const isIphone = /iPhone/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        const isSafari = isIOS && /^((?!chrome).)*safari/i.test(navigator.userAgent);
+        const desktopCont = document.querySelector('.Main-display-cont');
+        const mobileCont = document.querySelector('.Phone-display-cont');
+
+        function toggleSignupView() {
+            // Force mobile for Android/iPhone/Safari/iOS, otherwise use width
+            const isMobileDevice = isAndroid || isIphone || isIOS || isSafari;
+            if (isMobileDevice || window.innerWidth <= 800) {
+                desktopCont.style.display = 'none';
+                mobileCont.style.display = 'block';
+            } else {
+                desktopCont.style.display = 'block';
+                mobileCont.style.display = 'none';
+            }
+        }
+
+        // Run on load
+        toggleSignupView();
+        // Run on resize
+        window.addEventListener('resize', toggleSignupView);
+    </script>
+</body>
+
+</html>
