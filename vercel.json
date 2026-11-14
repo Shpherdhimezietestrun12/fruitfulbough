@@ -2,11 +2,11 @@
   "version": 2,
   "builds": [
     { "src": "mock/app.py", "use": "@vercel/python" },
-    { "src": "splash-screen/**", "use": "@vercel/static" }
+    { "src": "public/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "mock/app.py" },
-    { "src": "/", "dest": "/splash-screen/Home.html" },
-    { "src": "/(.*)", "dest": "/splash-screen/$1" }
+    { "src": "/", "dest": "/public/Home.html" },
+    { "src": "/(.*)", "dest": "/public/$1" }
   ]
 }
