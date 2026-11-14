@@ -1,6 +1,9 @@
 {
-  "outputDirectory": "splash screen",
-  "rewrites": [
-    { "source": "/", "destination": "/Home.html" }
+  "version": 2,
+  "builds": [
+    { "src": "mock/app.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "mock/app.py" }
   ]
 }
