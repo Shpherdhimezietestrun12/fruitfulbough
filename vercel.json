@@ -1,0 +1,6 @@
+{
+  "outputDirectory": "splash screen",
+  "rewrites": [
+    { "source": "/", "destination": "/Home.html" }
+  ]
+}
