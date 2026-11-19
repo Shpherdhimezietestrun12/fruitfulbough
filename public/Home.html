@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fruitful Bough Productions - Platform for Advertising Fruitful Bough Products</title>
-    <link rel="icon" type="image/x-icon" href="./">
+    <link rel="icon" type="image/x-icon" href="./icons/FB-Stream.png">
     <meta name="description" content="Fruitful Bough: AI book creation, publishing with ISBN, book reels, covers, bids and Fruitful Stream video.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
@@ -39,6 +39,32 @@
             color: var(--ink);
             font-family: Manrope, sans-serif;
             line-height: 1.6
+        }
+        
+        body::-webkit-scrollbar {
+            display: noe;
+            /* hide scrollbar on Chrome, Safari, and Opera */
+            width: 6px;
+            /* width of the scrollbar */
+            height: 100%;
+            /* height of the scrollbar (for horizontal scrollbars) */
+        }
+        
+        body:-webkit-scrollbar {
+            background-color: #111111;
+            /* color of the track */
+            border-radius: 10px;
+        }
+        
+        body::-webkit-scrollbar-thumb {
+            background: #ffc800;
+            /* color of the scrollbar thumb */
+            border-radius: 10px;
+        }
+        
+        body::-webkit-scrollbar-thumb:hover {
+            background: #ffc800;
+            /* color of the scrollbar thumb on hover */
         }
         
         h1,
@@ -328,7 +354,7 @@
 </head>
 
 <body>
-    <a class="div-88282-929" href="Home.html"><img src="../icons/icons8-tsssree-100.png" alt="Fruitful Bough Logo" class="img-82828-92"></a>
+    <a class="div-88282-929" href="Home.html"><img src="./icons/icons8-tsssree-100.png" alt="Fruitful Bough Logo" class="img-82828-92"></a>
     <nav><a class="logo" href="Home.html">Fruitful <span>Bough</span></a>
         <div class="links"><a class="btn ghost" href="#features">Explore</a> <a class="btn" href="#start">Get Started</a></div>
     </nav>
@@ -351,7 +377,7 @@
     <section class="cta" id="start" style="background: transparent;">
         <div class="text">
             <h2>Plant your story today</h2>
-            <p>Join creators growing books with Fruitful Bough.</p><a class="btn" href="./auth/Signup.html">Create Free Account</a></section>
+            <p>Join creators growing books with Fruitful Bough.</p><a class="btn" href="./auth/signup.html">Create Free Account</a></section>
     <footer>© <span id="y"></span> Fruitful Bough. All rights reserved.</footer>
 
     <script>
