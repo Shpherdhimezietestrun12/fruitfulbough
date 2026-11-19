@@ -6,11 +6,11 @@
     var CONFIG = {
         apiUrl: 'http://127.0.0.1:5000/api/signup', // where mock/app.py is running
         verifyPage: 'verify.html', // page to open after success
-        redirectDelayMs: 2000, // wait after loading overlay closes
-        minCheckMs: 5000, // the loading overlay stays at least this long while the server checks the account
-        accountExistsPage: '../errors/errors/account_exists.html', // shown when the name or email is taken
+        redirectDelayMs: 10000, // wait after loading overlay closes
+        minCheckMs: 30000, // the loading overlay stays at least this long while the server checks the account
+        accountExistsPage: '../errors/account_exists.html', // shown when the name or email is taken
         maxConnectionFailures: 3, // connection failures allowed before redirecting
-        connectionErrorPage: '../errors/errors/Connection_wrong.html' // page shown after too many failures
+        connectionErrorPage: '../errors/connection_wrong.html' // page shown after too many failures
     };
 
     // Counts failed connections in a row. Kept in sessionStorage so a page refresh does not reset it.
@@ -163,15 +163,18 @@
                 });
             }, function() {
                 // Only real connection failures (server off / unreachable) land here
-                setLoading(false);
-                saveFailures(connectionFailures + 1);
-                if (connectionFailures >= CONFIG.maxConnectionFailures) {
-                    saveFailures(0); // start fresh next time
-                    // replace() removes the sign-up page from history, so Back cannot return to it
-                    window.location.replace(CONFIG.connectionErrorPage);
-                    return;
-                }
-                showStatus('Connection problem with the server. Try again later.', true);
+                var wait = Math.max(0, CONFIG.minCheckMs - (Date.now() - startedAt));
+                setTimeout(function() {
+                    setLoading(false);
+                    saveFailures(connectionFailures + 1);
+                    if (connectionFailures >= CONFIG.maxConnectionFailures) {
+                        saveFailures(0); // start fresh next time
+                        // replace() removes the sign-up page from history, so Back cannot return to it
+                        window.location.replace(CONFIG.connectionErrorPage);
+                        return;
+                    }
+                    showStatus('Connection problem with the server. Try again later.', true);
+                }, wait);
             });
     });
 })();
