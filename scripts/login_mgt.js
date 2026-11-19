@@ -6,10 +6,10 @@
     var CONFIG = {
         apiUrl: 'http://127.0.0.1:5000/api/login', // where mock/app.py is running
         onboardingPage: '../onboarding/onboarding.html', // opens when email and password match
-        notFoundPage: '../errors/errors/404_Not_found.html', // opens when the credentials are wrong
-        connectionErrorPage: '../errors/errors/Connection_wrong.html', // opens on timeout or no connection
-        minCheckMs: 5000, // the loading overlay stays at least this long
-        timeoutMs: 15000 // give up and show the connection error after this long
+        notFoundPage: '../errors/404_Not_found.html', // opens when the credentials are wrong
+        connectionErrorPage: '../errors/connection_wrong.html', // opens on timeout or no connection
+        minCheckMs: 20000, // the loading overlay stays at least this long
+        timeoutMs: 50000 // give up and show the connection error after this long
     };
 
     var form = document.getElementById('login-form');
@@ -121,7 +121,10 @@
             }, function() {
                 // Server unreachable, or no answer within timeoutMs
                 clearTimeout(timer);
-                window.location.replace(CONFIG.connectionErrorPage);
+                var wait = Math.max(0, CONFIG.minCheckMs - (Date.now() - startedAt));
+                setTimeout(function() {
+                    window.location.replace(CONFIG.connectionErrorPage);
+                }, wait);
             });
     });
 })();
